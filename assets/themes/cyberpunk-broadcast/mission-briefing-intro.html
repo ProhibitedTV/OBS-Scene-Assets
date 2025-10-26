@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mission Briefing Intro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap');
+
+      :root {
+        color-scheme: dark;
+        --cyber-bg: #050213;
+        --cyber-bg-alt: #08051d;
+        --cyber-magenta: #ff00aa;
+        --cyber-cyan: #00fff7;
+        --cyber-surface: rgba(5, 2, 19, 0.78);
+        --cyber-border: rgba(0, 255, 247, 0.4);
+        --cyber-text: #e7f9ff;
+        --cyber-muted: rgba(231, 249, 255, 0.65);
+      }
+
+      @keyframes scan {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+
+      @keyframes flicker {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        40% {
+          opacity: 0.85;
+        }
+        60% {
+          opacity: 0.65;
+        }
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(20px, 6vw, 48px);
+        background: radial-gradient(circle at 12% 18%, rgba(255, 0, 170, 0.18), transparent 55%),
+          radial-gradient(circle at 82% 22%, rgba(0, 255, 247, 0.24), transparent 60%),
+          linear-gradient(160deg, var(--cyber-bg) 0%, var(--cyber-bg-alt) 60%, var(--cyber-bg) 100%);
+        font-family: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
+        color: var(--cyber-text);
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+      }
+
+      .briefing {
+        position: relative;
+        width: min(1100px, 94vw);
+        border-radius: 36px;
+        padding: clamp(28px, 3vw, 44px);
+        background: rgba(5, 2, 19, 0.82);
+        border: 2px solid rgba(0, 255, 247, 0.35);
+        box-shadow: 0 0 42px rgba(255, 0, 170, 0.28), 0 0 72px rgba(0, 255, 247, 0.24);
+        overflow: hidden;
+      }
+
+      .briefing::before {
+        content: '';
+        position: absolute;
+        inset: 16px;
+        border-radius: 28px;
+        border: 1px dashed rgba(255, 0, 170, 0.4);
+        pointer-events: none;
+      }
+
+      .briefing::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(0, 255, 247, 0.12), transparent 55%);
+        mix-blend-mode: screen;
+        opacity: 0.6;
+        pointer-events: none;
+        animation: flicker 4s ease-in-out infinite;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: clamp(16px, 4vw, 32px);
+        margin-bottom: clamp(24px, 4vw, 42px);
+        font-size: clamp(0.75rem, 1.8vw, 1rem);
+        letter-spacing: 0.28em;
+        color: var(--cyber-muted);
+      }
+
+      header span {
+        display: inline-flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      header span::before {
+        content: '';
+        width: 46px;
+        height: 4px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(255, 0, 170, 0.4), rgba(0, 255, 247, 0.85));
+      }
+
+      .grid {
+        position: relative;
+        display: grid;
+        gap: clamp(18px, 2.4vw, 28px);
+      }
+
+      .mission {
+        display: grid;
+        gap: 14px;
+        padding: clamp(18px, 2.4vw, 28px);
+        border-radius: 22px;
+        border: 1px solid rgba(0, 255, 247, 0.25);
+        background: rgba(0, 8, 26, 0.72);
+        box-shadow: inset 0 0 0 1px rgba(255, 0, 170, 0.18);
+      }
+
+      .mission h1 {
+        margin: 0;
+        font-size: clamp(1.4rem, 4vw, 2rem);
+        letter-spacing: 0.32em;
+        color: rgba(0, 255, 247, 0.9);
+        text-shadow: 0 0 18px rgba(0, 255, 247, 0.35);
+      }
+
+      .mission p {
+        margin: 0;
+        font-size: clamp(0.8rem, 2.4vw, 1.05rem);
+        letter-spacing: 0.18em;
+        color: var(--cyber-muted);
+      }
+
+      .details {
+        display: grid;
+        gap: clamp(14px, 2vw, 22px);
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .detail {
+        position: relative;
+        padding: 18px 20px 20px;
+        border-radius: 18px;
+        background: rgba(3, 10, 30, 0.78);
+        border: 1px solid rgba(255, 0, 170, 0.25);
+        box-shadow: inset 0 0 0 1px rgba(0, 255, 247, 0.18);
+      }
+
+      .detail label {
+        display: block;
+        font-size: 0.65rem;
+        letter-spacing: 0.28em;
+        color: rgba(0, 255, 247, 0.75);
+        margin-bottom: 10px;
+      }
+
+      .detail span {
+        display: block;
+        font-size: clamp(0.85rem, 2vw, 1.05rem);
+        color: var(--cyber-text);
+      }
+
+      .timeline {
+        position: relative;
+        margin-top: clamp(20px, 3vw, 32px);
+        padding: 20px 24px;
+        border-radius: 18px;
+        border: 1px solid rgba(0, 255, 247, 0.22);
+        background: rgba(0, 6, 22, 0.68);
+        overflow: hidden;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(255, 0, 170, 0.12), rgba(0, 255, 247, 0.12));
+        mix-blend-mode: screen;
+        opacity: 0.6;
+      }
+
+      .timeline::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -20%;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(120deg, transparent, rgba(0, 255, 247, 0.3), transparent);
+        animation: scan 3.6s linear infinite;
+      }
+
+      .timeline ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 12px;
+        font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+        letter-spacing: 0.24em;
+      }
+
+      .timeline li {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: var(--cyber-muted);
+      }
+
+      .timeline li::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid rgba(0, 255, 247, 0.7);
+        box-shadow: 0 0 10px rgba(0, 255, 247, 0.5);
+      }
+
+      .footer {
+        margin-top: clamp(18px, 2.4vw, 26px);
+        font-size: clamp(0.6rem, 1.4vw, 0.75rem);
+        letter-spacing: 0.28em;
+        color: rgba(231, 249, 255, 0.45);
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .footer span {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .footer span::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        border-radius: 4px;
+        background: linear-gradient(135deg, rgba(255, 0, 170, 0.8), rgba(0, 255, 247, 0.8));
+        box-shadow: 0 0 10px rgba(0, 255, 247, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="briefing" role="presentation" aria-label="Mission briefing intro scene">
+      <header>
+        <span>Broadcast Systems Online</span>
+        <span>Priority Channel: AX-07</span>
+        <span>Encryption: Quantum-NEO</span>
+      </header>
+      <div class="grid">
+        <div class="mission">
+          <h1>Operation Hyperlink</h1>
+          <p>Brief teammates on tonight's objectives before the stream goes live.</p>
+        </div>
+        <div class="details">
+          <div class="detail">
+            <label>Launch Window</label>
+            <span>21:30 GST</span>
+          </div>
+          <div class="detail">
+            <label>Primary Host</label>
+            <span>Echo Vector</span>
+          </div>
+          <div class="detail">
+            <label>Comms Uplink</label>
+            <span>Channel 47-B // Secure</span>
+          </div>
+          <div class="detail">
+            <label>Support Team</label>
+            <span>Spectre // Nova // Glint</span>
+          </div>
+        </div>
+        <div class="timeline">
+          <ul>
+            <li>00:00 &mdash; Broadcast signal verification</li>
+            <li>02:30 &mdash; Mission intel package rotation</li>
+            <li>05:00 &mdash; Team status rollcall + sync</li>
+            <li>08:00 &mdash; Countdown overlay activation</li>
+          </ul>
+        </div>
+      </div>
+      <footer class="footer">
+        <span>Signal Integrity 98%</span>
+        <span>Uplink Ready</span>
+        <span>Playback Loop 01</span>
+      </footer>
+    </section>
+  </body>
+</html>

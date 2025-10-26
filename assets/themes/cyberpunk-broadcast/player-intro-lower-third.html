@@ -5,15 +5,25 @@
   <title>Cyberpunk Player Intro Lower Third</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap');
+
     :root {
       color-scheme: dark;
+      --cyber-bg: #050213;
+      --cyber-bg-alt: #08051d;
+      --cyber-magenta: #ff00aa;
+      --cyber-cyan: #00fff7;
+      --cyber-surface: rgba(5, 2, 19, 0.78);
+      --cyber-border: rgba(0, 255, 247, 0.4);
+      --cyber-text: #e7f9ff;
+      --cyber-muted: rgba(231, 249, 255, 0.65);
     }
 
     body {
       margin: 0;
       background: transparent;
-      font-family: 'Orbitron', 'Segoe UI', sans-serif;
-      color: #f9fcff;
+      font-family: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
+      color: var(--cyber-text);
     }
 
     .lower-third {

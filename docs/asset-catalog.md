@@ -58,6 +58,24 @@ The following tables summarize every HTML asset available in the repository. Use
 | `starting-soon.html` | Pre-stream countdown and highlight reel. | 1920×1080 | Pair with alert widgets for incoming events. |
 | `support-goals.html` | Donation/subscriber goals and milestones. | 1920×1080 | Connect to manual updates or chatbot integrations. |
 
+## Theme Collections (`assets/themes/`)
+
+### Cyberpunk Broadcast Suite (`assets/themes/cyberpunk-broadcast/`)
+
+| File | Purpose | Recommended Source Size | Notes |
+| --- | --- | --- | --- |
+| `control-room-overlay.html` | Full-frame layout for gameplay scenes with HUD accents. | 1920×1080 | Toggle modules by editing the HTML blocks. |
+| `data-uplink-overlay.html` | Lower-third system metrics overlay with scrolling ticker. | 1920×360 (Transparent) | Position near the bottom of frame and resize to taste. |
+| `dual-host-frame.html` | Split camera frame for co-hosts or guests. | 1920×1080 (Transparent) | Resize the webcam placeholders to match your sources. |
+| `holographic-chat-overlay.html` | Neon chat panel with ticker marquee. | 700×900 (Transparent) | Best when paired with darker backgrounds for legibility. |
+| `mission-briefing-intro.html` | Pre-show mission briefing slate with schedule timeline. | 1920×1080 | Deploy as an intro or recap loop between segments. |
+| `neon-alert.html` | Alert widget featuring holographic badge animation. | 800×450 | Update copy to match the specific alert trigger. |
+| `ops-status-dashboard.html` | Mission control stats board for status callouts. | 1920×1080 | Ideal for analyst scenes or between-game breakdowns. |
+| `player-intro-lower-third.html` | Animated lower-third for player or guest introductions. | 1920×300 (Transparent) | Edit the accent colors to match team branding. |
+| `stinger-transition.html` | High-energy transition with neon sweep. | 1920×1080 | Export as a WebM with alpha if you need animation in OBS. |
+| `stream-countdown.html` | Circular countdown timer with orbiting accents. | 1080×1080 | Adjust the displayed time directly in the markup. |
+| `synthwave-break-screen.html` | BRB slate with progress indicator and neon grid. | 1920×1080 | Pair with lo-fi audio during intermissions. |
+
 ## Widgets (`assets/widgets/`)
 
 | File | Function | Recommended Source Size | Notes |

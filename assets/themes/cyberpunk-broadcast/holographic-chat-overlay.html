@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Holographic Chat Overlay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap');
+
+    :root {
+        color-scheme: dark;
+        --cyber-bg: #050213;
+        --cyber-bg-alt: #08051d;
+        --cyber-magenta: #ff00aa;
+        --cyber-cyan: #00fff7;
+        --cyber-surface: rgba(5, 2, 19, 0.78);
+        --cyber-border: rgba(0, 255, 247, 0.4);
+        --cyber-text: #e7f9ff;
+        --cyber-muted: rgba(231, 249, 255, 0.65);
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.55;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: radial-gradient(circle at 0% 0%, rgba(255, 0, 170, 0.25), transparent 45%),
+          radial-gradient(circle at 100% 100%, rgba(0, 255, 247, 0.2), transparent 60%),
+          linear-gradient(140deg, var(--cyber-bg) 0%, var(--cyber-bg-alt) 80%, var(--cyber-bg) 100%);
+        font-family: 'Rajdhani', 'Orbitron', 'Segoe UI', sans-serif;
+        color: var(--cyber-text);
+      }
+
+      .overlay {
+        position: relative;
+        width: min(90vw, 780px);
+        padding: 24px 28px 28px;
+        border-radius: 28px;
+        border: 2px solid rgba(0, 255, 247, 0.4);
+        background: rgba(1, 6, 25, 0.82);
+        box-shadow: 0 0 35px rgba(0, 255, 247, 0.25), 0 0 55px rgba(255, 0, 170, 0.22);
+        overflow: hidden;
+      }
+
+      .overlay::before,
+      .overlay::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .overlay::before {
+        border-radius: inherit;
+        border: 1px dashed rgba(255, 0, 170, 0.45);
+        inset: 10px;
+        filter: drop-shadow(0 0 12px rgba(255, 0, 170, 0.35));
+      }
+
+      .overlay::after {
+        background: linear-gradient(120deg, rgba(0, 255, 247, 0.18), rgba(255, 0, 170, 0));
+        mix-blend-mode: screen;
+        opacity: 0.7;
+        animation: pulse 3.6s ease-in-out infinite;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+        text-transform: uppercase;
+        letter-spacing: 0.32em;
+        font-size: clamp(0.65rem, 2vw, 0.8rem);
+        color: rgba(0, 255, 247, 0.85);
+      }
+
+      header span {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      header span::before {
+        content: '';
+        width: 32px;
+        height: 4px;
+        background: linear-gradient(90deg, rgba(255, 0, 170, 0.4), rgba(0, 255, 247, 0.9));
+        border-radius: 999px;
+      }
+
+      header time {
+        font-size: 0.75rem;
+        letter-spacing: 0.18em;
+        color: rgba(231, 249, 255, 0.6);
+      }
+
+      .chat-log {
+        display: grid;
+        gap: 16px;
+      }
+
+      .message {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 12px 16px;
+        align-items: center;
+        padding: 12px 16px;
+        border-radius: 18px;
+        background: rgba(0, 10, 25, 0.55);
+        border: 1px solid rgba(0, 255, 247, 0.2);
+        box-shadow: inset 0 0 0 1px rgba(255, 0, 170, 0.18);
+      }
+
+      .message::before {
+        content: '';
+        grid-row: 1 / span 2;
+        width: 42px;
+        aspect-ratio: 1;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(255, 0, 170, 0.8), rgba(0, 255, 247, 0.8));
+        opacity: 0.75;
+        filter: drop-shadow(0 0 12px rgba(0, 255, 247, 0.5));
+      }
+
+      .username {
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(0, 255, 247, 0.85);
+      }
+
+      .timestamp {
+        justify-self: end;
+        font-size: 0.7rem;
+        letter-spacing: 0.14em;
+        color: rgba(231, 249, 255, 0.45);
+      }
+
+      .content {
+        grid-column: 2 / -1;
+        font-size: clamp(0.9rem, 2.4vw, 1rem);
+        letter-spacing: 0.04em;
+        color: rgba(231, 249, 255, 0.85);
+      }
+
+      .ticker {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 180%;
+        display: flex;
+        gap: 32px;
+        padding: 16px 0;
+        background: linear-gradient(90deg, rgba(0, 255, 247, 0.18), rgba(255, 0, 170, 0.18));
+        border-top: 1px solid rgba(0, 255, 247, 0.32);
+        border-bottom: 1px solid rgba(255, 0, 170, 0.22);
+        transform: translateX(0);
+        animation: slide 18s linear infinite;
+      }
+
+      .ticker span {
+        font-size: 0.75rem;
+        letter-spacing: 0.28em;
+        color: rgba(231, 249, 255, 0.65);
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="overlay" role="log" aria-live="polite">
+      <header>
+        <span>Live Chat Stream</span>
+        <time datetime="20:47">20:47 Neo City</time>
+      </header>
+      <div class="chat-log">
+        <article class="message">
+          <h2 class="username">GhostFox</h2>
+          <time class="timestamp" datetime="PT0M05S">00:05</time>
+          <p class="content">Systems are green. Ready to deploy the next highlight reel.</p>
+        </article>
+        <article class="message">
+          <h2 class="username">NovaPulse</h2>
+          <time class="timestamp" datetime="PT0M12S">00:12</time>
+          <p class="content">This synthwave mix is unreal—keep the energy coming!</p>
+        </article>
+        <article class="message">
+          <h2 class="username">CipherRunner</h2>
+          <time class="timestamp" datetime="PT0M23S">00:23</time>
+          <p class="content">Drop your location tags if you want to squad up after the show.</p>
+        </article>
+      </div>
+      <div class="ticker" aria-hidden="true">
+        <span>New Subroutine Unlocked</span>
+        <span>Stay Hydrated Operatives</span>
+        <span>Daily System Checkpoint &bull; Complete</span>
+        <span>Signal Boost: #CyberWave</span>
+      </div>
+    </section>
+  </body>
+</html>

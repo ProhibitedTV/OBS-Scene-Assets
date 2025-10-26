@@ -5,16 +5,28 @@
   <title>Cyberpunk Dual Host Frame</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap');
+
     :root {
       color-scheme: dark;
+      --cyber-bg: #050213;
+      --cyber-bg-alt: #08051d;
+      --cyber-magenta: #ff00aa;
+      --cyber-cyan: #00fff7;
+      --cyber-surface: rgba(5, 2, 19, 0.78);
+      --cyber-border: rgba(0, 255, 247, 0.4);
+      --cyber-text: #e7f9ff;
+      --cyber-muted: rgba(231, 249, 255, 0.65);
     }
 
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(140deg, #050111 0%, #010409 100%);
-      font-family: 'Orbitron', 'Segoe UI', sans-serif;
-      color: #f0fbff;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 0, 170, 0.16), transparent 65%),
+        radial-gradient(circle at 80% 80%, rgba(0, 255, 247, 0.16), transparent 70%),
+        linear-gradient(140deg, var(--cyber-bg), var(--cyber-bg-alt));
+      font-family: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
+      color: var(--cyber-text);
     }
 
     .layout {
