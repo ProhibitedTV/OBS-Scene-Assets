@@ -11,8 +11,6 @@
       --bg: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.2), transparent 60%),
         radial-gradient(circle at 80% 30%, rgba(244, 114, 182, 0.25), transparent 70%),
         linear-gradient(135deg, #020617, #0f172a 40%, #0b1120 75%);
-      --accent-one: rgba(56, 189, 248, 0.6);
-      --accent-two: rgba(244, 114, 182, 0.6);
     }
 
     * {
@@ -72,18 +70,6 @@
       font-size: 0.95rem;
       letter-spacing: 0.12em;
       opacity: 0.7;
-      flex-wrap: wrap;
-    }
-
-    .socials span::before {
-      content: '•';
-      margin-right: 0.6rem;
-      color: var(--accent-one);
-    }
-
-    .socials span:first-child::before {
-      content: '';
-      margin-right: 0;
     }
 
     .glow {
@@ -120,52 +106,8 @@
     </div>
   </div>
   <script>
-    const params = new URLSearchParams(window.location.search);
-
-    const title = params.get('title');
-    const subtitle = params.get('subtitle');
-    const socialsParam = params.get('socials');
-    const accentOne = params.get('accentOne');
-    const accentTwo = params.get('accentTwo');
-    const minutesParam = parseInt(params.get('minutes'), 10);
-    const secondsParam = parseInt(params.get('seconds'), 10);
-    const autohide = params.get('autohide') === 'true';
-
-    if (title) {
-      document.querySelector('.title').textContent = title;
-    }
-
-    if (subtitle) {
-      document.querySelector('.subtitle').textContent = subtitle;
-    }
-
-    if (accentOne) {
-      document.documentElement.style.setProperty('--accent-one', accentOne);
-    }
-
-    if (accentTwo) {
-      document.documentElement.style.setProperty('--accent-two', accentTwo);
-    }
-
-    if (socialsParam) {
-      const socials = socialsParam.split('|').map((item) => item.trim()).filter(Boolean);
-      const socialsContainer = document.querySelector('.socials');
-      socialsContainer.innerHTML = '';
-      socials.forEach((entry) => {
-        const span = document.createElement('span');
-        span.textContent = entry;
-        socialsContainer.appendChild(span);
-      });
-    }
-
     const countdownElement = document.getElementById('countdown');
     let totalSeconds = 5 * 60;
-
-    if (!Number.isNaN(minutesParam) || !Number.isNaN(secondsParam)) {
-      const minutes = Number.isNaN(minutesParam) ? 0 : minutesParam;
-      const seconds = Number.isNaN(secondsParam) ? 0 : secondsParam;
-      totalSeconds = Math.max(minutes * 60 + seconds, 0);
-    }
 
     function updateCountdown() {
       const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
@@ -174,9 +116,6 @@
 
       if (totalSeconds > 0) {
         totalSeconds -= 1;
-      } else if (autohide) {
-        document.querySelector('.container').style.opacity = '0';
-        document.querySelector('.container').style.transition = 'opacity 0.6s ease';
       }
     }
 
