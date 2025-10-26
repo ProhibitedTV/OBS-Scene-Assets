@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>League of Legends Draft Desk</title>
+  <style>
+    :root {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      --bg: linear-gradient(150deg, #050912, #0c1a32 50%, #050912 100%);
+      --panel: rgba(8, 16, 30, 0.9);
+      --accent: #00d5b1;
+      --secondary: #f2c94c;
+      --text: #f3f6fb;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    main {
+      width: 92vw;
+      max-width: 1600px;
+      background: var(--panel);
+      border-radius: 2.4rem;
+      border: 2px solid rgba(0, 213, 177, 0.35);
+      padding: 2.6rem 3.2rem;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 2.4rem;
+      position: relative;
+      box-shadow: 0 36px 100px rgba(0, 0, 0, 0.55);
+    }
+
+    main::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 2.4rem;
+      border: 1px solid rgba(0, 213, 177, 0.2);
+      pointer-events: none;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    header p {
+      margin: 0.6rem 0 0;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 1rem;
+      color: rgba(243, 246, 251, 0.7);
+    }
+
+    .bans-picks {
+      margin-top: 2.2rem;
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    .team {
+      border-radius: 1.6rem;
+      border: 1px solid rgba(0, 213, 177, 0.35);
+      background: rgba(5, 12, 24, 0.8);
+      padding: 1.8rem 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .team h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .lineup {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .player {
+      border-radius: 1rem;
+      border: 1px solid rgba(0, 213, 177, 0.35);
+      padding: 0.9rem 1rem;
+      background: rgba(0, 20, 24, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.8rem;
+      color: rgba(243, 246, 251, 0.8);
+    }
+
+    .player strong {
+      font-size: 1.1rem;
+      color: var(--secondary);
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      font-size: 0.85rem;
+      color: rgba(243, 246, 251, 0.7);
+    }
+
+    .sidebar section {
+      border-radius: 1.6rem;
+      border: 1px solid rgba(0, 213, 177, 0.3);
+      padding: 1.6rem 1.8rem;
+      background: rgba(5, 12, 24, 0.8);
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .sidebar h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+
+    .sidebar ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.6rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <header>
+        <h1 id="title">Draft Desk • LCS</h1>
+        <p id="subtitle">Best of 5 • Patch 13.5</p>
+      </header>
+      <div class="bans-picks" id="teams">
+        <article class="team">
+          <h2>Blue Side • Cloud9</h2>
+          <div class="lineup">
+            <div class="player"><strong>Top</strong> Fudge • Gwen</div>
+            <div class="player"><strong>Jungle</strong> Blaber • Maokai</div>
+            <div class="player"><strong>Mid</strong> EMENES • Ahri</div>
+            <div class="player"><strong>ADC</strong> Berserker • Zeri</div>
+            <div class="player"><strong>Support</strong> Zven • Lulu</div>
+          </div>
+        </article>
+        <article class="team">
+          <h2>Red Side • 100 Thieves</h2>
+          <div class="lineup">
+            <div class="player"><strong>Top</strong> Tenacity • Jax</div>
+            <div class="player"><strong>Jungle</strong> Closer • Sejuani</div>
+            <div class="player"><strong>Mid</strong> Bjergsen • Syndra</div>
+            <div class="player"><strong>ADC</strong> Doublelift • Lucian</div>
+            <div class="player"><strong>Support</strong> Busio • Nami</div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <aside class="sidebar">
+      <section>
+        <h3>Priority bans</h3>
+        <ul id="bans">
+          <li>Maokai</li>
+          <li>Vi</li>
+          <li>Kassadin</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Win conditions</h3>
+        <ul id="conditions">
+          <li>Stack early drakes</li>
+          <li>Protect Zeri scaling</li>
+          <li>Track Closer pathing</li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const teams = params.get('teams');
+    const bans = params.get('bans');
+    const conditions = params.get('conditions');
+
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+
+    if (teams) {
+      const container = document.getElementById('teams');
+      container.innerHTML = '';
+      teams.split('||').forEach(entry => {
+        const [heading, lineup] = entry.split('::');
+        const article = document.createElement('article');
+        article.className = 'team';
+        article.innerHTML = `<h2>${heading || 'Team'}</h2>`;
+        const grid = document.createElement('div');
+        grid.className = 'lineup';
+        (lineup || '').split('|').forEach(playerEntry => {
+          if (!playerEntry) return;
+          const [role, player, champion] = playerEntry.split(';');
+          const div = document.createElement('div');
+          div.className = 'player';
+          div.innerHTML = `<strong>${role || ''}</strong> ${player || ''} • ${champion || ''}`;
+          grid.appendChild(div);
+        });
+        article.appendChild(grid);
+        container.appendChild(article);
+      });
+    }
+
+    function populateList(id, value) {
+      if (!value) return;
+      const list = document.getElementById(id);
+      list.innerHTML = '';
+      value.split('|').forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        list.appendChild(li);
+      });
+    }
+
+    populateList('bans', bans);
+    populateList('conditions', conditions);
+  </script>
+</body>
+</html>

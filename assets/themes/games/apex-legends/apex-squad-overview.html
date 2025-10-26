@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apex Legends Squad Overview</title>
+  <style>
+    :root {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      --bg: linear-gradient(120deg, #0d0d0f, #191d26 55%, #0d0d0f 100%);
+      --panel: rgba(15, 17, 22, 0.88);
+      --accent: #ff4654;
+      --secondary: #46c7ff;
+      --text: #f4f6fb;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    main {
+      width: 90vw;
+      max-width: 1500px;
+      border-radius: 2rem;
+      border: 2px solid rgba(255, 70, 84, 0.35);
+      background: var(--panel);
+      padding: 2.4rem 3rem;
+      display: grid;
+      gap: 2.4rem;
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .match-info {
+      display: flex;
+      gap: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.85rem;
+      color: rgba(244, 246, 251, 0.65);
+    }
+
+    .match-info span::before {
+      content: '\2022';
+      margin: 0 0.6rem 0 0.4rem;
+      color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      border-radius: 1.4rem;
+      border: 1px solid rgba(255, 70, 84, 0.3);
+      background: rgba(17, 19, 26, 0.9);
+      padding: 1.8rem 1.6rem;
+      display: grid;
+      gap: 0.9rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 1.4rem;
+      background: linear-gradient(140deg, rgba(255, 70, 84, 0.18), transparent 60%);
+      pointer-events: none;
+    }
+
+    .legend-name {
+      margin: 0;
+      font-size: 1.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .role {
+      margin: 0;
+      font-size: 0.85rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(244, 246, 251, 0.6);
+    }
+
+    .stat-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.85rem;
+    }
+
+    .stat-line strong {
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+
+    .ability {
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .ability span {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(244, 246, 251, 0.55);
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.85rem;
+      color: rgba(244, 246, 251, 0.65);
+    }
+
+    footer strong {
+      font-size: 1.1rem;
+      color: var(--secondary);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1 id="title">Squad Alpha • Ranked</h1>
+      <div class="match-info" id="match-info">
+        <span>World's Edge</span>
+        <span>Top 5 Remaining</span>
+        <span>Round 3 • Ring Closing</span>
+      </div>
+    </header>
+    <section class="grid" id="squad">
+      <article class="card">
+        <h2 class="legend-name">Wraith</h2>
+        <p class="role">Interdimensional Skirmisher</p>
+        <div class="stat-line"><strong>4</strong><span>Kills</span></div>
+        <div class="stat-line"><strong>1,250</strong><span>Damage</span></div>
+        <div class="ability">
+          <strong>Dimensional Rift</strong>
+          <span>Portal ready • 89%</span>
+        </div>
+      </article>
+      <article class="card">
+        <h2 class="legend-name">Bloodhound</h2>
+        <p class="role">Technological Tracker</p>
+        <div class="stat-line"><strong>2</strong><span>Kills</span></div>
+        <div class="stat-line"><strong>980</strong><span>Damage</span></div>
+        <div class="ability">
+          <strong>Beast of the Hunt</strong>
+          <span>Tactical scan ready • Charged</span>
+        </div>
+      </article>
+      <article class="card">
+        <h2 class="legend-name">Gibraltar</h2>
+        <p class="role">Shielded Fortress</p>
+        <div class="stat-line"><strong>1</strong><span>Kills</span></div>
+        <div class="stat-line"><strong>640</strong><span>Damage</span></div>
+        <div class="ability">
+          <strong>Defensive Bombardment</strong>
+          <span>Dome shield ready • 100%</span>
+        </div>
+      </article>
+    </section>
+    <footer id="footer">
+      <div>Respawn Beacons Nearby • <strong>2</strong></div>
+      <div>Next Ring Reveal in • <strong>00:45</strong></div>
+    </footer>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const matchInfo = params.get('matchInfo');
+    const squad = params.get('squad');
+    const footer = params.get('footer');
+
+    if (title) document.getElementById('title').textContent = title;
+
+    if (matchInfo) {
+      const container = document.getElementById('match-info');
+      container.innerHTML = '';
+      matchInfo.split('|').forEach(piece => {
+        const span = document.createElement('span');
+        span.textContent = piece;
+        container.appendChild(span);
+      });
+    }
+
+    if (squad) {
+      const container = document.getElementById('squad');
+      container.innerHTML = '';
+      squad.split('|').forEach(entry => {
+        const [legend, role, kills = '0', damage = '0', ability = '', status = ''] = entry.split(';');
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <h2 class="legend-name">${legend || 'Legend'}</h2>
+          <p class="role">${role || ''}</p>
+          <div class="stat-line"><strong>${kills}</strong><span>Kills</span></div>
+          <div class="stat-line"><strong>${damage}</strong><span>Damage</span></div>
+          <div class="ability">
+            <strong>${ability || 'Ultimate'}</strong>
+            <span>${status || ''}</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    if (footer) {
+      const container = document.getElementById('footer');
+      container.innerHTML = '';
+      footer.split('|').forEach(entry => {
+        const div = document.createElement('div');
+        div.innerHTML = entry;
+        container.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>

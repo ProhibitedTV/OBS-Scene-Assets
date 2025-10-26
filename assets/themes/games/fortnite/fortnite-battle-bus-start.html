@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fortnite Battle Bus Start</title>
+  <style>
+    :root {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      --bg: linear-gradient(160deg, #0a1a3a, #1b4fbf 55%, #0a1a3a 100%);
+      --panel: rgba(12, 26, 58, 0.85);
+      --accent: #00d4ff;
+      --secondary: #f8f94a;
+      --text: #f5f9ff;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    main {
+      width: 88vw;
+      max-width: 1500px;
+      background: var(--panel);
+      border-radius: 2rem;
+      border: 2px solid rgba(0, 212, 255, 0.4);
+      padding: 2.6rem 3rem;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 2rem;
+      position: relative;
+      box-shadow: 0 36px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 2rem;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      pointer-events: none;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    header p {
+      margin: 0.4rem 0 0;
+      font-size: 1rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(245, 249, 255, 0.7);
+    }
+
+    .countdown {
+      margin-top: 2.2rem;
+      font-size: 5.6rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--secondary);
+      text-shadow: 0 0 24px rgba(248, 249, 74, 0.8);
+    }
+
+    .cta {
+      margin-top: 1rem;
+      display: inline-flex;
+      padding: 0.6rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 212, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.34em;
+      font-size: 0.9rem;
+    }
+
+    .loadout {
+      background: rgba(8, 20, 48, 0.9);
+      border-radius: 1.6rem;
+      border: 1px solid rgba(248, 249, 74, 0.35);
+      padding: 2rem 2.4rem;
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .loadout h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--secondary);
+    }
+
+    .items {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .item {
+      border-radius: 1.2rem;
+      border: 1px solid rgba(248, 249, 74, 0.4);
+      padding: 1rem 1.4rem;
+      background: rgba(24, 40, 86, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(245, 249, 255, 0.85);
+    }
+
+    .drop-info {
+      display: grid;
+      gap: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.85rem;
+      color: rgba(245, 249, 255, 0.7);
+    }
+
+    .drop-info span {
+      display: inline-flex;
+      gap: 0.6rem;
+    }
+
+    .drop-info span::before {
+      content: '\2022';
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <header>
+        <h1 id="title">Battle Bus Launch</h1>
+        <p id="subtitle">Chapter 4 • Mega City drop</p>
+      </header>
+      <div class="countdown" id="countdown">00:01:30</div>
+      <div class="cta" id="cta">Mark your landing spot</div>
+      <div class="drop-info" id="drop-info">
+        <span>Bus angle: North East</span>
+        <span>Hot spots: Mega City • Knotty Nets</span>
+        <span>Storm forecast: Pulls South</span>
+      </div>
+    </section>
+    <aside class="loadout">
+      <h2>Squad Loadout</h2>
+      <div class="items" id="items">
+        <div class="item"><strong>Player One</strong><span>Gold Thunder Shotgun</span></div>
+        <div class="item"><strong>Player Two</strong><span>Mythic Havoc Pump</span></div>
+        <div class="item"><strong>Player Three</strong><span>Kinetic Blade & Splash</span></div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const countdown = params.get('countdown');
+    const cta = params.get('cta');
+    const dropInfo = params.get('dropInfo');
+    const items = params.get('items');
+
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (countdown) document.getElementById('countdown').textContent = countdown;
+    if (cta) document.getElementById('cta').textContent = cta;
+
+    if (dropInfo) {
+      const container = document.getElementById('drop-info');
+      container.innerHTML = '';
+      dropInfo.split('|').forEach(entry => {
+        const span = document.createElement('span');
+        span.textContent = entry;
+        container.appendChild(span);
+      });
+    }
+
+    if (items) {
+      const container = document.getElementById('items');
+      container.innerHTML = '';
+      items.split('|').forEach(entry => {
+        const [player, loadout] = entry.split(';');
+        const div = document.createElement('div');
+        div.className = 'item';
+        div.innerHTML = `<strong>${player || 'Player'}</strong><span>${loadout || ''}</span>`;
+        container.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fortnite Loadout Showcase</title>
+  <style>
+    :root {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      --bg: rgba(9, 20, 44, 0.85);
+      --panel: rgba(14, 28, 60, 0.9);
+      --accent: #00d4ff;
+      --secondary: #f8f94a;
+      --text: #f4f9ff;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .showcase {
+      width: 75vw;
+      max-width: 1200px;
+      border-radius: 1.8rem;
+      border: 2px solid rgba(0, 212, 255, 0.45);
+      background: var(--panel);
+      padding: 2.2rem 2.6rem;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.45);
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.85rem;
+      color: rgba(244, 249, 255, 0.7);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 0.32em;
+      color: var(--accent);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      border-radius: 1.2rem;
+      border: 1px solid rgba(0, 212, 255, 0.35);
+      background: rgba(9, 20, 44, 0.9);
+      padding: 1.4rem 1.6rem;
+      display: grid;
+      gap: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.85rem;
+      color: rgba(244, 249, 255, 0.8);
+    }
+
+    .card strong {
+      font-size: 1.2rem;
+      color: var(--secondary);
+    }
+
+    .rarity {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      color: rgba(244, 249, 255, 0.55);
+    }
+
+    .perks {
+      display: grid;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      color: rgba(244, 249, 255, 0.65);
+    }
+  </style>
+</head>
+<body>
+  <section class="showcase">
+    <header>
+      <h1 id="title">Loadout Spotlight</h1>
+      <div id="subtitle">Arena • Division 7 lobby</div>
+    </header>
+    <div class="grid" id="grid">
+      <article class="card">
+        <strong>Mythic Havoc Pump</strong>
+        <span class="rarity">Mythic</span>
+        <div class="perks">
+          <span>137 body | 210 headshot</span>
+          <span>Tactical sprint reload</span>
+          <span>Best for close range</span>
+        </div>
+      </article>
+      <article class="card">
+        <strong>Legendary Red-Eye AR</strong>
+        <span class="rarity">Legendary</span>
+        <div class="perks">
+          <span>Marksman scope activated</span>
+          <span>Stable recoil pattern</span>
+          <span>Pair with shockwave hammer</span>
+        </div>
+      </article>
+      <article class="card">
+        <strong>Epic Thunder Shotgun</strong>
+        <span class="rarity">Epic</span>
+        <div class="perks">
+          <span>128 body | 190 headshot</span>
+          <span>Reload cancel combo</span>
+          <span>Use with ODM gear</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const cards = params.get('cards');
+
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+
+    if (cards) {
+      const container = document.getElementById('grid');
+      container.innerHTML = '';
+      cards.split('|').forEach(entry => {
+        const [item, rarity, perkString] = entry.split('::');
+        const article = document.createElement('article');
+        article.className = 'card';
+        const perks = (perkString || '').split(';').map(perk => `<span>${perk}</span>`).join('');
+        article.innerHTML = `
+          <strong>${item || 'Item'}</strong>
+          <span class="rarity">${rarity || ''}</span>
+          <div class="perks">${perks}</div>
+        `;
+        container.appendChild(article);
+      });
+    }
+  </script>
+</body>
+</html>
