@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Digital Grid Background</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at 50% 10%, rgba(0, 255, 255, 0.2), transparent 55%),
+        radial-gradient(circle at 80% 60%, rgba(0, 255, 136, 0.15), transparent 65%),
+        linear-gradient(180deg, #020611, #050226 40%, #020611);
+      overflow: hidden;
+      color: #21f4ff;
+      font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(33, 244, 255, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(33, 244, 255, 0.12) 1px, transparent 1px);
+      background-size: 120px 120px;
+      transform: perspective(600px) rotateX(65deg) scale(1.2);
+      transform-origin: top;
+      animation: pulse 12s infinite linear;
+    }
+
+    .scanline {
+      position: absolute;
+      top: -50vh;
+      left: 0;
+      width: 100%;
+      height: 50vh;
+      background: linear-gradient(to bottom, rgba(33, 244, 255, 0) 0%, rgba(33, 244, 255, 0.08) 50%, rgba(33, 244, 255, 0) 100%);
+      animation: scan 5s infinite linear;
+    }
+
+    .binary {
+      position: absolute;
+      inset: 0;
+      font-size: 2vw;
+      opacity: 0.05;
+      letter-spacing: 2vw;
+      animation: drift 30s linear infinite;
+      white-space: nowrap;
+      transform: translate3d(0, 0, 0);
+    }
+
+    @keyframes scan {
+      0% {
+        transform: translateY(-30vh);
+      }
+      100% {
+        transform: translateY(120vh);
+      }
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 0.9;
+      }
+      50% {
+        opacity: 0.6;
+      }
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid" aria-hidden="true"></div>
+  <div class="scanline" aria-hidden="true"></div>
+  <div class="binary" aria-hidden="true">01000111 01001100 01001001 01010100 01000011 01001000 01000001 01001110 01001110 01000101 01001100</div>
+</body>
+</html>
