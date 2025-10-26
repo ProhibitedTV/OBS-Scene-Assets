@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Poll Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&display=swap');
+
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: 'Archivo', sans-serif;
+      color: #f8fafc;
+    }
+
+    .widget {
+      position: fixed;
+      bottom: 10vh;
+      right: 6vw;
+      width: 28vw;
+      min-width: 320px;
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 22px;
+      padding: 1.6rem 1.8rem;
+      border: 1px solid rgba(244, 114, 182, 0.4);
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.55);
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .title {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.9rem;
+      opacity: 0.75;
+    }
+
+    .option {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .option span {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.95rem;
+    }
+
+    .bar {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(30, 41, 59, 0.7);
+      overflow: hidden;
+    }
+
+    .bar div {
+      height: 100%;
+      width: var(--value, 50%);
+      background: linear-gradient(90deg, rgba(236, 72, 153, 0.9), rgba(59, 130, 246, 0.9));
+      border-radius: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="widget">
+    <div class="title">Live Poll · Choose the next segment</div>
+    <div class="option">
+      <span><strong>Coding Challenges</strong><small>38%</small></span>
+      <div class="bar"><div style="--value:38%"></div></div>
+    </div>
+    <div class="option">
+      <span><strong>Game Night</strong><small>44%</small></span>
+      <div class="bar"><div style="--value:44%"></div></div>
+    </div>
+    <div class="option">
+      <span><strong>AMA Session</strong><small>18%</small></span>
+      <div class="bar"><div style="--value:18%"></div></div>
+    </div>
+  </div>
+</body>
+</html>

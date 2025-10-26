@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Facebook Stars Alert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
+
+    :root {
+      --accent-start: #1877f2;
+      --accent-end: #00a6ff;
+    }
+
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: 'Nunito', sans-serif;
+      color: #eef6ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .alert {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.3rem;
+      align-items: center;
+      padding: 1.6rem 2.2rem;
+      border-radius: 28px;
+      background: rgba(6, 34, 78, 0.88);
+      border: 1px solid rgba(24, 119, 242, 0.4);
+      box-shadow: 0 30px 80px rgba(10, 37, 92, 0.5);
+    }
+
+    .badge {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, var(--accent-start), var(--accent-end));
+      display: grid;
+      place-items: center;
+      font-size: 2.2rem;
+    }
+
+    .details {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .label {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    .headline {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .message {
+      font-size: 1.05rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <div class="alert">
+    <div class="badge" id="badge" aria-hidden="true">⭐</div>
+    <div class="details">
+      <div class="label" id="label">Stars Support</div>
+      <div class="headline" id="headline">StreamFriend sent 250 Stars!</div>
+      <div class="message" id="message">"Keep the good vibes going!"</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const supporter = params.get('user') || 'StreamFriend';
+    const stars = params.get('stars') || '250';
+    const label = params.get('label') || 'Stars Support';
+    const message = params.get('message') || '"Keep the good vibes going!"';
+    const icon = params.get('icon');
+    const accentStart = params.get('accentStart');
+    const accentEnd = params.get('accentEnd');
+
+    document.getElementById('label').textContent = label;
+    document.getElementById('headline').textContent = `${supporter} sent ${stars} Stars!`;
+    document.getElementById('message').textContent = message;
+
+    if (icon) {
+      document.getElementById('badge').textContent = icon;
+    }
+
+    if (accentStart || accentEnd) {
+      document.documentElement.style.setProperty('--accent-start', accentStart || '#1877f2');
+      document.documentElement.style.setProperty('--accent-end', accentEnd || '#00a6ff');
+    }
+  </script>
+</body>
+</html>

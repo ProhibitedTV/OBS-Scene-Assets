@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Starting Soon Scene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Work+Sans:wght@400;600&display=swap');
+
+    :root {
+      --bg: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.2), transparent 60%),
+        radial-gradient(circle at 80% 30%, rgba(244, 114, 182, 0.25), transparent 70%),
+        linear-gradient(135deg, #020617, #0f172a 40%, #0b1120 75%);
+      --accent-one: rgba(56, 189, 248, 0.6);
+      --accent-two: rgba(244, 114, 182, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      color: #f8fafc;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      display: grid;
+      gap: 2rem;
+      padding: 4rem 6rem;
+      border-radius: 30px;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 35px 120px rgba(15, 23, 42, 0.6);
+    }
+
+    .title {
+      font-family: 'Changa One', cursive;
+      font-size: 6vw;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .countdown {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 3vw;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+      opacity: 0.7;
+      flex-wrap: wrap;
+    }
+
+    .socials span::before {
+      content: '•';
+      margin-right: 0.6rem;
+      color: var(--accent-one);
+    }
+
+    .socials span:first-child::before {
+      content: '';
+      margin-right: 0;
+    }
+
+    .glow {
+      position: absolute;
+      width: 60vw;
+      height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent 60%);
+      filter: blur(60px);
+      animation: rotate 30s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="subtitle">Welcome to the channel</div>
+    <div class="title">Starting Soon</div>
+    <div class="countdown" id="countdown">05:00</div>
+    <div class="socials">
+      <span>@YourHandle</span>
+      <span>Discord.gg/yourserver</span>
+      <span>#StayCreative</span>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const socialsParam = params.get('socials');
+    const accentOne = params.get('accentOne');
+    const accentTwo = params.get('accentTwo');
+    const minutesParam = parseInt(params.get('minutes'), 10);
+    const secondsParam = parseInt(params.get('seconds'), 10);
+    const autohide = params.get('autohide') === 'true';
+
+    if (title) {
+      document.querySelector('.title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.querySelector('.subtitle').textContent = subtitle;
+    }
+
+    if (accentOne) {
+      document.documentElement.style.setProperty('--accent-one', accentOne);
+    }
+
+    if (accentTwo) {
+      document.documentElement.style.setProperty('--accent-two', accentTwo);
+    }
+
+    if (socialsParam) {
+      const socials = socialsParam.split('|').map((item) => item.trim()).filter(Boolean);
+      const socialsContainer = document.querySelector('.socials');
+      socialsContainer.innerHTML = '';
+      socials.forEach((entry) => {
+        const span = document.createElement('span');
+        span.textContent = entry;
+        socialsContainer.appendChild(span);
+      });
+    }
+
+    const countdownElement = document.getElementById('countdown');
+    let totalSeconds = 5 * 60;
+
+    if (!Number.isNaN(minutesParam) || !Number.isNaN(secondsParam)) {
+      const minutes = Number.isNaN(minutesParam) ? 0 : minutesParam;
+      const seconds = Number.isNaN(secondsParam) ? 0 : secondsParam;
+      totalSeconds = Math.max(minutes * 60 + seconds, 0);
+    }
+
+    function updateCountdown() {
+      const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+      const seconds = String(totalSeconds % 60).padStart(2, '0');
+      countdownElement.textContent = `${minutes}:${seconds}`;
+
+      if (totalSeconds > 0) {
+        totalSeconds -= 1;
+      } else if (autohide) {
+        document.querySelector('.container').style.opacity = '0';
+        document.querySelector('.container').style.transition = 'opacity 0.6s ease';
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
