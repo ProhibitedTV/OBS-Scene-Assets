@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>YouTube Membership Alert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap');
+
+    :root {
+      --accent: #ff0000;
+      --accent-secondary: #ff7a6c;
+    }
+
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: 'Barlow', sans-serif;
+      color: #fff5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .alert {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.2rem;
+      align-items: center;
+      padding: 1.6rem 2.2rem;
+      border-radius: 28px;
+      background: rgba(65, 0, 0, 0.82);
+      border: 1px solid rgba(255, 122, 108, 0.45);
+      box-shadow: 0 30px 90px rgba(65, 0, 0, 0.55);
+    }
+
+    .badge {
+      width: 78px;
+      height: 78px;
+      border-radius: 20px;
+      background: linear-gradient(140deg, var(--accent), var(--accent-secondary));
+      display: grid;
+      place-items: center;
+      font-size: 2.2rem;
+    }
+
+    .details {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .label {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    .headline {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .perks {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <div class="alert">
+    <div class="badge" id="badge" aria-hidden="true">▶</div>
+    <div class="details">
+      <div class="label" id="label">New Member</div>
+      <div class="headline" id="headline">ChannelHero became a Level 2 member!</div>
+      <div class="perks" id="perks">Enjoy the new emotes and exclusive streams.</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const member = params.get('user') || 'ChannelHero';
+    const level = params.get('level') || 'Level 2';
+    const label = params.get('label') || 'New Member';
+    const perks = params.get('perks') || 'Enjoy the new emotes and exclusive streams.';
+    const icon = params.get('icon');
+    const accent = params.get('accent');
+    const accentSecondary = params.get('accentSecondary');
+
+    document.getElementById('label').textContent = label;
+    document.getElementById('headline').textContent = `${member} became a ${level} member!`;
+    document.getElementById('perks').textContent = perks;
+
+    if (icon) {
+      document.getElementById('badge').textContent = icon;
+    }
+
+    if (accent || accentSecondary) {
+      document.documentElement.style.setProperty('--accent', accent || '#ff0000');
+      document.documentElement.style.setProperty('--accent-secondary', accentSecondary || '#ff7a6c');
+    }
+  </script>
+</body>
+</html>

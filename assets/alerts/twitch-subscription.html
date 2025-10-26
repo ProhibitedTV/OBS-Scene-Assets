@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Twitch Subscription Alert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&display=swap');
+
+    :root {
+      --accent: #9146ff;
+      --accent-secondary: #772ce8;
+    }
+
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: 'Rajdhani', sans-serif;
+      color: #f8f7ff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .alert {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.3rem;
+      align-items: center;
+      padding: 1.6rem 2rem;
+      border-radius: 24px;
+      background: rgba(26, 0, 51, 0.85);
+      border: 1px solid rgba(145, 70, 255, 0.6);
+      box-shadow: 0 30px 80px rgba(17, 24, 39, 0.6);
+    }
+
+    .badge {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      display: grid;
+      place-items: center;
+      font-size: 2.4rem;
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+
+    .details {
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .label {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.95rem;
+      opacity: 0.7;
+    }
+
+    .headline {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .streak {
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.08);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="alert">
+    <div class="badge" id="badge" aria-hidden="true">⬣</div>
+    <div class="details">
+      <div class="label" id="label">New Subscription</div>
+      <div class="headline" id="headline">StreamerFan just subscribed at Tier 1!</div>
+      <div class="streak" id="streak">First month - welcome aboard!</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const subscriber = params.get('user') || 'StreamerFan';
+    const tier = params.get('tier') || 'Tier 1';
+    const months = Number(params.get('months')) || 1;
+    const isPrime = params.get('prime') === 'true';
+    const badge = params.get('badge');
+    const label = params.get('label') || (isPrime ? 'Prime Sub' : 'New Subscription');
+    const accent = params.get('accent');
+    const accentSecondary = params.get('accentSecondary');
+
+    document.getElementById('label').textContent = label;
+    const subscribeText = isPrime ? ' with Prime' : ` at ${tier}`;
+    document.getElementById('headline').textContent = `${subscriber} just subscribed${subscribeText}!`;
+
+    const streakText = params.get('streak');
+    if (streakText) {
+      document.getElementById('streak').textContent = streakText;
+    } else {
+      document.getElementById('streak').textContent =
+        months > 1 ? `Subscribed for ${months} months in a row!` : 'First month - welcome aboard!';
+    }
+
+    if (badge) {
+      document.getElementById('badge').textContent = badge;
+    }
+
+    if (accent || accentSecondary) {
+      document.documentElement.style.setProperty('--accent', accent || '#9146ff');
+      document.documentElement.style.setProperty('--accent-secondary', accentSecondary || '#772ce8');
+    }
+  </script>
+</body>
+</html>
