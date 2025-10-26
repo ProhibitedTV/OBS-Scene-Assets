@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Press Conference Scene</title>
+  <style>
+    :root {
+      font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    body {
+      margin: 0;
+      width: 1920px;
+      height: 1080px;
+      background: linear-gradient(135deg, #040816 0%, #0b1a3a 60%, #102d63 100%);
+      display: grid;
+      grid-template-columns: 640px 1fr;
+      grid-template-rows: 160px 1fr 220px;
+      gap: 24px;
+      padding: 40px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    header {
+      grid-column: 1 / -1;
+      background: rgba(4, 11, 28, 0.85);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 1.6rem;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.45);
+    }
+
+    .podium {
+      background: rgba(5, 13, 34, 0.85);
+      border-radius: 22px;
+      border: 3px solid rgba(46, 144, 255, 0.35);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .podium::before {
+      content: 'Main podium feed';
+      position: absolute;
+      color: rgba(255, 255, 255, 0.18);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .sidebar {
+      background: rgba(7, 20, 55, 0.85);
+      border-radius: 22px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    }
+
+    .sidebar h2 {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 1.3rem;
+      opacity: 0.75;
+    }
+
+    .sidebar p {
+      margin: 0;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      line-height: 1.6;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sidebar li {
+      letter-spacing: 0.12em;
+      opacity: 0.8;
+    }
+
+    footer {
+      grid-column: 1 / -1;
+      background: rgba(4, 16, 46, 0.85);
+      border-radius: 20px;
+      padding: 24px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 1.1rem;
+    }
+
+    footer span:last-child {
+      color: #60a5fa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span id="eventTitle">City Hall Press Conference</span>
+    <span id="status">Live</span>
+  </header>
+
+  <section class="podium"></section>
+
+  <aside class="sidebar">
+    <h2 id="speaker">Mayor Jordan Ellis</h2>
+    <p id="summary">Addressing infrastructure investments and emergency response upgrades across the metro area.</p>
+    <h2>Agenda</h2>
+    <ul id="agenda">
+      <li>Opening statement</li>
+      <li>Infrastructure plan overview</li>
+      <li>Public safety updates</li>
+      <li>Media Q&amp;A</li>
+    </ul>
+  </aside>
+
+  <footer>
+    <span id="footerLabel">Questions? Submit at newsroom.example.com</span>
+    <span id="footerNote">Simulcast to radio and web</span>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const eventTitle = params.get('eventTitle');
+    const status = params.get('status');
+    const speaker = params.get('speaker');
+    const summary = params.get('summary');
+    const agenda = params.get('agenda');
+    const footerLabel = params.get('footerLabel');
+    const footerNote = params.get('footerNote');
+
+    if (eventTitle) {
+      document.getElementById('eventTitle').textContent = eventTitle;
+    }
+    if (status) {
+      document.getElementById('status').textContent = status;
+    }
+    if (speaker) {
+      document.getElementById('speaker').textContent = speaker;
+    }
+    if (summary) {
+      document.getElementById('summary').textContent = summary;
+    }
+    if (agenda) {
+      const items = agenda.split('|').map((item) => item.trim()).filter(Boolean);
+      const list = document.getElementById('agenda');
+      if (items.length) {
+        list.innerHTML = '';
+        items.forEach((item) => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          list.appendChild(li);
+        });
+      }
+    }
+    if (footerLabel) {
+      document.getElementById('footerLabel').textContent = footerLabel;
+    }
+    if (footerNote) {
+      document.getElementById('footerNote').textContent = footerNote;
+    }
+  </script>
+</body>
+</html>

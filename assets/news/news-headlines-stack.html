@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Headline Stack</title>
+  <style>
+    :root {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    body {
+      margin: 0;
+      width: 1080px;
+      height: 1080px;
+      background: transparent;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+    }
+
+    .stack {
+      margin: 60px;
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .headline {
+      background: rgba(4, 16, 54, 0.92);
+      border-radius: 18px;
+      padding: 20px 24px;
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .headline::before {
+      content: attr(data-index);
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(180deg, rgba(255, 204, 0, 0.9), rgba(255, 97, 0, 0.9));
+      font-size: 1.4rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .headline h2 {
+      margin: 0 0 4px 56px;
+      font-size: 1.3rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .headline p {
+      margin: 0 0 0 56px;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      opacity: 0.75;
+    }
+  </style>
+</head>
+<body>
+  <section class="stack" id="stack">
+    <article class="headline" data-index="1">
+      <h2>Global Markets Rebound</h2>
+      <p>Central banks coordinate to stabilize currencies worldwide.</p>
+    </article>
+    <article class="headline" data-index="2">
+      <h2>Historic Climate Accord</h2>
+      <p>Signatories outline aggressive emissions targets through 2035.</p>
+    </article>
+    <article class="headline" data-index="3">
+      <h2>Technology Showcase</h2>
+      <p>Innovators unveil new AI tools for emergency response.</p>
+    </article>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const headlines = params.get('headlines');
+
+    if (headlines) {
+      const stack = document.getElementById('stack');
+      const entries = headlines.split('|').map((entry) => entry.trim()).filter(Boolean);
+      if (entries.length) {
+        stack.innerHTML = '';
+        entries.forEach((entry, index) => {
+          const [title, summary] = entry.split(';').map((item) => item.trim());
+          const article = document.createElement('article');
+          article.className = 'headline';
+          article.setAttribute('data-index', index + 1);
+          const h2 = document.createElement('h2');
+          h2.textContent = title || '';
+          const p = document.createElement('p');
+          p.textContent = summary || '';
+          article.appendChild(h2);
+          article.appendChild(p);
+          stack.appendChild(article);
+        });
+      }
+    }
+  </script>
+</body>
+</html>
