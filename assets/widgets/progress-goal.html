@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stream Progress Goal Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: 'Titillium Web', sans-serif;
+      color: #e0f2fe;
+    }
+
+    .widget {
+      position: fixed;
+      top: 8vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30vw;
+      min-width: 320px;
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 20px;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      box-shadow: 0 25px 50px rgba(15, 23, 42, 0.6);
+      padding: 1.5rem 1.8rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .widget h1 {
+      margin: 0;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.85;
+    }
+
+    .bar {
+      position: relative;
+      height: 18px;
+      background: rgba(30, 41, 59, 0.85);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar span {
+      position: absolute;
+      inset: 0;
+      width: 65%;
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.9), rgba(14, 165, 233, 0.7));
+      border-radius: inherit;
+    }
+
+    .details {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="widget">
+    <h1>New Camera Fund</h1>
+    <div class="bar"><span aria-hidden="true"></span></div>
+    <div class="details"><span>$650</span><span>$1000</span></div>
+  </div>
+</body>
+</html>

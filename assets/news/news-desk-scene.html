@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>News Desk Scene</title>
+  <style>
+    :root {
+      font-family: 'Roboto', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    body {
+      margin: 0;
+      width: 1920px;
+      height: 1080px;
+      background: radial-gradient(circle at top left, #1f3a93, #040b1a 70%);
+      display: grid;
+      grid-template-rows: 120px 1fr 160px;
+      grid-template-columns: 420px 1fr;
+      gap: 20px;
+      padding: 30px 40px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    header {
+      grid-column: 1 / -1;
+      background: linear-gradient(90deg, rgba(10, 24, 72, 0.85), rgba(22, 60, 148, 0.85));
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .network {
+      font-size: 2.8rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .timestamp {
+      font-size: 1.4rem;
+      letter-spacing: 0.2em;
+      opacity: 0.85;
+    }
+
+    .video-frame {
+      grid-row: 2 / 4;
+      background: rgba(5, 12, 32, 0.65);
+      border-radius: 22px;
+      border: 4px solid rgba(36, 107, 254, 0.4);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-frame::after {
+      content: 'Drop anchor camera feed here';
+      position: absolute;
+      font-size: 1.3rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.25);
+      transform: rotate(-90deg);
+    }
+
+    .headline {
+      background: linear-gradient(120deg, rgba(255, 204, 0, 0.85), rgba(255, 80, 80, 0.85));
+      border-radius: 18px;
+      padding: 24px 32px;
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.45);
+    }
+
+    .headline h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+    }
+
+    .headline p {
+      margin: 0.8rem 0 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+    }
+
+    .rundown {
+      background: rgba(7, 21, 60, 0.75);
+      border-radius: 18px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .rundown::before {
+      content: 'Top Stories';
+      position: absolute;
+      top: 18px;
+      left: 28px;
+      font-size: 1.2rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    .story {
+      padding-top: 32px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      letter-spacing: 0.05em;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .story:first-of-type {
+      border-top: none;
+    }
+
+    footer {
+      grid-column: 1 / -1;
+      background: rgba(3, 10, 29, 0.8);
+      border-radius: 18px;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 18px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .footer-title {
+      font-size: 1.3rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .footer-info {
+      display: flex;
+      gap: 32px;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+      opacity: 0.75;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="network" id="network">Global News Network</div>
+    <div class="timestamp" id="timestamp">Live • 8:00 PM</div>
+  </header>
+
+  <div class="rundown" id="rundown">
+    <div class="story">World leaders gather for emergency summit on economic resilience.</div>
+    <div class="story">Historic climate accord enters into force amid global celebrations.</div>
+    <div class="story">Tech innovators unveil next-gen satellite internet constellation.</div>
+  </div>
+
+  <section class="headline">
+    <h1 id="headline">Global Markets Rebound Overnight</h1>
+    <p id="summary">Analysts point to coordinated central bank actions and renewed investor confidence.</p>
+  </section>
+
+  <div class="video-frame"></div>
+
+  <footer>
+    <span class="footer-title" id="footerTitle">Across the World</span>
+    <div class="footer-info" id="footerInfo">
+      <span>Weather: 72°F partly cloudy</span>
+      <span>Traffic: Moderate delays downtown</span>
+      <span>Next: Nightline</span>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const network = params.get('network');
+    const timestamp = params.get('timestamp');
+    const headline = params.get('headline');
+    const summary = params.get('summary');
+    const stories = params.get('stories');
+    const footerTitle = params.get('footerTitle');
+    const footerInfo = params.get('footerInfo');
+
+    if (network) {
+      document.getElementById('network').textContent = network;
+    }
+
+    if (timestamp) {
+      document.getElementById('timestamp').textContent = timestamp;
+    }
+
+    if (headline) {
+      document.getElementById('headline').textContent = headline;
+    }
+
+    if (summary) {
+      document.getElementById('summary').textContent = summary;
+    }
+
+    if (stories) {
+      const container = document.getElementById('rundown');
+      const list = stories.split('|').map((item) => item.trim()).filter(Boolean);
+      if (list.length) {
+        container.innerHTML = '';
+        list.forEach((story) => {
+          const div = document.createElement('div');
+          div.className = 'story';
+          div.textContent = story;
+          container.appendChild(div);
+        });
+      }
+    }
+
+    if (footerTitle) {
+      document.getElementById('footerTitle').textContent = footerTitle;
+    }
+
+    if (footerInfo) {
+      const infoItems = footerInfo.split('|').map((item) => item.trim()).filter(Boolean);
+      const wrapper = document.getElementById('footerInfo');
+      if (infoItems.length) {
+        wrapper.innerHTML = '';
+        infoItems.forEach((info) => {
+          const span = document.createElement('span');
+          span.textContent = info;
+          wrapper.appendChild(span);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

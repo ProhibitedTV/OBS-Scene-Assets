@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multi-Platform Event Feed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+    :root {
+      color-scheme: dark;
+      --bg: rgba(15, 23, 42, 0.72);
+      --border: rgba(148, 163, 184, 0.28);
+      --accent: rgba(59, 130, 246, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .feed {
+      width: clamp(320px, 45vw, 520px);
+      max-height: 75vh;
+      padding: 1.6rem;
+      border-radius: 24px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      box-shadow: 0 40px 110px rgba(15, 23, 42, 0.5);
+      display: grid;
+      gap: 1.2rem;
+      overflow: hidden;
+    }
+
+    .feed header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .feed h1 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f8fafc;
+    }
+
+    .feed .tagline {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: rgba(148, 163, 184, 0.7);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+    }
+
+    li {
+      padding: 1rem 1.2rem;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      display: grid;
+      gap: 0.35rem;
+      color: #e2e8f0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    li::before {
+      content: attr(data-platform);
+      position: absolute;
+      top: 0.8rem;
+      right: 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent, rgba(148, 163, 184, 0.5));
+    }
+
+    .event-title {
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .event-body {
+      font-size: 1.05rem;
+    }
+
+    .event-meta {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(148, 163, 184, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="feed" id="feed">
+    <header>
+      <h1 id="feed-title">Live Event Feed</h1>
+      <span class="tagline" id="feed-tagline">Cross-platform alerts</span>
+    </header>
+    <ul id="event-list">
+      <li data-platform="Twitch">
+        <div class="event-title">New Subscription</div>
+        <div class="event-body">StreamerFan subscribed with Prime!</div>
+        <div class="event-meta">0:35 ago · Auto shout-out sent</div>
+      </li>
+      <li data-platform="YouTube">
+        <div class="event-title">Super Chat</div>
+        <div class="event-body">VideoGuru dropped a $20 Super Chat: "Huge fan of the series!"</div>
+        <div class="event-meta">1:12 ago · Highlight pinned</div>
+      </li>
+      <li data-platform="Facebook">
+        <div class="event-title">Stars Support</div>
+        <div class="event-body">StreamFriend sent 250 Stars with the message "Keep the good vibes going!"</div>
+        <div class="event-meta">3:48 ago · Reward unlocked</div>
+      </li>
+    </ul>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const title = params.get('title');
+    const tagline = params.get('tagline');
+    const accent = params.get('accent');
+    const border = params.get('border');
+    const background = params.get('background');
+    const eventsParam = params.get('events');
+
+    if (title) document.getElementById('feed-title').textContent = title;
+    if (tagline) document.getElementById('feed-tagline').textContent = tagline;
+    if (accent) document.documentElement.style.setProperty('--accent', accent);
+    if (border) document.documentElement.style.setProperty('--border', border);
+    if (background) document.documentElement.style.setProperty('--bg', background);
+
+    if (eventsParam) {
+      const list = document.getElementById('event-list');
+      list.innerHTML = '';
+      eventsParam.split('|').forEach((raw, index) => {
+        const [platform = 'Platform', titleText = 'Event', body = '', meta = ''] = raw.split(';');
+        const item = document.createElement('li');
+        item.dataset.platform = platform.trim();
+
+        const titleEl = document.createElement('div');
+        titleEl.className = 'event-title';
+        titleEl.textContent = titleText.trim();
+
+        const bodyEl = document.createElement('div');
+        bodyEl.className = 'event-body';
+        bodyEl.textContent = body.trim();
+
+        const metaEl = document.createElement('div');
+        metaEl.className = 'event-meta';
+        metaEl.textContent = meta.trim() || `Event ${index + 1}`;
+
+        item.appendChild(titleEl);
+        item.appendChild(bodyEl);
+        item.appendChild(metaEl);
+        list.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

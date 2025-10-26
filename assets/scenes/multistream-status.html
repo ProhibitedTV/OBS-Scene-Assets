@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Multistream Status Scene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+    :root {
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.22), transparent 55%),
+        radial-gradient(circle at 80% 15%, rgba(236, 72, 153, 0.28), transparent 65%),
+        radial-gradient(circle at 30% 80%, rgba(45, 212, 191, 0.2), transparent 60%),
+        #020617;
+      font-family: 'Rubik', sans-serif;
+      color: #f8fafc;
+      overflow: hidden;
+    }
+
+    .board {
+      width: min(95vw, 1400px);
+      padding: 3rem 4rem;
+      background: rgba(15, 23, 42, 0.78);
+      border-radius: 32px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      backdrop-filter: blur(24px);
+      display: grid;
+      gap: 2.4rem;
+      box-shadow: 0 45px 140px rgba(15, 23, 42, 0.55);
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    header .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 4vw, 3.6rem);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .platforms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .card {
+      padding: 1.6rem;
+      border-radius: 24px;
+      background: rgba(30, 41, 59, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      display: grid;
+      gap: 0.8rem;
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.25;
+      pointer-events: none;
+      background: var(--glow, radial-gradient(circle at top right, transparent, transparent));
+    }
+
+    .card .title {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card .handle {
+      font-size: 1rem;
+      opacity: 0.75;
+    }
+
+    .status {
+      font-size: 1.1rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.16);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .status span:first-child {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--status-color, #38bdf8);
+      box-shadow: 0 0 12px var(--status-color, #38bdf8);
+    }
+
+    .note {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      opacity: 0.65;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer .divider {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.4), transparent);
+      margin: 0 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <header>
+      <div class="eyebrow" id="eyebrow">Live on every platform</div>
+      <h1 id="title">Multistream Control Room</h1>
+    </header>
+    <section class="platforms" id="platforms">
+      <article class="card" data-platform="twitch" style="--glow: radial-gradient(circle at top right, rgba(145, 70, 255, 0.35), transparent 55%); --status-color: #22c55e;">
+        <div class="title">🎮 Twitch</div>
+        <div class="handle" data-handle>Twitch.tv/YourChannel</div>
+        <div class="status" data-status>
+          <span></span>
+          <strong>Live Now</strong>
+        </div>
+        <div class="note" data-note>Streaming: Cozy community night</div>
+      </article>
+      <article class="card" data-platform="youtube" style="--glow: radial-gradient(circle at top right, rgba(248, 113, 113, 0.4), transparent 60%); --status-color: #f97316;">
+        <div class="title">▶ YouTube</div>
+        <div class="handle" data-handle>YouTube.com/@YourChannel</div>
+        <div class="status" data-status>
+          <span></span>
+          <strong>Premiere Live</strong>
+        </div>
+        <div class="note" data-note>Episode 5 watch party</div>
+      </article>
+      <article class="card" data-platform="facebook" style="--glow: radial-gradient(circle at top right, rgba(59, 130, 246, 0.35), transparent 55%); --status-color: #60a5fa;">
+        <div class="title">⭐ Facebook</div>
+        <div class="handle" data-handle>fb.gg/YourGamingPage</div>
+        <div class="status" data-status>
+          <span></span>
+          <strong>Live with Stars</strong>
+        </div>
+        <div class="note" data-note>Engage to unlock giveaways</div>
+      </article>
+      <article class="card" data-platform="tiktok" style="--glow: radial-gradient(circle at top right, rgba(0, 242, 234, 0.4), transparent 60%); --status-color: #0ea5e9;">
+        <div class="title">♪ TikTok</div>
+        <div class="handle" data-handle>@YourShortsName</div>
+        <div class="status" data-status>
+          <span></span>
+          <strong>Hype Building</strong>
+        </div>
+        <div class="note" data-note>Run the latest dance challenge</div>
+      </article>
+    </section>
+    <footer>
+      <span id="footer-left">Sync alerts across Twitch · YouTube · Facebook · TikTok</span>
+      <div class="divider"></div>
+      <span id="footer-right">Powered by OBS Browser Sources</span>
+    </footer>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const eyebrow = params.get('eyebrow');
+    const title = params.get('title');
+    const footerLeft = params.get('footerLeft');
+    const footerRight = params.get('footerRight');
+
+    if (eyebrow) document.getElementById('eyebrow').textContent = eyebrow;
+    if (title) document.getElementById('title').textContent = title;
+    if (footerLeft) document.getElementById('footer-left').textContent = footerLeft;
+    if (footerRight) document.getElementById('footer-right').textContent = footerRight;
+
+    const platformConfigs = {
+      twitch: {
+        handle: params.get('twitchHandle'),
+        status: params.get('twitchStatus'),
+        note: params.get('twitchNote'),
+        state: params.get('twitchState'),
+      },
+      youtube: {
+        handle: params.get('youtubeHandle'),
+        status: params.get('youtubeStatus'),
+        note: params.get('youtubeNote'),
+        state: params.get('youtubeState'),
+      },
+      facebook: {
+        handle: params.get('facebookHandle'),
+        status: params.get('facebookStatus'),
+        note: params.get('facebookNote'),
+        state: params.get('facebookState'),
+      },
+      tiktok: {
+        handle: params.get('tiktokHandle'),
+        status: params.get('tiktokStatus'),
+        note: params.get('tiktokNote'),
+        state: params.get('tiktokState'),
+      },
+    };
+
+    const statusColorMap = {
+      online: '#22c55e',
+      offline: '#ef4444',
+      starting: '#facc15',
+      rerun: '#38bdf8',
+    };
+
+    document.querySelectorAll('.card').forEach((card) => {
+      const platform = card.dataset.platform;
+      const config = platformConfigs[platform];
+      if (!config) return;
+
+      if (config.handle) {
+        card.querySelector('[data-handle]').textContent = config.handle;
+      }
+
+      if (config.status) {
+        card.querySelector('[data-status] strong').textContent = config.status;
+      }
+
+      if (config.note) {
+        card.querySelector('[data-note]').textContent = config.note;
+      }
+
+      if (config.state) {
+        const color = statusColorMap[config.state] || '#38bdf8';
+        card.style.setProperty('--status-color', color);
+      }
+    });
+  </script>
+</body>
+</html>

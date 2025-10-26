@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Social Handle Rotator Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&display=swap');
+
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: 'Barlow Condensed', sans-serif;
+      color: #f8fafc;
+    }
+
+    .widget {
+      position: fixed;
+      top: 12vh;
+      right: 6vw;
+      width: 20vw;
+      min-width: 260px;
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 18px;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid rgba(248, 250, 252, 0.25);
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      overflow: hidden;
+    }
+
+    .label {
+      font-size: 0.8rem;
+      opacity: 0.6;
+    }
+
+    .handle {
+      margin-top: 0.5rem;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(59, 130, 246, 0.4);
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+    }
+
+    .slider {
+      position: relative;
+      height: 2px;
+      margin-top: 1.2rem;
+      background: rgba(148, 163, 184, 0.3);
+      overflow: hidden;
+    }
+
+    .slider span {
+      position: absolute;
+      inset: 0;
+      width: 0;
+      background: rgba(59, 130, 246, 0.8);
+      animation: fill 8s linear infinite;
+    }
+
+    @keyframes fill {
+      0% {
+        width: 0;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="widget">
+    <div class="label">Follow the journey</div>
+    <div class="handle"><span class="icon" id="network">IG</span><span id="username">@yourstudio</span></div>
+    <div class="slider"><span aria-hidden="true"></span></div>
+  </div>
+  <script>
+    const profiles = [
+      { icon: 'IG', user: '@yourstudio' },
+      { icon: 'TW', user: '@yourstudio_live' },
+      { icon: 'YT', user: 'YouTube.com/YourStudio' },
+      { icon: 'TT', user: '@yourstudio_clips' }
+    ];
+
+    const iconEl = document.getElementById('network');
+    const userEl = document.getElementById('username');
+    let index = 0;
+
+    function rotate() {
+      index = (index + 1) % profiles.length;
+      iconEl.textContent = profiles[index].icon;
+      userEl.textContent = profiles[index].user;
+    }
+
+    setInterval(rotate, 8000);
+  </script>
+</body>
+</html>
