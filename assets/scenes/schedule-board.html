@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Schedule Board Scene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1e293b, #0f172a 60%, #020617 100%);
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    .board {
+      width: 70vw;
+      max-width: 1100px;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 45px 90px rgba(15, 23, 42, 0.55);
+      overflow: hidden;
+    }
+
+    header {
+      padding: 2.2rem 3rem;
+      background: linear-gradient(90deg, rgba(59, 130, 246, 0.9), rgba(14, 165, 233, 0.9));
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 1.3rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+    }
+
+    th,
+    td {
+      padding: 1.4rem 2.4rem;
+    }
+
+    th {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      background: rgba(30, 41, 59, 0.8);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(30, 41, 59, 0.4);
+    }
+
+    tbody tr:nth-child(odd) {
+      background: rgba(30, 41, 59, 0.25);
+    }
+
+    tbody td:last-child {
+      color: #38bdf8;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <header>Weekly Stream Schedule</header>
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Time</th>
+          <th>Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monday</td>
+          <td>6:00 PM</td>
+          <td>Development Deep Dive</td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td>7:30 PM</td>
+          <td>Community Collab Night</td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td>8:00 PM</td>
+          <td>Gameplay &amp; Chill</td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td>4:00 PM</td>
+          <td>Special Guest Interviews</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

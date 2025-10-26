@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valorant Round History</title>
+  <style>
+    :root {
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      --bg: rgba(15, 18, 28, 0.85);
+      --accent: #ff4655;
+      --secondary: #00e0c6;
+      --text: #f5f6fa;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .history {
+      width: 80vw;
+      max-width: 1300px;
+      border-radius: 1.8rem;
+      border: 2px solid rgba(255, 70, 85, 0.4);
+      background: var(--bg);
+      padding: 2rem 2.6rem;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.9rem;
+      color: rgba(245, 246, 250, 0.7);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .rounds {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .round {
+      border-radius: 1.2rem;
+      border: 1px solid rgba(255, 70, 85, 0.3);
+      padding: 1rem 1.2rem;
+      background: rgba(10, 12, 20, 0.85);
+      display: grid;
+      gap: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.8rem;
+      color: rgba(245, 246, 250, 0.75);
+    }
+
+    .round.win {
+      border-color: rgba(0, 224, 198, 0.4);
+      color: var(--secondary);
+    }
+
+    .round .score {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .round .highlight {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      color: rgba(245, 246, 250, 0.55);
+    }
+  </style>
+</head>
+<body>
+  <section class="history">
+    <header>
+      <h1 id="title">Round history</h1>
+      <div id="series">Series: 6 - 4 • Team Phoenix leading</div>
+    </header>
+    <div class="rounds" id="rounds">
+      <div class="round win">
+        <div>Round 11</div>
+        <div class="score">13 - 11</div>
+        <div class="highlight">Ace • Jett</div>
+      </div>
+      <div class="round">
+        <div>Round 10</div>
+        <div class="score">11 - 11</div>
+        <div class="highlight">Flawless retake</div>
+      </div>
+      <div class="round win">
+        <div>Round 9</div>
+        <div class="score">11 - 9</div>
+        <div class="highlight">Clutch 1v3 • Reyna</div>
+      </div>
+      <div class="round">
+        <div>Round 8</div>
+        <div class="score">9 - 9</div>
+        <div class="highlight">Killjoy lockdown forced rotate</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const series = params.get('series');
+    const rounds = params.get('rounds');
+
+    if (title) document.getElementById('title').textContent = title;
+    if (series) document.getElementById('series').textContent = series;
+
+    if (rounds) {
+      const container = document.getElementById('rounds');
+      container.innerHTML = '';
+      rounds.split('|').forEach(entry => {
+        const [label, score, highlight, result] = entry.split(';');
+        const card = document.createElement('div');
+        card.className = 'round';
+        if ((result || '').toLowerCase() === 'win') {
+          card.classList.add('win');
+        }
+        card.innerHTML = `
+          <div>${label || 'Round'}</div>
+          <div class="score">${score || ''}</div>
+          <div class="highlight">${highlight || ''}</div>
+        `;
+        container.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>

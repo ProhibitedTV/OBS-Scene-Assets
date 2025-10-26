@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Be Right Back Scene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at 20% 20%, rgba(244, 114, 182, 0.15), transparent 55%),
+        radial-gradient(circle at 80% 30%, rgba(56, 189, 248, 0.15), transparent 70%),
+        linear-gradient(120deg, #111827, #0f172a 50%, #020617 100%);
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lexend', sans-serif;
+    }
+
+    .card {
+      display: grid;
+      gap: 1.5rem;
+      padding: 3rem 5rem;
+      background: rgba(15, 23, 42, 0.75);
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      backdrop-filter: blur(16px);
+      text-align: center;
+      max-width: 720px;
+    }
+
+    .headline {
+      font-size: 5vw;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+    }
+
+    .message {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      line-height: 1.6;
+    }
+
+    .timer {
+      font-size: 1rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+
+    .bars {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .bar {
+      width: 12px;
+      height: 60px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.9), rgba(14, 165, 233, 0.4));
+      animation: bounce 1.2s ease-in-out infinite;
+    }
+
+    .bar:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .bar:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .bar:nth-child(4) {
+      animation-delay: 0.45s;
+    }
+
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: scaleY(0.4);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="headline">Be Right Back</div>
+    <div class="message">Quick break to grab some water and stretch. We'll be back live in just a moment, so stay tuned!</div>
+    <div class="timer">Estimated return: 5 minutes</div>
+    <div class="bars" aria-hidden="true">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+</body>
+</html>

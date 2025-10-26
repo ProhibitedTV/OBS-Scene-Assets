@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>YouTube Super Chat Alert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+    :root {
+      --accent-start: #00e5ff;
+      --accent-end: #2962ff;
+    }
+
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: 'Spartan', sans-serif;
+      color: #e0f7fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .alert {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.4rem;
+      align-items: center;
+      padding: 1.6rem 2.4rem;
+      border-radius: 28px;
+      background: rgba(13, 71, 161, 0.88);
+      border: 1px solid rgba(41, 98, 255, 0.5);
+      box-shadow: 0 30px 90px rgba(13, 71, 161, 0.45);
+    }
+
+    .hex {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+      clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      color: #00172b;
+      font-weight: 700;
+    }
+
+    .text {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .label {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+
+    .headline {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .message {
+      font-size: 1.05rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <div class="alert">
+    <div class="hex" id="hex" aria-hidden="true">SC</div>
+    <div class="text">
+      <div class="label" id="label">Super Chat</div>
+      <div class="headline" id="headline">VideoGuru sent a $20.00 Super Chat!</div>
+      <div class="message" id="message">"Huge fan of the series!"</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const user = params.get('user') || 'VideoGuru';
+    const amount = params.get('amount') || '$20.00';
+    const currency = params.get('currency');
+    const message = params.get('message') || '"Huge fan of the series!"';
+    const label = params.get('label') || 'Super Chat';
+    const icon = params.get('icon');
+    const accentStart = params.get('accentStart');
+    const accentEnd = params.get('accentEnd');
+
+    document.getElementById('label').textContent = label;
+    const amountDisplay = currency ? `${currency}${amount}` : amount;
+    document.getElementById('headline').textContent = `${user} sent a ${amountDisplay} Super Chat!`;
+    document.getElementById('message').textContent = message;
+
+    if (icon) {
+      document.getElementById('hex').textContent = icon;
+    }
+
+    if (accentStart || accentEnd) {
+      document.documentElement.style.setProperty('--accent-start', accentStart || '#00e5ff');
+      document.documentElement.style.setProperty('--accent-end', accentEnd || '#2962ff');
+    }
+  </script>
+</body>
+</html>
