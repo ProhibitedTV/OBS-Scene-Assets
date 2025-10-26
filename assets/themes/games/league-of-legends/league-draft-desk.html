@@ -212,7 +212,9 @@
         const [heading, lineup] = entry.split('::');
         const article = document.createElement('article');
         article.className = 'team';
-        article.innerHTML = `<h2>${heading || 'Team'}</h2>`;
+        const title = document.createElement('h2');
+        title.textContent = heading || 'Team';
+        article.appendChild(title);
         const grid = document.createElement('div');
         grid.className = 'lineup';
         (lineup || '').split('|').forEach(playerEntry => {
@@ -220,7 +222,15 @@
           const [role, player, champion] = playerEntry.split(';');
           const div = document.createElement('div');
           div.className = 'player';
-          div.innerHTML = `<strong>${role || ''}</strong> ${player || ''} • ${champion || ''}`;
+          const strong = document.createElement('strong');
+          strong.textContent = role || '';
+          div.appendChild(strong);
+          const playerText = document.createTextNode(` ${player || ''}`);
+          div.appendChild(playerText);
+          const separator = document.createTextNode(' • ');
+          div.appendChild(separator);
+          const championText = document.createTextNode(champion || '');
+          div.appendChild(championText);
           grid.appendChild(div);
         });
         article.appendChild(grid);
