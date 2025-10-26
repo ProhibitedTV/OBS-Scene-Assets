@@ -223,16 +223,44 @@
         const [legend, role, kills = '0', damage = '0', ability = '', status = ''] = entry.split(';');
         const card = document.createElement('article');
         card.className = 'card';
-        card.innerHTML = `
-          <h2 class="legend-name">${legend || 'Legend'}</h2>
-          <p class="role">${role || ''}</p>
-          <div class="stat-line"><strong>${kills}</strong><span>Kills</span></div>
-          <div class="stat-line"><strong>${damage}</strong><span>Damage</span></div>
-          <div class="ability">
-            <strong>${ability || 'Ultimate'}</strong>
-            <span>${status || ''}</span>
-          </div>
-        `;
+
+        const nameEl = document.createElement('h2');
+        nameEl.className = 'legend-name';
+        nameEl.textContent = legend || 'Legend';
+        card.appendChild(nameEl);
+
+        const roleEl = document.createElement('p');
+        roleEl.className = 'role';
+        roleEl.textContent = role || '';
+        card.appendChild(roleEl);
+
+        const killsLine = document.createElement('div');
+        killsLine.className = 'stat-line';
+        const killsValue = document.createElement('strong');
+        killsValue.textContent = kills;
+        const killsLabel = document.createElement('span');
+        killsLabel.textContent = 'Kills';
+        killsLine.append(killsValue, killsLabel);
+        card.appendChild(killsLine);
+
+        const damageLine = document.createElement('div');
+        damageLine.className = 'stat-line';
+        const damageValue = document.createElement('strong');
+        damageValue.textContent = damage;
+        const damageLabel = document.createElement('span');
+        damageLabel.textContent = 'Damage';
+        damageLine.append(damageValue, damageLabel);
+        card.appendChild(damageLine);
+
+        const abilityWrapper = document.createElement('div');
+        abilityWrapper.className = 'ability';
+        const abilityName = document.createElement('strong');
+        abilityName.textContent = ability || 'Ultimate';
+        const abilityStatus = document.createElement('span');
+        abilityStatus.textContent = status || '';
+        abilityWrapper.append(abilityName, abilityStatus);
+        card.appendChild(abilityWrapper);
+
         container.appendChild(card);
       });
     }
@@ -242,7 +270,7 @@
       container.innerHTML = '';
       footer.split('|').forEach(entry => {
         const div = document.createElement('div');
-        div.innerHTML = entry;
+        div.textContent = entry;
         container.appendChild(div);
       });
     }
