@@ -223,44 +223,43 @@
         const [legend, role, kills = '0', damage = '0', ability = '', status = ''] = entry.split(';');
         const card = document.createElement('article');
         card.className = 'card';
+        const nameHeading = document.createElement('h2');
+        nameHeading.className = 'legend-name';
+        nameHeading.textContent = legend || 'Legend';
 
-        const nameEl = document.createElement('h2');
-        nameEl.className = 'legend-name';
-        nameEl.textContent = legend || 'Legend';
-        card.appendChild(nameEl);
+        const roleParagraph = document.createElement('p');
+        roleParagraph.className = 'role';
+        roleParagraph.textContent = role || '';
 
-        const roleEl = document.createElement('p');
-        roleEl.className = 'role';
-        roleEl.textContent = role || '';
-        card.appendChild(roleEl);
+        function createStatLine(value, label) {
+          const statLine = document.createElement('div');
+          statLine.className = 'stat-line';
+          const strong = document.createElement('strong');
+          strong.textContent = value;
+          const span = document.createElement('span');
+          span.textContent = label;
+          statLine.appendChild(strong);
+          statLine.appendChild(span);
+          return statLine;
+        }
 
-        const killsLine = document.createElement('div');
-        killsLine.className = 'stat-line';
-        const killsValue = document.createElement('strong');
-        killsValue.textContent = kills;
-        const killsLabel = document.createElement('span');
-        killsLabel.textContent = 'Kills';
-        killsLine.append(killsValue, killsLabel);
+        const killsLine = createStatLine(kills, 'Kills');
+        const damageLine = createStatLine(damage, 'Damage');
+
+        const abilityDiv = document.createElement('div');
+        abilityDiv.className = 'ability';
+        const abilityStrong = document.createElement('strong');
+        abilityStrong.textContent = ability || 'Ultimate';
+        const abilitySpan = document.createElement('span');
+        abilitySpan.textContent = status || '';
+        abilityDiv.appendChild(abilityStrong);
+        abilityDiv.appendChild(abilitySpan);
+
+        card.appendChild(nameHeading);
+        card.appendChild(roleParagraph);
         card.appendChild(killsLine);
-
-        const damageLine = document.createElement('div');
-        damageLine.className = 'stat-line';
-        const damageValue = document.createElement('strong');
-        damageValue.textContent = damage;
-        const damageLabel = document.createElement('span');
-        damageLabel.textContent = 'Damage';
-        damageLine.append(damageValue, damageLabel);
         card.appendChild(damageLine);
-
-        const abilityWrapper = document.createElement('div');
-        abilityWrapper.className = 'ability';
-        const abilityName = document.createElement('strong');
-        abilityName.textContent = ability || 'Ultimate';
-        const abilityStatus = document.createElement('span');
-        abilityStatus.textContent = status || '';
-        abilityWrapper.append(abilityName, abilityStatus);
-        card.appendChild(abilityWrapper);
-
+        card.appendChild(abilityDiv);
         container.appendChild(card);
       });
     }

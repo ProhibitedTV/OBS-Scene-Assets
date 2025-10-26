@@ -195,7 +195,14 @@
         const [player, loadout] = entry.split(';');
         const div = document.createElement('div');
         div.className = 'item';
-        div.innerHTML = `<strong>${player || 'Player'}</strong><span>${loadout || ''}</span>`;
+
+        const strong = document.createElement('strong');
+        strong.textContent = player || 'Player';
+        const span = document.createElement('span');
+        span.textContent = loadout || '';
+
+        div.appendChild(strong);
+        div.appendChild(span);
         container.appendChild(div);
       });
     }
