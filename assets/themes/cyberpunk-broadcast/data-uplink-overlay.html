@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Uplink Overlay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap');
+
+      :root {
+        color-scheme: dark;
+        --cyber-bg: #050213;
+        --cyber-bg-alt: #08051d;
+        --cyber-magenta: #ff00aa;
+        --cyber-cyan: #00fff7;
+        --cyber-surface: rgba(5, 2, 19, 0.78);
+        --cyber-border: rgba(0, 255, 247, 0.4);
+        --cyber-text: #e7f9ff;
+        --cyber-muted: rgba(231, 249, 255, 0.65);
+      }
+
+      @keyframes ticker {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      body {
+        margin: 0;
+        background: transparent;
+        font-family: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
+        color: var(--cyber-text);
+        text-transform: uppercase;
+        letter-spacing: 0.24em;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 6vh;
+        left: 4vw;
+        right: 4vw;
+        display: grid;
+        gap: 18px;
+      }
+
+      .uplink {
+        position: relative;
+        padding: 20px clamp(24px, 5vw, 36px);
+        border-radius: 24px;
+        border: 1px solid rgba(0, 255, 247, 0.35);
+        background: rgba(4, 8, 26, 0.78);
+        box-shadow: 0 0 28px rgba(0, 255, 247, 0.25), inset 0 0 0 1px rgba(255, 0, 170, 0.18);
+        overflow: hidden;
+      }
+
+      .uplink::before {
+        content: '';
+        position: absolute;
+        inset: 12px;
+        border-radius: 18px;
+        border: 1px dashed rgba(255, 0, 170, 0.4);
+        pointer-events: none;
+      }
+
+      .uplink header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        font-size: clamp(0.7rem, 2vw, 0.9rem);
+        color: var(--cyber-muted);
+      }
+
+      .uplink header span {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .uplink header span::before {
+        content: '';
+        width: 30px;
+        height: 3px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, rgba(255, 0, 170, 0.35), rgba(0, 255, 247, 0.9));
+      }
+
+      .metrics {
+        margin-top: clamp(16px, 2vw, 24px);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: clamp(16px, 2vw, 24px);
+        font-family: 'Share Tech Mono', 'Rajdhani', 'Segoe UI', monospace;
+        letter-spacing: 0.18em;
+      }
+
+      .metric {
+        position: relative;
+        padding: 16px 18px;
+        border-radius: 16px;
+        background: rgba(0, 6, 22, 0.75);
+        border: 1px solid rgba(0, 255, 247, 0.25);
+        box-shadow: inset 0 0 0 1px rgba(255, 0, 170, 0.18);
+      }
+
+      .metric label {
+        display: block;
+        font-size: 0.6rem;
+        color: rgba(0, 255, 247, 0.75);
+        margin-bottom: 12px;
+      }
+
+      .metric span {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        color: var(--cyber-text);
+      }
+
+      .ticker {
+        position: relative;
+        height: 46px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 0, 170, 0.35);
+        background: rgba(5, 2, 19, 0.72);
+        overflow: hidden;
+      }
+
+      .ticker::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(0, 255, 247, 0.1), transparent 70%);
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+
+      .ticker-track {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        padding-left: 36px;
+        animation: ticker 24s linear infinite;
+        white-space: nowrap;
+      }
+
+      .ticker-track span {
+        font-size: clamp(0.65rem, 2vw, 0.85rem);
+        color: var(--cyber-muted);
+      }
+
+      .ticker-track span::before {
+        content: '';
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin-right: 12px;
+        border-radius: 3px;
+        background: linear-gradient(135deg, rgba(255, 0, 170, 0.75), rgba(0, 255, 247, 0.75));
+        box-shadow: 0 0 10px rgba(0, 255, 247, 0.45);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay" role="presentation" aria-label="Data uplink overlay">
+      <section class="uplink">
+        <header>
+          <span>Data Uplink Established</span>
+          <span>Bandwidth 9.8 Tb</span>
+          <span>Packet Sync 99%</span>
+        </header>
+        <div class="metrics">
+          <div class="metric">
+            <label>Signal Strength</label>
+            <span>+67 dB</span>
+          </div>
+          <div class="metric">
+            <label>Latency Offset</label>
+            <span>12 ms</span>
+          </div>
+          <div class="metric">
+            <label>Node Traffic</label>
+            <span>4.6 mpps</span>
+          </div>
+          <div class="metric">
+            <label>Firewall Status</label>
+            <span>Greenline // OK</span>
+          </div>
+        </div>
+      </section>
+      <div class="ticker" role="presentation">
+        <div class="ticker-track">
+          <span>SYS LOG &mdash; Broadcast matrix recalibrated</span>
+          <span>ALERT &mdash; Secure uplink handshake refreshed</span>
+          <span>STATUS &mdash; Co-host queue synced at 21:15</span>
+          <span>OPS &mdash; Visual assets validated &amp; deployed</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

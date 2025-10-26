@@ -5,8 +5,18 @@
   <title>Cyberpunk Stinger Transition</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap');
+
     :root {
       color-scheme: dark;
+      --cyber-bg: #050213;
+      --cyber-bg-alt: #08051d;
+      --cyber-magenta: #ff00aa;
+      --cyber-cyan: #00fff7;
+      --cyber-surface: rgba(5, 2, 19, 0.78);
+      --cyber-border: rgba(0, 255, 247, 0.4);
+      --cyber-text: #e7f9ff;
+      --cyber-muted: rgba(231, 249, 255, 0.65);
     }
 
     body {
@@ -14,12 +24,12 @@
       height: 100vh;
       background: radial-gradient(circle at 20% 50%, rgba(0, 255, 247, 0.22), transparent 70%),
         radial-gradient(circle at 80% 40%, rgba(255, 0, 170, 0.18), transparent 75%),
-        linear-gradient(130deg, #010109 0%, #040117 100%);
+        linear-gradient(130deg, var(--cyber-bg) 0%, var(--cyber-bg-alt) 100%);
       display: grid;
       place-items: center;
-      font-family: 'Orbitron', 'Segoe UI', sans-serif;
+      font-family: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
       overflow: hidden;
-      color: #f3faff;
+      color: var(--cyber-text);
     }
 
     .stinger {

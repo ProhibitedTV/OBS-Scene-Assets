@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Synthwave Break Screen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap');
+
+      :root {
+        color-scheme: dark;
+        --cyber-bg: #050213;
+        --cyber-bg-alt: #08051d;
+        --cyber-magenta: #ff00aa;
+        --cyber-cyan: #00fff7;
+        --cyber-surface: rgba(5, 2, 19, 0.78);
+        --cyber-border: rgba(0, 255, 247, 0.4);
+        --cyber-text: #e7f9ff;
+        --cyber-muted: rgba(231, 249, 255, 0.65);
+      }
+
+      @keyframes gridGlow {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: translateX(-30%);
+        }
+        100% {
+          transform: translateX(130%);
+        }
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(24px, 5vw, 48px);
+        background: radial-gradient(circle at 20% 20%, rgba(0, 255, 247, 0.16), transparent 50%),
+          radial-gradient(circle at 80% 15%, rgba(255, 0, 170, 0.22), transparent 55%),
+          linear-gradient(160deg, var(--cyber-bg) 0%, var(--cyber-bg-alt) 45%, var(--cyber-bg) 100%);
+        font-family: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--cyber-text);
+      }
+
+      .frame {
+        position: relative;
+        width: min(1200px, 94vw);
+        aspect-ratio: 16 / 9;
+        border-radius: 36px;
+        border: 2px solid rgba(0, 255, 247, 0.38);
+        overflow: hidden;
+        box-shadow: 0 0 45px rgba(255, 0, 170, 0.28), 0 0 70px rgba(0, 255, 247, 0.28);
+        background: rgba(0, 5, 22, 0.7);
+      }
+
+      .frame::before {
+        content: '';
+        position: absolute;
+        inset: 16px;
+        border-radius: 28px;
+        border: 1px dashed rgba(255, 0, 170, 0.45);
+        pointer-events: none;
+      }
+
+      .grid {
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+            transparent 0 16px,
+            rgba(0, 255, 247, 0.08) 16px 17px
+          ),
+          repeating-linear-gradient(
+              90deg,
+              transparent 0 16px,
+              rgba(255, 0, 170, 0.08) 16px 17px
+            )
+            rgba(3, 12, 38, 0.55);
+        filter: blur(0.5px);
+        animation: gridGlow 4s ease-in-out infinite;
+      }
+
+      .neon-title {
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: clamp(1.3rem, 4vw, 2.2rem);
+        color: rgba(0, 255, 247, 0.95);
+        text-shadow: 0 0 18px rgba(0, 255, 247, 0.6), 0 0 34px rgba(255, 0, 170, 0.4);
+        letter-spacing: 0.3em;
+      }
+
+      .status-panel {
+        position: absolute;
+        bottom: 12%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(85%, 680px);
+        padding: 22px 28px;
+        border-radius: 24px;
+        background: rgba(1, 8, 28, 0.7);
+        border: 1px solid rgba(0, 255, 247, 0.32);
+        box-shadow: inset 0 0 0 1px rgba(255, 0, 170, 0.25);
+        display: grid;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .status-panel::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: linear-gradient(120deg, rgba(255, 0, 170, 0.25), rgba(0, 255, 247, 0.15));
+        opacity: 0.32;
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+
+      .status-panel h2 {
+        margin: 0;
+        font-size: clamp(1.1rem, 3vw, 1.6rem);
+        color: #ffffff;
+      }
+
+      .status-panel p {
+        margin: 0;
+        font-size: clamp(0.8rem, 2.2vw, 1rem);
+        letter-spacing: 0.12em;
+        color: rgba(244, 251, 255, 0.75);
+      }
+
+      .progress {
+        position: relative;
+        height: 10px;
+        border-radius: 999px;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.45);
+        border: 1px solid rgba(0, 255, 247, 0.32);
+      }
+
+      .progress span {
+        display: block;
+        height: 100%;
+        width: 65%;
+        background: linear-gradient(90deg, rgba(255, 0, 170, 0.8), rgba(0, 255, 247, 0.9));
+        box-shadow: 0 0 18px rgba(0, 255, 247, 0.45);
+      }
+
+      .shimmer {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 28%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+        animation: shimmer 3.8s ease-in-out infinite;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 4%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 40px;
+        font-size: clamp(0.6rem, 1.6vw, 0.75rem);
+        letter-spacing: 0.28em;
+        color: rgba(244, 251, 255, 0.5);
+      }
+
+      .footer span {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .footer span::before {
+        content: '';
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid rgba(0, 255, 247, 0.45);
+        box-shadow: 0 0 12px rgba(0, 255, 247, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="frame" role="presentation">
+      <div class="grid" aria-hidden="true"></div>
+      <h1 class="neon-title">System Cooling Cycle</h1>
+      <section class="status-panel">
+        <h2>Back Soon</h2>
+        <p>Recalibrating decks &mdash; grab a recharge</p>
+        <div class="progress" aria-hidden="true">
+          <span></span>
+          <div class="shimmer"></div>
+        </div>
+        <p>Est. Return: 08 Minutes</p>
+      </section>
+      <footer class="footer">
+        <span>Signal Stable</span>
+        <span>Neon District &bull; Channel 07</span>
+      </footer>
+    </main>
+  </body>
+</html>

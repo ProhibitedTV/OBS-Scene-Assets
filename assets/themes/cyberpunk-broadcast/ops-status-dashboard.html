@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ops Status Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap');
+
+      :root {
+        color-scheme: dark;
+        --cyber-bg: #050213;
+        --cyber-bg-alt: #08051d;
+        --cyber-magenta: #ff00aa;
+        --cyber-cyan: #00fff7;
+        --cyber-surface: rgba(5, 2, 19, 0.78);
+        --cyber-border: rgba(0, 255, 247, 0.4);
+        --cyber-text: #e7f9ff;
+        --cyber-muted: rgba(231, 249, 255, 0.65);
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 rgba(0, 255, 247, 0.4);
+        }
+        50% {
+          box-shadow: 0 0 24px rgba(0, 255, 247, 0.75);
+        }
+      }
+
+      @keyframes scanline {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(100%);
+        }
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(20px, 6vw, 40px);
+        background: radial-gradient(circle at 15% 20%, rgba(0, 255, 247, 0.2), transparent 45%),
+          radial-gradient(circle at 85% 15%, rgba(255, 0, 170, 0.26), transparent 55%),
+          linear-gradient(180deg, var(--cyber-bg) 0%, var(--cyber-bg-alt) 55%, var(--cyber-bg) 100%);
+        font-family: 'Share Tech Mono', 'Rajdhani', 'Segoe UI', monospace;
+        color: var(--cyber-text);
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      .panel {
+        position: relative;
+        width: min(95vw, 960px);
+        border-radius: 30px;
+        padding: 32px 36px 42px;
+        background: rgba(0, 6, 22, 0.82);
+        border: 2px solid rgba(0, 255, 247, 0.35);
+        box-shadow: 0 0 42px rgba(255, 0, 170, 0.2), 0 0 65px rgba(0, 255, 247, 0.25);
+        overflow: hidden;
+      }
+
+      .panel::before {
+        content: '';
+        position: absolute;
+        inset: 14px;
+        border-radius: 24px;
+        border: 1px dashed rgba(255, 0, 170, 0.45);
+        pointer-events: none;
+      }
+
+      .panel::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 40%);
+        mix-blend-mode: screen;
+        opacity: 0.25;
+        pointer-events: none;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 28px;
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+        color: rgba(0, 255, 247, 0.85);
+      }
+
+      header span {
+        display: inline-flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      header span::before {
+        content: '';
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        border: 1px solid rgba(0, 255, 247, 0.35);
+        box-shadow: inset 0 0 12px rgba(0, 255, 247, 0.4);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 22px;
+      }
+
+      .card {
+        position: relative;
+        padding: 18px 22px 22px;
+        border-radius: 22px;
+        background: rgba(0, 10, 28, 0.65);
+        border: 1px solid rgba(255, 0, 170, 0.24);
+        box-shadow: inset 0 0 0 1px rgba(0, 255, 247, 0.2);
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(circle at 20% 20%, rgba(0, 255, 247, 0.35), transparent 60%);
+        opacity: 0.35;
+        pointer-events: none;
+      }
+
+      .card h2 {
+        margin: 0 0 12px 0;
+        font-size: clamp(0.85rem, 2.6vw, 1.05rem);
+        letter-spacing: 0.22em;
+        color: rgba(231, 251, 255, 0.85);
+      }
+
+      .metric {
+        font-size: clamp(1.5rem, 4vw, 2.4rem);
+        color: #ffffff;
+        text-shadow: 0 0 18px rgba(0, 255, 247, 0.5);
+        margin: 0;
+      }
+
+      .metric small {
+        font-size: 0.45em;
+        color: rgba(231, 251, 255, 0.55);
+        letter-spacing: 0.25em;
+      }
+
+      .subtext {
+        margin-top: 8px;
+        font-size: clamp(0.65rem, 1.8vw, 0.8rem);
+        letter-spacing: 0.18em;
+        color: rgba(231, 251, 255, 0.5);
+      }
+
+      .warning {
+        border: 1px solid rgba(255, 145, 0, 0.45);
+        box-shadow: inset 0 0 0 1px rgba(255, 145, 0, 0.3);
+      }
+
+      .warning .metric {
+        color: #ffb347;
+        text-shadow: 0 0 18px rgba(255, 145, 0, 0.5);
+      }
+
+      .channels {
+        grid-column: span 2;
+        display: grid;
+        gap: 12px;
+      }
+
+      .channel-list {
+        display: grid;
+        gap: 8px;
+        font-size: clamp(0.7rem, 2vw, 0.85rem);
+        letter-spacing: 0.16em;
+        color: rgba(231, 251, 255, 0.7);
+      }
+
+      .channel-list span {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .scanline {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(transparent 0%, rgba(255, 255, 255, 0.06) 50%, transparent 100%);
+        mix-blend-mode: screen;
+        opacity: 0.7;
+        animation: scanline 6s linear infinite;
+        pointer-events: none;
+      }
+
+      footer {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+        letter-spacing: 0.26em;
+        color: rgba(231, 251, 255, 0.5);
+      }
+
+      footer span {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      footer span::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        border: 2px solid rgba(0, 255, 247, 0.4);
+        animation: pulse 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="panel" role="presentation">
+      <header>
+        <span>Ops Dashboard &bull; Sector 7G</span>
+        <time datetime="21:14">21:14</time>
+      </header>
+      <div class="grid">
+        <article class="card">
+          <h2>Energy Core</h2>
+          <p class="metric">82<span>%</span></p>
+          <p class="subtext">Stabilizer output nominal</p>
+        </article>
+        <article class="card warning">
+          <h2>Firewall Status</h2>
+          <p class="metric">68<span>%</span></p>
+          <p class="subtext">Threat surge detected &mdash; rerouting</p>
+        </article>
+        <article class="card">
+          <h2>Data Stream</h2>
+          <p class="metric">1.8<small> TB/s</small></p>
+          <p class="subtext">Peak bandwidth sustained</p>
+        </article>
+        <article class="card channels">
+          <h2>Channels Online</h2>
+          <div class="channel-list">
+            <span><strong>Alpha Relay</strong> <em>Live</em></span>
+            <span><strong>Beta Pulse</strong> <em>Live</em></span>
+            <span><strong>Gamma Vault</strong> <em>Encrypted</em></span>
+            <span><strong>Delta Drift</strong> <em>Queued</em></span>
+          </div>
+        </article>
+      </div>
+      <footer>
+        <span>Next Sync: 09 Minutes</span>
+        <span>Broadcast Grid Lock &bull; Active</span>
+      </footer>
+      <div class="scanline" aria-hidden="true"></div>
+    </section>
+  </body>
+</html>
