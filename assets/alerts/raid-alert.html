@@ -5,18 +5,13 @@
   <title>Raid Alert</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500&display=swap');
-
-    :root {
-      --accent-one: rgba(244, 114, 182, 0.95);
-      --accent-two: rgba(249, 115, 22, 0.9);
-    }
+    @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&display=swap');
 
     body {
       margin: 0;
       background: transparent;
-      font-family: 'Roboto', sans-serif;
-      color: #fdf2f8;
+      font-family: 'Antonio', sans-serif;
+      color: #f8fafc;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -24,67 +19,56 @@
     }
 
     .alert {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1.4rem;
-      align-items: center;
-      padding: 1.6rem 2rem;
-      border-radius: 24px;
-      background: rgba(88, 28, 135, 0.88);
-      border: 1px solid rgba(244, 114, 182, 0.4);
-      box-shadow: 0 30px 90px rgba(76, 29, 149, 0.5);
-      animation: burst 0.65s ease;
-    }
-
-    .burst {
-      width: 82px;
-      height: 82px;
-      border-radius: 50%;
-      background: conic-gradient(var(--accent-one), var(--accent-two), var(--accent-one));
       position: relative;
-      display: grid;
-      place-items: center;
-      font-family: 'Bebas Neue', cursive;
-      font-size: 1.6rem;
-      letter-spacing: 0.12em;
-      color: #0f172a;
+      padding: 1.5rem 2.4rem;
+      border-radius: 24px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 2px solid rgba(244, 114, 182, 0.7);
+      box-shadow: 0 35px 80px rgba(15, 23, 42, 0.6);
+      overflow: hidden;
       text-transform: uppercase;
+      letter-spacing: 0.1em;
+      animation: pop 0.8s ease;
     }
 
-    .burst::before,
-    .burst::after {
+    .alert::before {
       content: '';
       position: absolute;
-      border-radius: inherit;
-      inset: 0;
-      border: 4px solid rgba(249, 115, 22, 0.4);
-      animation: spin 5s linear infinite;
+      inset: -50%;
+      background: conic-gradient(rgba(244, 114, 182, 0.7), rgba(59, 130, 246, 0.7), transparent 70%);
+      animation: spin 6s linear infinite;
+      opacity: 0.4;
     }
 
-    .burst::after {
-      inset: 10%;
-      border-color: rgba(244, 114, 182, 0.5);
-      animation-direction: reverse;
-    }
-
-    .text {
+    .content {
+      position: relative;
       display: grid;
-      gap: 0.35rem;
+      gap: 0.6rem;
+      text-align: center;
     }
 
-    .text .label {
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.9rem;
-      opacity: 0.75;
+    .title {
+      font-size: 1rem;
+      opacity: 0.7;
     }
 
-    .text .message {
-      font-size: 1.4rem;
-      font-weight: 500;
+    .username {
+      font-size: 2.2rem;
+      font-weight: 700;
     }
 
-    @keyframes burst {
+    .viewers {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes pop {
       from {
         transform: scale(0.8);
         opacity: 0;
@@ -94,44 +78,15 @@
         opacity: 1;
       }
     }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
-    }
   </style>
 </head>
 <body>
   <div class="alert">
-    <div class="burst" id="burst">Raid</div>
-    <div class="text">
-      <div class="label" id="label">Incoming Raid</div>
-      <div class="message" id="message">StreamSquad is raiding with 24 viewers!</div>
+    <div class="content">
+      <div class="title">Incoming raid</div>
+      <div class="username">StreamerHouse</div>
+      <div class="viewers">45 Raiders</div>
     </div>
   </div>
-  <script>
-    const params = new URLSearchParams(window.location.search);
-
-    const burst = params.get('burst') || 'Raid';
-    const label = params.get('label') || 'Incoming Raid';
-    const raider = params.get('raider') || 'StreamSquad';
-    const viewers = params.get('viewers') || '24 viewers';
-    const message = params.get('message');
-    const accentOne = params.get('accentOne');
-    const accentTwo = params.get('accentTwo');
-
-    document.getElementById('burst').textContent = burst;
-    document.getElementById('label').textContent = label;
-    document.getElementById('message').textContent = message || `${raider} is raiding with ${viewers}!`;
-
-    if (accentOne || accentTwo) {
-      document.documentElement.style.setProperty('--accent-one', accentOne || 'rgba(244, 114, 182, 0.95)');
-      document.documentElement.style.setProperty('--accent-two', accentTwo || 'rgba(249, 115, 22, 0.9)');
-    }
-  </script>
 </body>
 </html>
