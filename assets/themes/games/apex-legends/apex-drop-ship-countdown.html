@@ -239,7 +239,13 @@
       path.split('|').forEach(entry => {
         const [stage, location] = entry.split(';');
         const li = document.createElement('li');
-        li.innerHTML = `<strong>${stage || 'Stage'}</strong> <span>${location || ''}</span>`;
+        const strong = document.createElement('strong');
+        strong.textContent = stage || 'Stage';
+        const span = document.createElement('span');
+        span.textContent = location || '';
+        li.appendChild(strong);
+        li.appendChild(document.createTextNode(' '));
+        li.appendChild(span);
         list.appendChild(li);
       });
     }
@@ -251,7 +257,12 @@
         const [legend, status] = entry.split(';');
         const div = document.createElement('div');
         div.className = 'legend';
-        div.innerHTML = `<strong>${legend || 'Legend'}</strong><span>${status || ''}</span>`;
+        const strong = document.createElement('strong');
+        strong.textContent = legend || 'Legend';
+        const span = document.createElement('span');
+        span.textContent = status || '';
+        div.appendChild(strong);
+        div.appendChild(span);
         grid.appendChild(div);
       });
     }

@@ -230,7 +230,9 @@
         const [teamName, agents] = teamEntry.split('::');
         const article = document.createElement('article');
         article.className = 'squad';
-        article.innerHTML = `<h2>${teamName || 'Team'}</h2>`;
+        const heading = document.createElement('h2');
+        heading.textContent = teamName || 'Team';
+        article.appendChild(heading);
         const grid = document.createElement('div');
         grid.className = 'agents';
         (agents || '').split('|').forEach(agentEntry => {
@@ -238,7 +240,10 @@
           const [agent, role] = agentEntry.split(';');
           const div = document.createElement('div');
           div.className = 'agent';
-          div.innerHTML = `${agent || 'Agent'}<span>${role || ''}</span>`;
+          div.textContent = agent || 'Agent';
+          const span = document.createElement('span');
+          span.textContent = role || '';
+          div.appendChild(span);
           grid.appendChild(div);
         });
         article.appendChild(grid);
