@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyberpunk Dual Host Frame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(140deg, #050111 0%, #010409 100%);
+      font-family: 'Orbitron', 'Segoe UI', sans-serif;
+      color: #f0fbff;
+    }
+
+    .layout {
+      position: absolute;
+      inset: 6vh 8vw;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3vw;
+    }
+
+    .panel {
+      position: relative;
+      border-radius: 28px;
+      border: 2px solid rgba(0, 255, 247, 0.3);
+      box-shadow: 0 0 28px rgba(255, 0, 170, 0.25), inset 0 0 18px rgba(0, 255, 247, 0.18);
+      overflow: hidden;
+      background: linear-gradient(120deg, rgba(0, 0, 0, 0.6), rgba(9, 0, 20, 0.35));
+    }
+
+    .panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(0, 255, 247, 0.18), transparent 70%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 170, 0.18), transparent 80%);
+      animation: float 28s linear infinite;
+      opacity: 0.4;
+    }
+
+    .panel header {
+      position: absolute;
+      top: 18px;
+      left: 22px;
+      right: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(240, 251, 255, 0.65);
+    }
+
+    .panel header span {
+      color: rgba(0, 255, 247, 0.85);
+    }
+
+    .stats {
+      position: absolute;
+      bottom: 20px;
+      left: 22px;
+      right: 22px;
+      display: flex;
+      gap: 14px;
+    }
+
+    .badge {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 0, 170, 0.5);
+      background: rgba(0, 0, 0, 0.5);
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(240, 251, 255, 0.75);
+    }
+
+    .divider {
+      position: absolute;
+      top: -3vh;
+      bottom: -3vh;
+      left: 50%;
+      width: 3px;
+      background: linear-gradient(180deg, rgba(255, 0, 170, 0), rgba(0, 255, 247, 0.8), rgba(255, 0, 170, 0));
+      box-shadow: 0 0 22px rgba(0, 255, 247, 0.35);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0);
+      }
+      50% {
+        transform: translate(8%, -6%);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout" aria-hidden="true">
+    <article class="panel">
+      <header>
+        <span>Host One</span>
+        <span>On-Air</span>
+      </header>
+      <div class="stats">
+        <span class="badge">Latency 11ms</span>
+        <span class="badge">Audio Sync 99%</span>
+      </div>
+    </article>
+    <article class="panel">
+      <header>
+        <span>Host Two</span>
+        <span>Remote</span>
+      </header>
+      <div class="stats">
+        <span class="badge">Latency 18ms</span>
+        <span class="badge">Audio Sync 97%</span>
+      </div>
+    </article>
+    <div class="divider" aria-hidden="true"></div>
+  </div>
+</body>
+</html>

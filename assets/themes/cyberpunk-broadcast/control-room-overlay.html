@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyberpunk Control Room Overlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at 20% 20%, rgba(255, 0, 128, 0.16), transparent 55%),
+        radial-gradient(circle at 80% 25%, rgba(0, 255, 247, 0.14), transparent 65%),
+        linear-gradient(120deg, #060612 0%, #010109 100%);
+      color: #f5fbff;
+      font-family: 'Orbitron', 'Segoe UI', sans-serif;
+    }
+
+    .frame {
+      position: absolute;
+      inset: 4vh 5vw;
+      border: 3px solid rgba(255, 0, 170, 0.6);
+      border-radius: 28px;
+      box-shadow: 0 0 30px rgba(255, 0, 170, 0.35), inset 0 0 12px rgba(0, 255, 247, 0.25);
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.25));
+      overflow: hidden;
+    }
+
+    .hud-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 0, 170, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 247, 0.08) 1px, transparent 1px);
+      background-size: 120px 120px;
+      opacity: 0.35;
+      mask-image: linear-gradient(140deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+      animation: drift 30s linear infinite;
+    }
+
+    .corner {
+      position: absolute;
+      width: 12vmax;
+      height: 12vmax;
+      border: 2px solid transparent;
+      border-image: linear-gradient(135deg, rgba(0, 255, 247, 0.9), rgba(255, 0, 170, 0.9)) 1;
+    }
+
+    .corner::after {
+      content: '';
+      position: absolute;
+      inset: 20%;
+      border: 1px dashed rgba(0, 255, 247, 0.4);
+    }
+
+    .corner.top-left { top: -2vmax; left: -2vmax; border-top-color: transparent; border-left-color: transparent; }
+    .corner.top-right { top: -2vmax; right: -2vmax; border-top-color: transparent; border-right-color: transparent; }
+    .corner.bottom-left { bottom: -2vmax; left: -2vmax; border-bottom-color: transparent; border-left-color: transparent; }
+    .corner.bottom-right { bottom: -2vmax; right: -2vmax; border-bottom-color: transparent; border-right-color: transparent; }
+
+    .sidebar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: min(24vw, 360px);
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 255, 247, 0.12), rgba(255, 0, 170, 0.06));
+      border-right: 2px solid rgba(255, 0, 170, 0.3);
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(22px);
+    }
+
+    .sidebar header {
+      padding: 20px 26px;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.75rem;
+      color: rgba(245, 251, 255, 0.75);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 0, 170, 0.2);
+    }
+
+    .sidebar header span {
+      font-size: 0.65rem;
+      color: rgba(0, 255, 247, 0.75);
+    }
+
+    .status-list {
+      padding: 24px 28px;
+      display: grid;
+      gap: 18px;
+      font-size: 0.85rem;
+    }
+
+    .status-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .status-item label {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.7rem;
+      color: rgba(245, 251, 255, 0.5);
+    }
+
+    .status-item .bar {
+      position: relative;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .status-item .bar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: var(--fill, 60%);
+      background: linear-gradient(90deg, rgba(0, 255, 247, 0.2), rgba(255, 0, 170, 0.45));
+      box-shadow: 0 0 18px rgba(255, 0, 170, 0.6);
+    }
+
+    .monitor {
+      position: absolute;
+      inset: 5vh 5vw;
+      border-radius: 22px;
+      border: 2px solid rgba(0, 255, 247, 0.3);
+      box-shadow: inset 0 0 24px rgba(0, 255, 247, 0.12);
+      pointer-events: none;
+    }
+
+    .monitor::before {
+      content: '';
+      position: absolute;
+      inset: 3% 3% auto 3%;
+      height: 12%;
+      border: 1px solid rgba(255, 0, 170, 0.4);
+      border-radius: 12px;
+      box-shadow: 0 0 18px rgba(255, 0, 170, 0.35);
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translate3d(-5%, -5%, 0);
+      }
+      50% {
+        transform: translate3d(5%, 3%, 0);
+      }
+      100% {
+        transform: translate3d(-5%, -5%, 0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame" aria-hidden="true">
+    <div class="hud-grid" aria-hidden="true"></div>
+    <div class="corner top-left" aria-hidden="true"></div>
+    <div class="corner top-right" aria-hidden="true"></div>
+    <div class="corner bottom-left" aria-hidden="true"></div>
+    <div class="corner bottom-right" aria-hidden="true"></div>
+    <aside class="sidebar" aria-hidden="true">
+      <header>
+        <span>SYS</span>
+        <span>STATUS: LIVE</span>
+      </header>
+      <div class="status-list">
+        <div class="status-item">
+          <label>Network Sync</label>
+          <div class="bar" style="--fill: 82%"></div>
+        </div>
+        <div class="status-item">
+          <label>Camera Matrix</label>
+          <div class="bar" style="--fill: 66%"></div>
+        </div>
+        <div class="status-item">
+          <label>Audio Levels</label>
+          <div class="bar" style="--fill: 58%"></div>
+        </div>
+        <div class="status-item">
+          <label>Stream Health</label>
+          <div class="bar" style="--fill: 92%"></div>
+        </div>
+      </div>
+    </aside>
+    <div class="monitor" aria-hidden="true"></div>
+  </div>
+</body>
+</html>
