@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>League Victory Screen</title>
+  <style>
+    :root {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      --bg: linear-gradient(160deg, #081019, #10263e 55%, #081019 100%);
+      --panel: rgba(5, 14, 26, 0.9);
+      --accent: #f2c94c;
+      --secondary: #00d5b1;
+      --text: #f3f6fb;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      color: var(--text);
+      overflow: hidden;
+    }
+
+    main {
+      width: 88vw;
+      max-width: 1500px;
+      border-radius: 2.2rem;
+      border: 2px solid rgba(242, 201, 76, 0.45);
+      background: var(--panel);
+      padding: 3rem 3.2rem 3.6rem;
+      display: grid;
+      gap: 2.6rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 40px 100px rgba(0, 0, 0, 0.55);
+    }
+
+    main::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 2.2rem;
+      border: 1px solid rgba(242, 201, 76, 0.2);
+      pointer-events: none;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 4rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-shadow: 0 0 40px rgba(242, 201, 76, 0.7);
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(243, 246, 251, 0.75);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      border-radius: 1.4rem;
+      border: 1px solid rgba(0, 213, 177, 0.35);
+      background: rgba(5, 20, 30, 0.8);
+      padding: 1.6rem 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.85rem;
+      color: rgba(243, 246, 251, 0.8);
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .card strong {
+      font-size: 2rem;
+      color: var(--secondary);
+    }
+
+    footer {
+      font-size: 0.9rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(243, 246, 251, 0.6);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="title">Victory</h1>
+    <p class="subtitle" id="subtitle">Cloud9 defeat 100 Thieves • 27 - 19</p>
+    <section class="stats" id="stats">
+      <article class="card">
+        <strong>+12k</strong>
+        <span>Gold lead</span>
+      </article>
+      <article class="card">
+        <strong>28:34</strong>
+        <span>Game length</span>
+      </article>
+      <article class="card">
+        <strong>Dragon Soul</strong>
+        <span>Infernal secured</span>
+      </article>
+      <article class="card">
+        <strong>Baron x2</strong>
+        <span>Objective control</span>
+      </article>
+    </section>
+    <footer id="footer">MVP: Berserker (Zeri) • 11/1/8</footer>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const stats = params.get('stats');
+    const footer = params.get('footer');
+
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+
+    if (stats) {
+      const container = document.getElementById('stats');
+      container.innerHTML = '';
+      stats.split('|').forEach(entry => {
+        const [value, label] = entry.split(';');
+        const card = document.createElement('article');
+        card.className = 'card';
+        card.innerHTML = `
+          <strong>${value || ''}</strong>
+          <span>${label || ''}</span>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    if (footer) document.getElementById('footer').textContent = footer;
+  </script>
+</body>
+</html>

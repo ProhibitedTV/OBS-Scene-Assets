@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fortnite Storm Alert</title>
+  <style>
+    :root {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      --bg: rgba(12, 28, 60, 0.9);
+      --accent: #f8f94a;
+      --secondary: #00d4ff;
+      --text: #f4f9ff;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .alert {
+      width: 65vw;
+      max-width: 1100px;
+      border-radius: 1.6rem;
+      border: 2px solid rgba(248, 249, 74, 0.45);
+      background: var(--bg);
+      padding: 1.8rem 2.2rem;
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.4);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.35rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 249, 74, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      color: rgba(244, 249, 255, 0.75);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+    }
+
+    .countdown {
+      font-size: 3.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      text-shadow: 0 0 20px rgba(248, 249, 74, 0.7);
+    }
+
+    .details {
+      display: grid;
+      gap: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.85rem;
+      color: rgba(244, 249, 255, 0.75);
+    }
+
+    .details span {
+      display: inline-flex;
+      gap: 0.6rem;
+    }
+
+    .details span::before {
+      content: '\2022';
+      color: var(--secondary);
+    }
+  </style>
+</head>
+<body>
+  <section class="alert">
+    <span class="tag">Storm warning</span>
+    <h1 id="title">Storm closing in</h1>
+    <div class="countdown" id="timer">00:45</div>
+    <div class="details" id="details">
+      <span>Phase 3 circle pulls Southeast</span>
+      <span>Slap Juice caches in Mega City</span>
+      <span>Forecast: 70% chance of heal-off</span>
+    </div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const timer = params.get('timer');
+    const details = params.get('details');
+
+    if (title) document.getElementById('title').textContent = title;
+    if (timer) document.getElementById('timer').textContent = timer;
+
+    if (details) {
+      const container = document.getElementById('details');
+      container.innerHTML = '';
+      details.split('|').forEach(entry => {
+        const span = document.createElement('span');
+        span.textContent = entry;
+        container.appendChild(span);
+      });
+    }
+  </script>
+</body>
+</html>

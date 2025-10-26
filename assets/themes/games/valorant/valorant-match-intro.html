@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valorant Match Intro</title>
+  <style>
+    :root {
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      --bg: linear-gradient(135deg, #0e1018 0%, #171b2c 50%, #0e1018 100%);
+      --accent: #ff4655;
+      --secondary: #00e0c6;
+      --panel: rgba(15, 18, 29, 0.88);
+      --text: #f4f6fa;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    main {
+      width: 90vw;
+      max-width: 1500px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      background: var(--panel);
+      border-radius: 2.4rem;
+      border: 2px solid rgba(255, 70, 85, 0.4);
+      padding: 2.8rem 3.2rem;
+      position: relative;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.55);
+    }
+
+    main::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 2.4rem;
+      border: 1px solid rgba(255, 70, 85, 0.2);
+      pointer-events: none;
+    }
+
+    .match {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .match h1 {
+      margin: 0;
+      font-size: 3.4rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: rgba(244, 246, 250, 0.7);
+    }
+
+    .meta {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(244, 246, 250, 0.6);
+    }
+
+    .lineup {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .squad {
+      border-radius: 1.6rem;
+      border: 1px solid rgba(255, 70, 85, 0.35);
+      padding: 1.6rem 1.8rem;
+      display: grid;
+      gap: 1rem;
+      background: rgba(10, 13, 22, 0.8);
+      position: relative;
+    }
+
+    .squad::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 1.6rem;
+      background: linear-gradient(135deg, rgba(255, 70, 85, 0.18), transparent 60%);
+      pointer-events: none;
+    }
+
+    .squad h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--secondary);
+    }
+
+    .agents {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.8rem;
+    }
+
+    .agent {
+      padding: 0.9rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 70, 85, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.8rem;
+      background: rgba(255, 70, 85, 0.12);
+      color: rgba(244, 246, 250, 0.85);
+      text-align: center;
+    }
+
+    .agent span {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      color: rgba(244, 246, 250, 0.6);
+    }
+
+    .map {
+      border-radius: 2rem;
+      border: 1px solid rgba(0, 224, 198, 0.35);
+      padding: 2rem;
+      display: grid;
+      gap: 1rem;
+      background: rgba(0, 20, 22, 0.75);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+    }
+
+    .map h2 {
+      margin: 0;
+      font-size: 1.6rem;
+      color: var(--secondary);
+    }
+
+    .map p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: rgba(244, 246, 250, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="match">
+      <div>
+        <p class="tagline" id="tagline">Champions Tour Qualifier • Best of 3</p>
+        <h1 id="title">Bind • Haven • Split</h1>
+      </div>
+      <div class="meta" id="meta">
+        <span>Patch 6.11</span>
+        <span>First to 13</span>
+        <span>OT rules enabled</span>
+      </div>
+      <section class="lineup" id="lineup">
+        <article class="squad">
+          <h2>Team Phoenix</h2>
+          <div class="agents">
+            <div class="agent">Jett<span>OP Duelist</span></div>
+            <div class="agent">Skye<span>Initiator</span></div>
+            <div class="agent">Omen<span>Controller</span></div>
+            <div class="agent">Killjoy<span>Sentinel</span></div>
+            <div class="agent">Raze<span>Entry Duelist</span></div>
+          </div>
+        </article>
+        <article class="squad">
+          <h2>Team Viper</h2>
+          <div class="agents">
+            <div class="agent">Reyna<span>Clutch Duelist</span></div>
+            <div class="agent">Breach<span>Initiator</span></div>
+            <div class="agent">Viper<span>Controller</span></div>
+            <div class="agent">Cypher<span>Sentinel</span></div>
+            <div class="agent">Brimstone<span>Smokes</span></div>
+          </div>
+        </article>
+      </section>
+    </section>
+    <aside class="map">
+      <h2 id="map-title">Featured Map: Lotus</h2>
+      <p id="map-detail">Triple-site layout • Rotating doors online • Defenders start North</p>
+      <p id="broadcast-note">Broadcast note: highlight new Killjoy turret placement restrictions.</p>
+    </aside>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const tagline = params.get('tagline');
+    const meta = params.get('meta');
+    const lineup = params.get('lineup');
+    const mapTitle = params.get('mapTitle');
+    const mapDetail = params.get('mapDetail');
+    const note = params.get('note');
+
+    if (title) document.getElementById('title').textContent = title;
+    if (tagline) document.getElementById('tagline').textContent = tagline;
+
+    if (meta) {
+      const container = document.getElementById('meta');
+      container.innerHTML = '';
+      meta.split('|').forEach(entry => {
+        const span = document.createElement('span');
+        span.textContent = entry;
+        container.appendChild(span);
+      });
+    }
+
+    if (lineup) {
+      const container = document.getElementById('lineup');
+      container.innerHTML = '';
+      lineup.split('||').forEach(teamEntry => {
+        const [teamName, agents] = teamEntry.split('::');
+        const article = document.createElement('article');
+        article.className = 'squad';
+        article.innerHTML = `<h2>${teamName || 'Team'}</h2>`;
+        const grid = document.createElement('div');
+        grid.className = 'agents';
+        (agents || '').split('|').forEach(agentEntry => {
+          if (!agentEntry) return;
+          const [agent, role] = agentEntry.split(';');
+          const div = document.createElement('div');
+          div.className = 'agent';
+          div.innerHTML = `${agent || 'Agent'}<span>${role || ''}</span>`;
+          grid.appendChild(div);
+        });
+        article.appendChild(grid);
+        container.appendChild(article);
+      });
+    }
+
+    if (mapTitle) document.getElementById('map-title').textContent = mapTitle;
+    if (mapDetail) document.getElementById('map-detail').textContent = mapDetail;
+    if (note) document.getElementById('broadcast-note').textContent = note;
+  </script>
+</body>
+</html>

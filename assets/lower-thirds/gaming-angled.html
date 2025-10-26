@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gaming Angled Lower Third</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Titillium+Web:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: 'Titillium Web', sans-serif;
+      color: #fff;
+    }
+
+    .wrap {
+      position: fixed;
+      bottom: 15vh;
+      left: 50%;
+      transform: translateX(-50%) skewX(-15deg);
+      display: inline-flex;
+      align-items: stretch;
+      filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.45));
+    }
+
+    .panel {
+      background: linear-gradient(135deg, #ff0054, #ff7b00);
+      padding: 0.6rem 2.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.25), transparent 65%);
+      mix-blend-mode: screen;
+    }
+
+    .panel .label {
+      font-family: 'Russo One', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .info {
+      background: rgba(8, 10, 26, 0.92);
+      padding: 0.75rem 2.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      border: 2px solid rgba(255, 123, 0, 0.4);
+    }
+
+    .name {
+      font-size: 1.3rem;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <div class="label">Champion</div>
+    </div>
+    <div class="info">
+      <div class="name">Player One</div>
+      <div class="tagline">MVP - Last Match Highlights</div>
+    </div>
+  </div>
+</body>
+</html>

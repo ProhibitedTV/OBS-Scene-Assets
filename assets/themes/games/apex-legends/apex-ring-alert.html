@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Apex Legends Ring Alert</title>
+  <style>
+    :root {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      --bg: linear-gradient(140deg, rgba(255, 70, 84, 0.16), rgba(18, 18, 22, 0.9));
+      --panel: rgba(17, 19, 26, 0.9);
+      --accent: #ff4654;
+      --warning: #fca311;
+      --text: #f8f9fb;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .alert {
+      width: 70vw;
+      max-width: 1100px;
+      background: var(--panel);
+      border-radius: 1.4rem;
+      border: 2px solid rgba(255, 70, 84, 0.45);
+      padding: 1.8rem 2.2rem;
+      display: grid;
+      gap: 0.8rem;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.35rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 70, 84, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.72rem;
+      color: rgba(248, 249, 251, 0.75);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .countdown {
+      font-size: 3.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      text-shadow: 0 0 24px rgba(255, 70, 84, 0.8);
+    }
+
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.9rem;
+      color: rgba(248, 249, 251, 0.7);
+    }
+
+    .warning {
+      color: var(--warning);
+    }
+  </style>
+</head>
+<body>
+  <section class="alert">
+    <span class="tag">Ring alert</span>
+    <h1 id="title">Ring closing • Round 3</h1>
+    <div class="countdown" id="countdown">00:45</div>
+    <div class="details" id="details">
+      <span class="warning">Damage per tick: 30</span>
+      <span>Safe zone: Fragment East</span>
+      <span>Rotate via: Climatizer zipline</span>
+    </div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const countdown = params.get('countdown');
+    const details = params.get('details');
+
+    if (title) document.getElementById('title').textContent = title;
+    if (countdown) document.getElementById('countdown').textContent = countdown;
+
+    if (details) {
+      const container = document.getElementById('details');
+      container.innerHTML = '';
+      details.split('|').forEach(detail => {
+        const span = document.createElement('span');
+        span.textContent = detail;
+        if (/warning/i.test(detail)) {
+          span.classList.add('warning');
+        }
+        container.appendChild(span);
+      });
+    }
+  </script>
+</body>
+</html>

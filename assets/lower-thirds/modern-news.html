@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modern News Lower Third</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+    }
+
+    .container {
+      position: fixed;
+      left: 0;
+      bottom: 10vh;
+      display: inline-flex;
+      align-items: stretch;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      border-radius: 0 12px 12px 0;
+      overflow: hidden;
+      transform: translateX(-100%);
+      animation: slide-in 1.2s ease forwards;
+    }
+
+    .accent {
+      background: linear-gradient(135deg, #1a73e8, #00c6ff);
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .text {
+      background: rgba(13, 17, 23, 0.92);
+      padding: 0.7rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      min-width: 28vw;
+    }
+
+    .headline {
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .subline {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      letter-spacing: 0.02em;
+    }
+
+    @keyframes slide-in {
+      0% {
+        transform: translateX(-110%);
+      }
+      60% {
+        transform: translateX(4%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="accent">LIVE</div>
+    <div class="text">
+      <div class="headline">Your Name</div>
+      <div class="subline">Breaking Story Subtitle Goes Here</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valorant Spike Status</title>
+  <style>
+    :root {
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      font-size: 16px;
+      --bg: rgba(14, 16, 24, 0.85);
+      --accent: #ff4655;
+      --secondary: #00e0c6;
+      --text: #f5f6fa;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background: transparent;
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .widget {
+      width: 60vw;
+      max-width: 900px;
+      border-radius: 1.4rem;
+      border: 2px solid rgba(255, 70, 85, 0.4);
+      background: var(--bg);
+      padding: 1.6rem 2rem;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.4rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 70, 85, 0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.72rem;
+      color: rgba(245, 246, 250, 0.75);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+    }
+
+    .status {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      color: rgba(245, 246, 250, 0.75);
+    }
+
+    .status strong {
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+
+    .progress {
+      position: relative;
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(255, 70, 85, 0.16);
+      overflow: hidden;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), rgba(255, 70, 85, 0.6));
+      box-shadow: 0 0 16px rgba(255, 70, 85, 0.7);
+    }
+
+    .callouts {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.82rem;
+      color: rgba(245, 246, 250, 0.65);
+    }
+
+    .callouts span {
+      padding: 0.45rem 0.9rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(0, 224, 198, 0.4);
+      color: var(--secondary);
+      background: rgba(0, 224, 198, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <section class="widget">
+    <span class="tag">Spike status</span>
+    <h1 id="title">Planted • Site B</h1>
+    <div class="status">
+      <div>Time remaining</div>
+      <strong id="time">00:45</strong>
+    </div>
+    <div class="progress">
+      <span id="progress" style="width: 75%"></span>
+    </div>
+    <div class="callouts" id="callouts">
+      <span>Defuse kit on Sova</span>
+      <span>Killjoy turret watching flank</span>
+      <span>Omen smoke in 8s</span>
+    </div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const time = params.get('time');
+    const progress = params.get('progress');
+    const callouts = params.get('callouts');
+
+    if (title) document.getElementById('title').textContent = title;
+    if (time) document.getElementById('time').textContent = time;
+    if (progress) {
+      const pct = Math.min(Math.max(parseFloat(progress), 0), 100);
+      document.getElementById('progress').style.width = `${pct}%`;
+    }
+
+    if (callouts) {
+      const container = document.getElementById('callouts');
+      container.innerHTML = '';
+      callouts.split('|').forEach(entry => {
+        const span = document.createElement('span');
+        span.textContent = entry;
+        container.appendChild(span);
+      });
+    }
+  </script>
+</body>
+</html>

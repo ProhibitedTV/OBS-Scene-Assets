@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Just Chatting Scene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at 25% 20%, rgba(236, 72, 153, 0.15), transparent 55%),
+        radial-gradient(circle at 80% 40%, rgba(56, 189, 248, 0.18), transparent 55%),
+        linear-gradient(135deg, #020617, #0f172a 50%, #111827 100%);
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 2.2rem;
+      width: 80vw;
+      max-width: 1300px;
+    }
+
+    .panel {
+      background: rgba(15, 23, 42, 0.78);
+      border-radius: 26px;
+      padding: 1.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: 0 30px 70px rgba(15, 23, 42, 0.55);
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .panel h2 {
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 1rem;
+      opacity: 0.75;
+    }
+
+    .video-area {
+      flex: 1;
+      border-radius: 20px;
+      border: 2px dashed rgba(96, 165, 250, 0.4);
+      background: rgba(30, 41, 59, 0.5);
+    }
+
+    .chat-list {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .chat-item {
+      background: rgba(30, 41, 59, 0.7);
+      border-radius: 16px;
+      padding: 0.9rem 1rem;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .chat-item strong {
+      color: #38bdf8;
+      letter-spacing: 0.02em;
+    }
+
+    .agenda {
+      display: grid;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      opacity: 0.85;
+    }
+
+    .agenda-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1rem;
+      border-radius: 16px;
+      background: rgba(251, 191, 36, 0.15);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+      color: #fde68a;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <section class="panel">
+      <h2>Host Camera</h2>
+      <div class="video-area"></div>
+      <div class="agenda">
+        <div class="agenda-item"><span>Topic 1</span><span>Channel updates</span></div>
+        <div class="agenda-item"><span>Topic 2</span><span>Community highlights</span></div>
+        <div class="agenda-item"><span>Topic 3</span><span>Upcoming schedule</span></div>
+      </div>
+    </section>
+    <aside class="panel">
+      <h2>Live Chat</h2>
+      <div class="chat-list">
+        <div class="chat-item"><strong>viewer01:</strong> Loving the new layout!</div>
+        <div class="chat-item"><strong>modJess:</strong> Drop your questions in chat!</div>
+        <div class="chat-item"><strong>subscriber99:</strong> Can't wait for the next guest.</div>
+      </div>
+    </aside>
+  </div>
+</body>
+</html>
