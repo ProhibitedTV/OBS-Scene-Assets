@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>News Anchor Lower Third</title>
+  <style>
+    :root {
+      font-size: 16px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --primary: #0f3d91;
+      --accent: #ffcc00;
+      --text: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: transparent;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .lower-third {
+      position: relative;
+      width: 75vw;
+      max-width: 1200px;
+      padding: 1.2rem 1.6rem 1.2rem 6.5rem;
+      background: linear-gradient(90deg, rgba(15, 61, 145, 0.95), rgba(7, 26, 70, 0.95));
+      border-radius: 0.4rem;
+      color: var(--text);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      transform: translateY(120%);
+      animation: slide-up 0.9s ease forwards;
+    }
+
+    .lower-third::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4.5rem;
+      background: linear-gradient(135deg, var(--accent), #ff9d00);
+      clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+    }
+
+    .name {
+      font-size: 2.3rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .title {
+      margin: 0.2rem 0 0;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .location {
+      position: absolute;
+      right: -0.2rem;
+      bottom: -1.6rem;
+      background: rgba(12, 44, 110, 0.95);
+      padding: 0.4rem 1.2rem;
+      border-radius: 0 0 0.4rem 0.4rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    }
+
+    @keyframes slide-up {
+      from {
+        transform: translateY(120%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="lower-third">
+    <h1 class="name" id="anchor">Alex Morgan</h1>
+    <p class="title" id="title">Lead Correspondent</p>
+    <span class="location" id="location">Washington, D.C.</span>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const anchor = params.get('anchor');
+    const title = params.get('title');
+    const location = params.get('location');
+
+    if (anchor) {
+      document.getElementById('anchor').textContent = anchor;
+    }
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (location) {
+      document.getElementById('location').textContent = location;
+    }
+  </script>
+</body>
+</html>
