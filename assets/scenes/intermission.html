@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Intermission Scene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(140deg, #020617 20%, #0b1120 50%, #1e1b4b 100%);
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      overflow: hidden;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2.5rem;
+      padding: 3rem 4rem;
+      background: rgba(15, 23, 42, 0.72);
+      border-radius: 32px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      backdrop-filter: blur(18px);
+      width: 70vw;
+      min-width: 960px;
+      max-width: 1200px;
+    }
+
+    .left {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .headline {
+      font-size: 4vw;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-weight: 700;
+    }
+
+    .panels {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .panel {
+      padding: 1.4rem 1.6rem;
+      border-radius: 18px;
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      background: rgba(30, 41, 59, 0.65);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.1rem;
+    }
+
+    .panel span:first-child {
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.85;
+    }
+
+    .panel span:last-child {
+      font-weight: 600;
+      color: #60a5fa;
+      letter-spacing: 0.08em;
+    }
+
+    .right {
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    .sponsor {
+      padding: 1.6rem;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.9), rgba(244, 114, 182, 0.8));
+      box-shadow: 0 20px 35px rgba(236, 72, 153, 0.35);
+      text-align: center;
+    }
+
+    .sponsor h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .sponsor p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .playlist {
+      padding: 1.4rem;
+      border-radius: 18px;
+      border: 1px solid rgba(45, 212, 191, 0.4);
+      background: rgba(13, 148, 136, 0.2);
+      color: #ccfbf1;
+    }
+
+    .playlist h3 {
+      margin-top: 0;
+      letter-spacing: 0.1em;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+
+    .playlist ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="left">
+      <div class="headline">Intermission</div>
+      <div class="panels">
+        <div class="panel">
+          <span>Next segment</span>
+          <span>Community Q&amp;A</span>
+        </div>
+        <div class="panel">
+          <span>Returning in</span>
+          <span>00:10:00</span>
+        </div>
+        <div class="panel">
+          <span>Today's goal</span>
+          <span>$500 Charity Donation</span>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="sponsor">
+        <h2>Sponsored by StreamTools</h2>
+        <p>Upgrade your broadcast overlays with customizable widgets and modular layouts.</p>
+      </div>
+      <div class="playlist">
+        <h3>Background Playlist</h3>
+        <ul>
+          <li>1. Nightwave · Chill Vibes</li>
+          <li>2. Lunar Echo · Synth Dreams</li>
+          <li>3. Midnight City · Lo-Fi Lounge</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
