@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>UNSC Fireteam Status HUD</title>
+  <style>
+    :root {
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      color-scheme: dark;
+      --bg: rgba(0, 6, 14, 0.65);
+      --accent: #8efaff;
+      --accent-soft: rgba(142, 250, 255, 0.45);
+      --warning: #ffd66b;
+      --danger: #ff6b6b;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      background: transparent;
+      color: #e9faff;
+      overflow: hidden;
+    }
+
+    .hud {
+      width: min(80rem, 92vw);
+      margin-bottom: 2.5rem;
+      background: var(--bg);
+      backdrop-filter: blur(12px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(142, 250, 255, 0.28);
+      position: relative;
+      padding: 1.8rem 2.4rem 2.4rem;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.65);
+    }
+
+    .hud::before,
+    .hud::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .hud::before {
+      border: 1px solid rgba(142, 250, 255, 0.2);
+      inset: 0.75rem;
+      opacity: 0.65;
+    }
+
+    .hud::after {
+      background: linear-gradient(120deg, transparent, rgba(142, 250, 255, 0.12), transparent);
+      mix-blend-mode: screen;
+      animation: sweep 7s linear infinite;
+    }
+
+    @keyframes sweep {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      font-size: 0.78rem;
+      opacity: 0.75;
+    }
+
+    .squad {
+      margin-top: 2.2rem;
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .member {
+      display: grid;
+      grid-template-columns: 1fr minmax(10rem, 18rem) 8rem;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1.2rem 1.6rem;
+      border-radius: 1rem;
+      background: rgba(0, 15, 32, 0.6);
+      border: 1px solid rgba(142, 250, 255, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .member::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, rgba(142, 250, 255, 0.08), transparent);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .member:hover::before {
+      opacity: 1;
+    }
+
+    .name {
+      font-size: 1.25rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .name::before {
+      content: '';
+      width: 0.85rem;
+      aspect-ratio: 1;
+      background: var(--accent);
+      border-radius: 999px;
+      box-shadow: 0 0 18px rgba(142, 250, 255, 0.8);
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.35);
+        opacity: 1;
+      }
+    }
+
+    .bars {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .bar {
+      position: relative;
+      height: 0.65rem;
+      background: rgba(233, 250, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(142, 250, 255, 0.25), rgba(142, 250, 255, 0.85));
+      transform-origin: left;
+      transform: scaleX(var(--value, 1));
+      transition: transform 0.8s ease-out;
+    }
+
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(233, 250, 255, 0.65);
+    }
+
+    .status-chip {
+      justify-self: end;
+      padding: 0.55rem 1.4rem;
+      border-radius: 999px;
+      letter-spacing: 0.3em;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      border: 1px solid rgba(142, 250, 255, 0.45);
+    }
+
+    .status-chip[data-state='critical'] {
+      border-color: rgba(255, 107, 107, 0.7);
+      color: var(--danger);
+      box-shadow: 0 0 22px rgba(255, 107, 107, 0.35);
+    }
+
+    .status-chip[data-state='warning'] {
+      border-color: rgba(255, 214, 107, 0.7);
+      color: var(--warning);
+      box-shadow: 0 0 18px rgba(255, 214, 107, 0.35);
+    }
+
+    footer {
+      margin-top: 2.4rem;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(233, 250, 255, 0.6);
+    }
+
+    footer strong {
+      color: rgba(142, 250, 255, 0.95);
+    }
+
+    @media (max-width: 900px) {
+      .hud {
+        margin: 1.5rem;
+      }
+
+      .member {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .bars {
+        order: 3;
+      }
+
+      .status-chip {
+        justify-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hud">
+    <header>
+      <span id="fireteam">Fireteam Orion</span>
+      <span id="mission">Operation: Silent Thunder</span>
+    </header>
+
+    <div class="squad" id="squad">
+      <!-- Dynamic members -->
+    </div>
+
+    <footer>
+      <span id="comms">Secure channel • ONI relay 07</span>
+      <span>Extraction ETA: <strong id="eta">12:45</strong></span>
+    </footer>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const squadContainer = document.getElementById('squad');
+
+    document.getElementById('fireteam').textContent = params.get('fireteam') || 'Fireteam Orion';
+    document.getElementById('mission').textContent = params.get('mission') || 'Operation: Silent Thunder';
+    document.getElementById('comms').textContent = params.get('comms') || 'Secure channel • ONI relay 07';
+    document.getElementById('eta').textContent = params.get('eta') || '12:45';
+
+    const defaultSquad = [
+      {
+        name: 'SPARTAN-II • LOCKE',
+        health: 0.92,
+        shield: 0.76,
+        status: 'engaged'
+      },
+      {
+        name: 'SPARTAN-IV • VALKYRIE',
+        health: 0.68,
+        shield: 0.52,
+        status: 'critical'
+      },
+      {
+        name: 'SPARTAN-III • ARC',
+        health: 0.81,
+        shield: 0.63,
+        status: 'resupply'
+      }
+    ];
+
+    const members = JSON.parse(params.get('members') || 'null') || defaultSquad;
+
+    const statusStates = {
+      critical: 'critical',
+      warning: 'warning'
+    };
+
+    members.forEach((member) => {
+      const article = document.createElement('article');
+      article.className = 'member';
+
+      const name = document.createElement('div');
+      name.className = 'name';
+      name.textContent = member.name;
+
+      const bars = document.createElement('div');
+      bars.className = 'bars';
+
+      const healthLabel = document.createElement('div');
+      healthLabel.className = 'bar-label';
+      healthLabel.innerHTML = '<span>Biometrics</span><span>' + Math.round(member.health * 100) + '%</span>';
+
+      const healthBar = document.createElement('div');
+      healthBar.className = 'bar';
+      healthBar.style.setProperty('--value', Math.min(Math.max(member.health, 0), 1));
+
+      const shieldLabel = document.createElement('div');
+      shieldLabel.className = 'bar-label';
+      shieldLabel.innerHTML = '<span>Shield</span><span>' + Math.round(member.shield * 100) + '%</span>';
+
+      const shieldBar = document.createElement('div');
+      shieldBar.className = 'bar';
+      shieldBar.style.setProperty('--value', Math.min(Math.max(member.shield, 0), 1));
+
+      bars.append(healthLabel, healthBar, shieldLabel, shieldBar);
+
+      const statusChip = document.createElement('div');
+      statusChip.className = 'status-chip';
+      statusChip.textContent = member.status;
+
+      const normalized = member.status.toLowerCase();
+      if (statusStates[normalized]) {
+        statusChip.dataset.state = statusStates[normalized];
+      }
+
+      article.append(name, bars, statusChip);
+      squadContainer.append(article);
+    });
+  </script>
+</body>
+</html>

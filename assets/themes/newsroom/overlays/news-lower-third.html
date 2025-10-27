@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>News Lower Third</title>
+  <style>
+    :root {
+      font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+      color-scheme: dark;
+      --blue: #1a74f2;
+      --red: #f2274c;
+      --bg: rgba(5, 10, 22, 0.92);
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(120%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      background: transparent;
+      color: #f0f3f8;
+    }
+
+    .lower-third {
+      width: min(80rem, 94vw);
+      margin-bottom: 3vh;
+      background: var(--bg);
+      border-radius: 1.2rem;
+      border: 1px solid rgba(26, 116, 242, 0.35);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+      transform: translateY(120%);
+      animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .flag {
+      background: linear-gradient(120deg, rgba(26, 116, 242, 0.9), rgba(242, 39, 76, 0.85));
+      display: grid;
+      place-items: center;
+      padding: 0 2.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .content {
+      padding: 1.2rem 2.2rem;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.4rem, 3.5vw, 2rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      color: rgba(240, 243, 248, 0.75);
+    }
+
+    .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      font-size: 0.78rem;
+      color: var(--red);
+    }
+
+    .live::before {
+      content: '';
+      width: 0.6rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 16px rgba(242, 39, 76, 0.8);
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+  <section class="lower-third">
+    <span class="flag" id="flag">Breaking</span>
+    <div class="content">
+      <span class="live" id="status">Live Update</span>
+      <h1 id="headline">Major policy announcement expected at summit</h1>
+      <p id="detail">World leaders gather to outline a new economic framework amid growing pressure.</p>
+    </div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const fields = {
+      flag: 'flag',
+      status: 'status',
+      headline: 'headline',
+      detail: 'detail'
+    };
+
+    Object.entries(fields).forEach(([param, id]) => {
+      const value = params.get(param);
+      if (value) {
+        document.getElementById(id).textContent = value;
+      }
+    });
+  </script>
+</body>
+</html>

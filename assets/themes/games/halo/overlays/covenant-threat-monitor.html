@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Covenant Threat Monitor Overlay</title>
+  <style>
+    :root {
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      color-scheme: dark;
+      --accent: #95fff6;
+      --danger: #ff5e78;
+      --warning: #ffd166;
+      --muted: rgba(222, 245, 255, 0.7);
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 0.45;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes sweep {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background: transparent;
+      color: #e8fbff;
+    }
+
+    .panel {
+      width: min(28rem, 34vw);
+      margin-right: 4vw;
+      padding: 1.5rem 1.8rem 2rem;
+      background: rgba(0, 12, 22, 0.85);
+      border-radius: 1.3rem;
+      border: 1px solid rgba(149, 255, 246, 0.28);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6);
+    }
+
+    .panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(149, 255, 246, 0.12), transparent);
+      animation: sweep 8s linear infinite;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.78rem;
+      color: rgba(232, 251, 255, 0.7);
+    }
+
+    header strong {
+      color: var(--accent);
+    }
+
+    .threat-level {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .threat-level span {
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .meter {
+      position: relative;
+      height: 0.65rem;
+      border-radius: 999px;
+      background: rgba(232, 251, 255, 0.1);
+      overflow: hidden;
+    }
+
+    .meter::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(149, 255, 246, 0.2), rgba(149, 255, 246, 0.9));
+      transform-origin: left;
+      transform: scaleX(var(--value, 0.55));
+      transition: transform 0.7s ease-out;
+    }
+
+    .contact-list {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .contact {
+      padding: 1.1rem 1.2rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(149, 255, 246, 0.18);
+      background: rgba(0, 16, 30, 0.8);
+      display: grid;
+      gap: 0.5rem;
+      position: relative;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px dashed rgba(149, 255, 246, 0.1);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .contact:hover::before {
+      opacity: 1;
+    }
+
+    .contact strong {
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+    }
+
+    .contact span {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      color: rgba(232, 251, 255, 0.72);
+      text-transform: uppercase;
+    }
+
+    .badge {
+      justify-self: start;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      letter-spacing: 0.3em;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      border: 1px solid rgba(149, 255, 246, 0.35);
+      color: var(--warning);
+    }
+
+    .badge[data-state='hostile'] {
+      border-color: rgba(255, 94, 120, 0.7);
+      color: var(--danger);
+      box-shadow: 0 0 18px rgba(255, 94, 120, 0.35);
+    }
+
+    .badge[data-state='critical'] {
+      border-color: rgba(255, 94, 120, 0.9);
+      color: var(--danger);
+      box-shadow: 0 0 24px rgba(255, 94, 120, 0.45);
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(232, 251, 255, 0.58);
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @media (max-width: 860px) {
+      body {
+        justify-content: center;
+      }
+
+      .panel {
+        margin: 0 1.5rem 2rem;
+        width: min(32rem, 92vw);
+      }
+    }
+  </style>
+</head>
+<body>
+  <aside class="panel">
+    <header>
+      <span>UNSC Sensor Uplink</span>
+      <span>Grid <strong id="grid">ECHO-07</strong></span>
+    </header>
+
+    <div class="threat-level">
+      <span>Overall threat index</span>
+      <div class="meter" id="meter" style="--value: 0.62"></div>
+    </div>
+
+    <div class="contact-list" id="contacts"></div>
+
+    <footer>
+      <span id="status">Recon drone • Active sweep</span>
+      <span id="timestamp">Timestamp: 18:42:13</span>
+    </footer>
+  </aside>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById('grid').textContent = params.get('grid') || 'ECHO-07';
+    document.getElementById('status').textContent = params.get('status') || 'Recon drone • Active sweep';
+    document.getElementById('timestamp').textContent = params.get('timestamp') || 'Timestamp: 18:42:13';
+
+    const threat = parseFloat(params.get('threat') || '0.62');
+    if (!Number.isNaN(threat)) {
+      document.getElementById('meter').style.setProperty('--value', Math.min(Math.max(threat, 0), 1));
+    }
+
+    const defaultContacts = [
+      {
+        name: 'Phantom Dropship',
+        info: 'Altitude 420m • Bearing 034°',
+        state: 'hostile'
+      },
+      {
+        name: 'Elite Strike Team',
+        info: '12 units • Energy signatures spiking',
+        state: 'critical'
+      },
+      {
+        name: 'Ghost Patrol',
+        info: 'Recon sweep • Route delta',
+        state: 'warning'
+      }
+    ];
+
+    const contacts = JSON.parse(params.get('contacts') || 'null') || defaultContacts;
+
+    const container = document.getElementById('contacts');
+    container.textContent = '';
+
+    contacts.forEach((contact) => {
+      const card = document.createElement('article');
+      card.className = 'contact';
+
+      const title = document.createElement('strong');
+      title.textContent = contact.name;
+
+      const detail = document.createElement('span');
+      detail.textContent = contact.info;
+
+      const badge = document.createElement('div');
+      badge.className = 'badge';
+      badge.textContent = contact.state;
+
+      const normalized = contact.state.toLowerCase();
+      if (['hostile', 'critical', 'warning'].includes(normalized)) {
+        badge.dataset.state = normalized;
+      }
+
+      card.append(title, detail, badge);
+      container.append(card);
+    });
+  </script>
+</body>
+</html>

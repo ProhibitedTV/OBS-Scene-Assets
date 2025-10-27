@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Summoning Circle Alert</title>
+  <style>
+    :root {
+      font-family: 'Cinzel', 'Goudy Bookletter 1911', serif;
+      color-scheme: dark;
+      --gold: #f6e9c6;
+      --crimson: #ff7b7b;
+      --violet: #a988ff;
+    }
+
+    @keyframes materialize {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+        filter: blur(8px);
+      }
+      60% {
+        opacity: 1;
+        filter: blur(0px);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes glyphGlow {
+      0%,
+      100% {
+        opacity: 0.45;
+      }
+      50% {
+        opacity: 0.95;
+      }
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .alert {
+      margin-top: 7vh;
+      width: min(52rem, 92vw);
+      background: radial-gradient(circle at 50% 0%, rgba(255, 123, 123, 0.4), rgba(10, 0, 18, 0.92));
+      border-radius: 2.2rem;
+      border: 1px solid rgba(246, 233, 198, 0.3);
+      padding: 2.4rem 2.8rem 2.8rem;
+      position: relative;
+      display: grid;
+      gap: 1.4rem;
+      transform-origin: center top;
+      animation: materialize 0.9s ease-out forwards;
+      overflow: hidden;
+    }
+
+    .alert::before {
+      content: '';
+      position: absolute;
+      inset: -45% -5% 45% -5%;
+      background: radial-gradient(circle, rgba(255, 123, 123, 0.35), transparent 70%);
+      animation: glyphGlow 4s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+
+    .alert::after {
+      content: '';
+      position: absolute;
+      inset: 1.5rem;
+      border: 1px solid rgba(246, 233, 198, 0.22);
+      border-radius: 1.7rem;
+    }
+
+    header {
+      text-transform: uppercase;
+      letter-spacing: 0.42em;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(246, 233, 198, 0.65);
+      position: relative;
+      z-index: 1;
+    }
+
+    header strong {
+      color: var(--violet);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 0 24px rgba(255, 123, 123, 0.45);
+    }
+
+    p {
+      margin: 0;
+      letter-spacing: 0.18em;
+      color: rgba(246, 233, 198, 0.75);
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta {
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-size: 0.85rem;
+      color: rgba(246, 233, 198, 0.75);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 720px) {
+      .alert {
+        margin-top: 4vh;
+        gap: 1rem;
+      }
+
+      .cta {
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="alert">
+    <header>
+      <span id="origin">Ancient Runic Beacon</span>
+      <span>Circle • <strong id="circle">Aether Sigil IV</strong></span>
+    </header>
+
+    <h1 id="title">Summoner Has Appeared!</h1>
+    <p id="detail">A legendary supporter has stepped through the veil with gifts untold.</p>
+
+    <div class="cta">
+      <span>Tribute pledged • <strong id="pledge">250 gold crowns</strong></span>
+      <span id="blessing">Blessings bestowed by the Astral Weavers</span>
+    </div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const fields = {
+      origin: 'origin',
+      circle: 'circle',
+      title: 'title',
+      detail: 'detail',
+      pledge: 'pledge',
+      blessing: 'blessing'
+    };
+
+    Object.entries(fields).forEach(([param, id]) => {
+      const value = params.get(param);
+      if (value) {
+        document.getElementById(id).textContent = value;
+      }
+    });
+  </script>
+</body>
+</html>

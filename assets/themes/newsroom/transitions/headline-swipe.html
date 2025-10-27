@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Headline Swipe Transition</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --blue: #1a74f2;
+      --red: #f2274c;
+    }
+
+    body {
+      margin: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .transition {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5, 10, 22, 0.95), rgba(5, 10, 22, 0.85));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4vw;
+      transform: translateX(-100%);
+      animation: sweep 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+      color: #f0f3f8;
+      font-family: 'Source Sans Pro', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.45em;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+    }
+
+    .transition::before,
+    .transition::after {
+      content: '';
+      flex: 1;
+      height: 100%;
+    }
+
+    .transition::before {
+      background: linear-gradient(120deg, rgba(26, 116, 242, 0.75), transparent);
+    }
+
+    .transition::after {
+      background: linear-gradient(-120deg, rgba(242, 39, 76, 0.75), transparent);
+    }
+
+    .headline {
+      position: relative;
+      padding: 1rem 2rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(240, 243, 248, 0.3);
+      background: rgba(5, 10, 22, 0.8);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.65);
+    }
+
+    @keyframes sweep {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="transition">
+    <div class="headline" id="headline">Breaking Developments</div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const text = params.get('headline');
+    if (text) {
+      document.getElementById('headline').textContent = text;
+    }
+  </script>
+</body>
+</html>

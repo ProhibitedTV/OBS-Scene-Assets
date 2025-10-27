@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Halo Drop Pod Countdown</title>
+  <style>
+    :root {
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      color-scheme: dark;
+      --bg-start: #03060d;
+      --bg-mid: #05162a;
+      --bg-end: #04070d;
+      --accent: #7df9ff;
+      --accent-strong: #22d6ff;
+      --warning: #ffee7d;
+      --grid: rgba(125, 249, 255, 0.15);
+      --glow: rgba(34, 214, 255, 0.55);
+    }
+
+    @keyframes drift {
+      from {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+      }
+      to {
+        transform: translate3d(-10%, -6%, 0) rotate(-1deg);
+      }
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 0.15;
+      }
+      60% {
+        opacity: 0.45;
+      }
+    }
+
+    @keyframes sweep {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 15% 20%, rgba(91, 236, 255, 0.12), transparent 55%),
+        radial-gradient(circle at 75% 15%, rgba(80, 250, 184, 0.25), transparent 50%),
+        linear-gradient(180deg, var(--bg-start), var(--bg-mid) 55%, var(--bg-end));
+      color: #e9faff;
+      overflow: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      inset: -30%;
+      background: radial-gradient(circle at 30% 30%, rgba(125, 249, 255, 0.1), transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(26, 143, 255, 0.1), transparent 65%);
+      filter: blur(80px);
+      animation: drift 22s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      animation-direction: alternate-reverse;
+    }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 0.25rem 0.25rem;
+      mix-blend-mode: overlay;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    main {
+      width: min(72rem, 86vw);
+      padding: 3rem 4rem;
+      border-radius: 2rem;
+      border: 1px solid rgba(125, 249, 255, 0.4);
+      background: linear-gradient(155deg, rgba(3, 15, 30, 0.82), rgba(0, 0, 0, 0.6));
+      backdrop-filter: blur(18px);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      box-shadow: 0 40px 110px rgba(0, 0, 0, 0.85);
+    }
+
+    main::before {
+      content: '';
+      position: absolute;
+      inset: 1.5rem;
+      border: 1px solid rgba(125, 249, 255, 0.3);
+      border-radius: 1.25rem;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    main::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(125, 249, 255, 0.12), transparent);
+      animation: sweep 6.5s linear infinite;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    header span {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    header span::before {
+      content: '';
+      width: 0.6rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--glow);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+
+    .countdown {
+      margin: 3rem 0;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .countdown h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      text-shadow: 0 0 40px var(--glow);
+    }
+
+    .countdown p {
+      margin: 0.75rem 0 0;
+      letter-spacing: 0.16em;
+      color: rgba(233, 250, 255, 0.7);
+    }
+
+    .timer {
+      justify-self: end;
+      background: rgba(3, 15, 30, 0.65);
+      border: 1px solid rgba(125, 249, 255, 0.5);
+      border-radius: 1.5rem;
+      padding: 1.6rem 2.2rem;
+      box-shadow: inset 0 0 36px rgba(34, 214, 255, 0.28);
+      display: grid;
+      text-align: center;
+    }
+
+    .timer .label {
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.75rem;
+      color: rgba(233, 250, 255, 0.65);
+    }
+
+    .timer .value {
+      font-size: clamp(3.2rem, 6vw, 5rem);
+      font-weight: 700;
+      letter-spacing: 0.35em;
+      text-shadow: 0 0 30px rgba(125, 249, 255, 0.75);
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.8rem;
+      color: rgba(233, 250, 255, 0.7);
+    }
+
+    footer strong {
+      color: var(--warning);
+      letter-spacing: 0.3em;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .status-bar {
+      width: clamp(12rem, 25vw, 18rem);
+      height: 0.5rem;
+      border-radius: 999px;
+      background: rgba(233, 250, 255, 0.12);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .status-bar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(34, 214, 255, 0.2), rgba(34, 214, 255, 0.95));
+      transform-origin: left;
+      transform: scaleX(var(--charge, 1));
+      transition: transform 1s ease-out;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        padding: 2.5rem;
+      }
+
+      .countdown {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .timer {
+        justify-self: center;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .status {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scanlines"></div>
+  <main>
+    <header>
+      <span id="channel">UNSC • Fireteam Orion</span>
+      <span id="location">High Orbit • Zeta Halo</span>
+    </header>
+
+    <section class="countdown">
+      <div>
+        <h1 id="title">Drop Pod Deployment</h1>
+        <p id="descriptor">Orbital insertion corridor locked • Atmospheric entry in progress</p>
+      </div>
+      <div class="timer">
+        <span class="label">Time to impact</span>
+        <span class="value" id="timer">00:05:00</span>
+      </div>
+    </section>
+
+    <footer>
+      <div class="status">
+        <span>Trajectory Integrity</span>
+        <div class="status-bar" id="integrity" style="--charge: 0.92"></div>
+      </div>
+      <div>Landing Zone: <strong id="lzs">SILVER • FOXTROT • 07</strong></div>
+    </footer>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const elements = {
+      title: document.getElementById('title'),
+      descriptor: document.getElementById('descriptor'),
+      timer: document.getElementById('timer'),
+      channel: document.getElementById('channel'),
+      location: document.getElementById('location'),
+      lzs: document.getElementById('lzs'),
+      integrity: document.getElementById('integrity')
+    };
+
+    Object.entries({
+      title: 'title',
+      descriptor: 'descriptor',
+      channel: 'channel',
+      location: 'location',
+      lzs: 'lzs'
+    }).forEach(([param, key]) => {
+      const value = params.get(param);
+      if (value) {
+        elements[key].textContent = value;
+      }
+    });
+
+    const minutes = parseInt(params.get('minutes') || '5', 10);
+    let remaining = Math.max(minutes, 0) * 60;
+
+    const integrity = parseFloat(params.get('integrity') || '0.92');
+    if (!Number.isNaN(integrity)) {
+      elements.integrity.style.setProperty('--charge', Math.min(Math.max(integrity, 0), 1));
+    }
+
+    function renderTimer() {
+      const mins = Math.floor(remaining / 60)
+        .toString()
+        .padStart(2, '0');
+      const secs = (remaining % 60).toString().padStart(2, '0');
+      elements.timer.textContent = `00:${mins}:${secs}`;
+    }
+
+    renderTimer();
+
+    const interval = setInterval(() => {
+      remaining = Math.max(remaining - 1, 0);
+      renderTimer();
+
+      if (remaining <= 0) {
+        clearInterval(interval);
+        elements.timer.textContent = '00:00:00';
+        elements.integrity.style.setProperty('--charge', 0.12);
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
