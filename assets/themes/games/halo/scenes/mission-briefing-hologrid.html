@@ -10,17 +10,17 @@
     :root {
       color-scheme: dark;
       font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
-      --halo-midnight: #020a15;
-      --halo-deep: #04162b;
+      --halo-midnight: #050f19;
+      --halo-deep: #0c1b2c;
       --halo-panel: rgba(5, 16, 27, 0.9);
       --halo-panel-soft: rgba(7, 18, 32, 0.75);
-      --halo-cyan: #9cecff;
-      --halo-cyan-strong: #50ffe8;
-      --halo-amber: #fceaa6;
-      --halo-border: rgba(156, 236, 255, 0.35);
-      --halo-grid: rgba(156, 236, 255, 0.12);
-      --halo-text: rgba(232, 247, 255, 0.88);
-      --halo-muted: rgba(232, 247, 255, 0.7);
+      --halo-cyan: #8ad9ff;
+      --halo-cyan-strong: #5ed4ff;
+      --halo-amber: #fbd66a;
+      --halo-border: rgba(138, 217, 255, 0.34);
+      --halo-grid: rgba(138, 217, 255, 0.12);
+      --halo-text: rgba(231, 245, 255, 0.88);
+      --halo-muted: rgba(231, 245, 255, 0.68);
     }
 
     @keyframes pan {
@@ -45,28 +45,66 @@
       }
     }
 
-    html,
-    body {
+    html {
       height: 100%;
       margin: 0;
       font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--halo-text);
-      background: radial-gradient(circle at 18% 22%, rgba(156, 236, 255, 0.18), transparent 55%),
-        radial-gradient(circle at 78% 82%, rgba(88, 138, 214, 0.2), transparent 58%),
+      background: radial-gradient(circle at 18% 22%, rgba(138, 217, 255, 0.18), transparent 55%),
+        radial-gradient(circle at 78% 82%, rgba(74, 112, 170, 0.2), transparent 58%),
         linear-gradient(150deg, var(--halo-midnight), var(--halo-deep));
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     body {
+      width: 1920px;
+      height: 1080px;
+      margin: 0;
+      position: relative;
       display: grid;
       place-items: center;
       padding: clamp(24px, 5vw, 72px);
       overflow: hidden;
+      background: transparent;
+    }
+
+    body::before,
+    body::after {
+      content: '';
+      position: absolute;
+      inset: -30%;
+      background: radial-gradient(circle, rgba(138, 217, 255, 0.14), transparent 60%);
+      mix-blend-mode: screen;
+      animation: drift 30s linear infinite;
+      pointer-events: none;
+    }
+
+    body::after {
+      animation-direction: reverse;
+      animation-duration: 42s;
+      opacity: 0.4;
+    }
+
+    @keyframes drift {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      50% {
+        transform: rotate(180deg) scale(1.08);
+      }
+      100% {
+        transform: rotate(360deg) scale(1);
+      }
     }
 
     .hologrid-shell {
-      width: min(96vw, 1500px);
+      width: 1600px;
+      max-width: 100%;
+      max-height: calc(1080px - clamp(24px, 5vw, 72px) * 2);
       border-radius: 32px;
       border: 1.5px solid var(--halo-border);
       background: linear-gradient(160deg, rgba(4, 18, 31, 0.92), rgba(3, 12, 22, 0.86));
