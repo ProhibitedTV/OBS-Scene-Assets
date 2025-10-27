@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Halo Combat Evolved Ending Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Barlow+Condensed:wght@500;700&display=swap');
+
+    :root {
+      color-scheme: dark;
+      --unsc-navy: #050f19;
+      --unsc-steel: #112233;
+      --forerunner-cyan: #8ad9ff;
+      --unsc-amber: #fbd66a;
+      --text: #e7f5ff;
+      --muted: rgba(231, 245, 255, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: radial-gradient(circle at 16% 22%, rgba(86, 126, 182, 0.24), transparent 60%),
+        radial-gradient(circle at 84% 82%, rgba(76, 112, 170, 0.22), transparent 60%),
+        linear-gradient(150deg, var(--unsc-navy), #03080f 72%);
+      font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
+      color: var(--text);
+      letter-spacing: 0.18em;
+      display: grid;
+      place-items: center;
+      padding: clamp(24px, 5vw, 64px);
+      overflow: hidden;
+      text-transform: uppercase;
+    }
+
+    .panel {
+      width: min(92vw, 1320px);
+      border-radius: 34px;
+      border: 2px solid rgba(138, 217, 255, 0.32);
+      padding: clamp(32px, 5vw, 72px);
+      background: rgba(7, 20, 34, 0.86);
+      box-shadow: 0 0 140px rgba(8, 24, 40, 0.85), inset 0 0 120px rgba(138, 217, 255, 0.16);
+      display: grid;
+      gap: clamp(24px, 3vw, 44px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(138, 217, 255, 0.35), transparent 55%, rgba(251, 214, 106, 0.25));
+      opacity: 0.6;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    header {
+      text-align: center;
+      display: grid;
+      gap: clamp(12px, 2.4vw, 24px);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5.6vw, 3.8rem);
+      letter-spacing: 0.32em;
+      text-shadow: 0 0 28px rgba(138, 217, 255, 0.55);
+    }
+
+    header p {
+      margin: 0 auto;
+      max-width: 760px;
+      font-size: clamp(1rem, 2.4vw, 1.22rem);
+      letter-spacing: 0.3em;
+      color: var(--muted);
+    }
+
+    .credits {
+      display: grid;
+      gap: clamp(16px, 2.4vw, 28px);
+    }
+
+    .credit-card {
+      position: relative;
+      padding: clamp(18px, 2.6vw, 28px);
+      border-radius: 18px;
+      background: linear-gradient(160deg, rgba(8, 22, 34, 0.92), rgba(5, 14, 24, 0.9));
+      border: 1px solid rgba(138, 217, 255, 0.25);
+      box-shadow: inset 0 0 26px rgba(138, 217, 255, 0.18);
+      display: grid;
+      gap: clamp(10px, 2vw, 16px);
+      text-align: center;
+    }
+
+    .credit-card span {
+      font-size: clamp(0.74rem, 1.9vw, 0.96rem);
+      color: rgba(231, 245, 255, 0.55);
+    }
+
+    .credit-card strong {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--forerunner-cyan);
+      text-shadow: 0 0 22px rgba(138, 217, 255, 0.42);
+    }
+
+    .schedule {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(16px, 2.4vw, 28px);
+    }
+
+    .schedule-card {
+      position: relative;
+      padding: clamp(16px, 2.4vw, 24px);
+      border-radius: 16px;
+      border: 1px solid rgba(251, 214, 106, 0.3);
+      background: rgba(32, 26, 10, 0.35);
+      color: var(--unsc-amber);
+      text-shadow: 0 0 18px rgba(251, 214, 106, 0.4);
+    }
+
+    .schedule-card span {
+      display: block;
+      font-size: clamp(0.72rem, 1.8vw, 0.9rem);
+      color: rgba(231, 245, 255, 0.6);
+    }
+
+    .closing-note {
+      text-align: center;
+      font-size: clamp(0.86rem, 2.1vw, 1.08rem);
+      letter-spacing: 0.26em;
+      color: rgba(231, 245, 255, 0.55);
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(16px, 2.4vw, 28px);
+      font-size: clamp(0.74rem, 1.9vw, 0.95rem);
+      color: rgba(231, 245, 255, 0.5);
+    }
+
+    footer span {
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(138, 217, 255, 0.2);
+      background: rgba(12, 24, 36, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <section class="panel" aria-labelledby="thanks-heading">
+    <header>
+      <h1 id="thanks-heading">Mission Complete // Thank You</h1>
+      <p>Alpha Halo operations concluded. Spartan returning to the Pillar of Autumn for debrief.</p>
+    </header>
+
+    <section class="credits" aria-label="Mission supporters">
+      <article class="credit-card">
+        <span>TACTICAL SUPPORT</span>
+        <strong>Chat Squad // Always Faithful</strong>
+      </article>
+      <article class="credit-card">
+        <span>INTEL RELAY</span>
+        <strong>Orbital Drop Subscribers</strong>
+      </article>
+      <article class="credit-card">
+        <span>FIELD LOGISTICS</span>
+        <strong>Mjolnir Crew &amp; Moderators</strong>
+      </article>
+    </section>
+
+    <section class="schedule" aria-label="Upcoming deployments">
+      <article class="schedule-card">
+        Next Operation
+        <span>Revisiting Silent Cartographer // 1900 Zulu</span>
+      </article>
+      <article class="schedule-card">
+        Future Recon
+        <span>Library Expedition // TBD</span>
+      </article>
+      <article class="schedule-card">
+        Debrief &amp; Q&amp;A
+        <span>UNSC Command Channel // 2100 Zulu</span>
+      </article>
+    </section>
+
+    <p class="closing-note">Report to cryo if you're continuing the fight. See you planetside, Spartan.</p>
+
+    <footer>
+      <span>Pillar of Autumn</span>
+      <span>Cortana Signing Off</span>
+      <span>Combat Evolved // Installation 04</span>
+    </footer>
+  </section>
+</body>
+</html>

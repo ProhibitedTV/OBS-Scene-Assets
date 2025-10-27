@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Halo Combat Evolved Start Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Barlow+Condensed:wght@500;700&display=swap');
+
+    :root {
+      color-scheme: dark;
+      --unsc-navy: #050f19;
+      --unsc-steel: #0f2130;
+      --unsc-teal: #8cd8ff;
+      --unsc-amber: #fbd66a;
+      --covenant-violet: rgba(86, 66, 164, 0.65);
+      --text: #ecf7ff;
+      --muted: rgba(236, 247, 255, 0.62);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(80, 123, 181, 0.28), transparent 55%),
+        radial-gradient(circle at 85% 80%, rgba(60, 98, 156, 0.24), transparent 60%),
+        linear-gradient(140deg, var(--unsc-navy), #03080f 72%);
+      font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
+      letter-spacing: 0.16em;
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: clamp(24px, 5vw, 64px);
+      overflow: hidden;
+      text-transform: uppercase;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+          180deg,
+          rgba(140, 216, 255, 0.08) 0,
+          rgba(140, 216, 255, 0.08) 1px,
+          transparent 1px,
+          transparent 5px
+        ),
+        radial-gradient(circle at 10% 12%, rgba(140, 216, 255, 0.08), transparent 38%);
+      opacity: 0.18;
+      mix-blend-mode: screen;
+      pointer-events: none;
+      animation: scan 14s linear infinite;
+    }
+
+    main {
+      width: min(94vw, 1320px);
+      border-radius: 34px;
+      border: 2px solid rgba(140, 216, 255, 0.32);
+      padding: clamp(32px, 5vw, 72px);
+      background: rgba(6, 18, 30, 0.85);
+      box-shadow: 0 0 140px rgba(8, 28, 46, 0.85), inset 0 0 120px rgba(140, 216, 255, 0.16);
+      display: grid;
+      gap: clamp(28px, 4vw, 54px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    main::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(140, 216, 255, 0.35), transparent 55%, rgba(251, 214, 106, 0.25));
+      mix-blend-mode: screen;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    header {
+      display: grid;
+      gap: clamp(12px, 2vw, 24px);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      letter-spacing: 0.32em;
+      text-shadow: 0 0 28px rgba(140, 216, 255, 0.65);
+    }
+
+    .tagline {
+      margin: 0 auto;
+      max-width: 720px;
+      font-size: clamp(1rem, 2.2vw, 1.3rem);
+      letter-spacing: 0.28em;
+      color: var(--muted);
+    }
+
+    .deployment-status {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: clamp(18px, 2.4vw, 32px);
+    }
+
+    .status-card {
+      position: relative;
+      padding: clamp(18px, 2.4vw, 28px);
+      border-radius: 18px;
+      background: linear-gradient(150deg, rgba(7, 20, 34, 0.92), rgba(5, 14, 25, 0.92));
+      border: 1px solid rgba(140, 216, 255, 0.28);
+      box-shadow: inset 0 0 24px rgba(140, 216, 255, 0.22);
+      display: grid;
+      gap: clamp(12px, 2vw, 18px);
+      text-align: center;
+    }
+
+    .status-card span {
+      font-size: clamp(0.72rem, 1.8vw, 0.92rem);
+      letter-spacing: 0.32em;
+      color: rgba(236, 247, 255, 0.55);
+    }
+
+    .status-card strong {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--unsc-teal);
+      text-shadow: 0 0 22px rgba(140, 216, 255, 0.45);
+    }
+
+    .countdown {
+      display: grid;
+      gap: clamp(16px, 2.4vw, 28px);
+      justify-items: center;
+    }
+
+    .counter {
+      display: flex;
+      gap: clamp(12px, 2vw, 18px);
+      font-size: clamp(1.8rem, 4.5vw, 3.2rem);
+      font-family: 'Rajdhani', 'Barlow Condensed', sans-serif;
+      letter-spacing: 0.4em;
+      color: var(--unsc-amber);
+      text-shadow: 0 0 28px rgba(251, 214, 106, 0.5);
+    }
+
+    .hint {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      letter-spacing: 0.24em;
+      color: rgba(236, 247, 255, 0.55);
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(16px, 2.4vw, 28px);
+      font-size: clamp(0.7rem, 1.8vw, 0.92rem);
+      color: rgba(236, 247, 255, 0.5);
+    }
+
+    footer span {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(14, 28, 44, 0.7);
+      border: 1px solid rgba(140, 216, 255, 0.2);
+    }
+
+    @keyframes scan {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-10%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Mission Briefing: Sierra Stream</h1>
+      <p class="tagline">UNSC Frigate Pillar of Autumn // Installation 04 Deployment Readiness</p>
+    </header>
+
+    <section class="deployment-status" aria-label="Deployment readiness">
+      <article class="status-card">
+        <span>FIRETEAM</span>
+        <strong>BLUE TEAM // GREENLIGHT</strong>
+      </article>
+      <article class="status-card">
+        <span>COMMS RELAY</span>
+        <strong>LINKED // ENCRYPTION XI</strong>
+      </article>
+      <article class="status-card">
+        <span>NAV SOLUTION</span>
+        <strong>SET // RING APPROACH</strong>
+      </article>
+    </section>
+
+    <section class="countdown" aria-label="Launch countdown">
+      <div class="counter">00 : 09 : 47</div>
+      <p class="hint">Stand by for drop. Secure gear and prepare for surface insertion.</p>
+    </section>
+
+    <footer>
+      <span>Pillar of Autumn</span>
+      <span>Cortana Uplink Stable</span>
+      <span>Combat Evolved // CE</span>
+    </footer>
+  </main>
+</body>
+</html>
