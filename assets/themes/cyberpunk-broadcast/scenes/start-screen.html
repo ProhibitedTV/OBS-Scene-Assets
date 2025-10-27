@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyberpunk Start Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap');
+
+    :root {
+      color-scheme: dark;
+      --bg-1: #030011;
+      --bg-2: #0c012a;
+      --accent-cyan: #00fff7;
+      --accent-magenta: #ff00aa;
+      --text: #eefbff;
+      --muted: rgba(238, 251, 255, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(0, 255, 247, 0.15), transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(255, 0, 170, 0.18), transparent 55%),
+        linear-gradient(130deg, var(--bg-1), var(--bg-2));
+      font-family: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
+      color: var(--text);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      display: grid;
+      place-items: center;
+      padding: clamp(16px, 4vw, 48px);
+    }
+
+    main {
+      width: min(92vw, 1380px);
+      border: 2px solid rgba(0, 255, 247, 0.4);
+      border-radius: 28px;
+      padding: clamp(32px, 5vw, 72px);
+      background: rgba(5, 2, 19, 0.72);
+      box-shadow: 0 0 120px rgba(0, 255, 247, 0.25), 0 0 120px rgba(255, 0, 170, 0.25);
+      display: grid;
+      gap: clamp(24px, 3vw, 48px);
+      overflow: hidden;
+    }
+
+    .headline {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(12px, 2vw, 24px);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      letter-spacing: 0.25em;
+      text-shadow: 0 0 24px rgba(0, 255, 247, 0.55);
+    }
+
+    .tagline {
+      margin: 0 auto;
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      font-size: clamp(1rem, 2.6vw, 1.35rem);
+      letter-spacing: 0.42em;
+      color: var(--muted);
+    }
+
+    .status {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: clamp(16px, 2vw, 28px);
+    }
+
+    .status-card {
+      padding: clamp(18px, 2vw, 28px);
+      border-radius: 18px;
+      border: 1px solid rgba(0, 255, 247, 0.35);
+      background: rgba(2, 0, 12, 0.65);
+      text-align: center;
+      box-shadow: inset 0 0 24px rgba(0, 255, 247, 0.18);
+    }
+
+    .status-card span {
+      display: block;
+      font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+      letter-spacing: 0.32em;
+      color: rgba(238, 251, 255, 0.58);
+      margin-bottom: clamp(12px, 1.6vw, 18px);
+    }
+
+    .status-card strong {
+      display: block;
+      font-size: clamp(1.1rem, 3vw, 1.8rem);
+      color: var(--accent-cyan);
+      text-shadow: 0 0 18px rgba(0, 255, 247, 0.45);
+    }
+
+    .ticker {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: clamp(0.85rem, 2vw, 1.05rem);
+      letter-spacing: 0.32em;
+      color: rgba(238, 251, 255, 0.7);
+    }
+
+    .ticker::before,
+    .ticker::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 247, 0.6), transparent);
+    }
+
+    .cta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(16px, 2vw, 28px);
+    }
+
+    .cta a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 14px 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 0, 170, 0.45);
+      box-shadow: 0 0 26px rgba(255, 0, 170, 0.3);
+      font-size: clamp(0.82rem, 2vw, 1.05rem);
+      letter-spacing: 0.3em;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta a:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 30px rgba(0, 255, 247, 0.45);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="headline">
+      <h1>Stream Starting Soon</h1>
+      <p class="tagline">calibrating neural uplink</p>
+    </section>
+    <section class="status" aria-label="Channel Status">
+      <article class="status-card">
+        <span>Next Event</span>
+        <strong>Going Live in 05:00</strong>
+      </article>
+      <article class="status-card">
+        <span>Featuring</span>
+        <strong>The Neon Syndicate</strong>
+      </article>
+      <article class="status-card">
+        <span>Now Playing</span>
+        <strong>Synthwave Signal</strong>
+      </article>
+    </section>
+    <p class="ticker">syncing overlays &bull; booting audio grid &bull; pinging control room</p>
+    <nav class="cta" aria-label="Social Links">
+      <a href="#">/neonrunner</a>
+      <a href="#">@neonrunner</a>
+      <a href="#">discord.gg/neonrunner</a>
+    </nav>
+  </main>
+</body>
+</html>

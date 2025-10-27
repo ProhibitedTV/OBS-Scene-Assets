@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyberpunk End Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap');
+
+    :root {
+      color-scheme: dark;
+      --bg-1: #02000f;
+      --bg-2: #150033;
+      --accent-cyan: #00fff7;
+      --accent-magenta: #ff00aa;
+      --text: #effbff;
+      --muted: rgba(239, 251, 255, 0.65);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
+      color: var(--text);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: radial-gradient(circle at 18% 22%, rgba(0, 255, 247, 0.2), transparent 55%),
+        radial-gradient(circle at 78% 70%, rgba(255, 0, 170, 0.22), transparent 60%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      display: grid;
+      place-items: center;
+      padding: clamp(16px, 4vw, 48px);
+    }
+
+    main {
+      width: min(92vw, 1320px);
+      border-radius: 30px;
+      border: 2px solid rgba(0, 255, 247, 0.4);
+      padding: clamp(32px, 5vw, 64px);
+      background: rgba(6, 2, 18, 0.76);
+      box-shadow: 0 0 120px rgba(0, 255, 247, 0.25), 0 0 120px rgba(255, 0, 170, 0.25);
+      display: grid;
+      gap: clamp(24px, 3vw, 48px);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    main::before,
+    main::after {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border-radius: 24px;
+      border: 1px dashed rgba(0, 255, 247, 0.32);
+      animation: rotate 18s linear infinite;
+      pointer-events: none;
+    }
+
+    main::after {
+      inset: 36px;
+      border-style: solid;
+      border-color: rgba(255, 0, 170, 0.28);
+      animation-duration: 26s;
+    }
+
+    main {
+      position: relative;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.1rem);
+      text-shadow: 0 0 26px rgba(0, 255, 247, 0.45);
+    }
+
+    .summary {
+      margin: 0 auto;
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      font-size: clamp(1rem, 2.4vw, 1.3rem);
+      color: var(--muted);
+      letter-spacing: 0.32em;
+      max-width: 720px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: clamp(16px, 2.4vw, 32px);
+    }
+
+    .stat-card {
+      padding: clamp(18px, 2vw, 24px);
+      border-radius: 18px;
+      background: rgba(3, 0, 12, 0.7);
+      border: 1px solid rgba(255, 0, 170, 0.35);
+      box-shadow: inset 0 0 26px rgba(255, 0, 170, 0.18);
+    }
+
+    .stat-card span {
+      display: block;
+      font-size: clamp(0.78rem, 1.8vw, 0.98rem);
+      color: rgba(239, 251, 255, 0.55);
+      margin-bottom: clamp(10px, 1.6vw, 16px);
+    }
+
+    .stat-card strong {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--accent-cyan);
+    }
+
+    .cta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: clamp(16px, 2vw, 28px);
+    }
+
+    .cta a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 14px 30px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 255, 247, 0.45);
+      box-shadow: 0 0 24px rgba(0, 255, 247, 0.3);
+      font-size: clamp(0.82rem, 2vw, 1.05rem);
+      letter-spacing: 0.3em;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .cta a:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 32px rgba(255, 0, 170, 0.4);
+    }
+
+    footer {
+      font-size: clamp(0.78rem, 2vw, 1rem);
+      color: rgba(239, 251, 255, 0.6);
+      letter-spacing: 0.26em;
+    }
+
+    footer strong {
+      color: var(--accent-magenta);
+    }
+
+    @keyframes rotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Stream Complete</h1>
+    <p class="summary">thanks for diving into the neon grid &bull; next operation launches tomorrow at 19:00 gmt</p>
+    <section class="stats" aria-label="Stream Stats">
+      <article class="stat-card">
+        <span>New Followers</span>
+        <strong>128</strong>
+      </article>
+      <article class="stat-card">
+        <span>Top Supporter</span>
+        <strong>NovaPrime</strong>
+      </article>
+      <article class="stat-card">
+        <span>Mission Progress</span>
+        <strong>87%</strong>
+      </article>
+    </section>
+    <nav class="cta" aria-label="Next Actions">
+      <a href="#">join the discord</a>
+      <a href="#">watch the vod</a>
+      <a href="#">follow on socials</a>
+    </nav>
+    <footer>powered by <strong>the neon syndicate</strong> &bull; stay sharp &bull; stay luminous</footer>
+  </main>
+</body>
+</html>

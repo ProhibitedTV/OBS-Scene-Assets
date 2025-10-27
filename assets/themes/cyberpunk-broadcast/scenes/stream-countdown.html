@@ -159,11 +159,53 @@
       <span></span>
       <span></span>
     </div>
-    <div class="timer">
+    <div class="timer" aria-live="polite">
       <p>Stream Begins In</p>
-      <h1>04:59</h1>
+      <h1>05:00</h1>
       <div class="ticker"><span>Stay Connected</span></div>
     </div>
   </section>
+  <script>
+    (function () {
+      const countdown = document.querySelector('.countdown');
+      const timerText = countdown?.querySelector('h1');
+      const statusText = countdown?.querySelector('.timer p');
+
+      if (!countdown || !timerText) return;
+
+      const durationAttr = countdown.getAttribute('data-duration');
+      const fallbackSeconds = 5 * 60; // default to five minutes
+      const totalSeconds = Number.parseInt(durationAttr ?? '', 10);
+      let remaining = Number.isFinite(totalSeconds) && totalSeconds > 0 ? totalSeconds : fallbackSeconds;
+
+      const formatTime = (seconds) => {
+        const mins = Math.floor(seconds / 60)
+          .toString()
+          .padStart(2, '0');
+        const secs = Math.floor(seconds % 60)
+          .toString()
+          .padStart(2, '0');
+        return `${mins}:${secs}`;
+      };
+
+      timerText.textContent = formatTime(remaining);
+
+      const tick = () => {
+        remaining -= 1;
+        if (remaining <= 0) {
+          timerText.textContent = '00:00';
+          if (statusText) {
+            statusText.textContent = 'Stream Starting';
+          }
+          clearInterval(intervalId);
+          return;
+        }
+
+        timerText.textContent = formatTime(remaining);
+      };
+
+      const intervalId = window.setInterval(tick, 1000);
+    })();
+  </script>
 </body>
 </html>

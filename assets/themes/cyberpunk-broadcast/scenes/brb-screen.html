@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cyberpunk BRB Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap');
+
+    :root {
+      color-scheme: dark;
+      --bg-1: #050017;
+      --bg-2: #13002e;
+      --accent-cyan: #00fff7;
+      --accent-magenta: #ff00aa;
+      --text: #f0fbff;
+      --muted: rgba(240, 251, 255, 0.7);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at 15% 25%, rgba(0, 255, 247, 0.22), transparent 55%),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 170, 0.28), transparent 60%),
+        linear-gradient(140deg, var(--bg-1), var(--bg-2));
+      color: var(--text);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      overflow: hidden;
+    }
+
+    main {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: clamp(32px, 5vw, 64px);
+    }
+
+    .panel {
+      position: relative;
+      width: min(90vw, 1360px);
+      border-radius: 32px;
+      padding: clamp(36px, 5vw, 72px);
+      background: rgba(8, 3, 24, 0.78);
+      border: 2px solid rgba(0, 255, 247, 0.4);
+      box-shadow: 0 0 120px rgba(0, 255, 247, 0.22), 0 0 120px rgba(255, 0, 170, 0.24);
+      display: grid;
+      gap: clamp(24px, 4vw, 48px);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .panel::before,
+    .panel::after {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border-radius: 24px;
+      border: 1px dashed rgba(0, 255, 247, 0.35);
+      opacity: 0.8;
+      animation: sweep 16s linear infinite;
+    }
+
+    .panel::after {
+      inset: 32px;
+      border-style: solid;
+      border-color: rgba(255, 0, 170, 0.32);
+      animation-duration: 22s;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      text-shadow: 0 0 24px rgba(0, 255, 247, 0.5);
+    }
+
+    .message {
+      margin: 0 auto;
+      font-family: 'Rajdhani', 'Segoe UI', sans-serif;
+      font-size: clamp(1rem, 2.4vw, 1.35rem);
+      color: var(--muted);
+      letter-spacing: 0.32em;
+      max-width: 640px;
+    }
+
+    .stack {
+      display: grid;
+      gap: clamp(16px, 2vw, 32px);
+    }
+
+    .stack .row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(18px, 3vw, 36px);
+      flex-wrap: wrap;
+    }
+
+    .card {
+      min-width: 200px;
+      padding: clamp(16px, 2vw, 24px);
+      border-radius: 16px;
+      background: rgba(4, 0, 16, 0.7);
+      border: 1px solid rgba(255, 0, 170, 0.35);
+      box-shadow: inset 0 0 28px rgba(255, 0, 170, 0.18);
+    }
+
+    .card span {
+      display: block;
+      font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+      color: rgba(240, 251, 255, 0.55);
+      margin-bottom: clamp(10px, 1.4vw, 16px);
+    }
+
+    .card strong {
+      font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+      color: var(--accent-cyan);
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      gap: clamp(18px, 2.4vw, 36px);
+      flex-wrap: wrap;
+      font-size: clamp(0.82rem, 2vw, 1.05rem);
+      color: rgba(240, 251, 255, 0.7);
+    }
+
+    footer span {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    footer span::before {
+      content: '';
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent-magenta), var(--accent-cyan));
+      box-shadow: 0 0 14px rgba(0, 255, 247, 0.4);
+    }
+
+    @keyframes sweep {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="panel">
+      <h1>Be Right Back</h1>
+      <p class="message">reloading supplies &bull; patching cybernetic implants &bull; recalibrating sound field</p>
+      <div class="stack">
+        <div class="row" aria-label="Return Status">
+          <article class="card">
+            <span>Estimated Return</span>
+            <strong>00:05:00</strong>
+          </article>
+          <article class="card">
+            <span>Now Playing</span>
+            <strong>Night Drive</strong>
+          </article>
+          <article class="card">
+            <span>Chat Command</span>
+            <strong>!status</strong>
+          </article>
+        </div>
+      </div>
+      <footer>
+        <span>@neonrunner</span>
+        <span>/neonrunner</span>
+        <span>discord.gg/neonrunner</span>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>
