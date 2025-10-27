@@ -4,39 +4,27 @@
   <meta charset="UTF-8" />
   <title>Halo Combat Evolved Live Screen</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../halo-theme.css" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Barlow+Condensed:wght@500;700&display=swap');
-
     :root {
-      color-scheme: dark;
-      --unsc-navy: #06111c;
-      --unsc-slate: #122435;
+      --halo-background: radial-gradient(circle at 22% 18%, rgba(90, 132, 186, 0.25), transparent 60%),
+        radial-gradient(circle at 80% 78%, rgba(74, 108, 170, 0.22), transparent 65%),
+        linear-gradient(150deg, var(--halo-midnight), #03070d 75%);
+      --halo-shell-background: rgba(7, 21, 34, 0.88);
+      --halo-shell-shadow: 0 0 140px rgba(10, 24, 38, 0.85), inset 0 0 120px rgba(138, 217, 255, 0.18);
+      --halo-border-strong: rgba(138, 217, 255, 0.35);
+      --halo-border-soft: rgba(138, 217, 255, 0.2);
+      --text: #e9f7ff;
+      --muted: rgba(233, 247, 255, 0.6);
       --forerunner-cyan: #8ad9ff;
       --unsc-amber: #fbd66a;
       --covenant-violet: rgba(119, 94, 214, 0.55);
-      --text: #e9f7ff;
-      --muted: rgba(233, 247, 255, 0.6);
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      background: radial-gradient(circle at 22% 18%, rgba(90, 132, 186, 0.25), transparent 60%),
-        radial-gradient(circle at 80% 78%, rgba(74, 108, 170, 0.22), transparent 65%),
-        linear-gradient(150deg, var(--unsc-navy), #03070d 75%);
-      font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
+    body.halo-body {
       color: var(--text);
       letter-spacing: 0.16em;
-      display: grid;
-      place-items: center;
       padding: clamp(22px, 5vw, 62px);
-      overflow: hidden;
-      text-transform: uppercase;
     }
 
     .hud-frame {
@@ -218,8 +206,8 @@
     }
   </style>
 </head>
-<body>
-  <main class="hud-frame">
+<body class="halo-body">
+  <main class="halo-shell hud-frame">
     <header>
       <div class="identity">
         <h1>Alpha Halo // Live Operations</h1>
