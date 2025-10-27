@@ -30,11 +30,31 @@
         linear-gradient(130deg, var(--bg-1), var(--bg-2));
       font-family: 'Orbitron', 'Rajdhani', 'Segoe UI', sans-serif;
       color: var(--text);
-      letter-spacing: 0.18em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       display: grid;
       place-items: center;
       padding: clamp(16px, 4vw, 48px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+          0deg,
+          rgba(0, 255, 247, 0.08) 0px,
+          rgba(0, 255, 247, 0.08) 1px,
+          transparent 1px,
+          transparent 4px
+        ),
+        radial-gradient(circle at 15% 10%, rgba(0, 255, 247, 0.08), transparent 45%);
+      opacity: 0.18;
+      mix-blend-mode: screen;
+      animation: scan 12s linear infinite;
     }
 
     main {
@@ -47,6 +67,21 @@
       display: grid;
       gap: clamp(24px, 3vw, 48px);
       overflow: hidden;
+      position: relative;
+      isolation: isolate;
+      animation: glowCycle 9s ease-in-out infinite;
+    }
+
+    main::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(130deg, rgba(0, 255, 247, 0.8), rgba(255, 0, 170, 0.8), rgba(0, 255, 247, 0.8));
+      filter: blur(6px);
+      opacity: 0.55;
+      z-index: -1;
+      animation: borderFlow 14s linear infinite;
     }
 
     .headline {
@@ -61,14 +96,29 @@
       font-size: clamp(2.6rem, 6vw, 4.2rem);
       letter-spacing: 0.25em;
       text-shadow: 0 0 24px rgba(0, 255, 247, 0.55);
+      position: relative;
+      animation: titlePulse 6s ease-in-out infinite;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(120px, 22vw, 240px);
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(0, 255, 247, 0.9), transparent);
+      animation: sweep 4s ease-in-out infinite;
     }
 
     .tagline {
       margin: 0 auto;
       font-family: 'Rajdhani', 'Segoe UI', sans-serif;
-      font-size: clamp(1rem, 2.6vw, 1.35rem);
-      letter-spacing: 0.42em;
-      color: var(--muted);
+      font-size: clamp(1rem, 2.4vw, 1.22rem);
+      letter-spacing: 0.26em;
+      color: rgba(238, 251, 255, 0.58);
+      animation: taglineShift 7s ease-in-out infinite;
     }
 
     .status {
@@ -84,6 +134,10 @@
       background: rgba(2, 0, 12, 0.65);
       text-align: center;
       box-shadow: inset 0 0 24px rgba(0, 255, 247, 0.18);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      animation: cardPulse 8s ease-in-out infinite;
     }
 
     .status-card span {
@@ -99,6 +153,7 @@
       font-size: clamp(1.1rem, 3vw, 1.8rem);
       color: var(--accent-cyan);
       text-shadow: 0 0 18px rgba(0, 255, 247, 0.45);
+      letter-spacing: 0.16em;
     }
 
     .ticker {
@@ -106,8 +161,9 @@
       gap: 18px;
       align-items: center;
       font-size: clamp(0.85rem, 2vw, 1.05rem);
-      letter-spacing: 0.32em;
-      color: rgba(238, 251, 255, 0.7);
+      letter-spacing: 0.22em;
+      color: rgba(238, 251, 255, 0.72);
+      animation: tickerDrift 16s linear infinite;
     }
 
     .ticker::before,
@@ -134,6 +190,8 @@
       box-shadow: 0 0 26px rgba(255, 0, 170, 0.3);
       font-size: clamp(0.82rem, 2vw, 1.05rem);
       letter-spacing: 0.3em;
+      position: relative;
+      overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
@@ -141,13 +199,133 @@
       transform: translateY(-4px);
       box-shadow: 0 0 30px rgba(0, 255, 247, 0.45);
     }
+
+    .cta a::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: skewX(-18deg);
+      transition: left 0.5s ease;
+    }
+
+    .cta a:hover::after {
+      left: 130%;
+    }
+
+    @keyframes scan {
+      0% {
+        transform: translateY(-20%);
+      }
+      50% {
+        transform: translateY(15%);
+      }
+      100% {
+        transform: translateY(-20%);
+      }
+    }
+
+    @keyframes glowCycle {
+      0%,
+      100% {
+        box-shadow: 0 0 120px rgba(0, 255, 247, 0.25), 0 0 120px rgba(255, 0, 170, 0.25);
+      }
+      50% {
+        box-shadow: 0 0 150px rgba(0, 255, 247, 0.35), 0 0 150px rgba(255, 0, 170, 0.35);
+      }
+    }
+
+    @keyframes borderFlow {
+      0% {
+        transform: rotate(0deg) scale(1.02);
+      }
+      50% {
+        transform: rotate(2deg) scale(1.05);
+      }
+      100% {
+        transform: rotate(0deg) scale(1.02);
+      }
+    }
+
+    @keyframes titlePulse {
+      0%,
+      100% {
+        text-shadow: 0 0 24px rgba(0, 255, 247, 0.55);
+      }
+      50% {
+        text-shadow: 0 0 36px rgba(255, 0, 170, 0.65);
+      }
+    }
+
+    @keyframes sweep {
+      0%,
+      100% {
+        opacity: 0.25;
+        transform: translateX(-50%) scaleX(0.6);
+      }
+      50% {
+        opacity: 0.7;
+        transform: translateX(-50%) scaleX(1.1);
+      }
+    }
+
+    @keyframes taglineShift {
+      0%,
+      100% {
+        letter-spacing: 0.26em;
+        opacity: 0.7;
+      }
+      40% {
+        letter-spacing: 0.32em;
+        opacity: 0.85;
+      }
+      70% {
+        letter-spacing: 0.22em;
+        opacity: 0.75;
+      }
+    }
+
+    @keyframes cardPulse {
+      0%,
+      100% {
+        transform: translateY(0);
+        box-shadow: inset 0 0 24px rgba(0, 255, 247, 0.18);
+      }
+      50% {
+        transform: translateY(-6px);
+        box-shadow: inset 0 0 32px rgba(255, 0, 170, 0.28);
+      }
+    }
+
+    .status-card:nth-child(2) {
+      animation-delay: 1.2s;
+    }
+
+    .status-card:nth-child(3) {
+      animation-delay: 2.4s;
+    }
+
+    @keyframes tickerDrift {
+      0% {
+        letter-spacing: 0.22em;
+      }
+      50% {
+        letter-spacing: 0.28em;
+      }
+      100% {
+        letter-spacing: 0.22em;
+      }
+    }
   </style>
 </head>
 <body>
   <main>
     <section class="headline">
       <h1>Stream Starting Soon</h1>
-      <p class="tagline">calibrating neural uplink</p>
+      <p class="tagline">signal alignment in progress</p>
     </section>
     <section class="status" aria-label="Channel Status">
       <article class="status-card">
@@ -163,7 +341,7 @@
         <strong>Synthwave Signal</strong>
       </article>
     </section>
-    <p class="ticker">syncing overlays &bull; booting audio grid &bull; pinging control room</p>
+    <p class="ticker">systems check &bull; uplink tuning &bull; neon grid warmup</p>
     <nav class="cta" aria-label="Social Links">
       <a href="#">/neonrunner</a>
       <a href="#">@neonrunner</a>
