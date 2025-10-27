@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>News Desk Main Scene</title>
+  <style>
+    :root {
+      font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+      color-scheme: dark;
+      --blue: #1a74f2;
+      --red: #f2274c;
+      --bg: radial-gradient(circle at 15% 25%, rgba(26, 116, 242, 0.2), transparent 60%),
+        radial-gradient(circle at 80% 70%, rgba(242, 39, 76, 0.18), transparent 60%),
+        linear-gradient(180deg, #05060a, #0a0f1a 55%, #05060a 100%);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      color: #f0f3f8;
+      overflow: hidden;
+    }
+
+    .scene {
+      width: min(92vw, 88rem);
+      padding: 3.2rem;
+      border-radius: 2.5rem;
+      background: rgba(5, 10, 22, 0.82);
+      border: 1px solid rgba(26, 116, 242, 0.3);
+      box-shadow: 0 40px 120px rgba(0, 0, 0, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scene::before,
+    .scene::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .scene::before {
+      inset: 2rem;
+      border: 1px solid rgba(26, 116, 242, 0.25);
+      border-radius: 2rem;
+    }
+
+    .scene::after {
+      background: linear-gradient(120deg, transparent, rgba(26, 116, 242, 0.18), transparent);
+      animation: sweep 8s linear infinite;
+      mix-blend-mode: screen;
+    }
+
+    @keyframes sweep {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      font-size: 0.78rem;
+      color: rgba(240, 243, 248, 0.7);
+    }
+
+    header strong {
+      color: var(--blue);
+    }
+
+    .content {
+      margin-top: 2.6rem;
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 2.5rem;
+    }
+
+    .anchor {
+      display: grid;
+      gap: 1.2rem;
+      align-content: start;
+    }
+
+    .anchor h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+    }
+
+    .anchor p {
+      margin: 0;
+      font-size: 1.05rem;
+      letter-spacing: 0.1em;
+      line-height: 1.6;
+      color: rgba(240, 243, 248, 0.75);
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .panel {
+      padding: 1.6rem 1.8rem;
+      border-radius: 1.4rem;
+      background: rgba(4, 8, 18, 0.88);
+      border: 1px solid rgba(26, 116, 242, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(140deg, rgba(242, 39, 76, 0.15), transparent 65%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .panel:hover::before {
+      opacity: 1;
+    }
+
+    .panel h2 {
+      margin: 0 0 0.6rem 0;
+      font-size: 1.1rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(240, 243, 248, 0.85);
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      display: grid;
+      gap: 0.55rem;
+      letter-spacing: 0.06em;
+      color: rgba(240, 243, 248, 0.75);
+    }
+
+    footer {
+      margin-top: 2.8rem;
+      display: flex;
+      justify-content: space-between;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.78rem;
+      color: rgba(240, 243, 248, 0.65);
+    }
+
+    footer strong {
+      color: var(--red);
+    }
+
+    @media (max-width: 1040px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="scene">
+    <header>
+      <span>Global Network News</span>
+      <span>Live desk • <strong id="channel">Studio 4A</strong></span>
+    </header>
+
+    <div class="content">
+      <article class="anchor">
+        <h1 id="headline">Tonight's Top Stories</h1>
+        <p id="summary">Breaking developments on the world stage with live correspondents on location.</p>
+      </article>
+      <aside class="sidebar">
+        <section class="panel">
+          <h2>Upcoming Segments</h2>
+          <ul id="segments"></ul>
+        </section>
+        <section class="panel">
+          <h2>Guest Lineup</h2>
+          <ul id="guests"></ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      <span>Producer • <strong id="producer">Jordan Ellis</strong></span>
+      <span>Next break at <strong id="break">00:45</strong></span>
+    </footer>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const fields = {
+      channel: 'channel',
+      headline: 'headline',
+      summary: 'summary',
+      producer: 'producer',
+      break: 'break'
+    };
+
+    Object.entries(fields).forEach(([param, id]) => {
+      const value = params.get(param);
+      if (value) {
+        document.getElementById(id).textContent = value;
+      }
+    });
+
+    const defaultSegments = [
+      'Global markets react to policy shift',
+      'On the ground in coastal storm zone',
+      'New technology reshaping classrooms'
+    ];
+
+    const defaultGuests = ['Dr. Amina Patel • Climate Analytics', 'Marcus Reed • Wall Street Journal', 'Elena Zhou • Techline'];
+
+    const segments = JSON.parse(params.get('segments') || 'null') || defaultSegments;
+    const guests = JSON.parse(params.get('guests') || 'null') || defaultGuests;
+
+    const segmentsList = document.getElementById('segments');
+    const guestsList = document.getElementById('guests');
+
+    segmentsList.textContent = '';
+    guestsList.textContent = '';
+
+    segments.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      segmentsList.append(li);
+    });
+
+    guests.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      guestsList.append(li);
+    });
+  </script>
+</body>
+</html>

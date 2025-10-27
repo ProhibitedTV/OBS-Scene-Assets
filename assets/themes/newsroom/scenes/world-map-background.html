@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>World Map Background</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --blue: #1a74f2;
+      --bg: linear-gradient(180deg, #02040a, #041026 65%, #02040a 100%);
+    }
+
+    @keyframes glow {
+      0%,
+      100% {
+        opacity: 0.35;
+      }
+      50% {
+        opacity: 0.75;
+      }
+    }
+
+    @keyframes pan {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-10%);
+      }
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .globe {
+      width: min(90vw, 90rem);
+      height: min(50vw, 52rem);
+      border-radius: 2.8rem;
+      background: radial-gradient(circle at 15% 30%, rgba(26, 116, 242, 0.25), transparent 55%),
+        radial-gradient(circle at 80% 70%, rgba(26, 116, 242, 0.18), transparent 60%),
+        rgba(2, 8, 18, 0.92);
+      border: 1px solid rgba(26, 116, 242, 0.28);
+      box-shadow: inset 0 0 140px rgba(0, 0, 0, 0.6), 0 45px 120px rgba(0, 0, 0, 0.75);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .globe::before {
+      content: '';
+      position: absolute;
+      inset: 2.2rem;
+      border: 1px solid rgba(26, 116, 242, 0.2);
+      border-radius: 2rem;
+    }
+
+    .map-layer,
+    .scanline {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .map-layer {
+      background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="none" stroke="%231a74f2" stroke-opacity="0.45" stroke-width="18"%3E%3Cpath d="M64 240c72 32 192 96 296 76 88-16 112-108 180-124 108-24 168 116 276 120 112 4 168-112 292-68 64 24 96 112 184 144"/%3E%3C/svg%3E')
+        center / cover;
+      animation: pan 24s linear infinite;
+      opacity: 0.5;
+    }
+
+    .map-layer::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(26, 116, 242, 0.55) 1px, transparent 1px);
+      background-size: 18px 18px;
+      mix-blend-mode: screen;
+      opacity: 0.35;
+    }
+
+    .scanline {
+      background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 0.25rem 0.25rem;
+      mix-blend-mode: overlay;
+      animation: glow 6s ease-in-out infinite;
+    }
+
+    .ticker {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 2rem;
+      height: 3.4rem;
+      background: linear-gradient(90deg, rgba(26, 116, 242, 0.6), rgba(12, 24, 48, 0.95));
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-top: 1px solid rgba(26, 116, 242, 0.4);
+      border-bottom: 1px solid rgba(26, 116, 242, 0.4);
+    }
+
+    .ticker span {
+      white-space: nowrap;
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 20s linear infinite;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="globe">
+    <div class="map-layer"></div>
+    <div class="scanline"></div>
+    <div class="ticker"><span id="ticker">Global updates streaming live • Markets • Weather • Politics • Tech • Culture • Science</span></div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const ticker = params.get('ticker');
+    if (ticker) {
+      document.getElementById('ticker').textContent = ticker;
+    }
+  </script>
+</body>
+</html>

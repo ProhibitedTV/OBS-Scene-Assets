@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Breaking News Stinger</title>
+  <style>
+    :root {
+      font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+      color-scheme: dark;
+      --blue: #1a74f2;
+      --red: #f2274c;
+      --bg: linear-gradient(135deg, rgba(26, 116, 242, 0.92), rgba(242, 39, 76, 0.92));
+    }
+
+    @keyframes enter {
+      0% {
+        transform: scale(0.8) rotateX(12deg);
+        opacity: 0;
+      }
+      60% {
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1) rotateX(0deg);
+      }
+    }
+
+    @keyframes flare {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(100%);
+      }
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      color: #f7f9ff;
+    }
+
+    .stinger {
+      width: min(60rem, 92vw);
+      padding: 2.2rem 2.6rem;
+      border-radius: 1.6rem;
+      background: var(--bg);
+      box-shadow: 0 35px 90px rgba(0, 0, 0, 0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.32em;
+      position: relative;
+      overflow: hidden;
+      transform-origin: center;
+      animation: enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .stinger::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255, 255, 255, 0.35), transparent, rgba(255, 255, 255, 0.15));
+      mix-blend-mode: screen;
+      animation: flare 1.8s linear infinite;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+    }
+
+    p {
+      margin: 0.8rem 0 0;
+      letter-spacing: 0.24em;
+      font-size: 0.9rem;
+      color: rgba(247, 249, 255, 0.75);
+    }
+  </style>
+</head>
+<body>
+  <section class="stinger">
+    <h1 id="headline">Breaking News</h1>
+    <p id="detail">Updates incoming from the GNN newsroom.</p>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const headline = params.get('headline');
+    const detail = params.get('detail');
+
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (detail) document.getElementById('detail').textContent = detail;
+  </script>
+</body>
+</html>
