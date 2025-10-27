@@ -161,9 +161,58 @@
     </div>
     <div class="timer">
       <p>Stream Begins In</p>
-      <h1>04:59</h1>
+      <h1 data-countdown-minutes="5">05:00</h1>
       <div class="ticker"><span>Stay Connected</span></div>
     </div>
   </section>
+  <script>
+    const timerElement = document.querySelector('.timer h1');
+    const finalMessage = 'Starting Soon';
+    const tickerElement = document.querySelector('.ticker span');
+
+    const padTime = (value) => value.toString().padStart(2, '0');
+
+    const initialSeconds = (() => {
+      const dataMinutes = Number.parseInt(timerElement.dataset.countdownMinutes, 10);
+      if (!Number.isNaN(dataMinutes) && dataMinutes > 0) {
+        return dataMinutes * 60;
+      }
+
+      const [minutes, seconds] = timerElement.textContent
+        .split(':')
+        .map((segment) => Number.parseInt(segment, 10))
+        .filter((segment) => !Number.isNaN(segment));
+
+      if (typeof minutes === 'number' && typeof seconds === 'number') {
+        return Math.max(minutes * 60 + seconds, 0);
+      }
+
+      return 5 * 60;
+    })();
+
+    let remainingSeconds = initialSeconds;
+
+    const updateDisplay = () => {
+      const minutes = Math.floor(remainingSeconds / 60);
+      const seconds = remainingSeconds % 60;
+      timerElement.textContent = `${padTime(minutes)}:${padTime(seconds)}`;
+    };
+
+    const countdownInterval = setInterval(() => {
+      if (remainingSeconds <= 0) {
+        clearInterval(countdownInterval);
+        timerElement.textContent = '00:00';
+        if (tickerElement) {
+          tickerElement.textContent = finalMessage;
+        }
+        return;
+      }
+
+      remainingSeconds -= 1;
+      updateDisplay();
+    }, 1000);
+
+    updateDisplay();
+  </script>
 </body>
 </html>
