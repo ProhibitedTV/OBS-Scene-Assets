@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Halo Combat Evolved Start Screen</title>
+  <title>UNSC Broadcast Relay — Starting Soon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Barlow+Condensed:wght@500;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Barlow+Condensed:wght@400;500;700&display=swap');
 
     :root {
       color-scheme: dark;
-      --unsc-navy: #050f19;
-      --unsc-steel: #0f2130;
-      --unsc-teal: #8cd8ff;
-      --unsc-amber: #fbd66a;
-      --covenant-violet: rgba(86, 66, 164, 0.65);
-      --text: #ecf7ff;
-      --muted: rgba(236, 247, 255, 0.62);
+      --unsc-deep: #02080f;
+      --unsc-blue: #0f2a3e;
+      --unsc-teal: #88d7ff;
+      --unsc-amber: #f9d76d;
+      --unsc-steel: rgba(21, 41, 60, 0.88);
+      --text-primary: #eff8ff;
+      --text-muted: rgba(239, 248, 255, 0.7);
+      --text-soft: rgba(239, 248, 255, 0.55);
+      --accent: rgba(136, 215, 255, 0.45);
     }
 
     * {
@@ -26,46 +28,53 @@
     body {
       height: 100%;
       margin: 0;
-      background: radial-gradient(circle at 20% 20%, rgba(80, 123, 181, 0.28), transparent 55%),
-        radial-gradient(circle at 85% 80%, rgba(60, 98, 156, 0.24), transparent 60%),
-        linear-gradient(140deg, var(--unsc-navy), #03080f 72%);
+      background: radial-gradient(circle at 12% 18%, rgba(88, 215, 255, 0.22), transparent 45%),
+        radial-gradient(circle at 86% 78%, rgba(26, 64, 112, 0.45), transparent 60%),
+        linear-gradient(150deg, var(--unsc-deep), #030b16 48%, #04162b 100%);
       font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
-      letter-spacing: 0.16em;
-      color: var(--text);
+      letter-spacing: 0.14em;
+      color: var(--text-primary);
       display: grid;
       place-items: center;
-      padding: clamp(24px, 5vw, 64px);
+      padding: clamp(24px, 5vw, 72px);
       overflow: hidden;
       text-transform: uppercase;
     }
 
-    body::before {
+    body::before,
+    body::after {
       content: '';
       position: fixed;
       inset: 0;
-      background: repeating-linear-gradient(
-          180deg,
-          rgba(140, 216, 255, 0.08) 0,
-          rgba(140, 216, 255, 0.08) 1px,
-          transparent 1px,
-          transparent 5px
-        ),
-        radial-gradient(circle at 10% 12%, rgba(140, 216, 255, 0.08), transparent 38%);
-      opacity: 0.18;
-      mix-blend-mode: screen;
       pointer-events: none;
-      animation: scan 14s linear infinite;
+      mix-blend-mode: screen;
+    }
+
+    body::before {
+      background: radial-gradient(circle at 15% 20%, rgba(136, 215, 255, 0.28), transparent 40%),
+        radial-gradient(circle at 80% 75%, rgba(249, 215, 109, 0.2), transparent 55%),
+        repeating-linear-gradient(90deg, rgba(136, 215, 255, 0.12) 0, rgba(136, 215, 255, 0.12) 1px, transparent 1px, transparent 12px);
+      opacity: 0.4;
+      animation: sweep 22s linear infinite;
+    }
+
+    body::after {
+      background-image: radial-gradient(circle, rgba(136, 215, 255, 0.4) 0 1px, transparent 1px);
+      background-size: 160px 160px;
+      animation: drift 48s linear infinite;
+      opacity: 0.35;
     }
 
     main {
       width: min(94vw, 1320px);
+      min-height: min(92vh, 800px);
       border-radius: 34px;
-      border: 2px solid rgba(140, 216, 255, 0.32);
+      border: 1.8px solid rgba(136, 215, 255, 0.4);
       padding: clamp(32px, 5vw, 72px);
-      background: rgba(6, 18, 30, 0.85);
-      box-shadow: 0 0 140px rgba(8, 28, 46, 0.85), inset 0 0 120px rgba(140, 216, 255, 0.16);
+      background: linear-gradient(145deg, rgba(3, 11, 19, 0.95), rgba(6, 21, 36, 0.86));
+      box-shadow: 0 0 160px rgba(9, 26, 42, 0.8), inset 0 0 140px rgba(136, 215, 255, 0.18);
       display: grid;
-      gap: clamp(28px, 4vw, 54px);
+      gap: clamp(24px, 4vw, 48px);
       position: relative;
       overflow: hidden;
     }
@@ -73,85 +82,229 @@
     main::before {
       content: '';
       position: absolute;
-      inset: -2px;
-      border-radius: inherit;
-      background: linear-gradient(135deg, rgba(140, 216, 255, 0.35), transparent 55%, rgba(251, 214, 106, 0.25));
-      mix-blend-mode: screen;
-      opacity: 0.6;
+      inset: 16px;
+      border-radius: 22px;
+      border: 1px solid rgba(136, 215, 255, 0.16);
       pointer-events: none;
+      mix-blend-mode: screen;
+      background: radial-gradient(circle at 50% 18%, rgba(249, 215, 109, 0.08), transparent 58%),
+        linear-gradient(135deg, rgba(136, 215, 255, 0.12), transparent 72%);
+      animation: pulseGlow 6s ease-in-out infinite;
+    }
+
+    .hud-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hud-lines::before,
+    .hud-lines::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(136, 215, 255, 0.15);
+      transform: scale(1.04);
+      opacity: 0.6;
+      animation: breathe 12s ease-in-out infinite;
+    }
+
+    .hud-lines::after {
+      transform: scale(1.08);
+      opacity: 0.24;
+      animation-delay: -6s;
     }
 
     header {
       display: grid;
-      gap: clamp(12px, 2vw, 24px);
+      justify-items: center;
+      gap: clamp(16px, 3vw, 28px);
       text-align: center;
+      z-index: 1;
+    }
+
+    .emblem {
+      display: grid;
+      place-items: center;
+      width: clamp(120px, 16vw, 180px);
+      aspect-ratio: 1;
+      position: relative;
+    }
+
+    .emblem svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 24px rgba(136, 215, 255, 0.45));
+      animation: hover 10s ease-in-out infinite;
+    }
+
+    .halo-ring {
+      position: absolute;
+      inset: -18%;
+      border-radius: 999px;
+      border: 1.4px dashed rgba(136, 215, 255, 0.36);
+      animation: orbit 26s linear infinite;
+      filter: drop-shadow(0 0 18px rgba(136, 215, 255, 0.35));
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.6rem, 6vw, 4.2rem);
-      letter-spacing: 0.32em;
-      text-shadow: 0 0 28px rgba(140, 216, 255, 0.65);
+      font-size: clamp(1.3rem, 3.6vw, 2rem);
+      color: var(--text-muted);
+      letter-spacing: 0.42em;
+    }
+
+    .headline {
+      font-size: clamp(2.8rem, 7vw, 4.8rem);
+      margin: 0;
+      color: var(--unsc-teal);
+      letter-spacing: 0.6em;
+      text-shadow: 0 0 34px rgba(136, 215, 255, 0.68);
+      animation: shimmer 7s ease-in-out infinite;
     }
 
     .tagline {
-      margin: 0 auto;
-      max-width: 720px;
+      margin: 0;
+      max-width: 740px;
       font-size: clamp(1rem, 2.2vw, 1.3rem);
+      letter-spacing: 0.32em;
+      color: var(--text-soft);
+    }
+
+    .countdown {
+      display: grid;
+      gap: clamp(12px, 2.6vw, 22px);
+      justify-items: center;
+      z-index: 1;
+    }
+
+    .counter {
+      display: flex;
+      gap: clamp(14px, 3vw, 28px);
+      font-family: 'Rajdhani', 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      color: var(--unsc-amber);
+      text-shadow: 0 0 26px rgba(249, 215, 109, 0.42);
+    }
+
+    .counter span {
+      position: relative;
+      padding: 18px 24px;
+      border-radius: 18px;
+      background: linear-gradient(160deg, rgba(249, 215, 109, 0.15), rgba(249, 215, 109, 0.06));
+      border: 1px solid rgba(249, 215, 109, 0.35);
+      min-width: clamp(92px, 12vw, 130px);
+      text-align: center;
+      letter-spacing: 0.38em;
+      animation: flicker 5s ease-in-out infinite;
+    }
+
+    .counter span::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(0.68rem, 1.8vw, 0.82rem);
+      letter-spacing: 0.24em;
+      color: var(--text-soft);
+    }
+
+    .hint {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
       letter-spacing: 0.28em;
-      color: var(--muted);
+      color: var(--text-soft);
+      text-align: center;
     }
 
     .deployment-status {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: clamp(18px, 2.4vw, 32px);
+      gap: clamp(18px, 2.6vw, 32px);
+      z-index: 1;
     }
 
     .status-card {
       position: relative;
-      padding: clamp(18px, 2.4vw, 28px);
+      padding: clamp(18px, 2.4vw, 30px);
       border-radius: 18px;
-      background: linear-gradient(150deg, rgba(7, 20, 34, 0.92), rgba(5, 14, 25, 0.92));
-      border: 1px solid rgba(140, 216, 255, 0.28);
-      box-shadow: inset 0 0 24px rgba(140, 216, 255, 0.22);
+      background: linear-gradient(150deg, rgba(7, 20, 34, 0.92), rgba(5, 14, 25, 0.88));
+      border: 1px solid rgba(136, 215, 255, 0.28);
+      box-shadow: inset 0 0 36px rgba(136, 215, 255, 0.18);
       display: grid;
       gap: clamp(12px, 2vw, 18px);
       text-align: center;
+      overflow: hidden;
+      animation: float 14s ease-in-out infinite;
+    }
+
+    .status-card:nth-child(2) {
+      animation-delay: -7s;
+    }
+
+    .status-card:nth-child(3) {
+      animation-delay: -3s;
+    }
+
+    .status-card::before {
+      content: '';
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle, rgba(136, 215, 255, 0.24), transparent 60%);
+      opacity: 0;
+      animation: pulse 8s infinite;
     }
 
     .status-card span {
-      font-size: clamp(0.72rem, 1.8vw, 0.92rem);
-      letter-spacing: 0.32em;
-      color: rgba(236, 247, 255, 0.55);
+      font-size: clamp(0.72rem, 1.9vw, 0.92rem);
+      letter-spacing: 0.34em;
+      color: var(--text-soft);
     }
 
     .status-card strong {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-size: clamp(1.1rem, 2.8vw, 1.8rem);
       color: var(--unsc-teal);
-      text-shadow: 0 0 22px rgba(140, 216, 255, 0.45);
+      text-shadow: 0 0 22px rgba(136, 215, 255, 0.45);
     }
 
-    .countdown {
+    .telemetry {
       display: grid;
-      gap: clamp(16px, 2.4vw, 28px);
-      justify-items: center;
+      gap: clamp(12px, 2vw, 22px);
+      z-index: 1;
     }
 
-    .counter {
-      display: flex;
-      gap: clamp(12px, 2vw, 18px);
-      font-size: clamp(1.8rem, 4.5vw, 3.2rem);
-      font-family: 'Rajdhani', 'Barlow Condensed', sans-serif;
-      letter-spacing: 0.4em;
-      color: var(--unsc-amber);
-      text-shadow: 0 0 28px rgba(251, 214, 106, 0.5);
+    .telemetry h2 {
+      margin: 0;
+      font-size: clamp(1rem, 2.4vw, 1.4rem);
+      letter-spacing: 0.36em;
+      color: var(--text-muted);
     }
 
-    .hint {
-      font-size: clamp(0.9rem, 2vw, 1.1rem);
-      letter-spacing: 0.24em;
-      color: rgba(236, 247, 255, 0.55);
+    .telemetry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(12px, 2vw, 22px);
+    }
+
+    .telemetry-item {
+      padding: clamp(12px, 1.6vw, 18px);
+      border-radius: 14px;
+      background: rgba(8, 20, 32, 0.78);
+      border: 1px solid rgba(136, 215, 255, 0.18);
+      display: grid;
+      gap: 6px;
+    }
+
+    .telemetry-item span {
+      font-size: clamp(0.66rem, 1.6vw, 0.82rem);
+      color: var(--text-soft);
+    }
+
+    .telemetry-item strong {
+      font-size: clamp(0.92rem, 2.2vw, 1.26rem);
+      color: var(--text-primary);
+      letter-spacing: 0.22em;
     }
 
     footer {
@@ -159,58 +312,246 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: clamp(16px, 2.4vw, 28px);
-      font-size: clamp(0.7rem, 1.8vw, 0.92rem);
-      color: rgba(236, 247, 255, 0.5);
+      font-size: clamp(0.68rem, 1.8vw, 0.9rem);
+      color: var(--text-soft);
+      z-index: 1;
     }
 
     footer span {
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(14, 28, 44, 0.7);
-      border: 1px solid rgba(140, 216, 255, 0.2);
+      background: rgba(10, 28, 46, 0.72);
+      border: 1px solid rgba(136, 215, 255, 0.24);
+      letter-spacing: 0.26em;
     }
 
-    @keyframes scan {
+    @keyframes sweep {
       from {
         transform: translateY(0);
       }
       to {
-        transform: translateY(-10%);
+        transform: translateY(-12%);
+      }
+    }
+
+    @keyframes drift {
+      from {
+        transform: rotate(0deg) scale(1);
+      }
+      to {
+        transform: rotate(360deg) scale(1.06);
+      }
+    }
+
+    @keyframes pulseGlow {
+      0%,
+      100% {
+        opacity: 0.45;
+      }
+      50% {
+        opacity: 0.7;
+      }
+    }
+
+    @keyframes breathe {
+      0%,
+      100% {
+        opacity: 0.32;
+      }
+      50% {
+        opacity: 0.12;
+      }
+    }
+
+    @keyframes hover {
+      0%,
+      100% {
+        transform: translateY(-2px);
+      }
+      50% {
+        transform: translateY(6px);
+      }
+    }
+
+    @keyframes orbit {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes shimmer {
+      0%,
+      100% {
+        text-shadow: 0 0 34px rgba(136, 215, 255, 0.68);
+      }
+      45% {
+        text-shadow: 0 0 46px rgba(249, 215, 109, 0.8);
+      }
+      65% {
+        text-shadow: 0 0 30px rgba(136, 215, 255, 0.52);
+      }
+    }
+
+    @keyframes flicker {
+      0%,
+      18%,
+      22%,
+      25%,
+      54%,
+      58%,
+      100% {
+        opacity: 1;
+      }
+      20%,
+      56% {
+        opacity: 0.5;
+      }
+      24% {
+        opacity: 0.78;
+      }
+    }
+
+    @keyframes float {
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      35% {
+        opacity: 0.22;
+      }
+      70% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulseTrail {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(200%);
+      }
+    }
+
+    @keyframes hoverLine {
+      0%,
+      100% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .counter span {
+        min-width: 78px;
+        letter-spacing: 0.22em;
+      }
+
+      .headline {
+        letter-spacing: 0.44em;
+      }
+
+      footer span {
+        letter-spacing: 0.18em;
       }
     }
   </style>
 </head>
 <body>
   <main>
+    <div class="hud-lines" aria-hidden="true"></div>
+
     <header>
-      <h1>Mission Briefing: Sierra Stream</h1>
-      <p class="tagline">UNSC Frigate Pillar of Autumn // Installation 04 Deployment Readiness</p>
+      <div class="emblem" aria-hidden="true">
+        <div class="halo-ring"></div>
+        <svg viewBox="0 0 160 160" role="img" aria-label="UNSC Emblem">
+          <defs>
+            <linearGradient id="wing" x1="0%" x2="100%" y1="0%" y2="100%">
+              <stop offset="0%" stop-color="#8cd8ff" />
+              <stop offset="100%" stop-color="#286089" />
+            </linearGradient>
+            <linearGradient id="shield" x1="0%" x2="0%" y1="0%" y2="100%">
+              <stop offset="0%" stop-color="#103047" />
+              <stop offset="100%" stop-color="#0a1b29" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#wing)" d="M40 30 L15 60 L30 64 L16 90 L42 84 L34 116 L64 90 L78 120 L82 74 Z" opacity="0.9" />
+          <path fill="url(#wing)" d="M120 30 L145 60 L130 64 L144 90 L118 84 L126 116 L96 90 L82 120 L78 74 Z" opacity="0.9" />
+          <path fill="url(#shield)" d="M64 50 L96 50 L112 84 L80 130 L48 84 Z" stroke="#8cd8ff" stroke-width="2" />
+          <text x="80" y="96" text-anchor="middle" font-size="28" fill="#f9d76d" font-family="'Rajdhani', sans-serif" letter-spacing="8">UNSC</text>
+          <path fill="#f9d76d" d="M80 108 L74 118 H86 Z" />
+        </svg>
+      </div>
+      <h1>Office Of Naval Intelligence Relay // Foxtrot-Actual</h1>
+      <h2 class="headline">Starting Soon</h2>
+      <p class="tagline">Stand by, Spartan. Tactical broadcast link initializing across the Pillar of Autumn battlenet.</p>
     </header>
+
+    <section class="countdown" aria-label="Launch countdown">
+      <div class="counter">
+        <span data-label="HRS">00</span>
+        <span data-label="MINS">09</span>
+        <span data-label="SECS">47</span>
+      </div>
+      <p class="hint">Crew status locked. Fireteam Sierra is equipping for orbital drop — remain in staging and sync loadouts.</p>
+    </section>
 
     <section class="deployment-status" aria-label="Deployment readiness">
       <article class="status-card">
-        <span>FIRETEAM</span>
-        <strong>BLUE TEAM // GREENLIGHT</strong>
+        <span>FIRETEAM ROTATION</span>
+        <strong>BLUE TEAM — READY</strong>
       </article>
       <article class="status-card">
-        <span>COMMS RELAY</span>
-        <strong>LINKED // ENCRYPTION XI</strong>
+        <span>COMMS LINK</span>
+        <strong>CRYO NET SECURE</strong>
       </article>
       <article class="status-card">
-        <span>NAV SOLUTION</span>
-        <strong>SET // RING APPROACH</strong>
+        <span>NAVIGATION SOLUTION</span>
+        <strong>HALO RING VECTOR</strong>
       </article>
     </section>
 
-    <section class="countdown" aria-label="Launch countdown">
-      <div class="counter">00 : 09 : 47</div>
-      <p class="hint">Stand by for drop. Secure gear and prepare for surface insertion.</p>
+    <section class="telemetry" aria-label="Bridge telemetry">
+      <h2>Bridge Telemetry Feed</h2>
+      <div class="telemetry-grid">
+        <div class="telemetry-item">
+          <span>Slipspace Drive Charge</span>
+          <strong>71.8% — INERT</strong>
+        </div>
+        <div class="telemetry-item">
+          <span>Orbital Defense Grid</span>
+          <strong>MAC-01 STANDBY</strong>
+        </div>
+        <div class="telemetry-item">
+          <span>AI Synchronization</span>
+          <strong>CORTANA CHANNEL LIVE</strong>
+        </div>
+        <div class="telemetry-item">
+          <span>External Sensors</span>
+          <strong>RING SURFACE CLEAR</strong>
+        </div>
+      </div>
     </section>
 
     <footer>
-      <span>Pillar of Autumn</span>
-      <span>Cortana Uplink Stable</span>
-      <span>Combat Evolved // CE</span>
+      <span>PILLAR OF AUTUMN // FLEETCOM SEVEN</span>
+      <span>MISSION CODE: SIERRA-117</span>
+      <span>TRANSMISSION NODE: EARTH-RELAY-42</span>
     </footer>
   </main>
 </body>
