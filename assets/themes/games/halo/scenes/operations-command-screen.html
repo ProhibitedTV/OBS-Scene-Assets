@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Halo Combat Evolved Operations Command</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Barlow+Condensed:wght@500;700&display=swap');
+
+      :root {
+        color-scheme: dark;
+        --unsc-navy: #071019;
+        --unsc-deep: #050c14;
+        --forerunner-cyan: #8fd5ff;
+        --forerunner-glow: rgba(143, 213, 255, 0.4);
+        --covenant-violet: rgba(131, 87, 214, 0.52);
+        --alert-amber: #fbd971;
+        --muted: rgba(229, 245, 255, 0.68);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
+        color: #ecf6ff;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        background: radial-gradient(circle at 16% 20%, rgba(142, 213, 255, 0.16), transparent 60%),
+          radial-gradient(circle at 78% 82%, rgba(89, 131, 209, 0.22), transparent 58%),
+          linear-gradient(140deg, var(--unsc-navy), var(--unsc-deep));
+        display: grid;
+        place-items: center;
+        padding: clamp(24px, 4vw, 60px);
+        overflow: hidden;
+      }
+
+      .ops-shell {
+        width: min(96vw, 1400px);
+        display: grid;
+        grid-template-columns: clamp(260px, 26vw, 320px) 1fr;
+        gap: clamp(18px, 2.8vw, 34px);
+        padding: clamp(22px, 3vw, 36px);
+        background: rgba(7, 18, 28, 0.94);
+        border-radius: 28px;
+        border: 1px solid rgba(143, 213, 255, 0.35);
+        box-shadow: 0 0 160px rgba(8, 18, 28, 0.85), inset 0 0 90px rgba(143, 213, 255, 0.12);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ops-shell::after {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: inherit;
+        background: linear-gradient(135deg, rgba(143, 213, 255, 0.36), transparent 55%, rgba(131, 87, 214, 0.28));
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+
+      .sidebar {
+        display: grid;
+        gap: clamp(16px, 2.4vw, 26px);
+        padding: clamp(18px, 2.2vw, 24px);
+        border-radius: 22px;
+        background: linear-gradient(180deg, rgba(6, 17, 27, 0.88), rgba(3, 10, 18, 0.94));
+        border: 1px solid rgba(143, 213, 255, 0.3);
+        box-shadow: inset 0 0 42px rgba(143, 213, 255, 0.14);
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: clamp(1.1rem, 2.3vw, 1.4rem);
+        letter-spacing: 0.32em;
+      }
+
+      .fireteam-status,
+      .signal-log {
+        display: grid;
+        gap: 14px;
+      }
+
+      .fireteam-card {
+        display: grid;
+        gap: 6px;
+        padding: 12px 14px;
+        border-radius: 14px;
+        border: 1px solid rgba(143, 213, 255, 0.25);
+        background: rgba(5, 13, 21, 0.75);
+        box-shadow: inset 0 0 24px rgba(143, 213, 255, 0.12);
+      }
+
+      .fireteam-card strong {
+        font-size: clamp(0.92rem, 1.7vw, 1.05rem);
+        letter-spacing: 0.28em;
+      }
+
+      .fireteam-card span {
+        color: var(--muted);
+        font-size: clamp(0.75rem, 1.5vw, 0.88rem);
+      }
+
+      .signal-log ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 12px;
+      }
+
+      .signal-log li {
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(143, 213, 255, 0.2);
+        background: rgba(5, 12, 21, 0.65);
+        font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+        color: rgba(229, 245, 255, 0.75);
+      }
+
+      .signal-log li span {
+        color: var(--alert-amber);
+      }
+
+      .main-area {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        gap: clamp(18px, 2.4vw, 30px);
+      }
+
+      .header-band {
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(12px, 2vw, 20px);
+        justify-content: space-between;
+        align-items: center;
+        padding: clamp(14px, 2vw, 22px);
+        border-radius: 18px;
+        border: 1px solid rgba(143, 213, 255, 0.28);
+        background: linear-gradient(120deg, rgba(5, 15, 24, 0.9), rgba(8, 20, 32, 0.82));
+      }
+
+      .header-band h1 {
+        margin: 0;
+        font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+        letter-spacing: 0.34em;
+        text-shadow: 0 0 28px rgba(143, 213, 255, 0.6);
+      }
+
+      .header-band .mission-clock {
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(251, 217, 113, 0.45);
+        background: rgba(39, 26, 8, 0.38);
+        color: var(--alert-amber);
+        font-size: clamp(0.82rem, 1.8vw, 1rem);
+        text-shadow: 0 0 16px rgba(251, 217, 113, 0.4);
+      }
+
+      .operations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: clamp(16px, 2.4vw, 30px);
+      }
+
+      .operation-card {
+        position: relative;
+        padding: clamp(18px, 2.4vw, 26px);
+        border-radius: 18px;
+        border: 1px solid rgba(143, 213, 255, 0.26);
+        background: linear-gradient(150deg, rgba(8, 18, 28, 0.92), rgba(4, 11, 19, 0.86));
+        box-shadow: inset 0 0 40px rgba(143, 213, 255, 0.16);
+        display: grid;
+        gap: 12px;
+        min-height: 220px;
+      }
+
+      .operation-card::before {
+        content: attr(data-sector);
+        position: absolute;
+        top: 18px;
+        right: 22px;
+        font-size: clamp(0.7rem, 1.4vw, 0.82rem);
+        letter-spacing: 0.4em;
+        color: rgba(143, 213, 255, 0.35);
+      }
+
+      .operation-card h2 {
+        margin: 0;
+        font-size: clamp(1.1rem, 2.6vw, 1.5rem);
+      }
+
+      .operation-card p {
+        margin: 0;
+        font-size: clamp(0.78rem, 1.6vw, 0.95rem);
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .operation-card .status {
+        margin-top: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: clamp(0.75rem, 1.5vw, 0.92rem);
+      }
+
+      .status::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--alert-amber);
+        box-shadow: 0 0 18px rgba(251, 217, 113, 0.5);
+      }
+
+      .covenant-sweep::before {
+        background: rgba(183, 99, 255, 0.9);
+        box-shadow: 0 0 18px rgba(183, 99, 255, 0.6);
+      }
+
+      .forerunner-ruins::before {
+        background: rgba(143, 213, 255, 0.8);
+        box-shadow: 0 0 18px rgba(143, 213, 255, 0.6);
+      }
+
+      .holo-grid {
+        position: absolute;
+        inset: -120px;
+        background: radial-gradient(circle at center, rgba(143, 213, 255, 0.12), transparent 65%),
+          repeating-linear-gradient(90deg, rgba(143, 213, 255, 0.05) 0 1px, transparent 1px 34px),
+          repeating-linear-gradient(0deg, rgba(143, 213, 255, 0.04) 0 1px, transparent 1px 34px);
+        pointer-events: none;
+        opacity: 0.35;
+      }
+
+      @media (max-width: 900px) {
+        .ops-shell {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ops-shell">
+      <div class="holo-grid"></div>
+      <aside class="sidebar">
+        <h2 class="section-title">UNSC Fireteams</h2>
+        <div class="fireteam-status">
+          <article class="fireteam-card">
+            <strong>Alpha Lance</strong>
+            <span>Spartan-117 / Blue Two / Pelican Echo 419 escort</span>
+            <span>Vitals green | Ammo 82% | NAV marker: Cartographer</span>
+          </article>
+          <article class="fireteam-card">
+            <strong>Charlie Saber</strong>
+            <span>ODST detachment | Assault on Silent Cartographer</span>
+            <span>Vitals green | Armor integrity 91%</span>
+          </article>
+          <article class="fireteam-card">
+            <strong>Foxtrot Watch</strong>
+            <span>Sniper recon | Ring sector D-12 ridgeline</span>
+            <span>Vitals nominal | Covenant patrols intercepted</span>
+          </article>
+        </div>
+        <section class="signal-log">
+          <h2 class="section-title">Signal Log</h2>
+          <ul>
+            <li><span>[PRIORITY]</span> Cortana decrypted Forerunner glyph stream.</li>
+            <li><span>[ALERT]</span> Covenant CCS-class cruiser emerging slipspace.</li>
+            <li><span>[UPDATE]</span> Pillar of Autumn MAC gun offline, rerouting power.</li>
+          </ul>
+        </section>
+      </aside>
+      <main class="main-area">
+        <header class="header-band">
+          <h1>Operations Command</h1>
+          <div class="mission-clock">MISSION T+02:16:44</div>
+        </header>
+        <section class="operations-grid">
+          <article class="operation-card forerunner-ruins" data-sector="SECTOR A7">
+            <h2>Silent Cartographer</h2>
+            <p>
+              Secure the island facility, locate Cartographer interface, and relay control room
+              coordinates to UNSC fleet command.
+            </p>
+            <span class="status">Active Extraction</span>
+          </article>
+          <article class="operation-card covenant-sweep" data-sector="SECTOR F2">
+            <h2>Halo Ring Canyon</h2>
+            <p>
+              Engage phantom dropships, recover scattered Marines, and fortify rock spires with
+              Scorpion armor support.
+            </p>
+            <span class="status">Covenant Sweep</span>
+          </article>
+          <article class="operation-card" data-sector="SECTOR D4">
+            <h2>Truth &amp; Reconciliation</h2>
+            <p>
+              Board Covenant cruiser, locate captured Captain Keyes, and disable gravity lift to
+              prevent reinforcement.
+            </p>
+            <span class="status">Boarding underway</span>
+          </article>
+          <article class="operation-card" data-sector="SECTOR K9">
+            <h2>Flood Containment</h2>
+            <p>
+              Quarantine release site, incinerate infection forms, and secure Index before Covenant
+              Hierarchs engage.
+            </p>
+            <span class="status">Containment Protocol</span>
+          </article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

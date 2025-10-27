@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Halo Combat Evolved BRB Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Barlow+Condensed:wght@500;700&display=swap');
+
+    :root {
+      color-scheme: dark;
+      --unsc-navy: #08121d;
+      --unsc-slate: #102131;
+      --covenant-violet: #5a3d9b;
+      --covenant-glow: rgba(124, 94, 219, 0.48);
+      --forerunner-cyan: #8bdcff;
+      --text: #e8f6ff;
+      --muted: rgba(232, 246, 255, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: radial-gradient(circle at 18% 25%, rgba(91, 131, 201, 0.24), transparent 60%),
+        radial-gradient(circle at 82% 75%, rgba(68, 102, 170, 0.22), transparent 65%),
+        linear-gradient(150deg, var(--unsc-navy), #03070c 75%);
+      font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
+      letter-spacing: 0.14em;
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      padding: clamp(20px, 5vw, 60px);
+      overflow: hidden;
+      text-transform: uppercase;
+    }
+
+    .container {
+      width: min(94vw, 1260px);
+      border-radius: 30px;
+      border: 2px solid rgba(139, 220, 255, 0.3);
+      padding: clamp(28px, 4.8vw, 68px);
+      background: rgba(7, 20, 32, 0.86);
+      box-shadow: 0 0 140px rgba(10, 26, 40, 0.85), inset 0 0 110px rgba(139, 220, 255, 0.16);
+      display: grid;
+      gap: clamp(22px, 3.2vw, 40px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .container::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: inherit;
+      background: linear-gradient(130deg, rgba(139, 220, 255, 0.35), transparent 55%, rgba(124, 94, 219, 0.38));
+      opacity: 0.6;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .status-display {
+      display: grid;
+      gap: clamp(14px, 2.4vw, 24px);
+      text-align: center;
+    }
+
+    .status-display h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      letter-spacing: 0.3em;
+      text-shadow: 0 0 26px rgba(139, 220, 255, 0.6);
+    }
+
+    .status-display p {
+      margin: 0 auto;
+      max-width: 680px;
+      font-size: clamp(1rem, 2.4vw, 1.2rem);
+      letter-spacing: 0.3em;
+      color: var(--muted);
+    }
+
+    .systems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(16px, 2.4vw, 28px);
+    }
+
+    .systems-card {
+      position: relative;
+      padding: clamp(18px, 2.6vw, 28px);
+      border-radius: 18px;
+      background: linear-gradient(160deg, rgba(8, 22, 34, 0.92), rgba(5, 12, 22, 0.9));
+      border: 1px solid rgba(139, 220, 255, 0.28);
+      box-shadow: inset 0 0 26px rgba(139, 220, 255, 0.2);
+      display: grid;
+      gap: clamp(8px, 2vw, 14px);
+      text-align: center;
+    }
+
+    .systems-card span {
+      font-size: clamp(0.72rem, 1.8vw, 0.92rem);
+      letter-spacing: 0.32em;
+      color: rgba(232, 246, 255, 0.55);
+    }
+
+    .systems-card strong {
+      font-size: clamp(1.1rem, 2.8vw, 1.6rem);
+      color: var(--forerunner-cyan);
+      text-shadow: 0 0 20px rgba(139, 220, 255, 0.45);
+    }
+
+    .intel-ticker {
+      position: relative;
+      border-radius: 14px;
+      border: 1px solid rgba(124, 94, 219, 0.38);
+      background: rgba(28, 20, 54, 0.45);
+      padding: 14px 18px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .intel-ticker span {
+      font-size: clamp(0.68rem, 1.8vw, 0.88rem);
+      color: rgba(232, 246, 255, 0.55);
+      letter-spacing: 0.32em;
+    }
+
+    .intel-ticker strong {
+      font-size: clamp(0.92rem, 2.4vw, 1.16rem);
+      color: rgba(220, 198, 255, 0.85);
+      letter-spacing: 0.38em;
+    }
+
+    .glyphs {
+      position: absolute;
+      inset: 6%;
+      border-radius: 24px;
+      border: 1px solid rgba(139, 220, 255, 0.12);
+      pointer-events: none;
+      mix-blend-mode: screen;
+      animation: pulse 12s ease-in-out infinite;
+    }
+
+    .glyphs::before {
+      content: 'Systems Hold: Awaiting Spartan Return';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: clamp(0.82rem, 2vw, 1rem);
+      color: rgba(232, 246, 255, 0.35);
+      letter-spacing: 0.48em;
+    }
+
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 0.25;
+        box-shadow: inset 0 0 70px rgba(139, 220, 255, 0.18);
+      }
+      50% {
+        opacity: 0.45;
+        box-shadow: inset 0 0 120px rgba(124, 94, 219, 0.28);
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="container" aria-labelledby="brb-heading">
+    <div class="glyphs" aria-hidden="true"></div>
+    <header class="status-display">
+      <h1 id="brb-heading">Systems Hold // BRB</h1>
+      <p>Spartan stepping out of the drop pod. Maintain readiness and monitor allied channels.</p>
+    </header>
+
+    <div class="systems-grid" aria-label="Current system status">
+      <article class="systems-card">
+        <span>COMMS</span>
+        <strong>Secure // Cortana Watch</strong>
+      </article>
+      <article class="systems-card">
+        <span>SHIELDS</span>
+        <strong>Recharge Cycle 42%</strong>
+      </article>
+      <article class="systems-card">
+        <span>MISSION LOG</span>
+        <strong>Updating // Ghost Signal</strong>
+      </article>
+    </div>
+
+    <aside class="intel-ticker" aria-label="Additional intel">
+      <span>UNSC DATASTREAM</span>
+      <strong>Pelican supply drop ETA 07:32 // Covenant forces re-positioning near Alpha Halo.</strong>
+    </aside>
+  </section>
+</body>
+</html>
