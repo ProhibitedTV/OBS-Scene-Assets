@@ -14,6 +14,9 @@
       --covenant-glow: #5a4b9f;
       --forerunner-light: rgba(148, 232, 255, 0.45);
       --ambient-stars: rgba(148, 194, 255, 0.16);
+      --ring-inner: 55%;
+      --ring-outer: 72%;
+      --ring-depth: 82px;
     }
 
     *,
@@ -26,9 +29,9 @@
     body {
       height: 100%;
       margin: 0;
-      background: radial-gradient(circle at 15% 20%, rgba(111, 195, 255, 0.18), transparent 52%),
-        radial-gradient(circle at 80% 80%, rgba(80, 101, 181, 0.22), transparent 55%),
-        linear-gradient(145deg, var(--unsc-navy) 0%, #020912 70%);
+      background: radial-gradient(circle at 18% 24%, rgba(111, 195, 255, 0.22), transparent 52%),
+        radial-gradient(circle at 80% 78%, rgba(80, 101, 181, 0.22), transparent 55%),
+        linear-gradient(150deg, var(--unsc-navy) 0%, #020912 70%);
       color: #d8f4ff;
       font-family: 'Rajdhani', 'Oswald', 'Segoe UI', sans-serif;
       overflow: hidden;
@@ -47,8 +50,8 @@
       height: min(94vh, 960px);
       border-radius: 38px;
       border: 2px solid rgba(148, 232, 255, 0.28);
-      background: radial-gradient(circle at 30% 28%, rgba(90, 123, 201, 0.4), transparent 60%),
-        linear-gradient(160deg, rgba(8, 24, 38, 0.9), rgba(2, 10, 19, 0.95));
+      background: radial-gradient(circle at 28% 32%, rgba(90, 123, 201, 0.36), transparent 60%),
+        linear-gradient(164deg, rgba(8, 24, 38, 0.9), rgba(2, 10, 19, 0.95));
       box-shadow: inset 0 0 180px rgba(28, 98, 161, 0.45), 0 0 120px rgba(20, 40, 62, 0.8);
       overflow: hidden;
     }
@@ -70,34 +73,185 @@
       left: 50%;
       width: 140%;
       height: 140%;
-      transform: translate(-50%, -50%) rotateX(62deg) rotateZ(-12deg);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(64, 185, 255, 0.28) 35%, transparent 70%),
-        conic-gradient(from 120deg, rgba(73, 175, 255, 0.28), rgba(170, 216, 255, 0.1) 45%, rgba(82, 210, 255, 0.35) 70%, rgba(31, 74, 116, 0.2) 100%);
-      box-shadow: 0 0 60px rgba(83, 177, 255, 0.35);
-      filter: drop-shadow(0 0 60px rgba(148, 232, 255, 0.28));
-      opacity: 0.85;
-      animation: spin 48s linear infinite;
+      transform: translate(-50%, -50%);
+      display: grid;
+      place-items: center;
+      perspective: 2000px;
+      pointer-events: none;
+      filter: drop-shadow(0 0 80px rgba(148, 232, 255, 0.28));
     }
 
-    .halo-ring::before {
-      content: '';
+    .ring-orbit {
       position: absolute;
-      inset: 18%;
+      top: 50%;
+      left: 50%;
+      width: min(74vw, 960px);
+      height: min(74vw, 960px);
+      transform-style: preserve-3d;
+      transform: translate(-50%, -50%) rotateX(72deg) rotateZ(-18deg);
+      animation: ring-wobble 24s ease-in-out infinite;
+    }
+
+    .ring-assembly {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      animation: ring-spin 68s linear infinite;
+      filter: drop-shadow(0 0 62px rgba(148, 232, 255, 0.24));
+    }
+
+    .ring-surface {
+      position: absolute;
+      inset: 7%;
       border-radius: 50%;
-      border: 2px solid rgba(148, 232, 255, 0.25);
-      box-shadow: inset 0 0 46px rgba(148, 232, 255, 0.45);
+      transform-style: preserve-3d;
+    }
+
+    .ring-terrain {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background:
+        conic-gradient(from 120deg, rgba(86, 158, 108, 0.88) 0deg 34deg, rgba(51, 122, 96, 0.92) 34deg 70deg, rgba(45, 107, 131, 0.86) 70deg 110deg,
+          rgba(122, 198, 164, 0.9) 110deg 146deg, rgba(44, 96, 116, 0.9) 146deg 186deg, rgba(38, 92, 134, 0.82) 186deg 224deg,
+          rgba(98, 176, 134, 0.86) 224deg 268deg, rgba(53, 122, 150, 0.9) 268deg 310deg, rgba(33, 82, 102, 0.95) 310deg 360deg),
+        radial-gradient(circle at 42% 38%, rgba(176, 255, 215, 0.36), transparent 42%),
+        radial-gradient(circle at 62% 64%, rgba(74, 160, 255, 0.26), transparent 48%);
+      filter: saturate(1.4) brightness(1.05);
       mix-blend-mode: screen;
+      -webkit-mask: radial-gradient(circle, transparent calc(var(--ring-inner) - 3%), rgba(0, 0, 0, 0.95) var(--ring-inner), rgba(0, 0, 0, 0.95) var(--ring-outer), transparent calc(var(--ring-outer) + 4%));
+      mask: radial-gradient(circle, transparent calc(var(--ring-inner) - 3%), rgba(0, 0, 0, 0.95) var(--ring-inner), rgba(0, 0, 0, 0.95) var(--ring-outer), transparent calc(var(--ring-outer) + 4%));
+      animation: terrain-rotate 96s linear infinite;
+    }
+
+    .ring-terrain--night {
+      background: linear-gradient(198deg, rgba(4, 12, 22, 0.8) 0%, rgba(9, 26, 38, 0.6) 36%, transparent 70%),
+        radial-gradient(circle at 32% 28%, rgba(20, 82, 122, 0.35), transparent 38%),
+        radial-gradient(circle at 78% 64%, rgba(9, 30, 52, 0.6), transparent 58%);
+      mix-blend-mode: multiply;
+      filter: saturate(1.1);
+      animation: night-shift 64s ease-in-out infinite;
+    }
+
+    .ring-wire {
+      position: absolute;
+      inset: -1.6%;
+      border-radius: 50%;
+      background:
+        repeating-conic-gradient(from 0deg, rgba(148, 232, 255, 0.32) 0deg 6deg, transparent 6deg 12deg),
+        repeating-linear-gradient(0deg, rgba(148, 232, 255, 0.24) 0 3px, transparent 3px 18px);
+      background-blend-mode: screen;
+      -webkit-mask: radial-gradient(circle, transparent calc(var(--ring-inner) - 4%), rgba(0, 0, 0, 0.95) var(--ring-inner), rgba(0, 0, 0, 0.95) var(--ring-outer), transparent calc(var(--ring-outer) + 5%));
+      mask: radial-gradient(circle, transparent calc(var(--ring-inner) - 4%), rgba(0, 0, 0, 0.95) var(--ring-inner), rgba(0, 0, 0, 0.95) var(--ring-outer), transparent calc(var(--ring-outer) + 5%));
+      mix-blend-mode: screen;
+      opacity: 0.6;
+    }
+
+    .ring-wire--front {
+      animation: wire-spin 32s linear infinite;
+    }
+
+    .ring-wire--back {
+      animation: wire-spin-back 36s linear infinite;
+      opacity: 0.42;
+      filter: blur(0.6px);
+    }
+
+    .ring-wire--inner {
+      inset: 11%;
+      opacity: 0.45;
+      background:
+        repeating-conic-gradient(from 45deg, rgba(148, 232, 255, 0.22) 0deg 5deg, transparent 5deg 10deg),
+        repeating-linear-gradient(90deg, rgba(148, 232, 255, 0.2) 0 2px, transparent 2px 14px);
+      -webkit-mask: radial-gradient(circle, transparent calc(var(--ring-inner) + 4%), rgba(0, 0, 0, 0.95) calc(var(--ring-inner) + 6%), rgba(0, 0, 0, 0.95) calc(var(--ring-outer) - 8%), transparent calc(var(--ring-outer) - 4%));
+      mask: radial-gradient(circle, transparent calc(var(--ring-inner) + 4%), rgba(0, 0, 0, 0.95) calc(var(--ring-inner) + 6%), rgba(0, 0, 0, 0.95) calc(var(--ring-outer) - 8%), transparent calc(var(--ring-outer) - 4%));
+      animation: wire-inner 26s linear infinite;
+    }
+
+    .ring-lights {
+      position: absolute;
+      inset: 0;
+      transform-style: preserve-3d;
+      pointer-events: none;
+    }
+
+    .ring-lights span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: clamp(8px, 1.4vw, 16px);
+      height: clamp(8px, 1.4vw, 16px);
+      margin: calc(clamp(8px, 1.4vw, 16px) / -2);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(210, 255, 255, 0.92) 0%, rgba(122, 214, 255, 0.2) 72%, transparent 100%);
+      box-shadow: 0 0 24px rgba(148, 232, 255, 0.6), 0 0 48px rgba(148, 232, 255, 0.35);
+      mix-blend-mode: screen;
+      animation: light-glint 14s ease-in-out infinite;
+      animation-delay: calc(var(--i) * -0.6s);
+    }
+
+    .ring-edge {
+      position: absolute;
+      inset: 6.6%;
+      border-radius: 50%;
+      border: 3px solid rgba(148, 232, 255, 0.28);
+      box-shadow: 0 0 26px rgba(148, 232, 255, 0.38);
+      mix-blend-mode: screen;
+    }
+
+    .ring-edge--front {
+      transform: translateZ(calc(var(--ring-depth) * 0.6));
+    }
+
+    .ring-edge--back {
+      transform: translateZ(calc(var(--ring-depth) * -0.6));
+      opacity: 0.45;
+      filter: blur(1.2px);
+    }
+
+    .ring-emitter {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 62% 32%, rgba(148, 232, 255, 0.28) 0%, transparent 52%),
+        radial-gradient(circle at 32% 68%, rgba(122, 255, 210, 0.2) 0%, transparent 60%),
+        linear-gradient(180deg, rgba(84, 210, 255, 0.12), transparent 70%);
+      mix-blend-mode: screen;
+      -webkit-mask: radial-gradient(circle, transparent calc(var(--ring-inner) - 1%), rgba(0, 0, 0, 0.9) var(--ring-inner), rgba(0, 0, 0, 0.9) calc(var(--ring-outer) - 4%), transparent calc(var(--ring-outer) + 2%));
+      mask: radial-gradient(circle, transparent calc(var(--ring-inner) - 1%), rgba(0, 0, 0, 0.9) var(--ring-inner), rgba(0, 0, 0, 0.9) calc(var(--ring-outer) - 4%), transparent calc(var(--ring-outer) + 2%));
+      animation: emitter-breathe 18s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .ring-shadow {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(2, 12, 24, 0.62) 0%, transparent 74%);
+      transform: translateZ(calc(var(--ring-depth) * -0.9)) scale(1.04);
+      filter: blur(34px);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    .ring-aura {
+      position: absolute;
+      inset: 3%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(100, 188, 255, 0.18) 0%, transparent 70%);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      animation: aura-pulse 16s ease-in-out infinite;
     }
 
     .planet {
       position: absolute;
       bottom: -18%;
       right: -12%;
-      width: 540px;
-      height: 540px;
+      width: clamp(320px, 32vw, 540px);
+      height: clamp(320px, 32vw, 540px);
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, rgba(110, 140, 184, 0.7), rgba(11, 26, 44, 0.95));
+      background: radial-gradient(circle at 30% 30%, rgba(110, 140, 184, 0.72), rgba(11, 26, 44, 0.96));
       box-shadow: inset -40px -40px 120px rgba(4, 12, 24, 0.85), 0 0 120px rgba(34, 74, 104, 0.45);
       overflow: hidden;
     }
@@ -108,6 +262,16 @@
       inset: 12%;
       background: linear-gradient(140deg, rgba(111, 186, 255, 0.25), transparent 60%);
       mix-blend-mode: screen;
+    }
+
+    .planet::after {
+      content: '';
+      position: absolute;
+      inset: -6%;
+      background: repeating-linear-gradient(180deg, rgba(148, 232, 255, 0.08) 0 18px, transparent 18px 36px);
+      opacity: 0.4;
+      mix-blend-mode: screen;
+      transform: rotate(14deg);
     }
 
     .covenant-fleet {
@@ -135,7 +299,7 @@
       width: 200px;
       height: 160px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(90, 75, 159, 0.2), transparent 70%);
+      background: radial-gradient(circle, rgba(90, 75, 159, 0.18), transparent 70%);
       filter: blur(24px);
       opacity: 0.6;
     }
@@ -149,6 +313,7 @@
       place-items: center;
       pointer-events: none;
       animation: pulse 12s ease-in-out infinite;
+      backdrop-filter: blur(4px);
     }
 
     .forerunner-glyphs::before {
@@ -170,12 +335,107 @@
       }
     }
 
-    @keyframes spin {
+    @keyframes ring-spin {
       from {
-        transform: translate(-50%, -50%) rotateX(62deg) rotateZ(-12deg);
+        transform: rotateY(0deg);
       }
       to {
-        transform: translate(-50%, -50%) rotateX(62deg) rotateZ(348deg);
+        transform: rotateY(360deg);
+      }
+    }
+
+    @keyframes ring-wobble {
+      0%,
+      100% {
+        transform: translate(-50%, -50%) rotateX(70deg) rotateZ(-18deg);
+      }
+      40% {
+        transform: translate(-50%, -50%) rotateX(73deg) rotateZ(-12deg);
+      }
+      70% {
+        transform: translate(-50%, -50%) rotateX(68deg) rotateZ(-20deg);
+      }
+    }
+
+    @keyframes terrain-rotate {
+      from {
+        transform: translateZ(calc(var(--ring-depth) * 0.32)) rotateZ(0deg);
+      }
+      to {
+        transform: translateZ(calc(var(--ring-depth) * 0.32)) rotateZ(360deg);
+      }
+    }
+
+    @keyframes night-shift {
+      0%,
+      100% {
+        transform: translateZ(calc(var(--ring-depth) * 0.28)) rotateZ(0deg);
+        opacity: 0.68;
+      }
+      50% {
+        transform: translateZ(calc(var(--ring-depth) * 0.28)) rotateZ(180deg);
+        opacity: 0.88;
+      }
+    }
+
+    @keyframes wire-spin {
+      from {
+        transform: translateZ(calc(var(--ring-depth) * 0.5)) rotateZ(0deg);
+      }
+      to {
+        transform: translateZ(calc(var(--ring-depth) * 0.5)) rotateZ(-360deg);
+      }
+    }
+
+    @keyframes wire-spin-back {
+      from {
+        transform: translateZ(calc(var(--ring-depth) * -0.5)) rotateY(180deg) rotateZ(0deg);
+      }
+      to {
+        transform: translateZ(calc(var(--ring-depth) * -0.5)) rotateY(180deg) rotateZ(360deg);
+      }
+    }
+
+    @keyframes wire-inner {
+      from {
+        transform: translateZ(calc(var(--ring-depth) * 0.22)) rotateZ(0deg);
+      }
+      to {
+        transform: translateZ(calc(var(--ring-depth) * 0.22)) rotateZ(360deg);
+      }
+    }
+
+    @keyframes light-glint {
+      0%,
+      100% {
+        transform: rotate(calc(var(--i) * 24deg)) translateX(clamp(200px, 33vw, 340px)) translateZ(calc(var(--ring-depth) * 0.38)) scale(0.8);
+        opacity: 0.5;
+      }
+      50% {
+        transform: rotate(calc(var(--i) * 24deg)) translateX(clamp(200px, 33vw, 340px)) translateZ(calc(var(--ring-depth) * 0.38)) scale(1.18);
+        opacity: 1;
+      }
+    }
+
+    @keyframes aura-pulse {
+      0%,
+      100% {
+        opacity: 0.22;
+        transform: translateZ(calc(var(--ring-depth) * -1.1)) scale(1.06);
+      }
+      50% {
+        opacity: 0.5;
+        transform: translateZ(calc(var(--ring-depth) * -1.1)) scale(1.12);
+      }
+    }
+
+    @keyframes emitter-breathe {
+      0%,
+      100% {
+        opacity: 0.42;
+      }
+      50% {
+        opacity: 0.7;
       }
     }
 
@@ -207,7 +467,41 @@
 <body>
   <div class="viewport" aria-hidden="true">
     <div class="stars"></div>
-    <div class="halo-ring"></div>
+    <div class="halo-ring" aria-hidden="true">
+      <div class="ring-orbit">
+        <div class="ring-shadow"></div>
+        <div class="ring-assembly">
+          <div class="ring-edge ring-edge--back"></div>
+          <div class="ring-surface">
+            <div class="ring-terrain"></div>
+            <div class="ring-terrain ring-terrain--night"></div>
+            <div class="ring-wire ring-wire--back"></div>
+            <div class="ring-wire ring-wire--front"></div>
+            <div class="ring-wire ring-wire--inner"></div>
+            <div class="ring-lights">
+              <span style="--i: 0;"></span>
+              <span style="--i: 1;"></span>
+              <span style="--i: 2;"></span>
+              <span style="--i: 3;"></span>
+              <span style="--i: 4;"></span>
+              <span style="--i: 5;"></span>
+              <span style="--i: 6;"></span>
+              <span style="--i: 7;"></span>
+              <span style="--i: 8;"></span>
+              <span style="--i: 9;"></span>
+              <span style="--i: 10;"></span>
+              <span style="--i: 11;"></span>
+              <span style="--i: 12;"></span>
+              <span style="--i: 13;"></span>
+              <span style="--i: 14;"></span>
+            </div>
+            <div class="ring-emitter"></div>
+          </div>
+          <div class="ring-edge ring-edge--front"></div>
+        </div>
+        <div class="ring-aura"></div>
+      </div>
+    </div>
     <div class="planet"></div>
     <div class="fleet-shadow"></div>
     <div class="covenant-fleet" aria-hidden="true">
