@@ -9,45 +9,88 @@
 
       :root {
         color-scheme: dark;
-        --unsc-deep: #040b12;
-        --unsc-slate: #09131d;
-        --forerunner-cyan: #7fd3ff;
-        --forerunner-glow: rgba(127, 211, 255, 0.45);
-        --alert-amber: #f7c96a;
+        --unsc-deep: #050f19;
+        --unsc-slate: #0d1f33;
+        --forerunner-cyan: #8ad9ff;
+        --forerunner-glow: rgba(138, 217, 255, 0.45);
+        --alert-amber: #fbd66a;
         --success-green: #7cffb0;
-        --muted: rgba(227, 244, 255, 0.72);
+        --muted: rgba(231, 245, 255, 0.72);
       }
 
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
       }
 
-      html,
-      body {
+      html {
         height: 100%;
         margin: 0;
         font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
         color: #e9f6ff;
         letter-spacing: 0.22em;
         text-transform: uppercase;
-        background: radial-gradient(circle at 18% 20%, rgba(127, 211, 255, 0.18), transparent 60%),
-          radial-gradient(circle at 80% 78%, rgba(102, 149, 212, 0.22), transparent 62%),
+        background: radial-gradient(circle at 18% 20%, rgba(138, 217, 255, 0.18), transparent 60%),
+          radial-gradient(circle at 80% 78%, rgba(102, 149, 212, 0.2), transparent 62%),
           linear-gradient(150deg, var(--unsc-deep), #02060a 70%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body {
+        width: 1920px;
+        height: 1080px;
+        margin: 0;
+        position: relative;
         display: grid;
         place-items: center;
         padding: clamp(24px, 4.5vw, 60px);
         overflow: hidden;
+        background: transparent;
+      }
+
+      body::before,
+      body::after {
+        content: '';
+        position: absolute;
+        inset: -30%;
+        background: radial-gradient(circle, rgba(138, 217, 255, 0.12), transparent 58%);
+        animation: drift 28s linear infinite;
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+
+      body::after {
+        animation-duration: 38s;
+        animation-direction: reverse;
+        opacity: 0.36;
+      }
+
+      @keyframes drift {
+        0% {
+          transform: rotate(0deg) scale(1);
+        }
+        50% {
+          transform: rotate(180deg) scale(1.08);
+        }
+        100% {
+          transform: rotate(360deg) scale(1);
+        }
       }
 
       .debrief-shell {
-        width: min(96vw, 1400px);
+        width: 1580px;
+        max-width: 100%;
+        max-height: calc(1080px - clamp(24px, 4.5vw, 60px) * 2);
         display: grid;
         gap: clamp(20px, 3vw, 30px);
         padding: clamp(26px, 4vw, 40px);
         border-radius: 32px;
-        border: 1px solid rgba(127, 211, 255, 0.34);
+        border: 1px solid rgba(138, 217, 255, 0.34);
         background: rgba(6, 14, 22, 0.94);
-        box-shadow: 0 0 150px rgba(4, 10, 17, 0.9), inset 0 0 120px rgba(127, 211, 255, 0.18);
+        box-shadow: 0 0 150px rgba(4, 10, 17, 0.9), inset 0 0 120px rgba(138, 217, 255, 0.18);
         position: relative;
         overflow: hidden;
       }
@@ -57,9 +100,20 @@
         position: absolute;
         inset: -2px;
         border-radius: inherit;
-        background: linear-gradient(135deg, rgba(127, 211, 255, 0.34), transparent 55%, rgba(122, 96, 214, 0.24));
+        background: linear-gradient(135deg, rgba(138, 217, 255, 0.34), transparent 55%, rgba(124, 94, 219, 0.24));
         mix-blend-mode: screen;
         pointer-events: none;
+        animation: pulse 14s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.45;
+        }
+        50% {
+          opacity: 0.75;
+        }
       }
 
       header {

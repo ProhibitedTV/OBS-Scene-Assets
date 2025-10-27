@@ -9,38 +9,85 @@
 
     :root {
       color-scheme: dark;
-      --unsc-navy: #08121d;
-      --unsc-slate: #102131;
-      --covenant-violet: #5a3d9b;
-      --covenant-glow: rgba(124, 94, 219, 0.48);
-      --forerunner-cyan: #8bdcff;
-      --text: #e8f6ff;
-      --muted: rgba(232, 246, 255, 0.6);
+      --unsc-midnight: #050f19;
+      --unsc-navy: #0c1b2c;
+      --unsc-steel: #132a42;
+      --unsc-slate: #1a2f46;
+      --covenant-violet: rgba(124, 94, 219, 0.48);
+      --forerunner-cyan: #8ad9ff;
+      --text: #e7f5ff;
+      --muted: rgba(231, 245, 255, 0.68);
+      --gridline: rgba(138, 217, 255, 0.08);
     }
 
-    * {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
 
-    html,
-    body {
+    html {
       height: 100%;
       margin: 0;
-      background: radial-gradient(circle at 18% 25%, rgba(91, 131, 201, 0.24), transparent 60%),
-        radial-gradient(circle at 82% 75%, rgba(68, 102, 170, 0.22), transparent 65%),
-        linear-gradient(150deg, var(--unsc-navy), #03070c 75%);
-      font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
-      letter-spacing: 0.14em;
-      color: var(--text);
+      background: radial-gradient(circle at 18% 22%, rgba(138, 217, 255, 0.18), transparent 55%),
+        radial-gradient(circle at 80% 82%, rgba(74, 112, 170, 0.18), transparent 60%),
+        linear-gradient(150deg, var(--unsc-midnight), #030a14 70%, var(--unsc-navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body {
+      width: 1920px;
+      height: 1080px;
+      margin: 0;
+      position: relative;
       display: grid;
       place-items: center;
       padding: clamp(20px, 5vw, 60px);
-      overflow: hidden;
+      font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
+      letter-spacing: 0.14em;
+      color: var(--text);
       text-transform: uppercase;
+      overflow: hidden;
+      background: radial-gradient(circle at 18% 25%, rgba(91, 131, 201, 0.24), transparent 60%),
+        radial-gradient(circle at 82% 75%, rgba(68, 102, 170, 0.22), transparent 65%),
+        linear-gradient(150deg, var(--unsc-steel), #030912 75%, var(--unsc-slate));
+    }
+
+    body::before,
+    body::after {
+      content: '';
+      position: absolute;
+      inset: -30%;
+      background: radial-gradient(circle, rgba(138, 217, 255, 0.15), transparent 60%);
+      animation: drift 26s linear infinite;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    body::after {
+      animation-duration: 34s;
+      animation-direction: reverse;
+      opacity: 0.35;
+    }
+
+    @keyframes drift {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      50% {
+        transform: rotate(180deg) scale(1.06);
+      }
+      100% {
+        transform: rotate(360deg) scale(1);
+      }
     }
 
     .container {
-      width: min(94vw, 1260px);
+      width: 1540px;
+      max-width: 100%;
+      max-height: calc(1080px - clamp(20px, 5vw, 60px) * 2);
       border-radius: 30px;
       border: 2px solid rgba(139, 220, 255, 0.3);
       padding: clamp(28px, 4.8vw, 68px);
@@ -57,10 +104,11 @@
       position: absolute;
       inset: -2px;
       border-radius: inherit;
-      background: linear-gradient(130deg, rgba(139, 220, 255, 0.35), transparent 55%, rgba(124, 94, 219, 0.38));
+      background: linear-gradient(130deg, rgba(138, 217, 255, 0.32), transparent 55%, rgba(124, 94, 219, 0.38));
       opacity: 0.6;
       mix-blend-mode: screen;
       pointer-events: none;
+      animation: pulse 12s ease-in-out infinite;
     }
 
     .status-display {
@@ -144,6 +192,7 @@
       pointer-events: none;
       mix-blend-mode: screen;
       animation: pulse 12s ease-in-out infinite;
+      overflow: hidden;
     }
 
     .glyphs::before {
@@ -155,6 +204,27 @@
       font-size: clamp(0.82rem, 2vw, 1rem);
       color: rgba(232, 246, 255, 0.35);
       letter-spacing: 0.48em;
+    }
+
+    .glyphs::after {
+      content: '';
+      position: absolute;
+      inset: -150% -40%;
+      background: repeating-linear-gradient(90deg, var(--gridline) 0 2px, transparent 2px 24px);
+      opacity: 0.3;
+      animation: sweep 24s linear infinite;
+    }
+
+    @keyframes sweep {
+      0% {
+        transform: translate3d(-10%, -10%, 0) rotate(8deg);
+      }
+      50% {
+        transform: translate3d(10%, 10%, 0) rotate(-4deg);
+      }
+      100% {
+        transform: translate3d(-10%, -10%, 0) rotate(8deg);
+      }
     }
 
     @keyframes pulse {
