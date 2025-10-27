@@ -64,17 +64,22 @@ The following tables summarize every HTML asset available in the repository. Use
 
 | File | Purpose | Recommended Source Size | Notes |
 | --- | --- | --- | --- |
-| `control-room-overlay.html` | Full-frame layout for gameplay scenes with HUD accents. | 1920×1080 | Toggle modules by editing the HTML blocks. |
-| `data-uplink-overlay.html` | Lower-third system metrics overlay with scrolling ticker. | 1920×360 (Transparent) | Position near the bottom of frame and resize to taste. |
-| `dual-host-frame.html` | Split camera frame for co-hosts or guests. | 1920×1080 (Transparent) | Resize the webcam placeholders to match your sources. |
-| `holographic-chat-overlay.html` | Neon chat panel with ticker marquee. | 700×900 (Transparent) | Best when paired with darker backgrounds for legibility. |
-| `mission-briefing-intro.html` | Pre-show mission briefing slate with schedule timeline. | 1920×1080 | Deploy as an intro or recap loop between segments. |
-| `neon-alert.html` | Alert widget featuring holographic badge animation. | 800×450 | Update copy to match the specific alert trigger. |
-| `ops-status-dashboard.html` | Mission control stats board for status callouts. | 1920×1080 | Ideal for analyst scenes or between-game breakdowns. |
-| `player-intro-lower-third.html` | Animated lower-third for player or guest introductions. | 1920×300 (Transparent) | Edit the accent colors to match team branding. |
-| `stinger-transition.html` | High-energy transition with neon sweep. | 1920×1080 | Export as a WebM with alpha if you need animation in OBS. |
-| `stream-countdown.html` | Circular countdown timer with orbiting accents. | 1080×1080 | Adjust the displayed time directly in the markup. |
-| `synthwave-break-screen.html` | BRB slate with progress indicator and neon grid. | 1920×1080 | Pair with lo-fi audio during intermissions. |
+| `backgrounds/neon-grid.html` | Loopable neon grid background for transparent overlays. | 1920×1080 | Works as a base layer behind widget stacks. |
+| `overlays/control-room-overlay.html` | Full-frame layout for gameplay scenes with HUD accents. | 1920×1080 | Toggle modules by editing the HTML blocks. |
+| `overlays/data-uplink-overlay.html` | Lower-third system metrics overlay with scrolling ticker. | 1920×360 (Transparent) | Position near the bottom of frame and resize to taste. |
+| `overlays/dual-host-frame.html` | Split camera frame for co-hosts or guests. | 1920×1080 (Transparent) | Resize the webcam placeholders to match your sources. |
+| `overlays/holographic-chat-overlay.html` | Neon chat panel with ticker marquee. | 700×900 (Transparent) | Best when paired with darker backgrounds for legibility. |
+| `overlays/ops-status-dashboard.html` | Mission control stats board for status callouts. | 1920×1080 | Ideal for analyst scenes or between-game breakdowns. |
+| `alerts/new-follower.html` | Holographic follower alert widget with refreshed animation. | 800×450 (Transparent) | Update copy to match the specific alert trigger. |
+| `lower-thirds/player-intro.html` | Animated lower-third for player or guest introductions. | 1920×300 (Transparent) | Edit the accent colors to match team branding. |
+| `scenes/mission-briefing-intro.html` | Pre-show mission briefing slate with schedule timeline. | 1920×1080 | Deploy as an intro or recap loop between segments. |
+| `scenes/start-screen.html` | Starting soon scene with mission diagnostics and chat preview. | 1920×1080 | Pair with countdown audio or ambient loops. |
+| `scenes/live-screen.html` | Live gameplay layout with modular stat panels. | 1920×1080 | Adjust source placeholders to match your capture setup. |
+| `scenes/brb-screen.html` | BRB slate with animated status readout. | 1920×1080 | Ideal for short intermissions. |
+| `scenes/end-screen.html` | Stream ending card with credits grid. | 1920×1080 | Update text layers with supporter shout-outs. |
+| `scenes/stream-countdown.html` | Circular countdown timer with orbiting accents. | 1080×1080 | Adjust the displayed time directly in the markup. |
+| `scenes/synthwave-break-screen.html` | BRB slate with progress indicator and neon grid. | 1920×1080 | Pair with lo-fi audio during intermissions. |
+| `transitions/stinger-transition.html` | High-energy transition with neon sweep. | 1920×1080 | Export as a WebM with alpha if you need animation in OBS. |
 
 ## Widgets (`assets/widgets/`)
 
