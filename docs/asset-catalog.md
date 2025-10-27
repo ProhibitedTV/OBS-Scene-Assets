@@ -134,7 +134,21 @@ The following tables summarize every HTML asset available in the repository. Use
 
 | File | Purpose | Recommended Source Size | Notes |
 | --- | --- | --- | --- |
-| `halo-theme.css` | Thematic CSS overrides for Halo broadcasts. | N/A (Stylesheet) | Import into Halo-specific HTML assets to reuse styling. |
+| `alerts/orbital-strike-alert.html` | Emergency broadcast alert with UNSC priority messaging. | 1920×1080 | Update location, threat level, and contact info in the text blocks. |
+| `backgrounds/halo-ring-orbit.html` | Animated Halo ring vista background with drifting stars. | 1920×1080 | Adjust the glyph text in the pseudo-element to match your installation. |
+| `lower-thirds/unsc-fireteam-intro.html` | Lower third introducing fireteam squads. | 1920×320 (Transparent) | Replace squad roster entries and designations in the list items. |
+| `overlays/covenant-threat-monitor.html` | Tactical sidebar overlay tracking Covenant signatures. | 1080×1080 (Transparent) | Update threat entries and progress bars for each contact. |
+| `overlays/fireteam-status-hud.html` | Horizontal HUD overlay for squad vitals and ammunition. | 1920×500 (Transparent) | Adjust health, shield, and ammunition values directly in the markup. |
+| `scenes/armory-loadout-screen.html` | Armory showcase for weapons and equipment. | 1920×1080 | Swap the weapon names and stats for your current loadout. |
+| `scenes/brb-screen.html` | BRB slate styled as a shield recharge status display. | 1920×1080 | Change recharge percentage and status text as needed. |
+| `scenes/drop-pod-countdown.html` | Drop pod launch countdown with mission brief. | 1920×1080 | Sync timer value and update the objective list per mission. |
+| `scenes/end-screen.html` | Stream ending scene with mission debrief summary. | 1920×1080 | Update commendations and closing messaging before export. |
+| `scenes/live-screen.html` | Live operations control screen with mission feed and intel panels. | 1920×1080 | Edit mission feed entries and spectator counts for your broadcast. |
+| `scenes/mission-briefing-hologrid.html` | Holographic mission briefing with squad assignments. | 1920×1080 | Replace operation title, objective text, and roster chips. |
+| `scenes/operations-command-screen.html` | Command center dashboard with tactical overlays. | 1920×1080 | Update tasking directives and map markers to match your event. |
+| `scenes/postgame-debrief-screen.html` | Post-match debrief screen summarizing outcomes. | 1920×1080 | Modify after-action report bullet points and statistics. |
+| `scenes/start-screen.html` | Starting soon slate styled as a UNSC broadcast relay. | 1920×1080 | Set the emblem SVG or replace copy for your channel branding. |
+| `transitions/slipspace-burst.html` | Slipspace burst stinger transition. | 1920×1080 | Export as a WebM with alpha for use as a stinger source. |
 
 #### League of Legends (`assets/themes/games/league-of-legends/`)
 
