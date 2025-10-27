@@ -9,16 +9,15 @@
 
     :root {
       color-scheme: dark;
-      --unsc-night: #030705;
-      --unsc-od-green: #1f2a1a;
-      --unsc-olive: #36472b;
-      --unsc-laser: #9ccf87;
+      --unsc-deep: #02080f;
+      --unsc-blue: #0f2a3e;
+      --unsc-teal: #88d7ff;
       --unsc-amber: #f9d76d;
-      --unsc-holo: rgba(102, 159, 118, 0.65);
-      --text-primary: #f6fbe9;
-      --text-muted: rgba(245, 250, 233, 0.78);
-      --text-soft: rgba(222, 236, 204, 0.6);
-      --accent: rgba(156, 207, 135, 0.38);
+      --unsc-steel: rgba(21, 41, 60, 0.88);
+      --text-primary: #eff8ff;
+      --text-muted: rgba(239, 248, 255, 0.7);
+      --text-soft: rgba(239, 248, 255, 0.55);
+      --accent: rgba(136, 215, 255, 0.45);
     }
 
     * {
@@ -29,15 +28,15 @@
     body {
       height: 100%;
       margin: 0;
-      background: radial-gradient(circle at 16% 18%, rgba(156, 207, 135, 0.16), transparent 45%),
-        radial-gradient(circle at 82% 78%, rgba(52, 70, 44, 0.5), transparent 60%),
-        linear-gradient(148deg, var(--unsc-night), #050f08 46%, #152114 100%);
+      background: radial-gradient(circle at 12% 18%, rgba(88, 215, 255, 0.22), transparent 45%),
+        radial-gradient(circle at 86% 78%, rgba(26, 64, 112, 0.45), transparent 60%),
+        linear-gradient(150deg, var(--unsc-deep), #030b16 48%, #04162b 100%);
       font-family: 'Barlow Condensed', 'Rajdhani', 'Segoe UI', sans-serif;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.14em;
       color: var(--text-primary);
       display: grid;
       place-items: center;
-      padding: clamp(20px, 4vw, 60px);
+      padding: clamp(24px, 5vw, 72px);
       overflow: hidden;
       text-transform: uppercase;
     }
@@ -52,15 +51,15 @@
     }
 
     body::before {
-      background: radial-gradient(circle at 12% 22%, rgba(156, 207, 135, 0.22), transparent 38%),
-        radial-gradient(circle at 78% 72%, rgba(249, 215, 109, 0.16), transparent 52%),
-        repeating-linear-gradient(92deg, rgba(156, 207, 135, 0.12) 0, rgba(156, 207, 135, 0.12) 1px, transparent 1px, transparent 12px);
+      background: radial-gradient(circle at 15% 20%, rgba(136, 215, 255, 0.28), transparent 40%),
+        radial-gradient(circle at 80% 75%, rgba(249, 215, 109, 0.2), transparent 55%),
+        repeating-linear-gradient(90deg, rgba(136, 215, 255, 0.12) 0, rgba(136, 215, 255, 0.12) 1px, transparent 1px, transparent 12px);
       opacity: 0.4;
       animation: sweep 22s linear infinite;
     }
 
     body::after {
-      background-image: radial-gradient(circle, rgba(156, 207, 135, 0.36) 0 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(136, 215, 255, 0.4) 0 1px, transparent 1px);
       background-size: 160px 160px;
       animation: drift 48s linear infinite;
       opacity: 0.35;
@@ -70,12 +69,12 @@
       width: min(94vw, 1320px);
       min-height: min(92vh, 800px);
       border-radius: 34px;
-      border: 2px solid rgba(156, 207, 135, 0.4);
-      padding: clamp(28px, 4.4vw, 66px);
-      background: linear-gradient(142deg, rgba(8, 18, 10, 0.94), rgba(14, 28, 16, 0.88));
-      box-shadow: 0 0 160px rgba(9, 24, 12, 0.78), inset 0 0 140px rgba(120, 168, 105, 0.16);
+      border: 1.8px solid rgba(136, 215, 255, 0.4);
+      padding: clamp(32px, 5vw, 72px);
+      background: linear-gradient(145deg, rgba(3, 11, 19, 0.95), rgba(6, 21, 36, 0.86));
+      box-shadow: 0 0 160px rgba(9, 26, 42, 0.8), inset 0 0 140px rgba(136, 215, 255, 0.18);
       display: grid;
-      gap: clamp(22px, 3.6vw, 44px);
+      gap: clamp(24px, 4vw, 48px);
       position: relative;
       overflow: hidden;
     }
@@ -85,11 +84,11 @@
       position: absolute;
       inset: 16px;
       border-radius: 22px;
-      border: 1px solid rgba(156, 207, 135, 0.18);
+      border: 1px solid rgba(136, 215, 255, 0.16);
       pointer-events: none;
       mix-blend-mode: screen;
-      background: radial-gradient(circle at 46% 18%, rgba(249, 215, 109, 0.08), transparent 58%),
-        linear-gradient(135deg, rgba(156, 207, 135, 0.12), transparent 72%);
+      background: radial-gradient(circle at 50% 18%, rgba(249, 215, 109, 0.08), transparent 58%),
+        linear-gradient(135deg, rgba(136, 215, 255, 0.12), transparent 72%);
       animation: pulseGlow 6s ease-in-out infinite;
     }
 
@@ -99,71 +98,13 @@
       pointer-events: none;
     }
 
-    .corner-badge {
-      position: absolute;
-      top: clamp(18px, 4vh, 32px);
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: rgba(30, 44, 28, 0.72);
-      border: 1px solid rgba(156, 207, 135, 0.34);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.74rem;
-      letter-spacing: 0.3em;
-      color: var(--text-soft);
-      text-transform: uppercase;
-      z-index: 2;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 24px rgba(24, 46, 24, 0.56);
-    }
-
-    .corner-badge svg {
-      width: 36px;
-      height: 36px;
-      filter: drop-shadow(0 0 12px rgba(156, 207, 135, 0.45));
-    }
-
-    .badge-left {
-      left: clamp(22px, 4vw, 48px);
-    }
-
-    .badge-right {
-      right: clamp(22px, 4vw, 48px);
-      text-align: right;
-    }
-
-    .badge-right strong {
-      color: var(--text-primary);
-      letter-spacing: 0.32em;
-      display: block;
-    }
-
-    .badge-right span {
-      display: block;
-      font-size: 0.62rem;
-      letter-spacing: 0.26em;
-      color: var(--text-soft);
-    }
-
-    .sigil-watermark {
-      position: absolute;
-      bottom: 8%;
-      right: -8%;
-      width: clamp(320px, 36vw, 440px);
-      opacity: 0.12;
-      z-index: 0;
-      animation: hover 16s ease-in-out infinite;
-      pointer-events: none;
-    }
-
     .hud-lines::before,
     .hud-lines::after {
       content: '';
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      border: 1px solid rgba(156, 207, 135, 0.18);
+      border: 1px solid rgba(136, 215, 255, 0.15);
       transform: scale(1.04);
       opacity: 0.6;
       animation: breathe 12s ease-in-out infinite;
@@ -181,7 +122,6 @@
       gap: clamp(16px, 3vw, 28px);
       text-align: center;
       z-index: 1;
-      padding-top: clamp(36px, 5vh, 72px);
     }
 
     .emblem {
@@ -195,7 +135,7 @@
     .emblem svg {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(0 0 24px rgba(156, 207, 135, 0.42));
+      filter: drop-shadow(0 0 24px rgba(136, 215, 255, 0.45));
       animation: hover 10s ease-in-out infinite;
     }
 
@@ -203,37 +143,33 @@
       position: absolute;
       inset: -18%;
       border-radius: 999px;
-      border: 1.4px dashed rgba(156, 207, 135, 0.4);
+      border: 1.4px dashed rgba(136, 215, 255, 0.36);
       animation: orbit 26s linear infinite;
-      filter: drop-shadow(0 0 18px rgba(156, 207, 135, 0.32));
+      filter: drop-shadow(0 0 18px rgba(136, 215, 255, 0.35));
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(1.2rem, 3.2vw, 1.9rem);
+      font-size: clamp(1.3rem, 3.6vw, 2rem);
       color: var(--text-muted);
-      letter-spacing: 0.3em;
-      max-width: 960px;
-      line-height: 1.35;
+      letter-spacing: 0.42em;
     }
 
     .headline {
-      font-size: clamp(2.6rem, 6.6vw, 4.6rem);
+      font-size: clamp(2.8rem, 7vw, 4.8rem);
       margin: 0;
-      color: var(--unsc-laser);
-      letter-spacing: clamp(0.34em, 1.8vw, 0.46em);
-      text-shadow: 0 0 34px rgba(156, 207, 135, 0.6);
+      color: var(--unsc-teal);
+      letter-spacing: 0.6em;
+      text-shadow: 0 0 34px rgba(136, 215, 255, 0.68);
       animation: shimmer 7s ease-in-out infinite;
-      line-height: 1.2;
     }
 
     .tagline {
       margin: 0;
       max-width: 740px;
       font-size: clamp(1rem, 2.2vw, 1.3rem);
-      letter-spacing: 0.26em;
+      letter-spacing: 0.32em;
       color: var(--text-soft);
-      line-height: 1.5;
     }
 
     .countdown {
@@ -243,52 +179,24 @@
       z-index: 1;
     }
 
-    .stream-banner {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      padding: 10px 24px;
-      border-radius: 999px;
-      background: rgba(44, 64, 38, 0.7);
-      border: 1px solid rgba(156, 207, 135, 0.36);
-      letter-spacing: 0.3em;
-      color: var(--text-primary);
-      font-size: clamp(0.82rem, 2vw, 1rem);
-      text-transform: uppercase;
-      box-shadow: 0 0 22px rgba(24, 46, 24, 0.5);
-      text-align: center;
-    }
-
-    .stream-banner::before {
-      content: '';
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: var(--unsc-amber);
-      box-shadow: 0 0 12px var(--unsc-amber);
-      animation: beacon 1.6s ease-in-out infinite;
-    }
-
     .counter {
       display: flex;
       gap: clamp(14px, 3vw, 28px);
       font-family: 'Rajdhani', 'Barlow Condensed', sans-serif;
       font-size: clamp(2.2rem, 6vw, 3.6rem);
       color: var(--unsc-amber);
-      text-shadow: 0 0 22px rgba(249, 215, 109, 0.36);
+      text-shadow: 0 0 26px rgba(249, 215, 109, 0.42);
     }
 
     .counter span {
       position: relative;
       padding: 18px 24px;
       border-radius: 18px;
-      background: linear-gradient(160deg, rgba(249, 215, 109, 0.15), rgba(58, 73, 43, 0.45));
-      border: 1px solid rgba(249, 215, 109, 0.28);
+      background: linear-gradient(160deg, rgba(249, 215, 109, 0.15), rgba(249, 215, 109, 0.06));
+      border: 1px solid rgba(249, 215, 109, 0.35);
       min-width: clamp(92px, 12vw, 130px);
       text-align: center;
-      letter-spacing: 0.32em;
+      letter-spacing: 0.38em;
       animation: flicker 5s ease-in-out infinite;
     }
 
@@ -299,7 +207,7 @@
       left: 50%;
       transform: translateX(-50%);
       font-size: clamp(0.68rem, 1.8vw, 0.82rem);
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
       color: var(--text-soft);
     }
 
@@ -308,8 +216,6 @@
       letter-spacing: 0.28em;
       color: var(--text-soft);
       text-align: center;
-      max-width: 720px;
-      line-height: 1.4;
     }
 
     .deployment-status {
@@ -323,9 +229,9 @@
       position: relative;
       padding: clamp(18px, 2.4vw, 30px);
       border-radius: 18px;
-      background: linear-gradient(150deg, rgba(18, 30, 18, 0.92), rgba(11, 20, 11, 0.88));
-      border: 1px solid rgba(156, 207, 135, 0.28);
-      box-shadow: inset 0 0 36px rgba(156, 207, 135, 0.16);
+      background: linear-gradient(150deg, rgba(7, 20, 34, 0.92), rgba(5, 14, 25, 0.88));
+      border: 1px solid rgba(136, 215, 255, 0.28);
+      box-shadow: inset 0 0 36px rgba(136, 215, 255, 0.18);
       display: grid;
       gap: clamp(12px, 2vw, 18px);
       text-align: center;
@@ -345,7 +251,7 @@
       content: '';
       position: absolute;
       inset: -40%;
-      background: radial-gradient(circle, rgba(156, 207, 135, 0.22), transparent 60%);
+      background: radial-gradient(circle, rgba(136, 215, 255, 0.24), transparent 60%);
       opacity: 0;
       animation: pulse 8s infinite;
     }
@@ -358,8 +264,8 @@
 
     .status-card strong {
       font-size: clamp(1.1rem, 2.8vw, 1.8rem);
-      color: var(--unsc-laser);
-      text-shadow: 0 0 22px rgba(156, 207, 135, 0.4);
+      color: var(--unsc-teal);
+      text-shadow: 0 0 22px rgba(136, 215, 255, 0.45);
     }
 
     .telemetry {
@@ -373,7 +279,6 @@
       font-size: clamp(1rem, 2.4vw, 1.4rem);
       letter-spacing: 0.36em;
       color: var(--text-muted);
-      text-align: center;
     }
 
     .telemetry-grid {
@@ -385,8 +290,8 @@
     .telemetry-item {
       padding: clamp(12px, 1.6vw, 18px);
       border-radius: 14px;
-      background: rgba(22, 32, 22, 0.78);
-      border: 1px solid rgba(156, 207, 135, 0.18);
+      background: rgba(8, 20, 32, 0.78);
+      border: 1px solid rgba(136, 215, 255, 0.18);
       display: grid;
       gap: 6px;
     }
@@ -402,43 +307,6 @@
       letter-spacing: 0.22em;
     }
 
-    .intel-banner {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: clamp(14px, 2.2vw, 26px);
-      z-index: 1;
-    }
-
-    .intel-card {
-      padding: clamp(12px, 1.8vw, 18px);
-      border-radius: 16px;
-      border: 1px solid rgba(156, 207, 135, 0.24);
-      background: rgba(30, 44, 28, 0.62);
-      display: grid;
-      gap: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--text-soft);
-      backdrop-filter: blur(4px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .intel-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent, rgba(156, 207, 135, 0.14) 48%, transparent 72%);
-      opacity: 0;
-      animation: hoverLine 6s ease-in-out infinite;
-    }
-
-    .intel-card strong {
-      color: var(--text-primary);
-      font-size: clamp(0.84rem, 1.9vw, 1.02rem);
-      letter-spacing: 0.26em;
-    }
-
     footer {
       display: flex;
       flex-wrap: wrap;
@@ -452,9 +320,9 @@
     footer span {
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(22, 32, 18, 0.72);
-      border: 1px solid rgba(156, 207, 135, 0.24);
-      letter-spacing: 0.22em;
+      background: rgba(10, 28, 46, 0.72);
+      border: 1px solid rgba(136, 215, 255, 0.24);
+      letter-spacing: 0.26em;
     }
 
     @keyframes sweep {
@@ -517,13 +385,13 @@
     @keyframes shimmer {
       0%,
       100% {
-        text-shadow: 0 0 34px rgba(156, 207, 135, 0.62);
+        text-shadow: 0 0 34px rgba(136, 215, 255, 0.68);
       }
       45% {
-        text-shadow: 0 0 46px rgba(249, 215, 109, 0.78);
+        text-shadow: 0 0 46px rgba(249, 215, 109, 0.8);
       }
       65% {
-        text-shadow: 0 0 30px rgba(120, 168, 105, 0.54);
+        text-shadow: 0 0 30px rgba(136, 215, 255, 0.52);
       }
     }
 
@@ -588,30 +456,6 @@
       }
     }
 
-    @keyframes beacon {
-      0%,
-      100% {
-        opacity: 0.4;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 1;
-        transform: scale(1.18);
-      }
-    }
-
-    @media (max-width: 960px) {
-      .corner-badge {
-        position: static;
-        margin-inline: auto;
-        justify-content: center;
-      }
-
-      header {
-        padding-top: clamp(24px, 8vw, 48px);
-      }
-    }
-
     @media (max-width: 720px) {
       .counter span {
         min-width: 78px;
@@ -620,11 +464,6 @@
 
       .headline {
         letter-spacing: 0.44em;
-      }
-
-      .stream-banner {
-        letter-spacing: 0.2em;
-        padding: 10px 18px;
       }
 
       footer span {
@@ -636,24 +475,6 @@
 <body>
   <main>
     <div class="hud-lines" aria-hidden="true"></div>
-    <div class="corner-badge badge-left" aria-hidden="true">
-      <svg viewBox="0 0 120 120" role="img" aria-label="UNSC Eagle">
-        <path fill="rgba(156, 207, 135, 0.68)" d="M60 8 L44 30 L20 30 L38 54 L26 72 L42 70 L34 108 L60 84 L86 108 L78 70 L94 72 L82 54 L100 30 L76 30 Z" />
-        <rect x="52" y="48" width="16" height="30" fill="rgba(249, 215, 109, 0.72)" />
-        <path fill="#0b130c" d="M60 64 L52 78 L68 78 Z" />
-      </svg>
-      NAVSPECWARCOM
-    </div>
-    <div class="corner-badge badge-right" aria-hidden="true">
-      <strong>UNSC FLEETCOM</strong>
-      <span>Pillar of Autumn // Red Flag</span>
-    </div>
-    <svg class="sigil-watermark" viewBox="0 0 320 320" aria-hidden="true">
-      <circle cx="160" cy="160" r="146" fill="none" stroke="rgba(156, 207, 135, 0.32)" stroke-width="4" stroke-dasharray="18 12" />
-      <text x="160" y="110" text-anchor="middle" font-size="48" fill="rgba(249, 215, 109, 0.45)" font-family="'Rajdhani', sans-serif" letter-spacing="18">UNSC</text>
-      <text x="160" y="170" text-anchor="middle" font-size="24" fill="rgba(156, 207, 135, 0.65)" font-family="'Barlow Condensed', sans-serif" letter-spacing="10">SECTION 3</text>
-      <text x="160" y="220" text-anchor="middle" font-size="18" fill="rgba(156, 207, 135, 0.55)" font-family="'Barlow Condensed', sans-serif" letter-spacing="8">TACTICAL NETWORK</text>
-    </svg>
 
     <header>
       <div class="emblem" aria-hidden="true">
@@ -661,17 +482,17 @@
         <svg viewBox="0 0 160 160" role="img" aria-label="UNSC Emblem">
           <defs>
             <linearGradient id="wing" x1="0%" x2="100%" y1="0%" y2="100%">
-              <stop offset="0%" stop-color="#9ccf87" />
-              <stop offset="100%" stop-color="#23321b" />
+              <stop offset="0%" stop-color="#8cd8ff" />
+              <stop offset="100%" stop-color="#286089" />
             </linearGradient>
             <linearGradient id="shield" x1="0%" x2="0%" y1="0%" y2="100%">
-              <stop offset="0%" stop-color="#20321f" />
-              <stop offset="100%" stop-color="#0b140a" />
+              <stop offset="0%" stop-color="#103047" />
+              <stop offset="100%" stop-color="#0a1b29" />
             </linearGradient>
           </defs>
-          <path fill="url(#wing)" d="M40 30 L15 60 L30 64 L16 90 L42 84 L34 116 L64 90 L78 120 L82 74 Z" opacity="0.92" />
-          <path fill="url(#wing)" d="M120 30 L145 60 L130 64 L144 90 L118 84 L126 116 L96 90 L82 120 L78 74 Z" opacity="0.92" />
-          <path fill="url(#shield)" d="M64 50 L96 50 L112 84 L80 130 L48 84 Z" stroke="#9ccf87" stroke-width="2" />
+          <path fill="url(#wing)" d="M40 30 L15 60 L30 64 L16 90 L42 84 L34 116 L64 90 L78 120 L82 74 Z" opacity="0.9" />
+          <path fill="url(#wing)" d="M120 30 L145 60 L130 64 L144 90 L118 84 L126 116 L96 90 L82 120 L78 74 Z" opacity="0.9" />
+          <path fill="url(#shield)" d="M64 50 L96 50 L112 84 L80 130 L48 84 Z" stroke="#8cd8ff" stroke-width="2" />
           <text x="80" y="96" text-anchor="middle" font-size="28" fill="#f9d76d" font-family="'Rajdhani', sans-serif" letter-spacing="8">UNSC</text>
           <path fill="#f9d76d" d="M80 108 L74 118 H86 Z" />
         </svg>
@@ -680,8 +501,6 @@
       <h2 class="headline">Starting Soon</h2>
       <p class="tagline">Stand by, Spartan. Tactical broadcast link initializing across the Pillar of Autumn battlenet.</p>
     </header>
-
-    <div class="stream-banner" role="status" aria-live="polite">Starting Soon Transmission</div>
 
     <section class="countdown" aria-label="Launch countdown">
       <div class="counter">
@@ -726,21 +545,6 @@
           <span>External Sensors</span>
           <strong>RING SURFACE CLEAR</strong>
         </div>
-      </div>
-    </section>
-
-    <section class="intel-banner" aria-label="UNSC intel dispatches">
-      <div class="intel-card">
-        <span>lore file</span>
-        <strong>OPERATION: RED FLAG PREPARED</strong>
-      </div>
-      <div class="intel-card">
-        <span>artifact log</span>
-        <strong>FORWARD UNTO DAWN DOCKED</strong>
-      </div>
-      <div class="intel-card">
-        <span>protocol reference</span>
-        <strong>COLE PROTOCOL ARMED</strong>
       </div>
     </section>
 
