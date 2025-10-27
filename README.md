@@ -20,8 +20,10 @@ assets/
 ├── backgrounds/      # Animated and static scene backdrops
 ├── index.html        # Human-friendly catalog of all assets
 ├── lower-thirds/     # Lower third nameplates and announcement banners
+├── news/             # Broadcast-style scenes, tickers, and live inserts
 ├── overlays/         # Webcam frames, tickers, chat panels
 ├── scenes/           # Complete scene layouts (starting soon, intermission, etc.)
+├── themes/           # Coordinated asset suites grouped by visual theme
 └── widgets/          # Supplemental UI elements like polls and goals
 ```
 

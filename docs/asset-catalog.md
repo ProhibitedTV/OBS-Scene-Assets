@@ -20,12 +20,15 @@ The following tables summarize every HTML asset available in the repository. Use
 
 | File | Style | Recommended Source Size | Notes |
 | --- | --- | --- | --- |
+| `aurora-borealis.html` | Northern lights gradient with slow shimmer. | 1920×1080 | Works well for calm pre-show loops. |
 | `digital-grid.html` | Futuristic cyan grid with gentle camera pan. | 1920×1080 | Designed to sit behind overlays; seamless loop. |
 | `gradient-wave.html` | Abstract gradient ribbons flowing across screen. | 1920×1080 | Soft color palette for general chatting scenes. |
 | `nature-leaves.html` | Botanical leaves with slow parallax motion. | 1920×1080 | Pair with minimalist overlays for a calm vibe. |
 | `retro-sunset.html` | Retro synthwave horizon with sun animation. | 1920×1080 | Great for countdowns and retro streams. |
 | `soft-bokeh.html` | Blurred bokeh lights floating gently. | 1920×1080 | Low contrast, ideal for text overlays. |
 | `space-nebula.html` | Cosmic nebula clouds with star twinkle. | 1920×1080 | Works in sci-fi themes and BRB scenes. |
+| `tech-circuit.html` | Glowing circuit board animation. | 1920×1080 | Pair with tech or esports overlays. |
+| `tropical-sunrise.html` | Warm sunrise with palm silhouettes. | 1920×1080 | Bright option for morning or travel streams. |
 
 ## Lower Thirds (`assets/lower-thirds/`)
 
@@ -58,6 +61,24 @@ The following tables summarize every HTML asset available in the repository. Use
 | `starting-soon.html` | Pre-stream countdown and highlight reel. | 1920×1080 | Pair with alert widgets for incoming events. |
 | `support-goals.html` | Donation/subscriber goals and milestones. | 1920×1080 | Connect to manual updates or chatbot integrations. |
 
+## News (`assets/news/`)
+
+| File | Use Case | Recommended Source Size | Notes |
+| --- | --- | --- | --- |
+| `breaking-news-stinger.html` | Quick animated stinger for transitions. | 1920×1080 | Export to WebM for use as a stinger source. |
+| `election-results.html` | Election race results board. | 1920×1080 | Update candidate data in the inline script. |
+| `live-location-bug.html` | Live location lower-right identifier. | 600×200 (Transparent) | Layer on top of footage for remote hits. |
+| `news-anchor-lower-third.html` | Primary presenter lower third. | 1920×250 (Transparent) | Swap headline and subtext for each story. |
+| `news-countdown.html` | Countdown intro slate. | 1920×1080 | Adjust timer length to match your rundown. |
+| `news-desk-scene.html` | Main news desk layout. | 1920×1080 | Includes panels for headlines, ticker, and webcam feeds. |
+| `news-headlines-stack.html` | Vertical stack of top stories. | 1080×1920 | Ideal for vertical or portrait outputs. |
+| `news-ticker.html` | Scrolling headline ticker. | 1920×160 (Transparent) | Populate the headlines array in the script block. |
+| `over-the-shoulder.html` | Anchor over-the-shoulder graphic. | 1280×720 (Transparent) | Position above shoulder and update the imagery. |
+| `press-conference.html` | Podium scene layout. | 1920×1080 | Customize speaker nameplates and logos. |
+| `split-screen-interview.html` | Dual-guest interview layout. | 1920×1080 | Update guest names and adjust camera placeholders. |
+| `weather-update.html` | Weather segment scene with forecast data. | 1920×1080 | Edit the daily forecast details in the table. |
+| `world-map-background.html` | Animated world map background. | 1920×1080 | Loop behind newsroom overlays for global coverage. |
+
 ## Theme Collections (`assets/themes/`)
 
 ### Cyberpunk Broadcast Suite (`assets/themes/cyberpunk-broadcast/`)
@@ -80,6 +101,69 @@ The following tables summarize every HTML asset available in the repository. Use
 | `scenes/stream-countdown.html` | Circular countdown timer with orbiting accents. | 1080×1080 | Adjust the displayed time directly in the markup. |
 | `scenes/synthwave-break-screen.html` | BRB slate with progress indicator and neon grid. | 1920×1080 | Pair with lo-fi audio during intermissions. |
 | `transitions/stinger-transition.html` | High-energy transition with neon sweep. | 1920×1080 | Export as a WebM with alpha if you need animation in OBS. |
+
+### Fantasy Legends Suite (`assets/themes/fantasy-legends/`)
+
+| File | Purpose | Recommended Source Size | Notes |
+| --- | --- | --- | --- |
+| `alerts/summoning-circle-alert.html` | Magical alert with arcane circle animation. | 800×450 (Transparent) | Replace runes or sigils with your guild branding. |
+| `overlays/quest-lower-third.html` | Quest-themed lower third. | 1920×300 (Transparent) | Update quest title and subtitle in the markup. |
+| `scenes/adventure-countdown.html` | Adventure countdown intro. | 1920×1080 | Adjust the countdown length in the script block. |
+| `scenes/enchanted-map-briefing.html` | Map briefing scene with party roster. | 1920×1080 | Edit party list and objective text for each session. |
+| `transitions/arcane-portal.html` | Portal-themed wipe transition. | 1920×1080 | Export to WebM for chroma-transparent stinger. |
+
+### Games Collection (`assets/themes/games/`)
+
+#### Apex Legends (`assets/themes/games/apex-legends/`)
+
+| File | Purpose | Recommended Source Size | Notes |
+| --- | --- | --- | --- |
+| `apex-drop-ship-countdown.html` | Drop ship countdown overlay. | 1920×1080 | Sync the countdown timer to match match start. |
+| `apex-ring-alert.html` | Ring closure alert banner. | 1920×300 (Transparent) | Update ring timing text for each round. |
+| `apex-squad-overview.html` | Squad roster card. | 1920×1080 | Populate legend picks and loadouts in the table. |
+
+#### Fortnite (`assets/themes/games/fortnite/`)
+
+| File | Purpose | Recommended Source Size | Notes |
+| --- | --- | --- | --- |
+| `fortnite-battle-bus-start.html` | Battle Bus intro scene. | 1920×1080 | Update drop location tips in the sidebar. |
+| `fortnite-loadout-showcase.html` | Loadout showcase panel. | 1920×1080 | Replace weapon and item icons with current selections. |
+| `fortnite-storm-alert.html` | Storm alert warning overlay. | 1920×360 (Transparent) | Adjust warning copy for each storm phase. |
+
+#### Halo (`assets/themes/games/halo/`)
+
+| File | Purpose | Recommended Source Size | Notes |
+| --- | --- | --- | --- |
+| `halo-theme.css` | Thematic CSS overrides for Halo broadcasts. | N/A (Stylesheet) | Import into Halo-specific HTML assets to reuse styling. |
+
+#### League of Legends (`assets/themes/games/league-of-legends/`)
+
+| File | Purpose | Recommended Source Size | Notes |
+| --- | --- | --- | --- |
+| `league-draft-desk.html` | Draft desk scene with ban/pick columns. | 1920×1080 | Update team names and champion pools per match. |
+| `league-objective-tracker.html` | Objective tracking widget. | 600×600 (Transparent) | Edit timers for Baron, Dragon, and turret status. |
+| `league-victory-screen.html` | Victory celebration scene. | 1920×1080 | Customize animation colors for each team. |
+
+#### Valorant (`assets/themes/games/valorant/`)
+
+| File | Purpose | Recommended Source Size | Notes |
+| --- | --- | --- | --- |
+| `valorant-match-intro.html` | Match intro slate. | 1920×1080 | Update agent lineup and event branding. |
+| `valorant-round-history.html` | Round history tracker. | 1920×1080 | Populate round wins and economy icons. |
+| `valorant-spike-status.html` | Spike status widget. | 600×600 (Transparent) | Toggle planted/defused states via provided variables. |
+
+### Newsroom Suite (`assets/themes/newsroom/`)
+
+| File | Purpose | Recommended Source Size | Notes |
+| --- | --- | --- | --- |
+| `alerts/breaking-news-stinger.html` | Breaking news transition. | 1920×1080 | Render as WebM with alpha for stinger transitions. |
+| `alerts/election-results-flip.html` | Election results reveal animation. | 1920×1080 | Customize candidate data and party colors. |
+| `overlays/live-location-bug.html` | Live location identifier. | 600×200 (Transparent) | Display city and reporter details. |
+| `overlays/news-lower-third.html` | News lower third overlay. | 1920×250 (Transparent) | Update story headline and kicker text. |
+| `overlays/news-ticker.html` | Scrolling news ticker. | 1920×160 (Transparent) | Maintain headline list in the script array. |
+| `scenes/news-desk-main.html` | Main news desk scene. | 1920×1080 | Replace placeholder video frames with live feeds. |
+| `scenes/world-map-background.html` | World map loop background. | 1920×1080 | Use as a base behind other newsroom overlays. |
+| `transitions/headline-swipe.html` | Headline swipe transition. | 1920×1080 | Export to WebM for use as a stinger. |
 
 ## Widgets (`assets/widgets/`)
 
