@@ -1,0 +1,122 @@
+<!--
+Title: Live Show Host Intro Lower Third
+Category: lower-thirds
+Collection: live-show
+UseCase: Presenter lower third for podcasts, host-led creator shows, and talk-format broadcasts.
+Resolution: 1920x260
+Transparent: true
+Description: Broadcast-style host nameplate with a clean headline lane and subtle accent flare for polished live-show intros.
+Tags: live-show, host, lower-third, podcast, presenter, creator, overlay
+Preview: previews/themes/live-show/lower-thirds/host-intro.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Show Host Intro Lower Third</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+    :root {
+      --accent: #1d4ed8;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.74);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 3vw 4vh;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    .lower-third {
+      width: min(76vw, 1240px);
+      border-radius: 1.4rem;
+      overflow: hidden;
+      background: rgba(8, 15, 28, 0.84);
+      border: 1px solid rgba(226, 232, 240, 0.14);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.95rem 1rem;
+      box-shadow: 0 20px 40px rgba(2, 8, 23, 0.28);
+    }
+
+    .tag {
+      padding: 0.68rem 0.8rem;
+      border-radius: 1rem;
+      background: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .copy {
+      display: grid;
+      gap: 0.18rem;
+    }
+
+    .title {
+      font-size: 1.18rem;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .headline {
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+  </style>
+</head>
+<body>
+  <div class="lower-third">
+    <div class="tag" id="tag">Host</div>
+    <div class="copy">
+      <div class="title" id="title">Jordan Vale</div>
+      <div class="subtitle" id="subtitle">Show host • Creator strategy and live production</div>
+    </div>
+    <div class="headline" id="headline">Live Show Suite</div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const accent = params.get('accent');
+    const headline = params.get('headline');
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+    }
+
+    if (headline) {
+      document.getElementById('headline').textContent = headline;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+    }
+  </script>
+</body>
+</html>

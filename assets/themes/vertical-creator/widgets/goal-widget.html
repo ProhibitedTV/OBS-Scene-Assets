@@ -1,0 +1,167 @@
+<!--
+Title: Vertical Creator Goal Widget
+Category: widgets
+Collection: vertical-creator
+UseCase: Portrait-friendly creator goal bar for follower pushes, drop milestones, and campaign checkpoints.
+Resolution: 900x260
+Transparent: true
+Description: Compact progress widget with milestone numbers, support copy, and a bright creator-style fill bar built for portrait stacks.
+Tags: vertical, creator, goal, widget, progress, milestone, mobile, overlay
+Preview: previews/themes/vertical-creator/widgets/goal-widget.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vertical Creator Goal Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@500;700&family=Inter:wght@500;700&display=swap');
+
+    :root {
+      --accent: #fb7185;
+      --accent-secondary: #f97316;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.72);
+      --progress: 0.68;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      display: grid;
+      place-items: center;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    .widget {
+      width: min(92vw, 860px);
+      padding: 1rem 1.15rem;
+      border-radius: 1.35rem;
+      background: rgba(8, 15, 28, 0.78);
+      border: 1px solid rgba(226, 232, 240, 0.14);
+      display: grid;
+      gap: 0.9rem;
+      box-shadow: 0 20px 40px rgba(2, 8, 23, 0.28);
+    }
+
+    .head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .title {
+      font-family: 'Cabinet Grotesk', 'Inter', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      font-size: 0.82rem;
+      color: var(--muted);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .numbers {
+      text-align: right;
+    }
+
+    .numbers strong {
+      display: block;
+      font-size: 1.3rem;
+      letter-spacing: -0.04em;
+    }
+
+    .numbers span {
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .track {
+      height: 1rem;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .fill {
+      width: calc(var(--progress) * 100%);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="widget">
+    <div class="head">
+      <div>
+        <div class="subtitle" id="subtitle">Monthly creator goal</div>
+        <div class="title" id="title">Hit 3,000 followers before the next launch</div>
+      </div>
+      <div class="numbers">
+        <strong id="numbers">2,040 / 3,000</strong>
+        <span id="headline">68% complete</span>
+      </div>
+    </div>
+    <div class="track">
+      <div class="fill"></div>
+    </div>
+    <div class="footer">
+      <span id="footer-left">Momentum callout: the next milestone unlocks a creator Q&amp;A.</span>
+      <span id="footer-right">Shared params: title, subtitle, accent, headline</span>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const accent = params.get('accent');
+    const headline = params.get('headline');
+    const current = Number(params.get('current'));
+    const goal = Number(params.get('goal'));
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+    }
+
+    if (!Number.isNaN(current) && !Number.isNaN(goal) && goal > 0) {
+      const progress = Math.min(1, current / goal);
+      document.documentElement.style.setProperty('--progress', String(progress));
+      document.getElementById('numbers').textContent = `${current.toLocaleString()} / ${goal.toLocaleString()}`;
+      document.getElementById('headline').textContent = `${Math.round(progress * 100)}% complete`;
+    } else if (headline) {
+      document.getElementById('headline').textContent = headline;
+    }
+  </script>
+</body>
+</html>

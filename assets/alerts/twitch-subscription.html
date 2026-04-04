@@ -1,3 +1,14 @@
+<!--
+Title: Twitch Subscription Alert
+Category: alerts
+Collection: core
+UseCase: Recognizes new or returning subscribers.
+Resolution: 800x450
+Transparent: false
+Description: Shared query params support title, headline, subtitle, and accent overrides for fast OBS alert customization.
+Tags: accent, alert, alerts, core, headline, obs, query-params, subscription, subtitle, title, twitch
+Preview: none
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,17 +107,18 @@
     const months = Number(params.get('months')) || 1;
     const isPrime = params.get('prime') === 'true';
     const badge = params.get('badge');
-    const label = params.get('label') || (isPrime ? 'Prime Sub' : 'New Subscription');
+    const label = params.get('title') || params.get('label') || (isPrime ? 'Prime Sub' : 'New Subscription');
+    const headline = params.get('headline');
+    const subtitle = params.get('subtitle') || params.get('streak');
     const accent = params.get('accent');
     const accentSecondary = params.get('accentSecondary');
 
     document.getElementById('label').textContent = label;
     const subscribeText = isPrime ? ' with Prime' : ` at ${tier}`;
-    document.getElementById('headline').textContent = `${subscriber} just subscribed${subscribeText}!`;
+    document.getElementById('headline').textContent = headline || `${subscriber} just subscribed${subscribeText}!`;
 
-    const streakText = params.get('streak');
-    if (streakText) {
-      document.getElementById('streak').textContent = streakText;
+    if (subtitle) {
+      document.getElementById('streak').textContent = subtitle;
     } else {
       document.getElementById('streak').textContent =
         months > 1 ? `Subscribed for ${months} months in a row!` : 'First month - welcome aboard!';

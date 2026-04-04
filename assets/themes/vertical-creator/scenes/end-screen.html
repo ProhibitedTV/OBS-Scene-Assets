@@ -1,0 +1,260 @@
+<!--
+Title: Vertical Creator End Screen
+Category: scenes
+Collection: vertical-creator
+UseCase: Vertical end card for creator streams with follow prompts, next-live reminders, and shoutout slots.
+Resolution: 1080x1920
+Transparent: false
+Description: Portrait outro scene with stacked creator CTAs, rotating callout cards, and a clean mobile-native wrap-up layout.
+Tags: vertical, creator, outro, portrait, follow, call-to-action, mobile, shorts
+Preview: previews/themes/vertical-creator/scenes/end-screen.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vertical Creator End Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Syne:wght@600;700&display=swap');
+
+    :root {
+      --accent: #ec4899;
+      --accent-secondary: #3b82f6;
+      --panel: rgba(15, 23, 42, 0.82);
+      --line: rgba(226, 232, 240, 0.14);
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.74);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(236, 72, 153, 0.26), transparent 22%),
+        radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.22), transparent 26%),
+        linear-gradient(180deg, #090616, #140a24 50%, #0b1324);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+    }
+
+    main {
+      min-height: 100vh;
+      padding: 6vh 7vw;
+      display: grid;
+      gap: 1.5rem;
+      align-content: space-between;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.84rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0.4rem 0 0;
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 5.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      max-width: 7ch;
+    }
+
+    .lede {
+      max-width: 18ch;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+      line-height: 1.6;
+    }
+
+    .cta-stack {
+      display: grid;
+      gap: 0.95rem;
+    }
+
+    .cta-card {
+      padding: 1.1rem 1.15rem;
+      border-radius: 1.3rem;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      display: grid;
+      gap: 0.3rem;
+      box-shadow: 0 20px 40px rgba(2, 8, 23, 0.3);
+    }
+
+    .cta-card strong {
+      font-size: 1rem;
+    }
+
+    .cta-card span {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .social-panel,
+    .next-panel {
+      padding: 1.2rem;
+      border-radius: 1.4rem;
+      border: 1px solid var(--line);
+      background: rgba(8, 15, 28, 0.75);
+    }
+
+    .panel-label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .social-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .tag {
+      padding: 0.55rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.86rem;
+    }
+
+    .next-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+    }
+
+    .next-copy {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-end;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <p class="eyebrow" id="subtitle">Thanks for hanging out</p>
+      <h1 id="title">Catch the next drop soon.</h1>
+      <p class="lede" id="lede">Use this wrap-up scene to push follows, tease the next live, and keep mobile audiences moving to your strongest next action.</p>
+    </section>
+    <section class="grid">
+      <div class="cta-stack" id="cta-stack">
+        <article class="cta-card">
+          <strong>Follow for the next live</strong>
+          <span>Pin your posting cadence so returning viewers know when to show up.</span>
+        </article>
+        <article class="cta-card">
+          <strong>Drop a comment prompt</strong>
+          <span>Use a simple hook to keep the replay active after the stream ends.</span>
+        </article>
+        <article class="cta-card">
+          <strong>Point people to the newest upload</strong>
+          <span>Bridge viewers into the next short, highlight reel, or sponsor post.</span>
+        </article>
+      </div>
+      <div class="social-panel">
+        <span class="panel-label">Creator Links</span>
+        <div class="social-list" id="social-list">
+          <span class="tag">@yourhandle</span>
+          <span class="tag">new clip tomorrow</span>
+          <span class="tag">discord.gg/yourspace</span>
+        </div>
+      </div>
+      <div class="next-panel">
+        <span class="panel-label">Next Up</span>
+        <div class="next-title" id="next-title">Tomorrow at 7 PM</div>
+        <div class="next-copy" id="next-copy">Live challenge stream, community shoutouts, and a fresh clip batch for the week.</div>
+      </div>
+    </section>
+    <footer class="footer">
+      <span id="footer-left">Built for portrait creator workflows</span>
+      <span id="footer-right">Swap the CTA cards with the items query parameter</span>
+    </footer>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const accent = params.get('accent');
+    const items = params.get('items');
+    const next = params.get('headline');
+    const nextCopy = params.get('description');
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+    }
+
+    if (next) {
+      document.getElementById('next-title').textContent = next;
+    }
+
+    if (nextCopy) {
+      document.getElementById('next-copy').textContent = nextCopy;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+    }
+
+    if (items) {
+      const stack = document.getElementById('cta-stack');
+      const socials = document.getElementById('social-list');
+      stack.innerHTML = '';
+      socials.innerHTML = '';
+
+      items
+        .split('|')
+        .map((entry) => entry.trim())
+        .filter(Boolean)
+        .forEach((entry, index) => {
+          const [headline, detail] = entry.split('::');
+          if (index < 3) {
+            const card = document.createElement('article');
+            card.className = 'cta-card';
+            card.innerHTML = `<strong>${headline || 'CTA'}</strong><span>${detail || 'Add detail copy with the items parameter.'}</span>`;
+            stack.appendChild(card);
+          } else {
+            const tag = document.createElement('span');
+            tag.className = 'tag';
+            tag.textContent = headline || entry;
+            socials.appendChild(tag);
+          }
+        });
+    }
+  </script>
+</body>
+</html>

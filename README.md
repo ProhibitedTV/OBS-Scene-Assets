@@ -1,60 +1,97 @@
 # OBS Scene Assets
 
-This repository is a curated library of standalone HTML overlays, widgets, and complete scenes that can be loaded directly into [OBS Studio](https://obsproject.com/) as **Browser Sources**. Each asset is self-contained (HTML, CSS, and optional JavaScript in a single file) so you can use it without running a web server or installing extra packages.
+OBS Scene Assets is a metadata-driven library of standalone HTML overlays, widgets, lower thirds, and complete scenes for [OBS Studio](https://obsproject.com/) Browser Sources.
 
-## Quick start
+The repo currently ships with **121 assets** across the core library and themed suites, including the new **Vertical Creator** and **Live Show** packs for general streamers.
 
-1. **Download the files** – Clone the repository or grab a ZIP from GitHub and extract it locally.
-2. **Open OBS Studio** and add a new **Browser Source** to any scene.
-3. **Browse to the asset** you want to use (for example `assets/scenes/starting-soon.html`). On Windows you can use a `file:///C:/path/to/repo/...` URL; on macOS/Linux use the absolute path.
-4. **Match the resolution** – Most full-scene layouts are designed for 1920×1080. Set the Browser Source width/height accordingly to avoid stretching.
-5. **Customize the text and colors** by editing the HTML/CSS inside each file. Every asset ships with comments and placeholder copy so you can quickly adapt it to your stream.
+## Quick Start
 
-If you are new to OBS, the [detailed setup guide](docs/obs-setup-guide.md) walks through the same process with screenshots and extra tips.
+1. Clone the repo or download the ZIP and keep the folder structure intact.
+2. Open [assets/index.html](assets/index.html) in a browser to browse the filterable gallery and copy the asset path you want.
+3. In OBS, add a **Browser Source** and point it to the local file path, for example:
+   `file:///C:/path/to/OBS-Scene-Assets/assets/scenes/starting-soon.html`
+4. Match the Browser Source width and height to the resolution listed in [docs/asset-catalog.md](docs/asset-catalog.md).
+5. Customize the asset either by editing the HTML file or by appending shared query params such as `title`, `subtitle`, `headline`, `accent`, `timer`, and `items`.
 
-## Repository layout
+If you are new to OBS, start with [docs/obs-setup-guide.md](docs/obs-setup-guide.md).
 
-```
+## What's In The Repo
+
+- `assets/index.html`: generated gallery with search, category filters, collection filters, aspect badges, and preview placeholders.
+- `assets/catalog.json`: machine-readable catalog generated from the metadata block in each asset.
+- `docs/asset-catalog.md`: generated markdown catalog grouped by collection and category.
+- `assets/previews/`: mirrored preview image tree. New assets must ship with a PNG preview.
+- `templates/asset-starter.html`: starter template for new assets with the required metadata block and shared query-param scaffold.
+- `scripts/`: lightweight tooling for metadata backfill, preview generation, catalog generation, and validation.
+
+## Repository Layout
+
+```text
 assets/
-├── alerts/           # Alerts for followers, donations, raids, and more
-├── backgrounds/      # Animated and static scene backdrops
-├── index.html        # Human-friendly catalog of all assets
-├── lower-thirds/     # Lower third nameplates and announcement banners
-├── news/             # Broadcast-style scenes, tickers, and live inserts
-├── overlays/         # Webcam frames, tickers, chat panels
-├── scenes/           # Complete scene layouts (starting soon, intermission, etc.)
-├── themes/           # Coordinated asset suites grouped by visual theme
-└── widgets/          # Supplemental UI elements like polls and goals
+  alerts/
+  backgrounds/
+  catalog.json
+  index.html
+  lower-thirds/
+  news/
+  overlays/
+  previews/
+  scenes/
+  themes/
+  widgets/
+docs/
+scripts/
+templates/
 ```
 
-Open [`assets/index.html`](assets/index.html) in any browser to preview thumbnails and descriptions for everything in the catalog. Each folder also contains a `README` section inside the [Asset Catalog](docs/asset-catalog.md) with usage notes and recommended source settings.
+## Best Starter Assets
 
-## Customization checklist
+- `assets/scenes/starting-soon.html`
+- `assets/scenes/just-chatting.html`
+- `assets/scenes/countdown-timer.html`
+- `assets/themes/vertical-creator/scenes/start-screen.html`
+- `assets/themes/live-show/scenes/dual-camera-scene.html`
+- `assets/themes/live-show/scenes/break-screen.html`
 
-- **Text content** – Replace placeholder names, schedule items, social handles, and alerts with your own.
-- **Brand colors & fonts** – Update CSS variables at the top of each file. If you reference external fonts (Google Fonts, Adobe Fonts) ensure the Browser Source has network access.
-- **Timing** – Some widgets include simple timers or animation intervals. Adjust the values in the embedded JavaScript to match your needs.
-- **Localization** – All copy is plain text inside the markup, so you can translate it directly.
-- **File hosting** – Assets can be loaded locally or hosted via any static file host (GitHub Pages, Netlify, personal web server). Hosting makes it easier to reuse across multiple computers.
+For pack-level recipes, see [docs/creator-pack-recipes.md](docs/creator-pack-recipes.md).
 
-Refer to [docs/customization-tips.md](docs/customization-tips.md) for a deeper dive into modifying colors, fonts, animation speeds, and browser source properties.
+## Shared Customization Pattern
 
-## Best practices in OBS
+The repo now standardizes a lightweight query-param convention for reusable assets:
 
-- Use **separate browser sources** for distinct overlays so you can toggle them independently.
-- Lock the source after positioning to prevent accidental movement.
-- Prefer **hardware accelerated rendering** (Settings → Advanced → Video) for smoother animations.
-- When stacking multiple browser sources, order them like any other scene item so foreground widgets appear above background scenes.
-- For alerts, configure your bot/service (Streamlabs, StreamElements, etc.) to open the corresponding HTML file when events trigger.
+- `title`: main label, presenter name, or scene title
+- `subtitle`: supporting copy or secondary label
+- `headline`: compact status line, CTA chip, or short banner text
+- `accent`: primary color override
+- `timer`: countdown length in seconds or `MM:SS` / `HH:MM:SS`
+- `items`: pipe-separated content list for tickers, chats, rundowns, and card stacks
 
-More operational guidance is available in the [operations playbook](docs/operations-playbook.md), including scene organization strategies, backup suggestions, and integration ideas.
+See [docs/customization-tips.md](docs/customization-tips.md) for copy-paste OBS URL examples.
+
+## Catalog Workflow
+
+Run these commands after adding, renaming, or updating assets:
+
+```bash
+npm run assets:generate
+npm run assets:validate
+```
+
+Useful helpers:
+
+```bash
+npm run assets:backfill
+npm run previews:generate
+```
+
+`assets:generate` rebuilds `assets/catalog.json`, `assets/index.html`, and `docs/asset-catalog.md` from the metadata embedded in each asset file.
 
 ## Contributing
 
-Want to add a new overlay or improve an existing one?
+1. Start from [templates/asset-starter.html](templates/asset-starter.html) or a nearby asset.
+2. Add the required metadata block at the top of the file.
+3. Save a mirrored PNG preview under `assets/previews/`.
+4. Run the generation and validation commands.
+5. Review the result in OBS before submitting changes.
 
-1. Follow the design conventions in [docs/contribution-guide.md](docs/contribution-guide.md).
-2. Add your asset under the appropriate folder and update `assets/index.html` with a preview entry.
-3. Submit a pull request with screenshots or short videos so maintainers can verify the look and feel.
-
-We welcome bug reports and feature requests via GitHub issues.
+Detailed contributor guidance lives in [docs/contribution-guide.md](docs/contribution-guide.md).

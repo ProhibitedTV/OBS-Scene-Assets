@@ -1,0 +1,208 @@
+<!--
+Title: Vertical Creator Live Frame
+Category: overlays
+Collection: vertical-creator
+UseCase: Transparent portrait camera frame for live mobile streams, creator intros, and short-form interviews.
+Resolution: 1080x1920
+Transparent: true
+Description: Clean vertical frame overlay with creator tags, stage markers, and a bottom CTA rail that keeps portrait scenes organized without blocking the subject.
+Tags: vertical, creator, overlay, portrait, camera-frame, mobile, live, stream
+Preview: previews/themes/vertical-creator/overlays/live-frame.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vertical Creator Live Frame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+    :root {
+      --accent: #22d3ee;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.78);
+      --line: rgba(226, 232, 240, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+    }
+
+    .frame {
+      position: fixed;
+      inset: 3vh 4vw;
+      border-radius: 2.2rem;
+      border: 2px solid rgba(255, 255, 255, 0.18);
+      box-shadow:
+        inset 0 0 0 1px rgba(34, 211, 238, 0.35),
+        0 0 0 2px rgba(15, 23, 42, 0.22);
+      pointer-events: none;
+    }
+
+    .corner {
+      position: absolute;
+      width: 16vw;
+      height: 16vw;
+      border-color: var(--accent);
+      border-style: solid;
+      border-width: 0;
+      border-radius: 1.8rem;
+      opacity: 0.95;
+    }
+
+    .corner.top-left {
+      top: 0;
+      left: 0;
+      border-top-width: 10px;
+      border-left-width: 10px;
+    }
+
+    .corner.top-right {
+      top: 0;
+      right: 0;
+      border-top-width: 10px;
+      border-right-width: 10px;
+    }
+
+    .corner.bottom-left {
+      bottom: 0;
+      left: 0;
+      border-bottom-width: 10px;
+      border-left-width: 10px;
+    }
+
+    .corner.bottom-right {
+      bottom: 0;
+      right: 0;
+      border-bottom-width: 10px;
+      border-right-width: 10px;
+    }
+
+    .top-bar,
+    .bottom-bar {
+      position: fixed;
+      left: 8vw;
+      right: 8vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem 1rem;
+      border-radius: 1.3rem;
+      border: 1px solid var(--line);
+      background: rgba(7, 17, 31, 0.52);
+      backdrop-filter: blur(12px);
+    }
+
+    .top-bar {
+      top: 6vh;
+    }
+
+    .bottom-bar {
+      bottom: 6vh;
+    }
+
+    .title-block {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .subtitle {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .title {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .status-pill,
+    .tag {
+      padding: 0.48rem 0.72rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.8rem;
+    }
+
+    .tag-row {
+      display: flex;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <div class="corner top-left"></div>
+    <div class="corner top-right"></div>
+    <div class="corner bottom-left"></div>
+    <div class="corner bottom-right"></div>
+  </div>
+  <div class="top-bar">
+    <div class="title-block">
+      <span class="subtitle" id="subtitle">Vertical live scene</span>
+      <span class="title" id="title">Creator camera frame</span>
+    </div>
+    <span class="status-pill" id="status-pill">Live capture</span>
+  </div>
+  <div class="bottom-bar">
+    <span class="status-pill" id="cta-pill">Follow for the next drop</span>
+    <div class="tag-row" id="tag-row">
+      <span class="tag">portrait safe zone</span>
+      <span class="tag">chat ready</span>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const accent = params.get('accent');
+    const headline = params.get('headline');
+    const items = params.get('items');
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+    }
+
+    if (headline) {
+      document.getElementById('cta-pill').textContent = headline;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+    }
+
+    if (items) {
+      const tagRow = document.getElementById('tag-row');
+      const tags = items.split('|').map((entry) => entry.trim()).filter(Boolean);
+      if (tags.length) {
+        tagRow.innerHTML = '';
+        tags.forEach((entry) => {
+          const tag = document.createElement('span');
+          tag.className = 'tag';
+          tag.textContent = entry;
+          tagRow.appendChild(tag);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,3 +1,14 @@
+<!--
+Title: Multistream Status Scene
+Category: scenes
+Collection: core
+UseCase: Shows multi-platform online status.
+Resolution: 1920x1080
+Transparent: false
+Description: Multi-platform status board with shared title, subtitle, accent, headline, and items query parameters for creator control-room workflows.
+Tags: accent, core, creator, items, multi, multistream, query-params, scene, status, streaming
+Preview: none
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +20,7 @@
 
     :root {
       color-scheme: dark;
+      --accent: #38bdf8;
     }
 
     * {
@@ -21,7 +33,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.22), transparent 55%),
+      background:
+        radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.22), transparent 55%),
         radial-gradient(circle at 80% 15%, rgba(236, 72, 153, 0.28), transparent 65%),
         radial-gradient(circle at 30% 80%, rgba(45, 212, 191, 0.2), transparent 60%),
         #020617;
@@ -38,14 +51,14 @@
       border: 1px solid rgba(148, 163, 184, 0.35);
       backdrop-filter: blur(24px);
       display: grid;
-      gap: 2.4rem;
+      gap: 2.2rem;
       box-shadow: 0 45px 140px rgba(15, 23, 42, 0.55);
     }
 
     header {
       display: flex;
       flex-direction: column;
-      gap: 0.6rem;
+      gap: 0.55rem;
     }
 
     header .eyebrow {
@@ -60,6 +73,13 @@
       font-size: clamp(2.6rem, 4vw, 3.6rem);
       text-transform: uppercase;
       letter-spacing: 0.18em;
+    }
+
+    header .headline {
+      max-width: 46rem;
+      color: rgba(226, 232, 240, 0.8);
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .platforms {
@@ -136,6 +156,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
     }
 
     footer .divider {
@@ -151,10 +172,11 @@
     <header>
       <div class="eyebrow" id="eyebrow">Live on every platform</div>
       <h1 id="title">Multistream Control Room</h1>
+      <div class="headline" id="headline">Sync your creator presence across every destination while keeping a single browser source for the overview scene.</div>
     </header>
     <section class="platforms" id="platforms">
       <article class="card" data-platform="twitch" style="--glow: radial-gradient(circle at top right, rgba(145, 70, 255, 0.35), transparent 55%); --status-color: #22c55e;">
-        <div class="title">🎮 Twitch</div>
+        <div class="title">Twitch</div>
         <div class="handle" data-handle>Twitch.tv/YourChannel</div>
         <div class="status" data-status>
           <span></span>
@@ -163,7 +185,7 @@
         <div class="note" data-note>Streaming: Cozy community night</div>
       </article>
       <article class="card" data-platform="youtube" style="--glow: radial-gradient(circle at top right, rgba(248, 113, 113, 0.4), transparent 60%); --status-color: #f97316;">
-        <div class="title">▶ YouTube</div>
+        <div class="title">YouTube</div>
         <div class="handle" data-handle>YouTube.com/@YourChannel</div>
         <div class="status" data-status>
           <span></span>
@@ -172,7 +194,7 @@
         <div class="note" data-note>Episode 5 watch party</div>
       </article>
       <article class="card" data-platform="facebook" style="--glow: radial-gradient(circle at top right, rgba(59, 130, 246, 0.35), transparent 55%); --status-color: #60a5fa;">
-        <div class="title">⭐ Facebook</div>
+        <div class="title">Facebook</div>
         <div class="handle" data-handle>fb.gg/YourGamingPage</div>
         <div class="status" data-status>
           <span></span>
@@ -181,7 +203,7 @@
         <div class="note" data-note>Engage to unlock giveaways</div>
       </article>
       <article class="card" data-platform="tiktok" style="--glow: radial-gradient(circle at top right, rgba(0, 242, 234, 0.4), transparent 60%); --status-color: #0ea5e9;">
-        <div class="title">♪ TikTok</div>
+        <div class="title">TikTok</div>
         <div class="handle" data-handle>@YourShortsName</div>
         <div class="status" data-status>
           <span></span>
@@ -191,7 +213,7 @@
       </article>
     </section>
     <footer>
-      <span id="footer-left">Sync alerts across Twitch · YouTube · Facebook · TikTok</span>
+      <span id="footer-left">Sync alerts across Twitch / YouTube / Facebook / TikTok</span>
       <div class="divider"></div>
       <span id="footer-right">Powered by OBS Browser Sources</span>
     </footer>
@@ -199,15 +221,24 @@
   <script>
     const params = new URLSearchParams(window.location.search);
 
-    const eyebrow = params.get('eyebrow');
+    const subtitle = params.get('subtitle') || params.get('eyebrow');
     const title = params.get('title');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
     const footerLeft = params.get('footerLeft');
     const footerRight = params.get('footerRight');
+    const items = params.get('items');
 
-    if (eyebrow) document.getElementById('eyebrow').textContent = eyebrow;
+    if (subtitle) document.getElementById('eyebrow').textContent = subtitle;
     if (title) document.getElementById('title').textContent = title;
+    if (headline) document.getElementById('headline').textContent = headline;
     if (footerLeft) document.getElementById('footer-left').textContent = footerLeft;
     if (footerRight) document.getElementById('footer-right').textContent = footerRight;
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.querySelector('.board').style.borderColor = `${accent}55`;
+    }
 
     const platformConfigs = {
       twitch: {
@@ -235,6 +266,26 @@
         state: params.get('tiktokState'),
       },
     };
+
+    if (items) {
+      items
+        .split('|')
+        .map((entry) => entry.trim())
+        .filter(Boolean)
+        .forEach((entry, index) => {
+          const [platform, handle, status, note, state] = entry.split('::');
+          const key = platform && platformConfigs[platform.toLowerCase()] ? platform.toLowerCase() : ['twitch', 'youtube', 'facebook', 'tiktok'][index];
+          if (!key || !platformConfigs[key]) {
+            return;
+          }
+          platformConfigs[key] = {
+            handle: handle || platformConfigs[key].handle,
+            status: status || platformConfigs[key].status,
+            note: note || platformConfigs[key].note,
+            state: state || platformConfigs[key].state,
+          };
+        });
+    }
 
     const statusColorMap = {
       online: '#22c55e',

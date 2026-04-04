@@ -1,0 +1,10 @@
+{
+  "name": "obs-scene-assets",
+  "private": true,
+  "scripts": {
+    "assets:backfill": "node scripts/backfill-asset-metadata.js",
+    "assets:generate": "node scripts/asset-tools.js generate",
+    "assets:validate": "node scripts/asset-tools.js validate",
+    "previews:generate": "node scripts/generate-preview-cards.js"
+  }
+}

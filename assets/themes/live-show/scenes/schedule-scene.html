@@ -1,0 +1,251 @@
+<!--
+Title: Live Show Schedule Scene
+Category: scenes
+Collection: live-show
+UseCase: Full-screen upcoming-show board for creator calendars, episode lineups, and weekly broadcast schedules.
+Resolution: 1920x1080
+Transparent: false
+Description: Broadcast-inspired schedule scene with day cards, topic prompts, and a clear next-show headline for creator-led programming.
+Tags: live-show, schedule, scene, calendar, weekly, creator, podcast, lineup
+Preview: previews/themes/live-show/scenes/schedule-scene.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Show Schedule Scene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+    :root {
+      --accent: #14b8a6;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.72);
+      --panel: rgba(8, 15, 28, 0.82);
+      --line: rgba(226, 232, 240, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(20, 184, 166, 0.22), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.2), transparent 24%),
+        linear-gradient(140deg, #06111f, #0a1524 52%, #0f172a);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+
+    main {
+      min-height: 100vh;
+      padding: 3vw;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1.1fr 1.4fr;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: 1.7rem;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: 0 28px 56px rgba(2, 8, 23, 0.28);
+    }
+
+    .intro {
+      padding: 2.6rem;
+      display: grid;
+      align-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.8rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0.4rem 0 1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      line-height: 0.94;
+      letter-spacing: -0.04em;
+    }
+
+    .lede {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 24ch;
+      font-size: 1.04rem;
+    }
+
+    .next-show {
+      padding: 1.1rem 1.15rem;
+      border-radius: 1.3rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: grid;
+      gap: 0.28rem;
+    }
+
+    .next-show strong {
+      font-size: 1.15rem;
+    }
+
+    .next-show span {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .board {
+      padding: 1.25rem;
+      display: grid;
+      gap: 0.95rem;
+      align-content: start;
+    }
+
+    .slot {
+      padding: 1rem 1.05rem;
+      border-radius: 1.25rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .slot-day {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .slot-day strong {
+      font-size: 1rem;
+    }
+
+    .slot-day span,
+    .slot-copy span {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .slot-copy strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="intro panel">
+      <div>
+        <p class="eyebrow" id="subtitle">Weekly lineup</p>
+        <h1 id="title">What the show is doing next.</h1>
+        <p class="lede" id="description">Use this scene between episodes or on social-friendly countdown streams to keep your creator calendar front and center.</p>
+      </div>
+      <div class="next-show">
+        <strong id="headline">Next live: Thursday • 8 PM</strong>
+        <span>Swap the headline for the next big show, guest drop, or sponsored segment reminder.</span>
+      </div>
+    </section>
+    <section class="board panel" id="board">
+      <article class="slot">
+        <div class="slot-day">
+          <strong>Tuesday</strong>
+          <span>7 PM</span>
+        </div>
+        <div class="slot-copy">
+          <strong>Creator news desk</strong>
+          <span>Rapid breakdown of platform changes, new tools, and audience growth experiments.</span>
+        </div>
+      </article>
+      <article class="slot">
+        <div class="slot-day">
+          <strong>Thursday</strong>
+          <span>8 PM</span>
+        </div>
+        <div class="slot-copy">
+          <strong>Guest interview live</strong>
+          <span>Feature segment with a collaborator, coach, or creator operator from the community.</span>
+        </div>
+      </article>
+      <article class="slot">
+        <div class="slot-day">
+          <strong>Saturday</strong>
+          <span>11 AM</span>
+        </div>
+        <div class="slot-copy">
+          <strong>Open studio stream</strong>
+          <span>Live build session, Q&amp;A, and a quick sponsor update before the weekend recap.</span>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const accent = params.get('accent');
+    const headline = params.get('headline');
+    const description = params.get('description');
+    const items = params.get('items');
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+    }
+
+    if (headline) {
+      document.getElementById('headline').textContent = headline;
+    }
+
+    if (description) {
+      document.getElementById('description').textContent = description;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+    }
+
+    if (items) {
+      const board = document.getElementById('board');
+      board.innerHTML = '';
+      items
+        .split('|')
+        .map((entry) => entry.trim())
+        .filter(Boolean)
+        .forEach((entry) => {
+          const [slot, detail] = entry.split('::');
+          const [day, time] = (slot || 'Day @ Time').split('@');
+          const article = document.createElement('article');
+          article.className = 'slot';
+          article.innerHTML = `
+            <div class="slot-day">
+              <strong>${(day || 'Day').trim()}</strong>
+              <span>${(time || 'Time').trim()}</span>
+            </div>
+            <div class="slot-copy">
+              <strong>${(detail || 'Segment title').split(' - ')[0]}</strong>
+              <span>${(detail || 'Add lineup copy with the items parameter.').split(' - ').slice(1).join(' - ') || 'Add lineup copy with the items parameter.'}</span>
+            </div>
+          `;
+          board.appendChild(article);
+        });
+    }
+  </script>
+</body>
+</html>

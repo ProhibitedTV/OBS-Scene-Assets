@@ -1,0 +1,170 @@
+<!--
+Title: Live Show Promo Card
+Category: widgets
+Collection: live-show
+UseCase: Reusable promo panel for upcoming episodes, merch drops, sponsor moments, and creator announcements.
+Resolution: 900x900
+Transparent: true
+Description: Square promo card with a strong headline lane, CTA slot, and supporting bullets for broad creator show packaging.
+Tags: live-show, promo, widget, card, creator, episode, sponsor, announcement
+Preview: previews/themes/live-show/widgets/promo-card.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Show Promo Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Unbounded:wght@500;700&display=swap');
+
+    :root {
+      --accent: #7c3aed;
+      --accent-secondary: #ec4899;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.72);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: transparent;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .card {
+      width: min(92vw, 860px);
+      aspect-ratio: 1;
+      border-radius: 1.9rem;
+      padding: 2rem;
+      background:
+        radial-gradient(circle at top right, rgba(236, 72, 153, 0.22), transparent 24%),
+        linear-gradient(145deg, rgba(8, 15, 28, 0.92), rgba(17, 24, 39, 0.88));
+      border: 1px solid rgba(226, 232, 240, 0.14);
+      display: grid;
+      gap: 1rem;
+      align-content: space-between;
+      box-shadow: 0 28px 56px rgba(2, 8, 23, 0.28);
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0.5rem 0 1rem;
+      font-family: 'Unbounded', sans-serif;
+      font-size: clamp(2rem, 4.6vw, 3.3rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      max-width: 10ch;
+    }
+
+    .description {
+      margin: 0;
+      max-width: 28ch;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      width: fit-content;
+      padding: 0.8rem 1rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 700;
+    }
+
+    .bullets {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .bullet {
+      padding: 0.9rem 1rem;
+      border-radius: 1.1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div>
+      <p class="eyebrow" id="subtitle">Promo card</p>
+      <h1 id="title">Next live show drops Friday.</h1>
+      <p class="description" id="description">Use this square card for sponsor promos, next-episode pushes, merch drops, or creator community notices.</p>
+    </div>
+    <div class="cta" id="headline">Set reminder now</div>
+    <div class="bullets" id="bullets">
+      <div class="bullet">Works in stream scenes, social graphics, or OBS docks.</div>
+      <div class="bullet">Shared params keep the card quick to customize without editing HTML.</div>
+      <div class="bullet">Swap bullet copy with the items query parameter.</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const accent = params.get('accent');
+    const headline = params.get('headline');
+    const description = params.get('description');
+    const items = params.get('items');
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+    }
+
+    if (headline) {
+      document.getElementById('headline').textContent = headline;
+    }
+
+    if (description) {
+      document.getElementById('description').textContent = description;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+    }
+
+    if (items) {
+      const bullets = document.getElementById('bullets');
+      bullets.innerHTML = '';
+      items
+        .split('|')
+        .map((entry) => entry.trim())
+        .filter(Boolean)
+        .forEach((entry) => {
+          const bullet = document.createElement('div');
+          bullet.className = 'bullet';
+          bullet.textContent = entry;
+          bullets.appendChild(bullet);
+        });
+    }
+  </script>
+</body>
+</html>

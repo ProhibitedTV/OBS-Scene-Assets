@@ -1,0 +1,222 @@
+<!--
+Title: Live Show Sponsor Slate
+Category: scenes
+Collection: live-show
+UseCase: Sponsor or partner acknowledgement scene for podcasts, livestream intermissions, and creator campaigns.
+Resolution: 1920x1080
+Transparent: false
+Description: Full-screen sponsor slate with room for campaign copy, featured offer details, and polished live-show branding.
+Tags: live-show, sponsor, slate, scene, promo, campaign, partner, creator
+Preview: previews/themes/live-show/scenes/sponsor-slate.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Show Sponsor Slate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap');
+
+    :root {
+      --accent: #c026d3;
+      --accent-secondary: #f59e0b;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.72);
+      --panel: rgba(11, 18, 34, 0.84);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top right, rgba(192, 38, 211, 0.24), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(245, 158, 11, 0.22), transparent 24%),
+        linear-gradient(140deg, #070b16, #141026 58%, #111827);
+      color: var(--text);
+      font-family: 'Archivo', sans-serif;
+    }
+
+    main {
+      min-height: 100vh;
+      padding: 4vw;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: 1.8rem;
+      border: 1px solid rgba(226, 232, 240, 0.14);
+      background: var(--panel);
+      box-shadow: 0 28px 56px rgba(2, 8, 23, 0.28);
+    }
+
+    .copy-panel {
+      padding: 3rem;
+      display: grid;
+      align-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.82rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0.35rem 0 1rem;
+      font-family: 'Newsreader', serif;
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 24ch;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .offer-card {
+      padding: 1.15rem 1.2rem;
+      border-radius: 1.3rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .offer-card strong {
+      font-size: 1.15rem;
+    }
+
+    .offer-card span {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .brand-panel {
+      padding: 2rem;
+      display: grid;
+      align-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo-block {
+      min-height: 260px;
+      border-radius: 1.4rem;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(192, 38, 211, 0.3), transparent 22%),
+        rgba(255, 255, 255, 0.04);
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .logo-block strong {
+      font-size: 1.6rem;
+      letter-spacing: -0.04em;
+    }
+
+    .bullet-list {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .bullet {
+      padding: 0.9rem 1rem;
+      border-radius: 1.1rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="copy-panel panel">
+      <div>
+        <p class="eyebrow" id="subtitle">Partner spotlight</p>
+        <h1 id="title">This segment is powered by your featured creator partner.</h1>
+        <p class="lede" id="description">Use the sponsor slate to bridge into reads, partner shoutouts, merch drops, or campaign CTA beats without breaking the show aesthetic.</p>
+      </div>
+      <div class="offer-card">
+        <strong id="headline">Creator code: LIVE20</strong>
+        <span>Swap the headline and supporting copy for a limited-time offer, campaign link, or sponsor reminder.</span>
+      </div>
+    </section>
+    <aside class="brand-panel panel">
+      <div class="logo-block">
+        <div>
+          <p class="eyebrow">Logo / Product Lockup</p>
+          <strong>Featured Partner</strong>
+        </div>
+      </div>
+      <div class="bullet-list" id="bullet-list">
+        <div class="bullet">Use as a full-screen sponsor beat between segments or during ad reads.</div>
+        <div class="bullet">Works for affiliate shoutouts, product campaigns, and event partnerships.</div>
+        <div class="bullet">The items query param can swap each support bullet in one OBS URL.</div>
+      </div>
+    </aside>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const accent = params.get('accent');
+    const headline = params.get('headline');
+    const description = params.get('description');
+    const items = params.get('items');
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+    }
+
+    if (headline) {
+      document.getElementById('headline').textContent = headline;
+    }
+
+    if (description) {
+      document.getElementById('description').textContent = description;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+    }
+
+    if (items) {
+      const bulletList = document.getElementById('bullet-list');
+      bulletList.innerHTML = '';
+      items
+        .split('|')
+        .map((entry) => entry.trim())
+        .filter(Boolean)
+        .forEach((entry) => {
+          const bullet = document.createElement('div');
+          bullet.className = 'bullet';
+          bullet.textContent = entry;
+          bulletList.appendChild(bullet);
+        });
+    }
+  </script>
+</body>
+</html>

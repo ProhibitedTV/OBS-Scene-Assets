@@ -1,0 +1,239 @@
+<!--
+Title: Live Show Break Screen
+Category: scenes
+Collection: live-show
+UseCase: General intermission scene for talk-format streams, podcasts, creator panels, and sponsored breaks.
+Resolution: 1920x1080
+Transparent: false
+Description: Calm on-brand break screen with timer, segment notes, and a flexible update rail for host-led live shows.
+Tags: live-show, break, intermission, scene, podcast, creator, talk-show
+Preview: previews/themes/live-show/scenes/break-screen.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Show Break Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=General+Sans:wght@500;700&family=Source+Serif+4:wght@600;700&display=swap');
+
+    :root {
+      --accent: #4f46e5;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.72);
+      --panel: rgba(8, 15, 28, 0.8);
+      --line: rgba(226, 232, 240, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(79, 70, 229, 0.24), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.2), transparent 24%),
+        linear-gradient(135deg, #050915, #0a1524 58%, #0e1729);
+      color: var(--text);
+      font-family: 'General Sans', 'Segoe UI', sans-serif;
+    }
+
+    main {
+      min-height: 100vh;
+      padding: 4vw;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: 1.7rem;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: 0 28px 56px rgba(2, 8, 23, 0.28);
+    }
+
+    .hero {
+      padding: 2.8rem;
+      display: grid;
+      align-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.82rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0.4rem 0 0.9rem;
+      font-family: 'Source Serif 4', serif;
+      font-size: clamp(3rem, 5vw, 4.8rem);
+      line-height: 0.94;
+      letter-spacing: -0.04em;
+    }
+
+    .lede {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 24ch;
+      font-size: 1.02rem;
+    }
+
+    .timer-card {
+      width: fit-content;
+      padding: 1.1rem 1.2rem;
+      border-radius: 1.3rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .timer-card span {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .timer-card strong {
+      font-size: 3rem;
+      letter-spacing: -0.08em;
+    }
+
+    .sidebar {
+      padding: 1.3rem;
+      display: grid;
+      gap: 0.8rem;
+      align-content: start;
+    }
+
+    .note {
+      padding: 1rem 1.05rem;
+      border-radius: 1.2rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 0.28rem;
+      font-size: 0.96rem;
+    }
+
+    .note span {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero panel">
+      <div>
+        <p class="eyebrow" id="subtitle">Brief intermission</p>
+        <h1 id="title">We will be right back.</h1>
+        <p class="lede" id="description">Use this break scene for talk shows, creator roundtables, or sponsor resets without dropping the overall live-show branding.</p>
+      </div>
+      <div class="timer-card">
+        <span id="headline">Back in</span>
+        <strong id="timer">03:00</strong>
+      </div>
+    </section>
+    <aside class="sidebar panel" id="notes">
+      <div class="note">
+        <strong>Next segment</strong>
+        <span>Guest Q&amp;A and clip breakdown after the break.</span>
+      </div>
+      <div class="note">
+        <strong>During the break</strong>
+        <span>Keep sponsor logos, links, or community reminders on the scene sidebar.</span>
+      </div>
+      <div class="note">
+        <strong>Shared params</strong>
+        <span>Use title, subtitle, headline, timer, accent, and items for fast OBS customization.</span>
+      </div>
+    </aside>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const accent = params.get('accent');
+    const headline = params.get('headline');
+    const description = params.get('description');
+    const items = params.get('items');
+    const timerParam = params.get('timer');
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+    }
+
+    if (headline) {
+      document.getElementById('headline').textContent = headline;
+    }
+
+    if (description) {
+      document.getElementById('description').textContent = description;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+    }
+
+    if (items) {
+      const notes = document.getElementById('notes');
+      notes.innerHTML = '';
+      items
+        .split('|')
+        .map((entry) => entry.trim())
+        .filter(Boolean)
+        .forEach((entry) => {
+          const [headlineText, detail] = entry.split('::');
+          const note = document.createElement('div');
+          note.className = 'note';
+          note.innerHTML = `<strong>${headlineText || 'Break note'}</strong><span>${detail || 'Add detail copy with the items parameter.'}</span>`;
+          notes.appendChild(note);
+        });
+    }
+
+    const timerElement = document.getElementById('timer');
+    let totalSeconds = 3 * 60;
+
+    if (timerParam) {
+      if (/^\d+$/.test(timerParam)) {
+        totalSeconds = Number(timerParam);
+      } else if (/^\d{1,2}:\d{2}$/.test(timerParam)) {
+        const [minutes, seconds] = timerParam.split(':').map(Number);
+        totalSeconds = (minutes * 60) + seconds;
+      }
+    }
+
+    function renderTimer() {
+      const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+      const seconds = String(totalSeconds % 60).padStart(2, '0');
+      timerElement.textContent = `${minutes}:${seconds}`;
+      if (totalSeconds > 0) {
+        totalSeconds -= 1;
+      }
+    }
+
+    renderTimer();
+    setInterval(renderTimer, 1000);
+  </script>
+</body>
+</html>

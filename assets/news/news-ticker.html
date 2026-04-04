@@ -1,3 +1,14 @@
+<!--
+Title: News Ticker
+Category: news
+Collection: core
+UseCase: Scrolling headline ticker.
+Resolution: 1920x160
+Transparent: true
+Description: Shared query params support title or headline, items, speed, and accent overrides for reusable tickers.
+Tags: accent, core, headline, items, news, query-params, scrolling, speed, ticker, title
+Preview: none
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +19,9 @@
       font-family: 'Roboto Condensed', 'Segoe UI', sans-serif;
       font-size: 16px;
       color: #fff;
+      --accent: #b40b21;
+      --accent-secondary: #ff2e63;
+      --bullet: #ffcc00;
     }
 
     body {
@@ -30,7 +44,7 @@
     }
 
     .label {
-      background: linear-gradient(135deg, #b40b21, #ff2e63);
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -60,7 +74,7 @@
     .item::before {
       content: '•';
       margin-right: 16px;
-      color: #ffcc00;
+      color: var(--bullet);
     }
 
     @keyframes scroll {
@@ -87,13 +101,20 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const label = params.get('label');
+    const label = params.get('headline') || params.get('title') || params.get('label');
     const items = params.get('items');
     const speed = params.get('speed');
+    const accent = params.get('accent');
     const scroll = document.getElementById('scroll');
 
     if (label) {
       document.getElementById('label').textContent = label;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+      document.documentElement.style.setProperty('--bullet', accent);
     }
 
     if (items) {

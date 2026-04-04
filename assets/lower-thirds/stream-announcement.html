@@ -1,3 +1,14 @@
+<!--
+Title: Stream Announcement Lower Third
+Category: lower-thirds
+Collection: core
+UseCase: Banner for highlights or schedule reminders.
+Resolution: 1920x260
+Transparent: true
+Description: Shared query params support title, subtitle, headline, and accent overrides for quick creator callouts.
+Tags: accent, announcement, banner, core, creator, headline, lower-thirds, query-params, stream, subtitle, title
+Preview: none
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +17,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+
+    :root {
+      --accent: rgba(59, 130, 246, 0.92);
+      --accent-secondary: rgba(236, 72, 153, 0.9);
+    }
 
     body {
       margin: 0;
@@ -18,7 +34,7 @@
       position: fixed;
       bottom: 8vh;
       right: 4vw;
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.92), rgba(236, 72, 153, 0.9));
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
       border-radius: 16px;
       padding: 1.2rem 1.6rem;
       width: 30vw;
@@ -96,10 +112,34 @@
 <body>
   <div class="banner">
     <div class="banner-content">
-      <div class="title">Stream Schedule Update</div>
-      <div class="message">New episode goes live tonight with special guest Q&amp;A and live demos.</div>
-      <div class="time"><span class="pulse" aria-hidden="true"></span> Tonight · 7:00 PM</div>
+      <div class="title" id="title">Stream Schedule Update</div>
+      <div class="message" id="subtitle">New episode goes live tonight with special guest Q&amp;A and live demos.</div>
+      <div class="time" id="headline"><span class="pulse" aria-hidden="true"></span>Tonight / 7:00 PM</div>
     </div>
   </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+    }
+
+    if (headline) {
+      document.getElementById('headline').innerHTML = `<span class="pulse" aria-hidden="true"></span>${headline}`;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+    }
+  </script>
 </body>
 </html>

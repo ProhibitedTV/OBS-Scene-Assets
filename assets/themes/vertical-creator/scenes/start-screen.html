@@ -1,0 +1,349 @@
+<!--
+Title: Vertical Creator Start Screen
+Category: scenes
+Collection: vertical-creator
+UseCase: Vertical pre-show countdown for short-form live streams and mobile-first creator workflows.
+Resolution: 1080x1920
+Transparent: false
+Description: Bold portrait intro screen with a countdown ring, creator hooks, and stacked segment callouts for TikTok, Shorts, and Reels style broadcasts.
+Tags: vertical, creator, countdown, portrait, shorts, tiktok, reels, mobile
+Preview: previews/themes/vertical-creator/scenes/start-screen.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vertical Creator Start Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Sora:wght@400;600&display=swap');
+
+    :root {
+      --accent: #f97316;
+      --accent-soft: rgba(249, 115, 22, 0.18);
+      --accent-secondary: #38bdf8;
+      --bg: #080f1c;
+      --panel: rgba(9, 17, 32, 0.82);
+      --line: rgba(226, 232, 240, 0.14);
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.74);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top center, rgba(56, 189, 248, 0.24), transparent 25%),
+        radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.22), transparent 32%),
+        linear-gradient(180deg, #040812, #0b1324 58%, #081423);
+      color: var(--text);
+      font-family: 'Sora', sans-serif;
+      overflow: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    body::before {
+      background:
+        linear-gradient(90deg, transparent 48%, rgba(255, 255, 255, 0.04) 48%, rgba(255, 255, 255, 0.04) 52%, transparent 52%),
+        linear-gradient(transparent 48%, rgba(255, 255, 255, 0.03) 48%, rgba(255, 255, 255, 0.03) 52%, transparent 52%);
+      background-size: 100% 12vh, 12vh 100%;
+      mask-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9) 16%, rgba(0, 0, 0, 0.9) 84%, transparent);
+      opacity: 0.5;
+    }
+
+    body::after {
+      background:
+        radial-gradient(circle at 50% 26%, rgba(249, 115, 22, 0.22), transparent 20%),
+        radial-gradient(circle at 50% 32%, rgba(56, 189, 248, 0.12), transparent 28%);
+      filter: blur(28px);
+      opacity: 0.8;
+    }
+
+    main {
+      position: relative;
+      min-height: 100vh;
+      padding: 5.5vh 7vw;
+      display: grid;
+      align-content: space-between;
+      gap: 2rem;
+    }
+
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .pill {
+      padding: 0.5rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(226, 232, 240, 0.12);
+      background: rgba(15, 23, 42, 0.58);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      display: grid;
+      gap: 1.8rem;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .subtitle {
+      margin: 0;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 7vw, 5.4rem);
+      letter-spacing: -0.05em;
+      line-height: 0.96;
+      max-width: 10ch;
+    }
+
+    .timer-shell {
+      width: min(72vw, 460px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(8, 15, 28, 0.9) 56%, transparent 57%),
+        conic-gradient(var(--accent) calc(var(--progress, 0.2) * 1turn), rgba(255, 255, 255, 0.08) 0);
+      box-shadow:
+        inset 0 0 0 20px rgba(255, 255, 255, 0.04),
+        0 30px 60px rgba(2, 8, 23, 0.5);
+    }
+
+    .timer-core {
+      width: 76%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      gap: 0.2rem;
+      background: rgba(8, 15, 28, 0.86);
+      border: 1px solid var(--line);
+      text-align: center;
+    }
+
+    .timer-label {
+      font-size: 0.76rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .timer-value {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3rem, 10vw, 5.4rem);
+      letter-spacing: -0.08em;
+    }
+
+    .schedule {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 0.4rem;
+    }
+
+    .schedule-item {
+      width: min(78vw, 520px);
+      padding: 1rem 1.1rem;
+      border-radius: 1.2rem;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      display: grid;
+      gap: 0.25rem;
+      box-shadow: 0 20px 40px rgba(2, 8, 23, 0.24);
+    }
+
+    .schedule-item strong {
+      font-size: 1.02rem;
+    }
+
+    .schedule-item span {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.6rem;
+    }
+
+    @media (max-width: 700px) {
+      .footer {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .socials {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="topline">
+      <span class="pill" id="live-label">Creator queue loading</span>
+      <span id="status-note">Vertical-first broadcast package</span>
+    </div>
+    <section class="hero">
+      <p class="subtitle" id="subtitle">Going live in a moment</p>
+      <h1 id="title">Vertical Creator Live</h1>
+      <div class="timer-shell">
+        <div class="timer-core">
+          <span class="timer-label">Countdown</span>
+          <span class="timer-value" id="timer">05:00</span>
+          <span class="timer-label" id="timer-note">Tap in before the drop</span>
+        </div>
+      </div>
+      <div class="schedule" id="schedule">
+        <article class="schedule-item">
+          <strong>Clip-friendly opener</strong>
+          <span>Hook, teaser, and comment prompt to seed early engagement.</span>
+        </article>
+        <article class="schedule-item">
+          <strong>Live vertical segment</strong>
+          <span>Camera-first scene with chat, CTA, and creator goal widget support.</span>
+        </article>
+        <article class="schedule-item">
+          <strong>Fast call to action</strong>
+          <span>Wrap the stream with follow, drop, and next-live reminders.</span>
+        </article>
+      </div>
+    </section>
+    <footer class="footer">
+      <span id="footer-left">Designed for TikTok Live, Shorts, and Reels creators</span>
+      <div class="socials" id="socials">
+        <span class="pill">@yourhandle</span>
+        <span class="pill">new upload tonight</span>
+      </div>
+    </footer>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const accent = params.get('accent');
+    const items = params.get('items');
+    const timerParam = params.get('timer');
+    const footerLeft = params.get('footerLeft');
+    const footerRight = params.get('footerRight');
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+      document.getElementById('live-label').textContent = subtitle;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-soft', `${accent}22`);
+    }
+
+    if (footerLeft) {
+      document.getElementById('footer-left').textContent = footerLeft;
+    }
+
+    if (footerRight) {
+      const socials = document.getElementById('socials');
+      socials.innerHTML = '';
+      footerRight
+        .split('|')
+        .map((entry) => entry.trim())
+        .filter(Boolean)
+        .forEach((entry) => {
+          const pill = document.createElement('span');
+          pill.className = 'pill';
+          pill.textContent = entry;
+          socials.appendChild(pill);
+        });
+    }
+
+    if (items) {
+      const schedule = document.getElementById('schedule');
+      schedule.innerHTML = '';
+      items
+        .split('|')
+        .map((entry) => entry.trim())
+        .filter(Boolean)
+        .forEach((entry) => {
+          const [headline, detail] = entry.split('::');
+          const item = document.createElement('article');
+          item.className = 'schedule-item';
+          item.innerHTML = `<strong>${headline || 'Segment'}</strong><span>${detail || 'Update the item copy through the items query parameter.'}</span>`;
+          schedule.appendChild(item);
+        });
+    }
+
+    const timerElement = document.getElementById('timer');
+    const timerShell = document.querySelector('.timer-shell');
+    let totalSeconds = 5 * 60;
+
+    if (timerParam) {
+      if (/^\d+$/.test(timerParam)) {
+        totalSeconds = Number(timerParam);
+      } else if (/^\d{1,2}:\d{2}$/.test(timerParam)) {
+        const [minutes, seconds] = timerParam.split(':').map(Number);
+        totalSeconds = (minutes * 60) + seconds;
+      }
+    }
+
+    const initialSeconds = Math.max(1, totalSeconds);
+
+    function renderTimer() {
+      const minutes = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+      const seconds = String(totalSeconds % 60).padStart(2, '0');
+      timerElement.textContent = `${minutes}:${seconds}`;
+      const progress = totalSeconds / initialSeconds;
+      timerShell.style.setProperty('--progress', String(progress));
+      if (totalSeconds > 0) {
+        totalSeconds -= 1;
+      }
+    }
+
+    renderTimer();
+    setInterval(renderTimer, 1000);
+  </script>
+</body>
+</html>

@@ -1,3 +1,14 @@
+<!--
+Title: Countdown Timer Scene
+Category: scenes
+Collection: core
+UseCase: Countdown overlay with customizable target time.
+Resolution: 1920x1080
+Transparent: false
+Description: Flexible countdown scene with shared title, subtitle, accent, headline, and timer query parameters for launch or event workflows.
+Tags: accent, countdown, core, headline, launch, query-params, scene, timer, title
+Preview: none
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +18,25 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
 
+    :root {
+      --accent: #0ea5e9;
+      --accent-soft: rgba(14, 165, 233, 0.18);
+      --text: #e0f2fe;
+      --muted: rgba(224, 242, 254, 0.72);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #000814, #001d3d 40%, #003566 100%);
-      color: #e0f2fe;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.18), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.14), transparent 22%),
+        linear-gradient(135deg, #000814, #001d3d 40%, #003566 100%);
+      color: var(--text);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -20,20 +45,27 @@
 
     .wrapper {
       display: grid;
-      gap: 2rem;
+      gap: 1.4rem;
       text-align: center;
+      padding: 2rem;
+    }
+
+    .headline {
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.82rem;
+      color: var(--muted);
     }
 
     .event {
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
-      font-size: 1rem;
-      opacity: 0.8;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      letter-spacing: -0.05em;
+      font-weight: 700;
     }
 
     .timer {
       display: grid;
-      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      grid-template-columns: repeat(4, minmax(140px, 1fr));
       gap: 1rem;
     }
 
@@ -60,15 +92,16 @@
 
     .note {
       font-size: 0.95rem;
-      opacity: 0.7;
+      color: var(--muted);
       letter-spacing: 0.06em;
     }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <div class="event">Countdown to Launch Party</div>
-    <div class="timer" id="timer">
+    <div class="headline" id="headline">Launch countdown</div>
+    <div class="event" id="event">Countdown to Launch Party</div>
+    <div class="timer">
       <div class="unit">
         <div class="unit-value" id="days">00</div>
         <div class="unit-label">Days</div>
@@ -86,19 +119,64 @@
         <div class="unit-label">Seconds</div>
       </div>
     </div>
-    <div class="note">Update the date in the script to match your next big moment.</div>
+    <div class="note" id="note">Pass `timer=3600` or `timer=15:00` in the OBS Browser Source URL to customize this countdown without editing code.</div>
   </div>
   <script>
-    const targetDate = new Date(Date.now() + 36 * 60 * 60 * 1000);
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    const timerParam = params.get('timer');
 
+    if (title) {
+      document.getElementById('event').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('note').textContent = subtitle;
+    }
+
+    if (headline) {
+      document.getElementById('headline').textContent = headline;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-soft', `${accent}22`);
+    }
+
+    function parseTimerValue(value) {
+      if (!value) {
+        return Date.now() + (36 * 60 * 60 * 1000);
+      }
+
+      if (/^\d+$/.test(value)) {
+        return Date.now() + (Number(value) * 1000);
+      }
+
+      if (/^\d{1,2}:\d{2}$/.test(value)) {
+        const [minutes, seconds] = value.split(':').map(Number);
+        return Date.now() + (((minutes * 60) + seconds) * 1000);
+      }
+
+      if (/^\d{1,2}:\d{2}:\d{2}$/.test(value)) {
+        const [hours, minutes, seconds] = value.split(':').map(Number);
+        return Date.now() + ((((hours * 60) + minutes) * 60 + seconds) * 1000);
+      }
+
+      const parsedDate = new Date(value);
+      return Number.isNaN(parsedDate.getTime()) ? Date.now() + (36 * 60 * 60 * 1000) : parsedDate.getTime();
+    }
+
+    const targetDate = parseTimerValue(timerParam);
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
     const secondsEl = document.getElementById('seconds');
 
     function updateTimer() {
-      const now = new Date();
-      const diff = targetDate - now;
+      const diff = targetDate - Date.now();
 
       if (diff <= 0) {
         daysEl.textContent = '00';

@@ -1,0 +1,127 @@
+<!--
+Title: Live Show Guest Intro Lower Third
+Category: lower-thirds
+Collection: live-show
+UseCase: Guest lower third for interviews, special segments, co-stream collaborators, and podcast call-ins.
+Resolution: 1920x260
+Transparent: true
+Description: Elegant guest nameplate with standout accent framing and supporting descriptor copy for creator interviews or roundtable streams.
+Tags: live-show, guest, lower-third, interview, podcast, overlay, creator
+Preview: previews/themes/live-show/lower-thirds/guest-intro.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Show Guest Intro Lower Third</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap');
+
+    :root {
+      --accent: #ea580c;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.74);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 0 3vw 4vh;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+    }
+
+    .lower-third {
+      width: min(78vw, 1260px);
+      border-radius: 1.4rem;
+      overflow: hidden;
+      background: rgba(8, 15, 28, 0.84);
+      border: 1px solid rgba(226, 232, 240, 0.14);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.95rem 1rem;
+      box-shadow: 0 20px 40px rgba(2, 8, 23, 0.28);
+    }
+
+    .copy {
+      display: grid;
+      gap: 0.18rem;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .title {
+      font-size: 1.18rem;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .tag {
+      padding: 0.68rem 0.8rem;
+      border-radius: 1rem;
+      background: rgba(234, 88, 12, 0.16);
+      border: 1px solid rgba(234, 88, 12, 0.32);
+      color: #ffedd5;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="lower-third">
+    <div class="copy">
+      <div class="eyebrow" id="headline">Featured guest</div>
+      <div class="title" id="title">Mina Ortiz</div>
+      <div class="subtitle" id="subtitle">Creative director • Livestream narrative systems</div>
+    </div>
+    <div class="tag">Guest</div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const accent = params.get('accent');
+    const headline = params.get('headline');
+
+    if (title) {
+      document.getElementById('title').textContent = title;
+    }
+
+    if (subtitle) {
+      document.getElementById('subtitle').textContent = subtitle;
+    }
+
+    if (headline) {
+      document.getElementById('headline').textContent = headline;
+    }
+
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.querySelector('.tag').style.background = `${accent}22`;
+      document.querySelector('.tag').style.borderColor = `${accent}55`;
+    }
+  </script>
+</body>
+</html>
