@@ -1,0 +1,12 @@
+{
+  "type": "lower-third",
+  "name": "PlayerTitle",
+  "Collection": "core",
+  "Category": "lower-thirds",
+  "UseCase": "player name and title",
+  "Resolution": "1920x250",
+  "Transparent": "true",
+  "Description": "Shows player name overlaid.",
+  "Tags": "player,lower-third",
+  "Preview": "assets/previews/lower-thirds/player-title.png"
+}

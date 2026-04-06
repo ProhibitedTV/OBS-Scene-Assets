@@ -1,0 +1,12 @@
+{
+  "type": "widget",
+  "name": "LivePoll",
+  "Collection": "core",
+  "Category": "widgets",
+  "UseCase": "display live poll results",
+  "Resolution": "800x600",
+  "Transparent": "true",
+  "Description": "Shows current poll scores.",
+  "Tags": "poll,interactive",
+  "Preview": "assets/previews/widgets/live-poll.png"
+}

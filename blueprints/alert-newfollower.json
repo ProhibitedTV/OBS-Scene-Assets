@@ -1,0 +1,12 @@
+{
+  "type": "alert",
+  "name": "NewFollower",
+  "Collection": "core",
+  "Category": "alerts",
+  "UseCase": "display new follower popup",
+  "Resolution": "800x450",
+  "Transparent": "true",
+  "Description": "Shows when a new follower joins.",
+  "Tags": "follower,alert",
+  "Preview": "assets/previews/alerts/new-follower.png"
+}

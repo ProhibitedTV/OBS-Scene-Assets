@@ -1,0 +1,48 @@
+name: Run asset pipeline
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      # Node modules cache removed for stricter build isolation
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate asset catalog and gallery
+        run: npm run assets:generate
+
+      - name: Validate assets
+        run: npm run assets:validate
+
+      - name: Generate preview images
+        run: npm run previews:generate
+
+      - name: Upload generated assets as artifacts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: assets-generated
+          path: |
+            assets/catalog.json
+            assets/index.html
+            docs/asset-catalog.md
+            assets/previews
+
+      - name: Clean up generated files
+        run: rm -f assets/catalog.json assets/index.html docs/asset-catalog.md

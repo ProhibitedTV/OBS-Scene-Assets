@@ -1,0 +1,12 @@
+{
+  "type": "widget",
+  "name": "SocialRotator",
+  "Collection": "core",
+  "Category": "widgets",
+  "UseCase": "rotate social handles",
+  "Resolution": "900x900",
+  "Transparent": "true",
+  "Description": "Displays scrolling social media names.",
+  "Tags": "social,rotator",
+  "Preview": "assets/previews/widgets/social-rotator.png"
+}

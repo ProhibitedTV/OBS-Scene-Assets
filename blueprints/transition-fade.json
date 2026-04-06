@@ -1,0 +1,12 @@
+{
+  "type": "transition",
+  "name": "FadeIn",
+  "Collection": "core",
+  "Category": "transitions",
+  "UseCase": "smooth fade over 2 seconds",
+  "Resolution": "1920x1080",
+  "Transparent": "false",
+  "Description": "Fade in/out transition.",
+  "Tags": "fade,transition",
+  "Preview": "assets/previews/transitions/fade-in.png"
+}
