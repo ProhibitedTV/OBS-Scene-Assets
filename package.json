@@ -5,9 +5,11 @@
     "assets:backfill": "node scripts/backfill-asset-metadata.js",
     "assets:generate": "node scripts/asset-tools.js generate",
     "assets:validate": "node scripts/asset-tools.js validate",
-    "previews:generate": "node scripts/generate-preview.js"
+    "previews:generate": "node scripts/generate-preview.js",
+    "preview": "node scripts/generate-preview-for.js"
   },
   "dependencies": {
-    "puppeteer": "^22.15.0"
+    "puppeteer": "^22.15.0",
+    "ripgrep": "^0.3.1"
   }
 }
