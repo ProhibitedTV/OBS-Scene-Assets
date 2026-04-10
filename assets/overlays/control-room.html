@@ -1,0 +1,32 @@
+<!--
+Title: Control‑Room Overlay
+Category: overlays
+Collection: core
+UseCase: Control‑room view with monitoring panels.
+Resolution: 1920x1080
+Transparent: true
+Description: Displays key stats and camera feeds.
+Tags: control, overlay, monitoring
+Preview: none
+-->
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <title\u003eControl‑Room Overlay</title>
+  <style>
+    body{margin:0;background:transparent;}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:10px;height:100vh;width:100vw;background:#111;}
+    .panel{background:#222;color:#ccc;padding:10px;border-radius:6px;}
+    .panel h3{margin:0 0 5px;}
+  </style>
+</head>
+<body>
+  <div class=\"grid\"\u003e
+    <div class=\"panel\"\u003e<h3>Camera 1</h3>Feed</div\u003e
+    <div class=\"panel\"\u003e<h3>Camera 2</h3>Feed</div\u003e
+    <div class=\"panel\"\u003e<h3>Stats</h3>CPU 30% CPU 20% RAM 40%\u003c/div\u003e
+    <div class=\"panel\"\u003e<h3>Chat Log</h3>Logs</div\u003e
+  </div\u003e
+</body>
+</html>

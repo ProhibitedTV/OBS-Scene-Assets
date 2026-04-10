@@ -1,0 +1,31 @@
+<!--
+Title: Scoreboard Shell Overlay
+Category: overlays
+Collection: core
+UseCase: Basic scoreboard layout for live games.
+Resolution: 1920x1080
+Transparent: true
+Description: Empty template to be filled by game logic.
+Tags: scoreboard, overlay
+Preview: none
+-->
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"UTF-8\" />
+  <title\u003eScoreboard Shell Overlay</title>
+  <style>
+    body{margin:0;background:transparent;}
+    .scoreboard{position:absolute;top:10%;left:10%;width:80%;height:70%;background:rgba(0,0,0,0.5);border:4px solid #fff;border-radius:8px;color:#fff;padding:20px;display:flex;flex-direction:column;justify-content:space-between;}
+    .team{font-size:1.8rem;margin-bottom:10px;}
+    .score{font-size:3rem;font-weight:bold;}
+  </style>
+</head>
+<body>
+  <div class=\"scoreboard\"\u003e
+    <div class=\"team\"\u003eTeam A\u003c/div\u003e
+    <div class=\"score\"\u003e0 - 0\u003c/div\u003e
+    <div class=\"team\"\u003eTeam B\u003c/div\u003e
+  </div\u003e
+</body>
+</html>

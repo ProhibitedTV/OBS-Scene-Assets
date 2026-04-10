@@ -1,0 +1,25 @@
+<!--
+Title: Single Cam Frame Overlay
+Category: overlays
+Collection: core
+UseCase: Frame for single webcam view with border.
+Resolution: 1280x720
+Transparent: true
+Description: Simple solid border around webcam.
+Tags: camera, single, frame, overlay
+Preview: none
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Single Cam Frame Overlay</title>
+  <style>
+    body{margin:0;background:transparent;}
+    .frame{position:absolute;top:10%;left:5%;width:30vw;height:60vh;border:8px solid rgba(0,120,255,0.8);border-radius:12px;box-shadow:0 12px 24px rgba(0,0,0,0.3);}
+  </style>
+</head>
+<body>
+  <div class="frame"></div>
+</body>
+</html>

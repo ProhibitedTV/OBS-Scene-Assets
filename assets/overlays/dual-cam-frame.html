@@ -1,0 +1,28 @@
+<!--
+Title: Dual Cam Frame Overlay
+Category: overlays
+Collection: core
+UseCase: Simultaneous dual webcam view side‑by‑side.
+Resolution: 1920x720
+Transparent: true
+Description: Two frames side by side with a simple border.
+Tags: camera, dual, frame, overlay
+Preview: none
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Dual Cam Frame Overlay</title>
+  <style>
+    body{margin:0;background:transparent;}
+    .frame{position:absolute;top:10%;width:45%;height:80%;border:8px solid rgba(0,120,255,0.8);border-radius:12px;box-shadow:0 12px 24px rgba(0,0,0,0.3);}
+    .left{left:5%;}
+    .right{right:5%;}
+  </style>
+</head>
+<body>
+  <div class="frame left"></div>
+  <div class="frame right"></div>
+</body>
+</html>
