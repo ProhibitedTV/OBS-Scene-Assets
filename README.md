@@ -95,3 +95,4 @@ npm run previews:generate
 5. Review the result in OBS before submitting changes.
 
 Detailed contributor guidance lives in [docs/contribution-guide.md](docs/contribution-guide.md).
+For roadmap priorities focused on repository hygiene and rapid asset expansion, see [docs/expansion-roadmap.md](docs/expansion-roadmap.md).
