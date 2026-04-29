@@ -82,8 +82,11 @@ npm run assets:validate
 If you are backfilling legacy files or need placeholder previews for the new suite assets, these helpers are also available:
 
 ```bash
+npm run assets:add -- <category> <slug> [collection]
 npm run assets:backfill
+npm run packs:generate
 npm run previews:generate
+npm run previews:sync
 ```
 
 Validation checks:

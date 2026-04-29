@@ -1,13 +1,345 @@
 {
   "summary": {
-    "assetCount": 139,
-    "collections": 11,
+    "assetCount": 227,
+    "collections": 19,
     "assetTypes": 8,
     "categories": 8,
-    "previewCount": 13,
-    "previewCoveragePercent": 9
+    "previewCount": 227,
+    "previewCoveragePercent": 100
   },
   "assets": [
+    {
+      "path": "themes/charity-marathon/alerts/supporter-surge-alert.html",
+      "title": "Charity Marathon Supporter Surge Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Animated alert card for fundraising streams, milestone pushes, and community challenge events.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact alert with layered motion and white-label framing for charity marathon broadcasts.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "alert",
+        "supporter",
+        "surge",
+        "alerts",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/alerts/supporter-surge-alert.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/charity-marathon/backgrounds/ambient-loop.html",
+      "title": "Charity Marathon Ambient Background",
+      "category": "backgrounds",
+      "categoryLabel": "Backgrounds",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Looping full-screen background for fundraising streams, milestone pushes, and community challenge events.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Animated backdrop built to carry charity marathon scenes without locking the design to one creator brand.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "ambient",
+        "background",
+        "loop",
+        "backgrounds",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/backgrounds/ambient-loop.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/charity-marathon/lower-thirds/segment-intro.html",
+      "title": "Charity Marathon Segment Intro Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Reusable lower third for names, topics, or CTAs in fundraising streams, milestone pushes, and community challenge events.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent lower third with a strong headline lane and flexible copy blocks for charity marathon segments.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "cta",
+        "intro",
+        "lower-third",
+        "segment",
+        "lower-thirds",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/lower-thirds/segment-intro.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/charity-marathon/overlays/live-frame.html",
+      "title": "Charity Marathon Live Frame Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Full-frame overlay for commentary, facecam, or main presentation scenes in fundraising streams, milestone pushes, and community challenge events.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent live frame with a modular header and sidebar notes tailored to charity marathon coverage.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "frame",
+        "live",
+        "overlay",
+        "overlays",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/overlays/live-frame.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/charity-marathon/scenes/break-screen.html",
+      "title": "Charity Marathon Break Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Intermission scene for fundraising streams, milestone pushes, and community challenge events.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Break layout with timer space, helper copy, and a structured side rail for charity marathon streams.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "break",
+        "intermission",
+        "scene",
+        "scenes",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/scenes/break-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/charity-marathon/scenes/closing-screen.html",
+      "title": "Charity Marathon Closing Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in fundraising streams, milestone pushes, and community challenge events.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Closing scene that keeps the final call to action readable and polished for charity marathon creators.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "closing",
+        "outro",
+        "scene",
+        "scenes",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/charity-marathon/scenes/schedule-board.html",
+      "title": "Charity Marathon Schedule Board Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Schedule and run-of-show scene for fundraising streams, milestone pushes, and community challenge events.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Planner-style scene for outlining a live session, route, or milestone ladder in charity marathon formats.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "agenda",
+        "schedule",
+        "scene",
+        "scenes",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/scenes/schedule-board.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/charity-marathon/scenes/starting-soon.html",
+      "title": "Charity Marathon Starting Soon Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Pre-show countdown scene for fundraising streams, milestone pushes, and community challenge events.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Starting-soon scene with timer-ready framing and flexible agenda copy for charity marathon broadcasts.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "countdown",
+        "pre-show",
+        "scene",
+        "starting-soon",
+        "scenes",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/scenes/starting-soon.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/charity-marathon/transitions/scene-sweep.html",
+      "title": "Charity Marathon Scene Sweep Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Stylized transition asset for moving between fundraising streams, milestone pushes, and community challenge events scenes.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Bold sweep transition with enough motion to sell a scene change while staying adaptable to many charity marathon use cases.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "sweep",
+        "transition",
+        "wipe",
+        "transitions",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/charity-marathon/widgets/goal-widget.html",
+      "title": "Charity Marathon Goal Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Progress widget for milestones, checkpoints, or audience targets in fundraising streams, milestone pushes, and community challenge events.",
+      "resolution": "900x260",
+      "width": 900,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact goal tracker with fast text overrides for charity marathon campaigns or creator milestones.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "goal",
+        "progress",
+        "widget",
+        "widgets",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/widgets/goal-widget.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/charity-marathon/widgets/promo-card.html",
+      "title": "Charity Marathon Promo Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "charity-marathon",
+      "collectionLabel": "Charity Marathon Suite",
+      "useCase": "Square promo panel for announcements, sponsor notes, or segment teases in fundraising streams, milestone pushes, and community challenge events.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Reusable square card that carries the charity marathon look across stream scenes, socials, and promo moments.",
+      "tags": [
+        "charity",
+        "community",
+        "fundraising",
+        "marathon",
+        "milestone",
+        "white-label",
+        "card",
+        "promo",
+        "widget",
+        "widgets",
+        "charity-marathon"
+      ],
+      "preview": "previews/themes/charity-marathon/widgets/promo-card.png",
+      "previewStatus": "image"
+    },
     {
       "path": "alerts/donation-alert.html",
       "title": "Donation Alert",
@@ -39,8 +371,8 @@
         "third",
         "trigger"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/alerts/donation-alert.png",
+      "previewStatus": "image"
     },
     {
       "path": "alerts/facebook-stars.html",
@@ -71,8 +403,8 @@
         "stars",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/alerts/facebook-stars.png",
+      "previewStatus": "image"
     },
     {
       "path": "alerts/follower-alert.html",
@@ -106,8 +438,8 @@
         "well",
         "works"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/alerts/follower-alert.png",
+      "previewStatus": "image"
     },
     {
       "path": "alerts/raid-alert.html",
@@ -138,8 +470,8 @@
         "raider",
         "welcome"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/alerts/raid-alert.png",
+      "previewStatus": "image"
     },
     {
       "path": "alerts/tiktok-gift.html",
@@ -172,8 +504,8 @@
         "spark",
         "tiktok"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/alerts/tiktok-gift.png",
+      "previewStatus": "image"
     },
     {
       "path": "alerts/twitch-cheer.html",
@@ -207,8 +539,8 @@
         "snippet",
         "twitch"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/alerts/twitch-cheer.png",
+      "previewStatus": "image"
     },
     {
       "path": "alerts/twitch-subscription.html",
@@ -237,8 +569,8 @@
         "title",
         "twitch"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/alerts/twitch-subscription.png",
+      "previewStatus": "image"
     },
     {
       "path": "alerts/youtube-membership.html",
@@ -267,8 +599,8 @@
         "swap",
         "youtube"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/alerts/youtube-membership.png",
+      "previewStatus": "image"
     },
     {
       "path": "alerts/youtube-superchat.html",
@@ -300,8 +632,8 @@
         "theme",
         "youtube"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/alerts/youtube-superchat.png",
+      "previewStatus": "image"
     },
     {
       "path": "backgrounds/aurora-borealis.html",
@@ -335,8 +667,8 @@
         "well",
         "works"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/backgrounds/aurora-borealis.png",
+      "previewStatus": "image"
     },
     {
       "path": "backgrounds/digital-grid.html",
@@ -370,8 +702,8 @@
         "seamless",
         "sit"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/backgrounds/digital-grid.png",
+      "previewStatus": "image"
     },
     {
       "path": "backgrounds/gradient-wave.html",
@@ -405,8 +737,8 @@
         "soft",
         "wave"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/backgrounds/gradient-wave.png",
+      "previewStatus": "image"
     },
     {
       "path": "backgrounds/nature-leaves.html",
@@ -438,8 +770,8 @@
         "slow",
         "vibe"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/backgrounds/nature-leaves.png",
+      "previewStatus": "image"
     },
     {
       "path": "backgrounds/retro-sunset.html",
@@ -469,8 +801,8 @@
         "sunset",
         "synthwave"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/backgrounds/retro-sunset.png",
+      "previewStatus": "image"
     },
     {
       "path": "backgrounds/soft-bokeh.html",
@@ -502,8 +834,8 @@
         "soft",
         "text"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/backgrounds/soft-bokeh.png",
+      "previewStatus": "image"
     },
     {
       "path": "backgrounds/space-nebula.html",
@@ -535,8 +867,8 @@
         "twinkle",
         "works"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/backgrounds/space-nebula.png",
+      "previewStatus": "image"
     },
     {
       "path": "backgrounds/tech-circuit.html",
@@ -565,8 +897,8 @@
         "pair",
         "tech"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/backgrounds/tech-circuit.png",
+      "previewStatus": "image"
     },
     {
       "path": "backgrounds/tropical-sunrise.html",
@@ -597,8 +929,8 @@
         "tropical",
         "warm"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/backgrounds/tropical-sunrise.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/breaking-update.html",
@@ -620,8 +952,8 @@
         "lower-third",
         "core"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/breaking-update.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/cta-lower-third.html",
@@ -642,8 +974,8 @@
         "lower-third",
         "core"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/cta-lower-third.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/episode-title.html",
@@ -665,8 +997,8 @@
         "lower-third",
         "core"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/episode-title.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/gaming-angled.html",
@@ -701,8 +1033,8 @@
         "tagplate",
         "third"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/gaming-angled.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/guest-intro.html",
@@ -724,8 +1056,8 @@
         "lower-third",
         "core"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/guest-intro.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/host-intro.html",
@@ -748,8 +1080,8 @@
         "lower-third",
         "core"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/host-intro.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/minimalist-bar.html",
@@ -780,8 +1112,8 @@
         "third",
         "title"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/minimalist-bar.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/modern-news.html",
@@ -814,8 +1146,8 @@
         "third",
         "ticker"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/modern-news.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/schedule-reminder.html",
@@ -837,8 +1169,8 @@
         "lower-third",
         "core"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/schedule-reminder.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/sponsor-callout.html",
@@ -860,8 +1192,8 @@
         "lower-third",
         "core"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/sponsor-callout.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/stat-highlight.html",
@@ -883,8 +1215,8 @@
         "lower-third",
         "core"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/stat-highlight.png",
+      "previewStatus": "image"
     },
     {
       "path": "lower-thirds/stream-announcement.html",
@@ -913,8 +1245,8 @@
         "subtitle",
         "title"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/lower-thirds/stream-announcement.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/breaking-news-stinger.html",
@@ -943,8 +1275,8 @@
         "use",
         "webm"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/breaking-news-stinger.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/election-results.html",
@@ -973,8 +1305,8 @@
         "script",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/election-results.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/news-headlines-stack.html",
@@ -1003,8 +1335,8 @@
         "top",
         "vertical"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/news-headlines-stack.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/live-location-bug.html",
@@ -1035,8 +1367,8 @@
         "right",
         "top"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/live-location-bug.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/news-anchor-lower-third.html",
@@ -1066,8 +1398,8 @@
         "swap",
         "third"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/news-anchor-lower-third.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/news-countdown.html",
@@ -1095,8 +1427,8 @@
         "slate",
         "timer"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/news-countdown.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/news-desk-scene.html",
@@ -1126,8 +1458,8 @@
         "ticker",
         "webcam"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/news-desk-scene.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/news-ticker.html",
@@ -1155,8 +1487,8 @@
         "ticker",
         "title"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/news-ticker.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/over-the-shoulder.html",
@@ -1184,8 +1516,8 @@
         "shoulder",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/over-the-shoulder.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/press-conference.html",
@@ -1214,8 +1546,8 @@
         "scene",
         "speaker"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/press-conference.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/split-screen-interview.html",
@@ -1246,8 +1578,8 @@
         "split",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/split-screen-interview.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/weather-update.html",
@@ -1277,8 +1609,8 @@
         "update",
         "weather"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/weather-update.png",
+      "previewStatus": "image"
     },
     {
       "path": "news/world-map-background.html",
@@ -1308,8 +1640,8 @@
         "overlays",
         "world"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/news/world-map-background.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/camera-frame.html",
@@ -1342,8 +1674,8 @@
         "title",
         "webcam"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/camera-frame.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/chat-box.html",
@@ -1375,8 +1707,8 @@
         "url",
         "widget"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/chat-box.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/control-room.html",
@@ -1397,8 +1729,8 @@
         "overlay",
         "monitoring"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/control-room.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/corner-bug.html",
@@ -1419,8 +1751,8 @@
         "bug",
         "decorative"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/corner-bug.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/dual-cam-frame.html",
@@ -1442,8 +1774,8 @@
         "frame",
         "overlay"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/dual-cam-frame.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/event-ticker.html",
@@ -1475,8 +1807,8 @@
         "top",
         "via"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/event-ticker.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/scoreboard-shell.html",
@@ -1496,8 +1828,8 @@
         "scoreboard",
         "overlay"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/scoreboard-shell.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/single-cam-frame.html",
@@ -1519,8 +1851,8 @@
         "frame",
         "overlay"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/single-cam-frame.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/supporter-ticker.html",
@@ -1541,8 +1873,8 @@
         "supporters",
         "overlay"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/supporter-ticker.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/top-bar-live-strip.html",
@@ -1563,8 +1895,8 @@
         "bar",
         "overlay"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/top-bar-live-strip.png",
+      "previewStatus": "image"
     },
     {
       "path": "overlays/webcam-plus-chat.html",
@@ -1585,8 +1917,8 @@
         "chat",
         "overlay"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/overlays/webcam-plus-chat.png",
+      "previewStatus": "image"
     },
     {
       "path": "scenes/be-right-back.html",
@@ -1618,8 +1950,8 @@
         "slate",
         "timer"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/scenes/be-right-back.png",
+      "previewStatus": "image"
     },
     {
       "path": "scenes/countdown-timer.html",
@@ -1646,8 +1978,8 @@
         "timer",
         "title"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/scenes/countdown-timer.png",
+      "previewStatus": "image"
     },
     {
       "path": "scenes/ending-soon.html",
@@ -1679,8 +2011,8 @@
         "text",
         "wrap"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/scenes/ending-soon.png",
+      "previewStatus": "image"
     },
     {
       "path": "scenes/intermission.html",
@@ -1712,8 +2044,8 @@
         "schedule",
         "stream"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/scenes/intermission.png",
+      "previewStatus": "image"
     },
     {
       "path": "scenes/just-chatting.html",
@@ -1746,8 +2078,8 @@
         "scenes",
         "webcam"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/scenes/just-chatting.png",
+      "previewStatus": "image"
     },
     {
       "path": "scenes/multistream-status.html",
@@ -1775,8 +2107,8 @@
         "status",
         "streaming"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/scenes/multistream-status.png",
+      "previewStatus": "image"
     },
     {
       "path": "scenes/schedule-board.html",
@@ -1803,8 +2135,8 @@
         "schedule",
         "weekly"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/scenes/schedule-board.png",
+      "previewStatus": "image"
     },
     {
       "path": "scenes/starting-soon.html",
@@ -1837,8 +2169,8 @@
         "stream",
         "widgets"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/scenes/starting-soon.png",
+      "previewStatus": "image"
     },
     {
       "path": "scenes/support-goals.html",
@@ -1869,8 +2201,8 @@
         "support",
         "updates"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/scenes/support-goals.png",
+      "previewStatus": "image"
     },
     {
       "path": "widgets/live-poll.html",
@@ -1900,8 +2232,8 @@
         "widget",
         "widgets"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/widgets/live-poll.png",
+      "previewStatus": "image"
     },
     {
       "path": "gameshows/lottery.html",
@@ -1926,8 +2258,8 @@
         "spinner",
         "widget"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/gameshows/lottery.png",
+      "previewStatus": "image"
     },
     {
       "path": "widgets/multi-event-feed.html",
@@ -1960,8 +2292,8 @@
         "script",
         "widgets"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/widgets/multi-event-feed.png",
+      "previewStatus": "image"
     },
     {
       "path": "widgets/now-playing.html",
@@ -1994,8 +2326,8 @@
         "widget",
         "widgets"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/widgets/now-playing.png",
+      "previewStatus": "image"
     },
     {
       "path": "gameshows/quiz.html",
@@ -2019,8 +2351,8 @@
         "prompt",
         "widget"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/gameshows/quiz.png",
+      "previewStatus": "image"
     },
     {
       "path": "widgets/social-rotator.html",
@@ -2051,8 +2383,8 @@
         "widget",
         "widgets"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/widgets/social-rotator.png",
+      "previewStatus": "image"
     },
     {
       "path": "widgets/progress-goal.html",
@@ -2083,8 +2415,339 @@
         "widget",
         "widgets"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/widgets/progress-goal.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/alerts/supporter-surge-alert.html",
+      "title": "Cozy Campfire Supporter Surge Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Animated alert card for cozy chats, book clubs, craft streams, and low-pressure community hangs.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact alert with layered motion and white-label framing for cozy campfire broadcasts.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "alert",
+        "supporter",
+        "surge",
+        "alerts",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/alerts/supporter-surge-alert.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/backgrounds/ambient-loop.html",
+      "title": "Cozy Campfire Ambient Background",
+      "category": "backgrounds",
+      "categoryLabel": "Backgrounds",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Looping full-screen background for cozy chats, book clubs, craft streams, and low-pressure community hangs.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Animated backdrop built to carry cozy campfire scenes without locking the design to one creator brand.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "background",
+        "loop",
+        "backgrounds",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/backgrounds/ambient-loop.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/lower-thirds/segment-intro.html",
+      "title": "Cozy Campfire Segment Intro Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Reusable lower third for names, topics, or CTAs in cozy chats, book clubs, craft streams, and low-pressure community hangs.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent lower third with a strong headline lane and flexible copy blocks for cozy campfire segments.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "cta",
+        "intro",
+        "lower-third",
+        "segment",
+        "lower-thirds",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/lower-thirds/segment-intro.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/overlays/live-frame.html",
+      "title": "Cozy Campfire Live Frame Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Full-frame overlay for commentary, facecam, or main presentation scenes in cozy chats, book clubs, craft streams, and low-pressure community hangs.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent live frame with a modular header and sidebar notes tailored to cozy campfire coverage.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "frame",
+        "live",
+        "overlay",
+        "overlays",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/overlays/live-frame.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/scenes/break-screen.html",
+      "title": "Cozy Campfire Break Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Intermission scene for cozy chats, book clubs, craft streams, and low-pressure community hangs.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Break layout with timer space, helper copy, and a structured side rail for cozy campfire streams.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "break",
+        "intermission",
+        "scene",
+        "scenes",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/scenes/break-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/scenes/closing-screen.html",
+      "title": "Cozy Campfire Closing Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in cozy chats, book clubs, craft streams, and low-pressure community hangs.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Closing scene that keeps the final call to action readable and polished for cozy campfire creators.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "closing",
+        "outro",
+        "scene",
+        "scenes",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/scenes/schedule-board.html",
+      "title": "Cozy Campfire Schedule Board Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Schedule and run-of-show scene for cozy chats, book clubs, craft streams, and low-pressure community hangs.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Planner-style scene for outlining a live session, route, or milestone ladder in cozy campfire formats.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "agenda",
+        "schedule",
+        "scene",
+        "scenes",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/scenes/schedule-board.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/scenes/starting-soon.html",
+      "title": "Cozy Campfire Starting Soon Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Pre-show countdown scene for cozy chats, book clubs, craft streams, and low-pressure community hangs.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Starting-soon scene with timer-ready framing and flexible agenda copy for cozy campfire broadcasts.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "countdown",
+        "pre-show",
+        "scene",
+        "starting-soon",
+        "scenes",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/scenes/starting-soon.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/transitions/scene-sweep.html",
+      "title": "Cozy Campfire Scene Sweep Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Stylized transition asset for moving between cozy chats, book clubs, craft streams, and low-pressure community hangs scenes.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Bold sweep transition with enough motion to sell a scene change while staying adaptable to many cozy campfire use cases.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "sweep",
+        "transition",
+        "wipe",
+        "transitions",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/widgets/goal-widget.html",
+      "title": "Cozy Campfire Goal Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Progress widget for milestones, checkpoints, or audience targets in cozy chats, book clubs, craft streams, and low-pressure community hangs.",
+      "resolution": "900x260",
+      "width": 900,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact goal tracker with fast text overrides for cozy campfire campaigns or creator milestones.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "goal",
+        "progress",
+        "widget",
+        "widgets",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/widgets/goal-widget.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/cozy-campfire/widgets/promo-card.html",
+      "title": "Cozy Campfire Promo Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "cozy-campfire",
+      "collectionLabel": "Cozy Campfire Suite",
+      "useCase": "Square promo panel for announcements, sponsor notes, or segment teases in cozy chats, book clubs, craft streams, and low-pressure community hangs.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Reusable square card that carries the cozy campfire look across stream scenes, socials, and promo moments.",
+      "tags": [
+        "ambient",
+        "calm",
+        "cozy",
+        "craft",
+        "lifestyle",
+        "white-label",
+        "card",
+        "promo",
+        "widget",
+        "widgets",
+        "cozy-campfire"
+      ],
+      "preview": "previews/themes/cozy-campfire/widgets/promo-card.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/backgrounds/neon-grid.html",
@@ -2117,8 +2780,8 @@
         "widget",
         "works"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/backgrounds/neon-grid.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/overlays/holographic-chat-overlay.html",
@@ -2150,8 +2813,8 @@
         "ticker",
         "when"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/overlays/holographic-chat-overlay.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/lower-thirds/player-intro.html",
@@ -2185,8 +2848,8 @@
         "team",
         "third"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/lower-thirds/player-intro.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/overlays/control-room-overlay.html",
@@ -2221,8 +2884,8 @@
         "scenes",
         "toggle"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/overlays/control-room-overlay.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/overlays/dual-host-frame.html",
@@ -2255,8 +2918,8 @@
         "split",
         "webcam"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/overlays/dual-host-frame.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/overlays/data-uplink-overlay.html",
@@ -2291,8 +2954,8 @@
         "ticker",
         "uplink"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/overlays/data-uplink-overlay.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/scenes/brb-screen.html",
@@ -2322,8 +2985,8 @@
         "slate",
         "status"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/scenes/brb-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/scenes/end-screen.html",
@@ -2357,8 +3020,8 @@
         "text",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/scenes/end-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/scenes/live-screen.html",
@@ -2392,8 +3055,8 @@
         "source",
         "stat"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/scenes/live-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/scenes/start-screen.html",
@@ -2428,8 +3091,8 @@
         "start",
         "starting"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/scenes/start-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/scenes/stream-countdown.html",
@@ -2461,8 +3124,8 @@
         "time",
         "timer"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/scenes/stream-countdown.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/scenes/mission-briefing-intro.html",
@@ -2495,8 +3158,8 @@
         "slate",
         "timeline"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/scenes/mission-briefing-intro.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/overlays/ops-status-dashboard.html",
@@ -2529,8 +3192,8 @@
         "stats",
         "status"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/overlays/ops-status-dashboard.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/scenes/synthwave-break-screen.html",
@@ -2563,8 +3226,8 @@
         "slate",
         "synthwave"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/scenes/synthwave-break-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/transitions/stinger-transition.html",
@@ -2597,8 +3260,8 @@
         "webm",
         "you"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/transitions/stinger-transition.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/cyberpunk-broadcast/alerts/new-follower.html",
@@ -2631,8 +3294,340 @@
         "widget",
         "widgets"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/cyberpunk-broadcast/alerts/new-follower.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/alerts/supporter-surge-alert.html",
+      "title": "Education Workshop Supporter Surge Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Animated alert card for tutorial streams, live classes, coaching sessions, and build-along workshops.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact alert with layered motion and white-label framing for education workshop broadcasts.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "alert",
+        "supporter",
+        "surge",
+        "alerts",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/alerts/supporter-surge-alert.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/backgrounds/ambient-loop.html",
+      "title": "Education Workshop Ambient Background",
+      "category": "backgrounds",
+      "categoryLabel": "Backgrounds",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Looping full-screen background for tutorial streams, live classes, coaching sessions, and build-along workshops.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Animated backdrop built to carry education workshop scenes without locking the design to one creator brand.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "ambient",
+        "background",
+        "loop",
+        "backgrounds",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/backgrounds/ambient-loop.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/lower-thirds/segment-intro.html",
+      "title": "Education Workshop Segment Intro Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Reusable lower third for names, topics, or CTAs in tutorial streams, live classes, coaching sessions, and build-along workshops.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent lower third with a strong headline lane and flexible copy blocks for education workshop segments.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "cta",
+        "intro",
+        "lower-third",
+        "segment",
+        "lower-thirds",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/lower-thirds/segment-intro.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/overlays/live-frame.html",
+      "title": "Education Workshop Live Frame Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Full-frame overlay for commentary, facecam, or main presentation scenes in tutorial streams, live classes, coaching sessions, and build-along workshops.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent live frame with a modular header and sidebar notes tailored to education workshop coverage.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "frame",
+        "live",
+        "overlay",
+        "overlays",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/overlays/live-frame.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/scenes/break-screen.html",
+      "title": "Education Workshop Break Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Intermission scene for tutorial streams, live classes, coaching sessions, and build-along workshops.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Break layout with timer space, helper copy, and a structured side rail for education workshop streams.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "break",
+        "intermission",
+        "scene",
+        "scenes",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/scenes/break-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/scenes/closing-screen.html",
+      "title": "Education Workshop Closing Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in tutorial streams, live classes, coaching sessions, and build-along workshops.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Closing scene that keeps the final call to action readable and polished for education workshop creators.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "closing",
+        "outro",
+        "scene",
+        "scenes",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/scenes/schedule-board.html",
+      "title": "Education Workshop Schedule Board Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Schedule and run-of-show scene for tutorial streams, live classes, coaching sessions, and build-along workshops.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Planner-style scene for outlining a live session, route, or milestone ladder in education workshop formats.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "agenda",
+        "schedule",
+        "scene",
+        "scenes",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/scenes/schedule-board.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/scenes/starting-soon.html",
+      "title": "Education Workshop Starting Soon Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Pre-show countdown scene for tutorial streams, live classes, coaching sessions, and build-along workshops.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Starting-soon scene with timer-ready framing and flexible agenda copy for education workshop broadcasts.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "countdown",
+        "pre-show",
+        "scene",
+        "starting-soon",
+        "scenes",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/scenes/starting-soon.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/transitions/scene-sweep.html",
+      "title": "Education Workshop Scene Sweep Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Stylized transition asset for moving between tutorial streams, live classes, coaching sessions, and build-along workshops scenes.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Bold sweep transition with enough motion to sell a scene change while staying adaptable to many education workshop use cases.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "sweep",
+        "transition",
+        "wipe",
+        "transitions",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/widgets/goal-widget.html",
+      "title": "Education Workshop Goal Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Progress widget for milestones, checkpoints, or audience targets in tutorial streams, live classes, coaching sessions, and build-along workshops.",
+      "resolution": "900x260",
+      "width": 900,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact goal tracker with fast text overrides for education workshop campaigns or creator milestones.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "goal",
+        "progress",
+        "widget",
+        "widgets",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/widgets/goal-widget.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/education-workshop/widgets/promo-card.html",
+      "title": "Education Workshop Promo Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "education-workshop",
+      "collectionLabel": "Education Workshop Suite",
+      "useCase": "Square promo panel for announcements, sponsor notes, or segment teases in tutorial streams, live classes, coaching sessions, and build-along workshops.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Reusable square card that carries the education workshop look across stream scenes, socials, and promo moments.",
+      "tags": [
+        "classroom",
+        "coaching",
+        "education",
+        "learning",
+        "tutorial",
+        "white-label",
+        "card",
+        "promo",
+        "widget",
+        "widgets",
+        "education-workshop"
+      ],
+      "preview": "previews/themes/education-workshop/widgets/promo-card.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/fantasy-legends/alerts/summoning-circle-alert.html",
@@ -2663,8 +3658,8 @@
         "sigils",
         "summoning"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/fantasy-legends/alerts/summoning-circle-alert.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/fantasy-legends/overlays/quest-lower-third.html",
@@ -2692,8 +3687,8 @@
         "title",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/fantasy-legends/overlays/quest-lower-third.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/fantasy-legends/scenes/enchanted-map-briefing.html",
@@ -2725,8 +3720,8 @@
         "session",
         "text"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/fantasy-legends/scenes/enchanted-map-briefing.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/fantasy-legends/scenes/adventure-countdown.html",
@@ -2755,8 +3750,8 @@
         "scenes",
         "script"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/fantasy-legends/scenes/adventure-countdown.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/fantasy-legends/transitions/arcane-portal.html",
@@ -2786,8 +3781,8 @@
         "webm",
         "wipe"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/fantasy-legends/transitions/arcane-portal.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/apex-legends/apex-ring-alert.html",
@@ -2818,8 +3813,8 @@
         "timing",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/apex-legends/apex-ring-alert.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/apex-legends/apex-drop-ship-countdown.html",
@@ -2849,8 +3844,8 @@
         "sync",
         "timer"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/apex-legends/apex-drop-ship-countdown.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/apex-legends/apex-squad-overview.html",
@@ -2881,8 +3876,8 @@
         "squad",
         "table"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/apex-legends/apex-squad-overview.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/fortnite/fortnite-storm-alert.html",
@@ -2911,8 +3906,8 @@
         "storm",
         "warning"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/fortnite/fortnite-storm-alert.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/fortnite/fortnite-battle-bus-start.html",
@@ -2943,8 +3938,8 @@
         "tips",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/fortnite/fortnite-battle-bus-start.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/fortnite/fortnite-loadout-showcase.html",
@@ -2974,8 +3969,8 @@
         "showcase",
         "weapon"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/fortnite/fortnite-loadout-showcase.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/alerts/orbital-strike-alert.html",
@@ -3012,8 +4007,8 @@
         "unsc",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/alerts/orbital-strike-alert.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/backgrounds/halo-ring-orbit.html",
@@ -3048,8 +4043,8 @@
         "text",
         "vista"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/backgrounds/halo-ring-orbit.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/lower-thirds/unsc-fireteam-intro.html",
@@ -3083,8 +4078,8 @@
         "third",
         "unsc"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/lower-thirds/unsc-fireteam-intro.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/overlays/covenant-threat-monitor.html",
@@ -3118,8 +4113,8 @@
         "tracking",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/overlays/covenant-threat-monitor.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/overlays/fireteam-status-hud.html",
@@ -3154,8 +4149,8 @@
         "values",
         "vitals"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/overlays/fireteam-status-hud.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/scenes/armory-loadout-screen.html",
@@ -3189,8 +4184,8 @@
         "weapon",
         "weapons"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/scenes/armory-loadout-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/scenes/brb-screen.html",
@@ -3225,8 +4220,8 @@
         "styled",
         "text"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/scenes/brb-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/scenes/end-screen.html",
@@ -3263,8 +4258,8 @@
         "summary",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/scenes/end-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/scenes/live-screen.html",
@@ -3300,8 +4295,8 @@
         "screen",
         "spectator"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/scenes/live-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/scenes/operations-command-screen.html",
@@ -3338,8 +4333,8 @@
         "tasking",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/scenes/operations-command-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/scenes/postgame-debrief-screen.html",
@@ -3376,8 +4371,8 @@
         "statistics",
         "summarizing"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/scenes/postgame-debrief-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/scenes/drop-pod-countdown.html",
@@ -3411,8 +4406,8 @@
         "update",
         "value"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/scenes/drop-pod-countdown.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/scenes/mission-briefing-hologrid.html",
@@ -3446,8 +4441,8 @@
         "text",
         "title"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/scenes/mission-briefing-hologrid.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/scenes/start-screen.html",
@@ -3483,8 +4478,8 @@
         "svg",
         "unsc"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/scenes/start-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/halo/transitions/slipspace-burst.html",
@@ -3513,8 +4508,8 @@
         "use",
         "webm"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/halo/transitions/slipspace-burst.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/league-of-legends/league-draft-desk.html",
@@ -3549,8 +4544,8 @@
         "team",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/league-of-legends/league-draft-desk.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/league-of-legends/league-victory-screen.html",
@@ -3580,8 +4575,8 @@
         "team",
         "victory"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/league-of-legends/league-victory-screen.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/league-of-legends/league-objective-tracker.html",
@@ -3612,8 +4607,8 @@
         "widget",
         "widgets"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/league-of-legends/league-objective-tracker.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/valorant/valorant-round-history.html",
@@ -3641,8 +4636,8 @@
         "valorant",
         "wins"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/valorant/valorant-round-history.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/valorant/valorant-match-intro.html",
@@ -3671,8 +4666,8 @@
         "update",
         "valorant"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/valorant/valorant-match-intro.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/games/valorant/valorant-spike-status.html",
@@ -3703,8 +4698,339 @@
         "widget",
         "widgets"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/games/valorant/valorant-spike-status.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/alerts/supporter-surge-alert.html",
+      "title": "Launch Event Supporter Surge Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Animated alert card for product launches, channel rebrands, premiere nights, and announcement streams.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact alert with layered motion and white-label framing for launch event broadcasts.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "alert",
+        "supporter",
+        "surge",
+        "alerts",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/alerts/supporter-surge-alert.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/backgrounds/ambient-loop.html",
+      "title": "Launch Event Ambient Background",
+      "category": "backgrounds",
+      "categoryLabel": "Backgrounds",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Looping full-screen background for product launches, channel rebrands, premiere nights, and announcement streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Animated backdrop built to carry launch event scenes without locking the design to one creator brand.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "ambient",
+        "background",
+        "loop",
+        "backgrounds",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/backgrounds/ambient-loop.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/lower-thirds/segment-intro.html",
+      "title": "Launch Event Segment Intro Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Reusable lower third for names, topics, or CTAs in product launches, channel rebrands, premiere nights, and announcement streams.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent lower third with a strong headline lane and flexible copy blocks for launch event segments.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "cta",
+        "intro",
+        "lower-third",
+        "segment",
+        "lower-thirds",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/lower-thirds/segment-intro.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/overlays/live-frame.html",
+      "title": "Launch Event Live Frame Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Full-frame overlay for commentary, facecam, or main presentation scenes in product launches, channel rebrands, premiere nights, and announcement streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent live frame with a modular header and sidebar notes tailored to launch event coverage.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "frame",
+        "live",
+        "overlay",
+        "overlays",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/overlays/live-frame.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/scenes/break-screen.html",
+      "title": "Launch Event Break Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Intermission scene for product launches, channel rebrands, premiere nights, and announcement streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Break layout with timer space, helper copy, and a structured side rail for launch event streams.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "break",
+        "intermission",
+        "scene",
+        "scenes",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/scenes/break-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/scenes/closing-screen.html",
+      "title": "Launch Event Closing Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in product launches, channel rebrands, premiere nights, and announcement streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Closing scene that keeps the final call to action readable and polished for launch event creators.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "closing",
+        "outro",
+        "scene",
+        "scenes",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/scenes/schedule-board.html",
+      "title": "Launch Event Schedule Board Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Schedule and run-of-show scene for product launches, channel rebrands, premiere nights, and announcement streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Planner-style scene for outlining a live session, route, or milestone ladder in launch event formats.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "agenda",
+        "schedule",
+        "scene",
+        "scenes",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/scenes/schedule-board.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/scenes/starting-soon.html",
+      "title": "Launch Event Starting Soon Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Pre-show countdown scene for product launches, channel rebrands, premiere nights, and announcement streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Starting-soon scene with timer-ready framing and flexible agenda copy for launch event broadcasts.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "pre-show",
+        "scene",
+        "starting-soon",
+        "scenes",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/scenes/starting-soon.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/transitions/scene-sweep.html",
+      "title": "Launch Event Scene Sweep Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Stylized transition asset for moving between product launches, channel rebrands, premiere nights, and announcement streams scenes.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Bold sweep transition with enough motion to sell a scene change while staying adaptable to many launch event use cases.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "sweep",
+        "transition",
+        "wipe",
+        "transitions",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/widgets/goal-widget.html",
+      "title": "Launch Event Goal Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Progress widget for milestones, checkpoints, or audience targets in product launches, channel rebrands, premiere nights, and announcement streams.",
+      "resolution": "900x260",
+      "width": 900,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact goal tracker with fast text overrides for launch event campaigns or creator milestones.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "goal",
+        "progress",
+        "widget",
+        "widgets",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/widgets/goal-widget.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/launch-event/widgets/promo-card.html",
+      "title": "Launch Event Promo Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "launch-event",
+      "collectionLabel": "Launch Event Suite",
+      "useCase": "Square promo panel for announcements, sponsor notes, or segment teases in product launches, channel rebrands, premiere nights, and announcement streams.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Reusable square card that carries the launch event look across stream scenes, socials, and promo moments.",
+      "tags": [
+        "announcement",
+        "countdown",
+        "launch",
+        "premiere",
+        "reveal",
+        "white-label",
+        "card",
+        "promo",
+        "widget",
+        "widgets",
+        "launch-event"
+      ],
+      "preview": "previews/themes/launch-event/widgets/promo-card.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/live-show/lower-thirds/guest-intro.html",
@@ -3893,6 +5219,338 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/music-pulse/alerts/supporter-surge-alert.html",
+      "title": "Music Pulse Supporter Surge Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Animated alert card for DJ sets, beat-making sessions, listening parties, and performance-led creator streams.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact alert with layered motion and white-label framing for music pulse broadcasts.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "alert",
+        "supporter",
+        "surge",
+        "alerts",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/alerts/supporter-surge-alert.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/music-pulse/backgrounds/ambient-loop.html",
+      "title": "Music Pulse Ambient Background",
+      "category": "backgrounds",
+      "categoryLabel": "Backgrounds",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Looping full-screen background for DJ sets, beat-making sessions, listening parties, and performance-led creator streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Animated backdrop built to carry music pulse scenes without locking the design to one creator brand.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "ambient",
+        "background",
+        "loop",
+        "backgrounds",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/backgrounds/ambient-loop.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/music-pulse/lower-thirds/segment-intro.html",
+      "title": "Music Pulse Segment Intro Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Reusable lower third for names, topics, or CTAs in DJ sets, beat-making sessions, listening parties, and performance-led creator streams.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent lower third with a strong headline lane and flexible copy blocks for music pulse segments.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "cta",
+        "intro",
+        "lower-third",
+        "segment",
+        "lower-thirds",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/lower-thirds/segment-intro.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/music-pulse/overlays/live-frame.html",
+      "title": "Music Pulse Live Frame Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Full-frame overlay for commentary, facecam, or main presentation scenes in DJ sets, beat-making sessions, listening parties, and performance-led creator streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent live frame with a modular header and sidebar notes tailored to music pulse coverage.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "frame",
+        "live",
+        "overlay",
+        "overlays",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/overlays/live-frame.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/music-pulse/scenes/break-screen.html",
+      "title": "Music Pulse Break Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Intermission scene for DJ sets, beat-making sessions, listening parties, and performance-led creator streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Break layout with timer space, helper copy, and a structured side rail for music pulse streams.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "break",
+        "intermission",
+        "scene",
+        "scenes",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/scenes/break-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/music-pulse/scenes/closing-screen.html",
+      "title": "Music Pulse Closing Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in DJ sets, beat-making sessions, listening parties, and performance-led creator streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Closing scene that keeps the final call to action readable and polished for music pulse creators.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "closing",
+        "outro",
+        "scene",
+        "scenes",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/music-pulse/scenes/schedule-board.html",
+      "title": "Music Pulse Schedule Board Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Schedule and run-of-show scene for DJ sets, beat-making sessions, listening parties, and performance-led creator streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Planner-style scene for outlining a live session, route, or milestone ladder in music pulse formats.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "agenda",
+        "schedule",
+        "scene",
+        "scenes",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/scenes/schedule-board.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/music-pulse/scenes/starting-soon.html",
+      "title": "Music Pulse Starting Soon Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Pre-show countdown scene for DJ sets, beat-making sessions, listening parties, and performance-led creator streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Starting-soon scene with timer-ready framing and flexible agenda copy for music pulse broadcasts.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "countdown",
+        "pre-show",
+        "scene",
+        "starting-soon",
+        "scenes",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/scenes/starting-soon.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/music-pulse/transitions/scene-sweep.html",
+      "title": "Music Pulse Scene Sweep Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Stylized transition asset for moving between DJ sets, beat-making sessions, listening parties, and performance-led creator streams scenes.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Bold sweep transition with enough motion to sell a scene change while staying adaptable to many music pulse use cases.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "sweep",
+        "transition",
+        "wipe",
+        "transitions",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/music-pulse/widgets/goal-widget.html",
+      "title": "Music Pulse Goal Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Progress widget for milestones, checkpoints, or audience targets in DJ sets, beat-making sessions, listening parties, and performance-led creator streams.",
+      "resolution": "900x260",
+      "width": 900,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact goal tracker with fast text overrides for music pulse campaigns or creator milestones.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "goal",
+        "progress",
+        "widget",
+        "widgets",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/widgets/goal-widget.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/music-pulse/widgets/promo-card.html",
+      "title": "Music Pulse Promo Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "music-pulse",
+      "collectionLabel": "Music Pulse Suite",
+      "useCase": "Square promo panel for announcements, sponsor notes, or segment teases in DJ sets, beat-making sessions, listening parties, and performance-led creator streams.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Reusable square card that carries the music pulse look across stream scenes, socials, and promo moments.",
+      "tags": [
+        "dj",
+        "music",
+        "performance",
+        "release",
+        "set",
+        "white-label",
+        "card",
+        "promo",
+        "widget",
+        "widgets",
+        "music-pulse"
+      ],
+      "preview": "previews/themes/music-pulse/widgets/promo-card.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/newsroom/scenes/world-map-background.html",
       "title": "World Map Background",
       "category": "backgrounds",
@@ -3919,8 +5577,8 @@
         "use",
         "world"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/newsroom/scenes/world-map-background.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/newsroom/overlays/news-lower-third.html",
@@ -3949,8 +5607,8 @@
         "third",
         "update"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/newsroom/overlays/news-lower-third.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/newsroom/scenes/news-desk-main.html",
@@ -3980,8 +5638,8 @@
         "scene",
         "video"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/newsroom/scenes/news-desk-main.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/newsroom/overlays/news-ticker.html",
@@ -4010,8 +5668,8 @@
         "scrolling",
         "ticker"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/newsroom/overlays/news-ticker.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/newsroom/alerts/election-results-flip.html",
@@ -4041,8 +5699,8 @@
         "reveal",
         "scenes"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/newsroom/alerts/election-results-flip.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/newsroom/overlays/live-location-bug.html",
@@ -4070,8 +5728,8 @@
         "reporter",
         "scenes"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/newsroom/overlays/live-location-bug.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/newsroom/alerts/breaking-news-stinger.html",
@@ -4098,8 +5756,8 @@
         "transitions",
         "webm"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/newsroom/alerts/breaking-news-stinger.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/newsroom/transitions/headline-swipe.html",
@@ -4126,8 +5784,672 @@
         "use",
         "webm"
       ],
-      "preview": "none",
-      "previewStatus": "placeholder"
+      "preview": "previews/themes/newsroom/transitions/headline-swipe.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/alerts/supporter-surge-alert.html",
+      "title": "Sports Watchalong Supporter Surge Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Animated alert card for watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact alert with layered motion and white-label framing for sports watchalong broadcasts.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "alert",
+        "supporter",
+        "surge",
+        "alerts",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/alerts/supporter-surge-alert.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/backgrounds/ambient-loop.html",
+      "title": "Sports Watchalong Ambient Background",
+      "category": "backgrounds",
+      "categoryLabel": "Backgrounds",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Looping full-screen background for watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Animated backdrop built to carry sports watchalong scenes without locking the design to one creator brand.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "ambient",
+        "background",
+        "loop",
+        "backgrounds",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/backgrounds/ambient-loop.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/lower-thirds/segment-intro.html",
+      "title": "Sports Watchalong Segment Intro Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Reusable lower third for names, topics, or CTAs in watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent lower third with a strong headline lane and flexible copy blocks for sports watchalong segments.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "cta",
+        "intro",
+        "lower-third",
+        "segment",
+        "lower-thirds",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/lower-thirds/segment-intro.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/overlays/live-frame.html",
+      "title": "Sports Watchalong Live Frame Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Full-frame overlay for commentary, facecam, or main presentation scenes in watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent live frame with a modular header and sidebar notes tailored to sports watchalong coverage.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "frame",
+        "live",
+        "overlay",
+        "overlays",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/overlays/live-frame.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/scenes/break-screen.html",
+      "title": "Sports Watchalong Break Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Intermission scene for watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Break layout with timer space, helper copy, and a structured side rail for sports watchalong streams.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "break",
+        "intermission",
+        "scene",
+        "scenes",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/scenes/break-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/scenes/closing-screen.html",
+      "title": "Sports Watchalong Closing Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Closing scene that keeps the final call to action readable and polished for sports watchalong creators.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "closing",
+        "outro",
+        "scene",
+        "scenes",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/scenes/schedule-board.html",
+      "title": "Sports Watchalong Schedule Board Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Schedule and run-of-show scene for watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Planner-style scene for outlining a live session, route, or milestone ladder in sports watchalong formats.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "agenda",
+        "schedule",
+        "scene",
+        "scenes",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/scenes/schedule-board.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/scenes/starting-soon.html",
+      "title": "Sports Watchalong Starting Soon Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Pre-show countdown scene for watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Starting-soon scene with timer-ready framing and flexible agenda copy for sports watchalong broadcasts.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "countdown",
+        "pre-show",
+        "scene",
+        "starting-soon",
+        "scenes",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/scenes/starting-soon.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/transitions/scene-sweep.html",
+      "title": "Sports Watchalong Scene Sweep Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Stylized transition asset for moving between watchalong streams, postgame shows, fan coverage, and creator-led sports analysis scenes.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Bold sweep transition with enough motion to sell a scene change while staying adaptable to many sports watchalong use cases.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "sweep",
+        "transition",
+        "wipe",
+        "transitions",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/widgets/goal-widget.html",
+      "title": "Sports Watchalong Goal Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Progress widget for milestones, checkpoints, or audience targets in watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.",
+      "resolution": "900x260",
+      "width": 900,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact goal tracker with fast text overrides for sports watchalong campaigns or creator milestones.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "goal",
+        "progress",
+        "widget",
+        "widgets",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/widgets/goal-widget.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/sports-watchalong/widgets/promo-card.html",
+      "title": "Sports Watchalong Promo Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "sports-watchalong",
+      "collectionLabel": "Sports Watchalong Suite",
+      "useCase": "Square promo panel for announcements, sponsor notes, or segment teases in watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Reusable square card that carries the sports watchalong look across stream scenes, socials, and promo moments.",
+      "tags": [
+        "analysis",
+        "sports",
+        "watchalong",
+        "matchup",
+        "scoreboard",
+        "white-label",
+        "card",
+        "promo",
+        "widget",
+        "widgets",
+        "sports-watchalong"
+      ],
+      "preview": "previews/themes/sports-watchalong/widgets/promo-card.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/alerts/supporter-surge-alert.html",
+      "title": "Travel Vlog Supporter Surge Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Animated alert card for IRL streams, travel updates, walking tours, and creator-led city guides.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact alert with layered motion and white-label framing for travel vlog broadcasts.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "alert",
+        "supporter",
+        "surge",
+        "alerts",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/alerts/supporter-surge-alert.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/backgrounds/ambient-loop.html",
+      "title": "Travel Vlog Ambient Background",
+      "category": "backgrounds",
+      "categoryLabel": "Backgrounds",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Looping full-screen background for IRL streams, travel updates, walking tours, and creator-led city guides.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Animated backdrop built to carry travel vlog scenes without locking the design to one creator brand.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "ambient",
+        "background",
+        "loop",
+        "backgrounds",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/backgrounds/ambient-loop.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/lower-thirds/segment-intro.html",
+      "title": "Travel Vlog Segment Intro Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Reusable lower third for names, topics, or CTAs in IRL streams, travel updates, walking tours, and creator-led city guides.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent lower third with a strong headline lane and flexible copy blocks for travel vlog segments.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "cta",
+        "intro",
+        "lower-third",
+        "segment",
+        "lower-thirds",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/lower-thirds/segment-intro.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/overlays/live-frame.html",
+      "title": "Travel Vlog Live Frame Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Full-frame overlay for commentary, facecam, or main presentation scenes in IRL streams, travel updates, walking tours, and creator-led city guides.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent live frame with a modular header and sidebar notes tailored to travel vlog coverage.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "frame",
+        "live",
+        "overlay",
+        "overlays",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/overlays/live-frame.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/scenes/break-screen.html",
+      "title": "Travel Vlog Break Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Intermission scene for IRL streams, travel updates, walking tours, and creator-led city guides.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Break layout with timer space, helper copy, and a structured side rail for travel vlog streams.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "break",
+        "intermission",
+        "scene",
+        "scenes",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/scenes/break-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/scenes/closing-screen.html",
+      "title": "Travel Vlog Closing Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in IRL streams, travel updates, walking tours, and creator-led city guides.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Closing scene that keeps the final call to action readable and polished for travel vlog creators.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "closing",
+        "outro",
+        "scene",
+        "scenes",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/scenes/schedule-board.html",
+      "title": "Travel Vlog Schedule Board Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Schedule and run-of-show scene for IRL streams, travel updates, walking tours, and creator-led city guides.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Planner-style scene for outlining a live session, route, or milestone ladder in travel vlog formats.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "agenda",
+        "schedule",
+        "scene",
+        "scenes",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/scenes/schedule-board.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/scenes/starting-soon.html",
+      "title": "Travel Vlog Starting Soon Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Pre-show countdown scene for IRL streams, travel updates, walking tours, and creator-led city guides.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Starting-soon scene with timer-ready framing and flexible agenda copy for travel vlog broadcasts.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "countdown",
+        "pre-show",
+        "scene",
+        "starting-soon",
+        "scenes",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/scenes/starting-soon.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/transitions/scene-sweep.html",
+      "title": "Travel Vlog Scene Sweep Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Stylized transition asset for moving between IRL streams, travel updates, walking tours, and creator-led city guides scenes.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Bold sweep transition with enough motion to sell a scene change while staying adaptable to many travel vlog use cases.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "sweep",
+        "transition",
+        "wipe",
+        "transitions",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/widgets/goal-widget.html",
+      "title": "Travel Vlog Goal Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Progress widget for milestones, checkpoints, or audience targets in IRL streams, travel updates, walking tours, and creator-led city guides.",
+      "resolution": "900x260",
+      "width": 900,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact goal tracker with fast text overrides for travel vlog campaigns or creator milestones.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "goal",
+        "progress",
+        "widget",
+        "widgets",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/widgets/goal-widget.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/widgets/promo-card.html",
+      "title": "Travel Vlog Promo Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Square promo panel for announcements, sponsor notes, or segment teases in IRL streams, travel updates, walking tours, and creator-led city guides.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Reusable square card that carries the travel vlog look across stream scenes, socials, and promo moments.",
+      "tags": [
+        "irl",
+        "location",
+        "mobile",
+        "travel",
+        "vlog",
+        "white-label",
+        "card",
+        "promo",
+        "widget",
+        "widgets",
+        "travel-vlog"
+      ],
+      "preview": "previews/themes/travel-vlog/widgets/promo-card.png",
+      "previewStatus": "image"
     },
     {
       "path": "themes/vertical-creator/lower-thirds/cta-lower-third.html",
@@ -4288,6 +6610,338 @@
         "overlay"
       ],
       "preview": "previews/themes/vertical-creator/widgets/goal-widget.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/alerts/supporter-surge-alert.html",
+      "title": "Wellness Retreat Supporter Surge Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Animated alert card for wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact alert with layered motion and white-label framing for wellness retreat broadcasts.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "alert",
+        "supporter",
+        "surge",
+        "alerts",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/alerts/supporter-surge-alert.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/backgrounds/ambient-loop.html",
+      "title": "Wellness Retreat Ambient Background",
+      "category": "backgrounds",
+      "categoryLabel": "Backgrounds",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Looping full-screen background for wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Animated backdrop built to carry wellness retreat scenes without locking the design to one creator brand.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "ambient",
+        "background",
+        "loop",
+        "backgrounds",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/backgrounds/ambient-loop.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/lower-thirds/segment-intro.html",
+      "title": "Wellness Retreat Segment Intro Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Reusable lower third for names, topics, or CTAs in wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent lower third with a strong headline lane and flexible copy blocks for wellness retreat segments.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "cta",
+        "intro",
+        "lower-third",
+        "segment",
+        "lower-thirds",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/lower-thirds/segment-intro.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/overlays/live-frame.html",
+      "title": "Wellness Retreat Live Frame Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Full-frame overlay for commentary, facecam, or main presentation scenes in wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Transparent live frame with a modular header and sidebar notes tailored to wellness retreat coverage.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "frame",
+        "live",
+        "overlay",
+        "overlays",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/overlays/live-frame.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/scenes/break-screen.html",
+      "title": "Wellness Retreat Break Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Intermission scene for wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Break layout with timer space, helper copy, and a structured side rail for wellness retreat streams.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "break",
+        "intermission",
+        "scene",
+        "scenes",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/scenes/break-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/scenes/closing-screen.html",
+      "title": "Wellness Retreat Closing Screen",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Closing scene that keeps the final call to action readable and polished for wellness retreat creators.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "closing",
+        "outro",
+        "scene",
+        "scenes",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/scenes/schedule-board.html",
+      "title": "Wellness Retreat Schedule Board Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Schedule and run-of-show scene for wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Planner-style scene for outlining a live session, route, or milestone ladder in wellness retreat formats.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "agenda",
+        "schedule",
+        "scene",
+        "scenes",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/scenes/schedule-board.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/scenes/starting-soon.html",
+      "title": "Wellness Retreat Starting Soon Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Pre-show countdown scene for wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Starting-soon scene with timer-ready framing and flexible agenda copy for wellness retreat broadcasts.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "countdown",
+        "pre-show",
+        "scene",
+        "starting-soon",
+        "scenes",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/scenes/starting-soon.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/transitions/scene-sweep.html",
+      "title": "Wellness Retreat Scene Sweep Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Stylized transition asset for moving between wellness streams, guided sessions, habit tracking, and soft-focus community check-ins scenes.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Bold sweep transition with enough motion to sell a scene change while staying adaptable to many wellness retreat use cases.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "sweep",
+        "transition",
+        "wipe",
+        "transitions",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/widgets/goal-widget.html",
+      "title": "Wellness Retreat Goal Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Progress widget for milestones, checkpoints, or audience targets in wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.",
+      "resolution": "900x260",
+      "width": 900,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact goal tracker with fast text overrides for wellness retreat campaigns or creator milestones.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "goal",
+        "progress",
+        "widget",
+        "widgets",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/widgets/goal-widget.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/wellness-retreat/widgets/promo-card.html",
+      "title": "Wellness Retreat Promo Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "wellness-retreat",
+      "collectionLabel": "Wellness Retreat Suite",
+      "useCase": "Square promo panel for announcements, sponsor notes, or segment teases in wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Reusable square card that carries the wellness retreat look across stream scenes, socials, and promo moments.",
+      "tags": [
+        "calm",
+        "guided",
+        "mindfulness",
+        "retreat",
+        "wellness",
+        "white-label",
+        "card",
+        "promo",
+        "widget",
+        "widgets",
+        "wellness-retreat"
+      ],
+      "preview": "previews/themes/wellness-retreat/widgets/promo-card.png",
       "previewStatus": "image"
     }
   ]

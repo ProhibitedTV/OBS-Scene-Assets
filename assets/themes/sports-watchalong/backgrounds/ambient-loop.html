@@ -1,0 +1,191 @@
+<!--
+Title: Sports Watchalong Ambient Background
+Category: backgrounds
+Collection: sports-watchalong
+UseCase: Looping full-screen background for watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.
+Resolution: 1920x1080
+Transparent: false
+Description: Animated backdrop built to carry sports watchalong scenes without locking the design to one creator brand.
+Tags: analysis, sports, watchalong, matchup, scoreboard, white-label, ambient, background, loop, backgrounds, sports-watchalong
+Preview: previews/themes/sports-watchalong/backgrounds/ambient-loop.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sports Watchalong Ambient Background</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #22c55e;
+      --accent-secondary: #0ea5e9;
+      --accent-tertiary: #f97316;
+      --text: #f0fdf4;
+      --muted: rgba(240, 253, 244, 0.78);
+      --line: rgba(240, 253, 244, 0.16);
+      --surface: rgba(10, 28, 20, 0.72);
+      --surface-strong: rgba(10, 28, 20, 0.92);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(34, 197, 94, 0.32);
+      --bg-start: #07110d;
+      --bg-mid: #113025;
+      --bg-end: #091321;
+      --wash-a: rgba(34, 197, 94, 0.22);
+      --wash-b: rgba(14, 165, 233, 0.18);
+      --wash-c: rgba(249, 115, 22, 0.18);
+  
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      background:
+        radial-gradient(circle at 16% 18%, var(--wash-a), transparent 28%),
+        radial-gradient(circle at 82% 18%, var(--wash-b), transparent 30%),
+        radial-gradient(circle at 70% 78%, var(--wash-c), transparent 28%),
+        linear-gradient(145deg, var(--bg-start), var(--bg-mid) 58%, var(--bg-end));
+  
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(8px);
+      opacity: 0.82;
+      animation: drift 16s ease-in-out infinite;
+    }
+
+    .orb-a {
+      width: 320px;
+      height: 320px;
+      top: 8%;
+      left: 8%;
+      background: rgba(34, 197, 94, 0.22);
+    }
+
+    .orb-b {
+      width: 260px;
+      height: 260px;
+      bottom: 12%;
+      right: 12%;
+      background: rgba(14, 165, 233, 0.18);
+      animation-delay: 1s;
+    }
+
+    .orb-c {
+      width: 220px;
+      height: 220px;
+      top: 34%;
+      right: 20%;
+      background: rgba(249, 115, 22, 0.18);
+      animation-delay: 2s;
+    }
+
+    .panel {
+      position: relative;
+      z-index: 1;
+      width: min(88vw, 1040px);
+      padding: 2rem 2.2rem;
+      border-radius: 2rem;
+      border: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.14);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 24px 48px var(--shadow);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+      max-width: 11ch;
+    }
+
+    p {
+      margin: 0;
+      max-width: 48ch;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.02rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .badge {
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, -18px, 0) scale(1.04); }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="orb orb-b" aria-hidden="true"></div>
+  <div class="orb orb-c" aria-hidden="true"></div>
+  <div class="panel">
+    <p class="eyebrow" id="subtitle">Scoreboard-minded coverage for live reactions</p>
+    <h1 id="title">Field-inspired backdrop for analysis scenes</h1>
+    <p id="headline">A white-label full-screen loop for watchalong streams, postgame shows, fan coverage, and creator-led sports analysis.</p>
+    <div class="badges" id="items">
+      <span class="badge">Current matchup</span>
+<span class="badge">Score pulse</span>
+<span class="badge">Next segment</span>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    const items = params.get('items');
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+    }
+    if (items) {
+      const container = document.getElementById('items');
+      container.innerHTML = '';
+      items.split('|').map((entry) => entry.trim()).filter(Boolean).forEach((entry) => {
+        const badge = document.createElement('span');
+        badge.className = 'badge';
+        badge.textContent = entry;
+        container.appendChild(badge);
+      });
+    }
+  </script>
+</body>
+</html>

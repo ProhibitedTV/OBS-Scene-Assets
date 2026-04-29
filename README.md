@@ -2,7 +2,7 @@
 
 OBS Scene Assets is a metadata-driven library of standalone HTML overlays, widgets, lower thirds, and complete scenes for [OBS Studio](https://obsproject.com/) Browser Sources.
 
-The repo currently ships with **139 assets** across the core library and themed suites, including the new **Vertical Creator** and **Live Show** packs for general streamers.
+The repo currently ships with **227 assets** across the core library and themed suites, including broad white-label packs such as **Charity Marathon**, **Music Pulse**, **Sports Watchalong**, **Travel Vlog**, **Wellness Retreat**, **Vertical Creator**, and **Live Show**.
 
 The long-term target is a scale-ready, white-label library with thousands of animated assets spanning thousands of discoverable creator niches. To keep that breadth usable, the repo keeps a compact set of stable asset types and expands depth through themed suites, coordinated packs, and strong tagging.
 
@@ -92,8 +92,11 @@ npm run assets:validate
 Useful helpers:
 
 ```bash
+npm run assets:add -- <category> <slug> [collection]
 npm run assets:backfill
+npm run packs:generate
 npm run previews:generate
+npm run previews:sync
 ```
 
 `assets:generate` rebuilds `assets/catalog.json`, `assets/index.html`, and `docs/asset-catalog.md` from the metadata embedded in each asset file.

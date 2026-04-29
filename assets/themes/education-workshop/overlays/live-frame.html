@@ -1,0 +1,226 @@
+<!--
+Title: Education Workshop Live Frame Overlay
+Category: overlays
+Collection: education-workshop
+UseCase: Full-frame overlay for commentary, facecam, or main presentation scenes in tutorial streams, live classes, coaching sessions, and build-along workshops.
+Resolution: 1920x1080
+Transparent: true
+Description: Transparent live frame with a modular header and sidebar notes tailored to education workshop coverage.
+Tags: classroom, coaching, education, learning, tutorial, white-label, frame, live, overlay, overlays, education-workshop
+Preview: previews/themes/education-workshop/overlays/live-frame.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Education Workshop Live Frame Overlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #38bdf8;
+      --accent-secondary: #14b8a6;
+      --accent-tertiary: #a3e635;
+      --text: #ecfeff;
+      --muted: rgba(236, 254, 255, 0.78);
+      --line: rgba(236, 254, 255, 0.16);
+      --surface: rgba(8, 31, 46, 0.72);
+      --surface-strong: rgba(8, 31, 46, 0.92);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(56, 189, 248, 0.32);
+      --bg-start: #051018;
+      --bg-mid: #0b2232;
+      --bg-end: #0b1717;
+      --wash-a: rgba(56, 189, 248, 0.22);
+      --wash-b: rgba(20, 184, 166, 0.18);
+      --wash-c: rgba(163, 230, 53, 0.18);
+  
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    .shell {
+      min-height: 100vh;
+      padding: 2.2rem;
+      display: grid;
+      grid-template-columns: 1fr 0.32fr;
+      grid-template-rows: auto 1fr auto;
+      gap: 1rem;
+      grid-template-areas:
+        "header sidebar"
+        "frame sidebar"
+        "footer sidebar";
+    }
+
+    .panel {
+      border-radius: 1.4rem;
+      border: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.12);
+      box-shadow: 0 18px 42px rgba(2, 6, 23, 0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    .header {
+      grid-area: header;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem 1.15rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0.3rem 0 0;
+      font-size: clamp(1.8rem, 4vw, 2.9rem);
+      letter-spacing: -0.05em;
+    }
+
+    .headline {
+      padding: 0.75rem 0.9rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.16), rgba(20, 184, 166, 0.12));
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .frame {
+      grid-area: frame;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.9rem;
+      border: 2px solid rgba(56, 189, 248, 0.6);
+      box-shadow: inset 0 0 0 1px rgba(20, 184, 166, 0.45);
+    }
+
+    .frame::before {
+      content: "";
+      position: absolute;
+      inset: 1.1rem;
+      border-radius: 1.3rem;
+      border: 1px dashed rgba(20, 184, 166, 0.38);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    }
+
+    .frame-title {
+      position: absolute;
+      top: 1.4rem;
+      left: 1.4rem;
+      padding: 0.65rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      padding: 1rem;
+      display: grid;
+      gap: 0.8rem;
+      align-content: start;
+    }
+
+    .sidebar-item {
+      padding: 0.9rem;
+      border-radius: 1.1rem;
+      border: 1px solid rgba(56, 189, 248, 0.18);
+      background: rgba(255, 255, 255, 0.05);
+      line-height: 1.5;
+    }
+
+    .footer {
+      grid-area: footer;
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .footer-chip {
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="header panel">
+      <div>
+        <p class="eyebrow" id="subtitle">Education Workshop Suite</p>
+        <h1 id="title">Education Workshop Live Frame</h1>
+      </div>
+      <div class="headline" id="headline">Clean framing for lessons and coaching</div>
+    </div>
+    <div class="frame" aria-label="Education Workshop live frame overlay">
+      <div class="frame-title">Education Workshop</div>
+    </div>
+    <div class="sidebar panel" id="items">
+      <div class="sidebar-item">Opening context and key outcomes</div>
+<div class="sidebar-item">Main walkthrough or live build</div>
+<div class="sidebar-item">Short question block and recap</div>
+    </div>
+    <div class="footer panel" id="chips">
+      <span class="footer-chip">Lesson focus</span>
+<span class="footer-chip">Question queue</span>
+<span class="footer-chip">Resource links</span>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    const items = params.get('items');
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+      document.documentElement.style.setProperty('--accent-tertiary', accent);
+    }
+    if (items) {
+      const list = items.split('|').map((entry) => entry.trim()).filter(Boolean);
+      const sidebar = document.getElementById('items');
+      const chips = document.getElementById('chips');
+      sidebar.innerHTML = '';
+      chips.innerHTML = '';
+      list.forEach((entry) => {
+        const card = document.createElement('div');
+        card.className = 'sidebar-item';
+        card.textContent = entry;
+        sidebar.appendChild(card);
+        const chip = document.createElement('span');
+        chip.className = 'footer-chip';
+        chip.textContent = entry;
+        chips.appendChild(chip);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!--
+Title: Cozy Campfire Segment Intro Lower Third
+Category: lower-thirds
+Collection: cozy-campfire
+UseCase: Reusable lower third for names, topics, or CTAs in cozy chats, book clubs, craft streams, and low-pressure community hangs.
+Resolution: 1920x260
+Transparent: true
+Description: Transparent lower third with a strong headline lane and flexible copy blocks for cozy campfire segments.
+Tags: ambient, calm, cozy, craft, lifestyle, white-label, cta, intro, lower-third, segment, lower-thirds, cozy-campfire
+Preview: previews/themes/cozy-campfire/lower-thirds/segment-intro.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cozy Campfire Segment Intro Lower Third</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #f59e0b;
+      --accent-secondary: #f97316;
+      --accent-tertiary: #84cc16;
+      --text: #fff7ed;
+      --muted: rgba(255, 247, 237, 0.76);
+      --line: rgba(255, 247, 237, 0.14);
+      --surface: rgba(47, 28, 17, 0.72);
+      --surface-strong: rgba(47, 28, 17, 0.9);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(245, 158, 11, 0.32);
+      --bg-start: #140d08;
+      --bg-mid: #2a1a11;
+      --bg-end: #0f1208;
+      --wash-a: rgba(245, 158, 11, 0.22);
+      --wash-b: rgba(249, 115, 22, 0.18);
+      --wash-c: rgba(132, 204, 22, 0.18);
+  
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      display: grid;
+      align-items: end;
+      padding: 0 3vw 3vw;
+    }
+
+    .lower-third {
+      width: min(90vw, 1420px);
+      padding: 1rem;
+      border-radius: 1.6rem;
+      border: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.16), rgba(249, 115, 22, 0.1)), var(--surface-strong);
+      box-shadow: 0 22px 48px var(--shadow);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .accent {
+      width: 0.8rem;
+      align-self: stretch;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-secondary), var(--accent-tertiary));
+    }
+
+    .eyebrow {
+      margin: 0 0 0.35rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    p {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .headline {
+      padding: 0.9rem 1rem;
+      border-radius: 1.1rem;
+      background: rgba(255, 255, 255, 0.07);
+      min-width: 240px;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="lower-third">
+    <div class="accent" aria-hidden="true"></div>
+    <div>
+      <p class="eyebrow" id="subtitle">Cozy Campfire Suite</p>
+      <h1 id="title">Tonight&#39;s cozy rundown</h1>
+      <p id="description">A flexible lower third for cozy chats, book clubs, craft streams, and low-pressure community hangs.</p>
+    </div>
+    <div class="headline" id="headline">Use the card for drop-ins, prompts, or a quiet CTA</div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+      document.documentElement.style.setProperty('--accent-tertiary', accent);
+    }
+  </script>
+</body>
+</html>

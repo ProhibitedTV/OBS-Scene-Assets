@@ -1,0 +1,151 @@
+<!--
+Title: Wellness Retreat Goal Widget
+Category: widgets
+Collection: wellness-retreat
+UseCase: Progress widget for milestones, checkpoints, or audience targets in wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.
+Resolution: 900x260
+Transparent: true
+Description: Compact goal tracker with fast text overrides for wellness retreat campaigns or creator milestones.
+Tags: calm, guided, mindfulness, retreat, wellness, white-label, goal, progress, widget, widgets, wellness-retreat
+Preview: previews/themes/wellness-retreat/widgets/goal-widget.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wellness Retreat Goal Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #2dd4bf;
+      --accent-secondary: #84cc16;
+      --accent-tertiary: #f59e0b;
+      --text: #f0fdfa;
+      --muted: rgba(240, 253, 250, 0.78);
+      --line: rgba(240, 253, 250, 0.16);
+      --surface: rgba(8, 33, 31, 0.7);
+      --surface-strong: rgba(8, 33, 31, 0.9);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(45, 212, 191, 0.32);
+      --bg-start: #061412;
+      --bg-mid: #0e2b2a;
+      --bg-end: #172612;
+      --wash-a: rgba(45, 212, 191, 0.22);
+      --wash-b: rgba(132, 204, 22, 0.18);
+      --wash-c: rgba(245, 158, 11, 0.18);
+  
+      --progress: 0.68;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      display: grid;
+      place-items: center;
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    .widget {
+      width: min(92vw, 860px);
+      padding: 1rem 1.1rem;
+      border-radius: 1.35rem;
+      border: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(45, 212, 191, 0.14), rgba(132, 204, 22, 0.08)), var(--surface-strong);
+      box-shadow: 0 18px 42px var(--shadow);
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .head,
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .subtitle,
+    .foot {
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .title {
+      margin-top: 0.25rem;
+      font-size: 1.28rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .numbers strong {
+      display: block;
+      font-size: 1.28rem;
+      letter-spacing: -0.04em;
+      text-align: right;
+    }
+
+    .track {
+      height: 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+    }
+
+    .fill {
+      width: calc(var(--progress) * 100%);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-secondary), var(--accent-tertiary));
+    }
+  </style>
+</head>
+<body>
+  <div class="widget">
+    <div class="head">
+      <div>
+        <div class="subtitle" id="subtitle">Wellness Retreat Suite</div>
+        <div class="title" id="title">Reach the next wellness checkpoint</div>
+      </div>
+      <div class="numbers">
+        <strong id="numbers">1768 / 2188</strong>
+        <div class="subtitle" id="headline">68% complete</div>
+      </div>
+    </div>
+    <div class="track"><div class="fill"></div></div>
+    <div class="foot">
+      <span>Calm presentation for reflection-led broadcasts</span>
+      <span>Shared params ready</span>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    const current = Number(params.get('current'));
+    const goal = Number(params.get('goal'));
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+      document.documentElement.style.setProperty('--accent-tertiary', accent);
+    }
+    if (!Number.isNaN(current) && !Number.isNaN(goal) && goal > 0) {
+      const progress = Math.min(1, current / goal);
+      document.documentElement.style.setProperty('--progress', String(progress));
+      document.getElementById('numbers').textContent = current.toLocaleString() + ' / ' + goal.toLocaleString();
+      document.getElementById('headline').textContent = Math.round(progress * 100) + '% complete';
+    } else if (headline) {
+      document.getElementById('headline').textContent = headline;
+    }
+  </script>
+</body>
+</html>

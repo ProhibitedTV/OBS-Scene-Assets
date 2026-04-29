@@ -29,17 +29,25 @@ const CATEGORY_LABELS = {
 };
 
 const COLLECTION_LABELS = {
+  'charity-marathon': 'Charity Marathon Suite',
+  'cozy-campfire': 'Cozy Campfire Suite',
   core: 'Core Library',
   'cyberpunk-broadcast': 'Cyberpunk Broadcast Suite',
+  'education-workshop': 'Education Workshop Suite',
   'fantasy-legends': 'Fantasy Legends Suite',
   'games/apex-legends': 'Games / Apex Legends',
   'games/fortnite': 'Games / Fortnite',
   'games/halo': 'Games / Halo',
   'games/league-of-legends': 'Games / League of Legends',
   'games/valorant': 'Games / Valorant',
+  'launch-event': 'Launch Event Suite',
   'live-show': 'Live Show Suite',
+  'music-pulse': 'Music Pulse Suite',
   newsroom: 'Newsroom Suite',
+  'sports-watchalong': 'Sports Watchalong Suite',
+  'travel-vlog': 'Travel Vlog Suite',
   'vertical-creator': 'Vertical Creator Suite',
+  'wellness-retreat': 'Wellness Retreat Suite',
 };
 
 function titleCase(value) {

@@ -1,0 +1,158 @@
+<!--
+Title: Wellness Retreat Promo Card
+Category: widgets
+Collection: wellness-retreat
+UseCase: Square promo panel for announcements, sponsor notes, or segment teases in wellness streams, guided sessions, habit tracking, and soft-focus community check-ins.
+Resolution: 900x900
+Transparent: true
+Description: Reusable square card that carries the wellness retreat look across stream scenes, socials, and promo moments.
+Tags: calm, guided, mindfulness, retreat, wellness, white-label, card, promo, widget, widgets, wellness-retreat
+Preview: previews/themes/wellness-retreat/widgets/promo-card.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wellness Retreat Promo Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #2dd4bf;
+      --accent-secondary: #84cc16;
+      --accent-tertiary: #f59e0b;
+      --text: #f0fdfa;
+      --muted: rgba(240, 253, 250, 0.78);
+      --line: rgba(240, 253, 250, 0.16);
+      --surface: rgba(8, 33, 31, 0.7);
+      --surface-strong: rgba(8, 33, 31, 0.9);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(45, 212, 191, 0.32);
+      --bg-start: #061412;
+      --bg-mid: #0e2b2a;
+      --bg-end: #172612;
+      --wash-a: rgba(45, 212, 191, 0.22);
+      --wash-b: rgba(132, 204, 22, 0.18);
+      --wash-c: rgba(245, 158, 11, 0.18);
+  
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    .card {
+      width: min(92vw, 860px);
+      aspect-ratio: 1;
+      padding: 2rem;
+      border-radius: 1.9rem;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(132, 204, 22, 0.22), transparent 24%),
+        linear-gradient(145deg, rgba(45, 212, 191, 0.16), rgba(255, 255, 255, 0.03)),
+        var(--surface-strong);
+      box-shadow: 0 24px 48px var(--shadow);
+      display: grid;
+      align-content: space-between;
+      gap: 1rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0.55rem 0 1rem;
+      max-width: 10ch;
+      font-size: clamp(2rem, 4.8vw, 3.5rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+    }
+
+    .description {
+      margin: 0;
+      max-width: 30ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .headline {
+      width: fit-content;
+      padding: 0.75rem 0.95rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .items {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .item {
+      padding: 0.9rem 1rem;
+      border-radius: 1.15rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(45, 212, 191, 0.16);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div>
+      <p class="eyebrow" id="subtitle">Wellness Retreat Suite</p>
+      <h1 id="title">Today&#39;s gentle focus</h1>
+      <p class="description" id="description">Ideal for calm, trust-building streams that need structure without harsh broadcast energy.</p>
+    </div>
+    <div class="headline" id="headline">Use the card for prompts, challenges, or next-step guidance</div>
+    <div class="items" id="items">
+      <div class="item">Great for reflection prompts and habits</div>
+<div class="item">Clean enough for health, journaling, or mindfulness creators</div>
+<div class="item">Lets the stream stay calm without feeling plain</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    const description = params.get('description');
+    const items = params.get('items');
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (description) document.getElementById('description').textContent = description;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+    }
+    if (items) {
+      const container = document.getElementById('items');
+      container.innerHTML = '';
+      items.split('|').map((entry) => entry.trim()).filter(Boolean).forEach((entry) => {
+        const item = document.createElement('div');
+        item.className = 'item';
+        item.textContent = entry;
+        container.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>
