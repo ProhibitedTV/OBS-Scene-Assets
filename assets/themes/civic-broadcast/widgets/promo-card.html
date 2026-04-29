@@ -1,0 +1,158 @@
+<!--
+Title: Civic Broadcast Promo Card
+Category: widgets
+Collection: civic-broadcast
+UseCase: Square promo panel for announcements, sponsor notes, or segment teases in analysis streams, issue explainers, live reactions, and public-interest creator coverage.
+Resolution: 900x900
+Transparent: true
+Description: Reusable square card that carries the civic broadcast look across stream scenes, socials, and promo moments.
+Tags: analysis, broadcast, civic, commentary, news-adjacent, white-label, card, promo, widget, widgets, civic-broadcast
+Preview: previews/themes/civic-broadcast/widgets/promo-card.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Civic Broadcast Promo Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #60a5fa;
+      --accent-secondary: #ef4444;
+      --accent-tertiary: #f59e0b;
+      --text: #eff6ff;
+      --muted: rgba(239, 246, 255, 0.78);
+      --line: rgba(239, 246, 255, 0.16);
+      --surface: rgba(13, 23, 43, 0.72);
+      --surface-strong: rgba(13, 23, 43, 0.92);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(96, 165, 250, 0.32);
+      --bg-start: #08101c;
+      --bg-mid: #11223f;
+      --bg-end: #24120f;
+      --wash-a: rgba(96, 165, 250, 0.22);
+      --wash-b: rgba(239, 68, 68, 0.18);
+      --wash-c: rgba(245, 158, 11, 0.18);
+  
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    .card {
+      width: min(92vw, 860px);
+      aspect-ratio: 1;
+      padding: 2rem;
+      border-radius: 1.9rem;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(239, 68, 68, 0.22), transparent 24%),
+        linear-gradient(145deg, rgba(96, 165, 250, 0.16), rgba(255, 255, 255, 0.03)),
+        var(--surface-strong);
+      box-shadow: 0 24px 48px var(--shadow);
+      display: grid;
+      align-content: space-between;
+      gap: 1rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0.55rem 0 1rem;
+      max-width: 10ch;
+      font-size: clamp(2rem, 4.8vw, 3.5rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+    }
+
+    .description {
+      margin: 0;
+      max-width: 30ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .headline {
+      width: fit-content;
+      padding: 0.75rem 0.95rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .items {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .item {
+      padding: 0.9rem 1rem;
+      border-radius: 1.15rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(96, 165, 250, 0.16);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div>
+      <p class="eyebrow" id="subtitle">Civic Broadcast Suite</p>
+      <h1 id="title">The next segment ahead</h1>
+      <p class="description" id="description">Built for commentary and analysis formats without locking the visuals to any specific network or issue.</p>
+    </div>
+    <div class="headline" id="headline">Use the card for notes, guest topics, or community prompts</div>
+    <div class="items" id="items">
+      <div class="item">Useful for rundown notes and guest prompts</div>
+<div class="item">Broadcast-adjacent without being imitation news branding</div>
+<div class="item">Easy to adapt for explainers or reaction streams</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    const description = params.get('description');
+    const items = params.get('items');
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (description) document.getElementById('description').textContent = description;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+    }
+    if (items) {
+      const container = document.getElementById('items');
+      container.innerHTML = '';
+      items.split('|').map((entry) => entry.trim()).filter(Boolean).forEach((entry) => {
+        const item = document.createElement('div');
+        item.className = 'item';
+        item.textContent = entry;
+        container.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

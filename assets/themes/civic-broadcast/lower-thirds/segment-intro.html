@@ -1,0 +1,131 @@
+<!--
+Title: Civic Broadcast Segment Intro Lower Third
+Category: lower-thirds
+Collection: civic-broadcast
+UseCase: Reusable lower third for names, topics, or CTAs in analysis streams, issue explainers, live reactions, and public-interest creator coverage.
+Resolution: 1920x260
+Transparent: true
+Description: Transparent lower third with a strong headline lane and flexible copy blocks for civic broadcast segments.
+Tags: analysis, broadcast, civic, commentary, news-adjacent, white-label, cta, intro, lower-third, segment, lower-thirds, civic-broadcast
+Preview: previews/themes/civic-broadcast/lower-thirds/segment-intro.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Civic Broadcast Segment Intro Lower Third</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #60a5fa;
+      --accent-secondary: #ef4444;
+      --accent-tertiary: #f59e0b;
+      --text: #eff6ff;
+      --muted: rgba(239, 246, 255, 0.78);
+      --line: rgba(239, 246, 255, 0.16);
+      --surface: rgba(13, 23, 43, 0.72);
+      --surface-strong: rgba(13, 23, 43, 0.92);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(96, 165, 250, 0.32);
+      --bg-start: #08101c;
+      --bg-mid: #11223f;
+      --bg-end: #24120f;
+      --wash-a: rgba(96, 165, 250, 0.22);
+      --wash-b: rgba(239, 68, 68, 0.18);
+      --wash-c: rgba(245, 158, 11, 0.18);
+  
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      display: grid;
+      align-items: end;
+      padding: 0 3vw 3vw;
+    }
+
+    .lower-third {
+      width: min(90vw, 1420px);
+      padding: 1rem;
+      border-radius: 1.6rem;
+      border: 1px solid var(--line);
+      background: linear-gradient(90deg, rgba(96, 165, 250, 0.16), rgba(239, 68, 68, 0.1)), var(--surface-strong);
+      box-shadow: 0 22px 48px var(--shadow);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .accent {
+      width: 0.8rem;
+      align-self: stretch;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-secondary), var(--accent-tertiary));
+    }
+
+    .eyebrow {
+      margin: 0 0 0.35rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    p {
+      margin: 0.45rem 0 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .headline {
+      padding: 0.9rem 1rem;
+      border-radius: 1.1rem;
+      background: rgba(255, 255, 255, 0.07);
+      min-width: 240px;
+      font-size: 0.84rem;
+      line-height: 1.5;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="lower-third">
+    <div class="accent" aria-hidden="true"></div>
+    <div>
+      <p class="eyebrow" id="subtitle">Civic Broadcast Suite</p>
+      <h1 id="title">Tonight&#39;s coverage outline</h1>
+      <p id="description">A flexible lower third for analysis streams, issue explainers, live reactions, and public-interest creator coverage.</p>
+    </div>
+    <div class="headline" id="headline">Use the card for notes, guest topics, or community prompts</div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+      document.documentElement.style.setProperty('--accent-tertiary', accent);
+    }
+  </script>
+</body>
+</html>

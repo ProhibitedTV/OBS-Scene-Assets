@@ -2,9 +2,9 @@
 
 This file is generated from the asset metadata blocks embedded in each HTML file. Run `npm run assets:generate` after adding or editing assets.
 
-Total assets: **227**
+Total assets: **315**
 
-Coverage snapshot: **19 collections**, **8 asset types**, **227 preview images** (100% preview coverage).
+Coverage snapshot: **27 collections**, **8 asset types**, **315 preview images** (100% preview coverage).
 
 ## Charity Marathon Suite
 
@@ -55,6 +55,56 @@ Location: `assets/themes/charity-marathon/`
 | --- | --- | --- | --- | --- | --- |
 | Charity Marathon Goal Widget | `themes/charity-marathon/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in fundraising streams, milestone pushes, and community challenge events. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for charity marathon campaigns or creator milestones. |
 | Charity Marathon Promo Card | `themes/charity-marathon/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in fundraising streams, milestone pushes, and community challenge events. | 900x900 (Transparent) | PNG | Reusable square card that carries the charity marathon look across stream scenes, socials, and promo moments. |
+
+## Civic Broadcast Suite
+
+Location: `assets/themes/civic-broadcast/`
+
+### Alerts
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Civic Broadcast Supporter Surge Alert | `themes/civic-broadcast/alerts/supporter-surge-alert.html` | Animated alert card for analysis streams, issue explainers, live reactions, and public-interest creator coverage. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for civic broadcast broadcasts. |
+
+### Backgrounds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Civic Broadcast Ambient Background | `themes/civic-broadcast/backgrounds/ambient-loop.html` | Looping full-screen background for analysis streams, issue explainers, live reactions, and public-interest creator coverage. | 1920x1080 | PNG | Animated backdrop built to carry civic broadcast scenes without locking the design to one creator brand. |
+
+### Lower Thirds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Civic Broadcast Segment Intro Lower Third | `themes/civic-broadcast/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in analysis streams, issue explainers, live reactions, and public-interest creator coverage. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for civic broadcast segments. |
+
+### Overlays
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Civic Broadcast Live Frame Overlay | `themes/civic-broadcast/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in analysis streams, issue explainers, live reactions, and public-interest creator coverage. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to civic broadcast coverage. |
+
+### Scenes
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Civic Broadcast Break Screen | `themes/civic-broadcast/scenes/break-screen.html` | Intermission scene for analysis streams, issue explainers, live reactions, and public-interest creator coverage. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for civic broadcast streams. |
+| Civic Broadcast Closing Screen | `themes/civic-broadcast/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in analysis streams, issue explainers, live reactions, and public-interest creator coverage. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for civic broadcast creators. |
+| Civic Broadcast Schedule Board Scene | `themes/civic-broadcast/scenes/schedule-board.html` | Schedule and run-of-show scene for analysis streams, issue explainers, live reactions, and public-interest creator coverage. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in civic broadcast formats. |
+| Civic Broadcast Starting Soon Scene | `themes/civic-broadcast/scenes/starting-soon.html` | Pre-show countdown scene for analysis streams, issue explainers, live reactions, and public-interest creator coverage. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for civic broadcast broadcasts. |
+
+### Transitions
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Civic Broadcast Scene Sweep Transition | `themes/civic-broadcast/transitions/scene-sweep.html` | Stylized transition asset for moving between analysis streams, issue explainers, live reactions, and public-interest creator coverage scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many civic broadcast use cases. |
+
+### Widgets
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Civic Broadcast Goal Widget | `themes/civic-broadcast/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in analysis streams, issue explainers, live reactions, and public-interest creator coverage. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for civic broadcast campaigns or creator milestones. |
+| Civic Broadcast Promo Card | `themes/civic-broadcast/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in analysis streams, issue explainers, live reactions, and public-interest creator coverage. | 900x900 (Transparent) | PNG | Reusable square card that carries the civic broadcast look across stream scenes, socials, and promo moments. |
 
 ## Core Library
 
@@ -214,6 +264,56 @@ Location: `assets/themes/cozy-campfire/`
 | --- | --- | --- | --- | --- | --- |
 | Cozy Campfire Goal Widget | `themes/cozy-campfire/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in cozy chats, book clubs, craft streams, and low-pressure community hangs. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for cozy campfire campaigns or creator milestones. |
 | Cozy Campfire Promo Card | `themes/cozy-campfire/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in cozy chats, book clubs, craft streams, and low-pressure community hangs. | 900x900 (Transparent) | PNG | Reusable square card that carries the cozy campfire look across stream scenes, socials, and promo moments. |
+
+## Creator Commerce Suite
+
+Location: `assets/themes/creator-commerce/`
+
+### Alerts
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Creator Commerce Supporter Surge Alert | `themes/creator-commerce/alerts/supporter-surge-alert.html` | Animated alert card for merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for creator commerce broadcasts. |
+
+### Backgrounds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Creator Commerce Ambient Background | `themes/creator-commerce/backgrounds/ambient-loop.html` | Looping full-screen background for merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 | PNG | Animated backdrop built to carry creator commerce scenes without locking the design to one creator brand. |
+
+### Lower Thirds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Creator Commerce Segment Intro Lower Third | `themes/creator-commerce/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for creator commerce segments. |
+
+### Overlays
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Creator Commerce Live Frame Overlay | `themes/creator-commerce/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to creator commerce coverage. |
+
+### Scenes
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Creator Commerce Break Screen | `themes/creator-commerce/scenes/break-screen.html` | Intermission scene for merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for creator commerce streams. |
+| Creator Commerce Closing Screen | `themes/creator-commerce/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for creator commerce creators. |
+| Creator Commerce Schedule Board Scene | `themes/creator-commerce/scenes/schedule-board.html` | Schedule and run-of-show scene for merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in creator commerce formats. |
+| Creator Commerce Starting Soon Scene | `themes/creator-commerce/scenes/starting-soon.html` | Pre-show countdown scene for merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for creator commerce broadcasts. |
+
+### Transitions
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Creator Commerce Scene Sweep Transition | `themes/creator-commerce/transitions/scene-sweep.html` | Stylized transition asset for moving between merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many creator commerce use cases. |
+
+### Widgets
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Creator Commerce Goal Widget | `themes/creator-commerce/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for creator commerce campaigns or creator milestones. |
+| Creator Commerce Promo Card | `themes/creator-commerce/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 900x900 (Transparent) | PNG | Reusable square card that carries the creator commerce look across stream scenes, socials, and promo moments. |
 
 ## Cyberpunk Broadcast Suite
 
@@ -466,6 +566,56 @@ Location: `assets/themes/games/valorant/`
 | --- | --- | --- | --- | --- | --- |
 | Valorant Spike Status | `themes/games/valorant/valorant-spike-status.html` | Spike status widget. | 600x600 (Transparent) | PNG | Toggle planted/defused states via provided variables. |
 
+## Holiday Celebration Suite
+
+Location: `assets/themes/holiday-celebration/`
+
+### Alerts
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Holiday Celebration Supporter Surge Alert | `themes/holiday-celebration/alerts/supporter-surge-alert.html` | Animated alert card for holiday streams, end-of-year specials, community events, and seasonal creator programming. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for holiday celebration broadcasts. |
+
+### Backgrounds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Holiday Celebration Ambient Background | `themes/holiday-celebration/backgrounds/ambient-loop.html` | Looping full-screen background for holiday streams, end-of-year specials, community events, and seasonal creator programming. | 1920x1080 | PNG | Animated backdrop built to carry holiday celebration scenes without locking the design to one creator brand. |
+
+### Lower Thirds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Holiday Celebration Segment Intro Lower Third | `themes/holiday-celebration/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in holiday streams, end-of-year specials, community events, and seasonal creator programming. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for holiday celebration segments. |
+
+### Overlays
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Holiday Celebration Live Frame Overlay | `themes/holiday-celebration/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in holiday streams, end-of-year specials, community events, and seasonal creator programming. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to holiday celebration coverage. |
+
+### Scenes
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Holiday Celebration Break Screen | `themes/holiday-celebration/scenes/break-screen.html` | Intermission scene for holiday streams, end-of-year specials, community events, and seasonal creator programming. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for holiday celebration streams. |
+| Holiday Celebration Closing Screen | `themes/holiday-celebration/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in holiday streams, end-of-year specials, community events, and seasonal creator programming. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for holiday celebration creators. |
+| Holiday Celebration Schedule Board Scene | `themes/holiday-celebration/scenes/schedule-board.html` | Schedule and run-of-show scene for holiday streams, end-of-year specials, community events, and seasonal creator programming. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in holiday celebration formats. |
+| Holiday Celebration Starting Soon Scene | `themes/holiday-celebration/scenes/starting-soon.html` | Pre-show countdown scene for holiday streams, end-of-year specials, community events, and seasonal creator programming. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for holiday celebration broadcasts. |
+
+### Transitions
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Holiday Celebration Scene Sweep Transition | `themes/holiday-celebration/transitions/scene-sweep.html` | Stylized transition asset for moving between holiday streams, end-of-year specials, community events, and seasonal creator programming scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many holiday celebration use cases. |
+
+### Widgets
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Holiday Celebration Goal Widget | `themes/holiday-celebration/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in holiday streams, end-of-year specials, community events, and seasonal creator programming. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for holiday celebration campaigns or creator milestones. |
+| Holiday Celebration Promo Card | `themes/holiday-celebration/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in holiday streams, end-of-year specials, community events, and seasonal creator programming. | 900x900 (Transparent) | PNG | Reusable square card that carries the holiday celebration look across stream scenes, socials, and promo moments. |
+
 ## Launch Event Suite
 
 Location: `assets/themes/launch-event/`
@@ -541,6 +691,56 @@ Location: `assets/themes/live-show/`
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
 | Live Show Promo Card | `themes/live-show/widgets/promo-card.html` | Reusable promo panel for upcoming episodes, merch drops, sponsor moments, and creator announcements. | 900x900 (Transparent) | PNG | Square promo card with a strong headline lane, CTA slot, and supporting bullets for broad creator show packaging. |
+
+## Maker Garage Suite
+
+Location: `assets/themes/maker-garage/`
+
+### Alerts
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Maker Garage Supporter Surge Alert | `themes/maker-garage/alerts/supporter-surge-alert.html` | Animated alert card for maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for maker garage broadcasts. |
+
+### Backgrounds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Maker Garage Ambient Background | `themes/maker-garage/backgrounds/ambient-loop.html` | Looping full-screen background for maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops. | 1920x1080 | PNG | Animated backdrop built to carry maker garage scenes without locking the design to one creator brand. |
+
+### Lower Thirds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Maker Garage Segment Intro Lower Third | `themes/maker-garage/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for maker garage segments. |
+
+### Overlays
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Maker Garage Live Frame Overlay | `themes/maker-garage/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to maker garage coverage. |
+
+### Scenes
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Maker Garage Break Screen | `themes/maker-garage/scenes/break-screen.html` | Intermission scene for maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for maker garage streams. |
+| Maker Garage Closing Screen | `themes/maker-garage/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for maker garage creators. |
+| Maker Garage Schedule Board Scene | `themes/maker-garage/scenes/schedule-board.html` | Schedule and run-of-show scene for maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in maker garage formats. |
+| Maker Garage Starting Soon Scene | `themes/maker-garage/scenes/starting-soon.html` | Pre-show countdown scene for maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for maker garage broadcasts. |
+
+### Transitions
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Maker Garage Scene Sweep Transition | `themes/maker-garage/transitions/scene-sweep.html` | Stylized transition asset for moving between maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many maker garage use cases. |
+
+### Widgets
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Maker Garage Goal Widget | `themes/maker-garage/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for maker garage campaigns or creator milestones. |
+| Maker Garage Promo Card | `themes/maker-garage/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in maker streams, build logs, repair sessions, engineering demos, and hands-on creator workshops. | 900x900 (Transparent) | PNG | Reusable square card that carries the maker garage look across stream scenes, socials, and promo moments. |
 
 ## Music Pulse Suite
 
@@ -629,6 +829,56 @@ Location: `assets/themes/newsroom/`
 | Breaking News Stinger | `themes/newsroom/alerts/breaking-news-stinger.html` | Breaking news transition. | 1920x1080 | PNG | Render as WebM with alpha for stinger transitions. |
 | Headline Swipe Transition | `themes/newsroom/transitions/headline-swipe.html` | Headline swipe transition. | 1920x1080 | PNG | Export to WebM for use as a stinger. |
 
+## Podcast Studio Suite
+
+Location: `assets/themes/podcast-studio/`
+
+### Alerts
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Podcast Studio Supporter Surge Alert | `themes/podcast-studio/alerts/supporter-surge-alert.html` | Animated alert card for podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for podcast studio broadcasts. |
+
+### Backgrounds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Podcast Studio Ambient Background | `themes/podcast-studio/backgrounds/ambient-loop.html` | Looping full-screen background for podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 | PNG | Animated backdrop built to carry podcast studio scenes without locking the design to one creator brand. |
+
+### Lower Thirds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Podcast Studio Segment Intro Lower Third | `themes/podcast-studio/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for podcast studio segments. |
+
+### Overlays
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Podcast Studio Live Frame Overlay | `themes/podcast-studio/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to podcast studio coverage. |
+
+### Scenes
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Podcast Studio Break Screen | `themes/podcast-studio/scenes/break-screen.html` | Intermission scene for podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for podcast studio streams. |
+| Podcast Studio Closing Screen | `themes/podcast-studio/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for podcast studio creators. |
+| Podcast Studio Schedule Board Scene | `themes/podcast-studio/scenes/schedule-board.html` | Schedule and run-of-show scene for podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in podcast studio formats. |
+| Podcast Studio Starting Soon Scene | `themes/podcast-studio/scenes/starting-soon.html` | Pre-show countdown scene for podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for podcast studio broadcasts. |
+
+### Transitions
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Podcast Studio Scene Sweep Transition | `themes/podcast-studio/transitions/scene-sweep.html` | Stylized transition asset for moving between podcasts, live interviews, call-in shows, and creator roundtable broadcasts scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many podcast studio use cases. |
+
+### Widgets
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Podcast Studio Goal Widget | `themes/podcast-studio/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for podcast studio campaigns or creator milestones. |
+| Podcast Studio Promo Card | `themes/podcast-studio/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 900x900 (Transparent) | PNG | Reusable square card that carries the podcast studio look across stream scenes, socials, and promo moments. |
+
 ## Sports Watchalong Suite
 
 Location: `assets/themes/sports-watchalong/`
@@ -678,6 +928,106 @@ Location: `assets/themes/sports-watchalong/`
 | --- | --- | --- | --- | --- | --- |
 | Sports Watchalong Goal Widget | `themes/sports-watchalong/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in watchalong streams, postgame shows, fan coverage, and creator-led sports analysis. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for sports watchalong campaigns or creator milestones. |
 | Sports Watchalong Promo Card | `themes/sports-watchalong/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in watchalong streams, postgame shows, fan coverage, and creator-led sports analysis. | 900x900 (Transparent) | PNG | Reusable square card that carries the sports watchalong look across stream scenes, socials, and promo moments. |
+
+## Study Session Suite
+
+Location: `assets/themes/study-session/`
+
+### Alerts
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Study Session Supporter Surge Alert | `themes/study-session/alerts/supporter-surge-alert.html` | Animated alert card for study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for study session broadcasts. |
+
+### Backgrounds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Study Session Ambient Background | `themes/study-session/backgrounds/ambient-loop.html` | Looping full-screen background for study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 | PNG | Animated backdrop built to carry study session scenes without locking the design to one creator brand. |
+
+### Lower Thirds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Study Session Segment Intro Lower Third | `themes/study-session/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for study session segments. |
+
+### Overlays
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Study Session Live Frame Overlay | `themes/study-session/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to study session coverage. |
+
+### Scenes
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Study Session Break Screen | `themes/study-session/scenes/break-screen.html` | Intermission scene for study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for study session streams. |
+| Study Session Closing Screen | `themes/study-session/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for study session creators. |
+| Study Session Schedule Board Scene | `themes/study-session/scenes/schedule-board.html` | Schedule and run-of-show scene for study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in study session formats. |
+| Study Session Starting Soon Scene | `themes/study-session/scenes/starting-soon.html` | Pre-show countdown scene for study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for study session broadcasts. |
+
+### Transitions
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Study Session Scene Sweep Transition | `themes/study-session/transitions/scene-sweep.html` | Stylized transition asset for moving between study streams, coding sessions, coworking rooms, and long-form focus broadcasts scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many study session use cases. |
+
+### Widgets
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Study Session Goal Widget | `themes/study-session/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for study session campaigns or creator milestones. |
+| Study Session Promo Card | `themes/study-session/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 900x900 (Transparent) | PNG | Reusable square card that carries the study session look across stream scenes, socials, and promo moments. |
+
+## Tournament Desk Suite
+
+Location: `assets/themes/tournament-desk/`
+
+### Alerts
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Tournament Desk Supporter Surge Alert | `themes/tournament-desk/alerts/supporter-surge-alert.html` | Animated alert card for bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for tournament desk broadcasts. |
+
+### Backgrounds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Tournament Desk Ambient Background | `themes/tournament-desk/backgrounds/ambient-loop.html` | Looping full-screen background for bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 | PNG | Animated backdrop built to carry tournament desk scenes without locking the design to one creator brand. |
+
+### Lower Thirds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Tournament Desk Segment Intro Lower Third | `themes/tournament-desk/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for tournament desk segments. |
+
+### Overlays
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Tournament Desk Live Frame Overlay | `themes/tournament-desk/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to tournament desk coverage. |
+
+### Scenes
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Tournament Desk Break Screen | `themes/tournament-desk/scenes/break-screen.html` | Intermission scene for bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for tournament desk streams. |
+| Tournament Desk Closing Screen | `themes/tournament-desk/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for tournament desk creators. |
+| Tournament Desk Schedule Board Scene | `themes/tournament-desk/scenes/schedule-board.html` | Schedule and run-of-show scene for bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in tournament desk formats. |
+| Tournament Desk Starting Soon Scene | `themes/tournament-desk/scenes/starting-soon.html` | Pre-show countdown scene for bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for tournament desk broadcasts. |
+
+### Transitions
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Tournament Desk Scene Sweep Transition | `themes/tournament-desk/transitions/scene-sweep.html` | Stylized transition asset for moving between bracket shows, esports desks, tournament recaps, and match-day creator coverage scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many tournament desk use cases. |
+
+### Widgets
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Tournament Desk Goal Widget | `themes/tournament-desk/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for tournament desk campaigns or creator milestones. |
+| Tournament Desk Promo Card | `themes/tournament-desk/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 900x900 (Transparent) | PNG | Reusable square card that carries the tournament desk look across stream scenes, socials, and promo moments. |
 
 ## Travel Vlog Suite
 
@@ -758,6 +1108,56 @@ Location: `assets/themes/vertical-creator/`
 | --- | --- | --- | --- | --- | --- |
 | Vertical Creator Chat Panel | `themes/vertical-creator/widgets/chat-panel.html` | Portrait chat sidebar for creator live scenes, comments walls, and mobile-first reaction layouts. | 540x1200 (Transparent) | PNG | Slim translucent chat column with creator-highlight styling that fits beside a portrait camera feed or full-screen vertical scene. |
 | Vertical Creator Goal Widget | `themes/vertical-creator/widgets/goal-widget.html` | Portrait-friendly creator goal bar for follower pushes, drop milestones, and campaign checkpoints. | 900x260 (Transparent) | PNG | Compact progress widget with milestone numbers, support copy, and a bright creator-style fill bar built for portrait stacks. |
+
+## VTuber Spotlight Suite
+
+Location: `assets/themes/vtuber-spotlight/`
+
+### Alerts
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| VTuber Spotlight Supporter Surge Alert | `themes/vtuber-spotlight/alerts/supporter-surge-alert.html` | Animated alert card for VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for vtuber spotlight broadcasts. |
+
+### Backgrounds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| VTuber Spotlight Ambient Background | `themes/vtuber-spotlight/backgrounds/ambient-loop.html` | Looping full-screen background for VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs. | 1920x1080 | PNG | Animated backdrop built to carry vtuber spotlight scenes without locking the design to one creator brand. |
+
+### Lower Thirds
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| VTuber Spotlight Segment Intro Lower Third | `themes/vtuber-spotlight/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for vtuber spotlight segments. |
+
+### Overlays
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| VTuber Spotlight Live Frame Overlay | `themes/vtuber-spotlight/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to vtuber spotlight coverage. |
+
+### Scenes
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| VTuber Spotlight Break Screen | `themes/vtuber-spotlight/scenes/break-screen.html` | Intermission scene for VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for vtuber spotlight streams. |
+| VTuber Spotlight Closing Screen | `themes/vtuber-spotlight/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for vtuber spotlight creators. |
+| VTuber Spotlight Schedule Board Scene | `themes/vtuber-spotlight/scenes/schedule-board.html` | Schedule and run-of-show scene for VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in vtuber spotlight formats. |
+| VTuber Spotlight Starting Soon Scene | `themes/vtuber-spotlight/scenes/starting-soon.html` | Pre-show countdown scene for VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for vtuber spotlight broadcasts. |
+
+### Transitions
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| VTuber Spotlight Scene Sweep Transition | `themes/vtuber-spotlight/transitions/scene-sweep.html` | Stylized transition asset for moving between VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many vtuber spotlight use cases. |
+
+### Widgets
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| VTuber Spotlight Goal Widget | `themes/vtuber-spotlight/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for vtuber spotlight campaigns or creator milestones. |
+| VTuber Spotlight Promo Card | `themes/vtuber-spotlight/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in VTuber debuts, avatar-first shows, lore streams, and stylized creator collabs. | 900x900 (Transparent) | PNG | Reusable square card that carries the vtuber spotlight look across stream scenes, socials, and promo moments. |
 
 ## Wellness Retreat Suite
 

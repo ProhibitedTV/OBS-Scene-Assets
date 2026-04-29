@@ -2,7 +2,7 @@
 
 OBS Scene Assets is a metadata-driven library of standalone HTML overlays, widgets, lower thirds, and complete scenes for [OBS Studio](https://obsproject.com/) Browser Sources.
 
-The repo currently ships with **227 assets** across the core library and themed suites, including broad white-label packs such as **Charity Marathon**, **Music Pulse**, **Sports Watchalong**, **Travel Vlog**, **Wellness Retreat**, **Vertical Creator**, and **Live Show**.
+The repo currently ships with **315 assets** across the core library and themed suites, including broad white-label packs such as **Charity Marathon**, **Civic Broadcast**, **Creator Commerce**, **Holiday Celebration**, **Maker Garage**, **Music Pulse**, **Podcast Studio**, **Study Session**, **Tournament Desk**, **Travel Vlog**, **VTuber Spotlight**, **Wellness Retreat**, **Vertical Creator**, and **Live Show**.
 
 The long-term target is a scale-ready, white-label library with thousands of animated assets spanning thousands of discoverable creator niches. To keep that breadth usable, the repo keeps a compact set of stable asset types and expands depth through themed suites, coordinated packs, and strong tagging.
 

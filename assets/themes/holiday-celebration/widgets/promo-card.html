@@ -1,0 +1,158 @@
+<!--
+Title: Holiday Celebration Promo Card
+Category: widgets
+Collection: holiday-celebration
+UseCase: Square promo panel for announcements, sponsor notes, or segment teases in holiday streams, end-of-year specials, community events, and seasonal creator programming.
+Resolution: 900x900
+Transparent: true
+Description: Reusable square card that carries the holiday celebration look across stream scenes, socials, and promo moments.
+Tags: celebration, community-event, holiday, seasonal, special, white-label, card, promo, widget, widgets, holiday-celebration
+Preview: previews/themes/holiday-celebration/widgets/promo-card.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Holiday Celebration Promo Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #22c55e;
+      --accent-secondary: #ef4444;
+      --accent-tertiary: #facc15;
+      --text: #f7fee7;
+      --muted: rgba(247, 254, 231, 0.78);
+      --line: rgba(247, 254, 231, 0.16);
+      --surface: rgba(18, 31, 19, 0.72);
+      --surface-strong: rgba(18, 31, 19, 0.92);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(34, 197, 94, 0.32);
+      --bg-start: #07110a;
+      --bg-mid: #17331a;
+      --bg-end: #2d140e;
+      --wash-a: rgba(34, 197, 94, 0.22);
+      --wash-b: rgba(239, 68, 68, 0.18);
+      --wash-c: rgba(250, 204, 21, 0.18);
+  
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    .card {
+      width: min(92vw, 860px);
+      aspect-ratio: 1;
+      padding: 2rem;
+      border-radius: 1.9rem;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(239, 68, 68, 0.22), transparent 24%),
+        linear-gradient(145deg, rgba(34, 197, 94, 0.16), rgba(255, 255, 255, 0.03)),
+        var(--surface-strong);
+      box-shadow: 0 24px 48px var(--shadow);
+      display: grid;
+      align-content: space-between;
+      gap: 1rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0.55rem 0 1rem;
+      max-width: 10ch;
+      font-size: clamp(2rem, 4.8vw, 3.5rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+    }
+
+    .description {
+      margin: 0;
+      max-width: 30ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .headline {
+      width: fit-content;
+      padding: 0.75rem 0.95rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .items {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .item {
+      padding: 0.9rem 1rem;
+      border-radius: 1.15rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(34, 197, 94, 0.16);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div>
+      <p class="eyebrow" id="subtitle">Holiday Celebration Suite</p>
+      <h1 id="title">What&#39;s coming up next</h1>
+      <p class="description" id="description">Seasonal enough to feel special while still broad enough for many creators and end-of-year formats.</p>
+    </div>
+    <div class="headline" id="headline">Use the card for games, gifts, and sponsor surprises</div>
+    <div class="items" id="items">
+      <div class="item">Great for seasonal prompts and event bullets</div>
+<div class="item">Keeps the vibe festive without licensed motifs</div>
+<div class="item">Easy to recolor for different seasonal moods</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    const description = params.get('description');
+    const items = params.get('items');
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (description) document.getElementById('description').textContent = description;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+    }
+    if (items) {
+      const container = document.getElementById('items');
+      container.innerHTML = '';
+      items.split('|').map((entry) => entry.trim()).filter(Boolean).forEach((entry) => {
+        const item = document.createElement('div');
+        item.className = 'item';
+        item.textContent = entry;
+        container.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

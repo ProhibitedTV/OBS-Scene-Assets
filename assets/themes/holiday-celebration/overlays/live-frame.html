@@ -1,0 +1,226 @@
+<!--
+Title: Holiday Celebration Live Frame Overlay
+Category: overlays
+Collection: holiday-celebration
+UseCase: Full-frame overlay for commentary, facecam, or main presentation scenes in holiday streams, end-of-year specials, community events, and seasonal creator programming.
+Resolution: 1920x1080
+Transparent: true
+Description: Transparent live frame with a modular header and sidebar notes tailored to holiday celebration coverage.
+Tags: celebration, community-event, holiday, seasonal, special, white-label, frame, live, overlay, overlays, holiday-celebration
+Preview: previews/themes/holiday-celebration/overlays/live-frame.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Holiday Celebration Live Frame Overlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #22c55e;
+      --accent-secondary: #ef4444;
+      --accent-tertiary: #facc15;
+      --text: #f7fee7;
+      --muted: rgba(247, 254, 231, 0.78);
+      --line: rgba(247, 254, 231, 0.16);
+      --surface: rgba(18, 31, 19, 0.72);
+      --surface-strong: rgba(18, 31, 19, 0.92);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(34, 197, 94, 0.32);
+      --bg-start: #07110a;
+      --bg-mid: #17331a;
+      --bg-end: #2d140e;
+      --wash-a: rgba(34, 197, 94, 0.22);
+      --wash-b: rgba(239, 68, 68, 0.18);
+      --wash-c: rgba(250, 204, 21, 0.18);
+  
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: transparent;
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    .shell {
+      min-height: 100vh;
+      padding: 2.2rem;
+      display: grid;
+      grid-template-columns: 1fr 0.32fr;
+      grid-template-rows: auto 1fr auto;
+      gap: 1rem;
+      grid-template-areas:
+        "header sidebar"
+        "frame sidebar"
+        "footer sidebar";
+    }
+
+    .panel {
+      border-radius: 1.4rem;
+      border: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.12);
+      box-shadow: 0 18px 42px rgba(2, 6, 23, 0.18);
+      backdrop-filter: blur(14px);
+    }
+
+    .header {
+      grid-area: header;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem 1.15rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0.3rem 0 0;
+      font-size: clamp(1.8rem, 4vw, 2.9rem);
+      letter-spacing: -0.05em;
+    }
+
+    .headline {
+      padding: 0.75rem 0.9rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(34, 197, 94, 0.16), rgba(239, 68, 68, 0.12));
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .frame {
+      grid-area: frame;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.9rem;
+      border: 2px solid rgba(34, 197, 94, 0.6);
+      box-shadow: inset 0 0 0 1px rgba(239, 68, 68, 0.45);
+    }
+
+    .frame::before {
+      content: "";
+      position: absolute;
+      inset: 1.1rem;
+      border-radius: 1.3rem;
+      border: 1px dashed rgba(239, 68, 68, 0.38);
+      background:
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.14), transparent 28%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    }
+
+    .frame-title {
+      position: absolute;
+      top: 1.4rem;
+      left: 1.4rem;
+      padding: 0.65rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      padding: 1rem;
+      display: grid;
+      gap: 0.8rem;
+      align-content: start;
+    }
+
+    .sidebar-item {
+      padding: 0.9rem;
+      border-radius: 1.1rem;
+      border: 1px solid rgba(34, 197, 94, 0.18);
+      background: rgba(255, 255, 255, 0.05);
+      line-height: 1.5;
+    }
+
+    .footer {
+      grid-area: footer;
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .footer-chip {
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="header panel">
+      <div>
+        <p class="eyebrow" id="subtitle">Holiday Celebration Suite</p>
+        <h1 id="title">Holiday Celebration Live Frame</h1>
+      </div>
+      <div class="headline" id="headline">Seasonal energy without hardcoded branding baggage</div>
+    </div>
+    <div class="frame" aria-label="Holiday Celebration live frame overlay">
+      <div class="frame-title">Holiday Celebration</div>
+    </div>
+    <div class="sidebar panel" id="items">
+      <div class="sidebar-item">Opening countdown and community hello</div>
+<div class="sidebar-item">Main event, game, or special segment</div>
+<div class="sidebar-item">Break for gifting, shout-outs, or chat prompts</div>
+    </div>
+    <div class="footer panel" id="chips">
+      <span class="footer-chip">Special moment</span>
+<span class="footer-chip">Community note</span>
+<span class="footer-chip">Next surprise</span>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    const items = params.get('items');
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+      document.documentElement.style.setProperty('--accent-tertiary', accent);
+    }
+    if (items) {
+      const list = items.split('|').map((entry) => entry.trim()).filter(Boolean);
+      const sidebar = document.getElementById('items');
+      const chips = document.getElementById('chips');
+      sidebar.innerHTML = '';
+      chips.innerHTML = '';
+      list.forEach((entry) => {
+        const card = document.createElement('div');
+        card.className = 'sidebar-item';
+        card.textContent = entry;
+        sidebar.appendChild(card);
+        const chip = document.createElement('span');
+        chip.className = 'footer-chip';
+        chip.textContent = entry;
+        chips.appendChild(chip);
+      });
+    }
+  </script>
+</body>
+</html>

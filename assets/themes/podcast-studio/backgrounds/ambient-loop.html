@@ -1,0 +1,191 @@
+<!--
+Title: Podcast Studio Ambient Background
+Category: backgrounds
+Collection: podcast-studio
+UseCase: Looping full-screen background for podcasts, live interviews, call-in shows, and creator roundtable broadcasts.
+Resolution: 1920x1080
+Transparent: false
+Description: Animated backdrop built to carry podcast studio scenes without locking the design to one creator brand.
+Tags: interview, podcast, roundtable, talk-show, studio, white-label, ambient, background, loop, backgrounds, podcast-studio
+Preview: previews/themes/podcast-studio/backgrounds/ambient-loop.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Podcast Studio Ambient Background</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #8b5cf6;
+      --accent-secondary: #3b82f6;
+      --accent-tertiary: #ec4899;
+      --text: #f5f3ff;
+      --muted: rgba(245, 243, 255, 0.78);
+      --line: rgba(245, 243, 255, 0.16);
+      --surface: rgba(17, 16, 42, 0.72);
+      --surface-strong: rgba(17, 16, 42, 0.92);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(139, 92, 246, 0.32);
+      --bg-start: #080811;
+      --bg-mid: #171739;
+      --bg-end: #160a1f;
+      --wash-a: rgba(139, 92, 246, 0.22);
+      --wash-b: rgba(59, 130, 246, 0.18);
+      --wash-c: rgba(236, 72, 153, 0.18);
+  
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      background:
+        radial-gradient(circle at 16% 18%, var(--wash-a), transparent 28%),
+        radial-gradient(circle at 82% 18%, var(--wash-b), transparent 30%),
+        radial-gradient(circle at 70% 78%, var(--wash-c), transparent 28%),
+        linear-gradient(145deg, var(--bg-start), var(--bg-mid) 58%, var(--bg-end));
+  
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(8px);
+      opacity: 0.82;
+      animation: drift 16s ease-in-out infinite;
+    }
+
+    .orb-a {
+      width: 320px;
+      height: 320px;
+      top: 8%;
+      left: 8%;
+      background: rgba(139, 92, 246, 0.22);
+    }
+
+    .orb-b {
+      width: 260px;
+      height: 260px;
+      bottom: 12%;
+      right: 12%;
+      background: rgba(59, 130, 246, 0.18);
+      animation-delay: 1s;
+    }
+
+    .orb-c {
+      width: 220px;
+      height: 220px;
+      top: 34%;
+      right: 20%;
+      background: rgba(236, 72, 153, 0.18);
+      animation-delay: 2s;
+    }
+
+    .panel {
+      position: relative;
+      z-index: 1;
+      width: min(88vw, 1040px);
+      padding: 2rem 2.2rem;
+      border-radius: 2rem;
+      border: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.14);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 24px 48px var(--shadow);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+      max-width: 11ch;
+    }
+
+    p {
+      margin: 0;
+      max-width: 48ch;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1.02rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .badge {
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, -18px, 0) scale(1.04); }
+    }
+  </style>
+</head>
+<body>
+  <div class="orb orb-a" aria-hidden="true"></div>
+  <div class="orb orb-b" aria-hidden="true"></div>
+  <div class="orb orb-c" aria-hidden="true"></div>
+  <div class="panel">
+    <p class="eyebrow" id="subtitle">Conversation-first assets for talk-led shows</p>
+    <h1 id="title">Studio-style loop for talk-led creator scenes</h1>
+    <p id="headline">A white-label full-screen loop for podcasts, live interviews, call-in shows, and creator roundtable broadcasts.</p>
+    <div class="badges" id="items">
+      <span class="badge">Current topic</span>
+<span class="badge">Guest lane</span>
+<span class="badge">Next question</span>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    const items = params.get('items');
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+    }
+    if (items) {
+      const container = document.getElementById('items');
+      container.innerHTML = '';
+      items.split('|').map((entry) => entry.trim()).filter(Boolean).forEach((entry) => {
+        const badge = document.createElement('span');
+        badge.className = 'badge';
+        badge.textContent = entry;
+        container.appendChild(badge);
+      });
+    }
+  </script>
+</body>
+</html>

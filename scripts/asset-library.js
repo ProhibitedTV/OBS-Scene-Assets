@@ -29,9 +29,11 @@ const CATEGORY_LABELS = {
 };
 
 const COLLECTION_LABELS = {
+  'civic-broadcast': 'Civic Broadcast Suite',
   'charity-marathon': 'Charity Marathon Suite',
   'cozy-campfire': 'Cozy Campfire Suite',
   core: 'Core Library',
+  'creator-commerce': 'Creator Commerce Suite',
   'cyberpunk-broadcast': 'Cyberpunk Broadcast Suite',
   'education-workshop': 'Education Workshop Suite',
   'fantasy-legends': 'Fantasy Legends Suite',
@@ -40,13 +42,19 @@ const COLLECTION_LABELS = {
   'games/halo': 'Games / Halo',
   'games/league-of-legends': 'Games / League of Legends',
   'games/valorant': 'Games / Valorant',
+  'holiday-celebration': 'Holiday Celebration Suite',
   'launch-event': 'Launch Event Suite',
   'live-show': 'Live Show Suite',
+  'maker-garage': 'Maker Garage Suite',
   'music-pulse': 'Music Pulse Suite',
   newsroom: 'Newsroom Suite',
+  'podcast-studio': 'Podcast Studio Suite',
   'sports-watchalong': 'Sports Watchalong Suite',
+  'study-session': 'Study Session Suite',
+  'tournament-desk': 'Tournament Desk Suite',
   'travel-vlog': 'Travel Vlog Suite',
   'vertical-creator': 'Vertical Creator Suite',
+  'vtuber-spotlight': 'VTuber Spotlight Suite',
   'wellness-retreat': 'Wellness Retreat Suite',
 };
 

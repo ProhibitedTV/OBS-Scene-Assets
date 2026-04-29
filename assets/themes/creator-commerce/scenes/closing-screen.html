@@ -1,0 +1,203 @@
+<!--
+Title: Creator Commerce Closing Screen
+Category: scenes
+Collection: creator-commerce
+UseCase: Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns.
+Resolution: 1920x1080
+Transparent: false
+Description: Closing scene that keeps the final call to action readable and polished for creator commerce creators.
+Tags: commerce, creator, drop, merch, shopping, white-label, closing, outro, scene, scenes, creator-commerce
+Preview: previews/themes/creator-commerce/scenes/closing-screen.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Creator Commerce Closing Screen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #fb7185;
+      --accent-secondary: #8b5cf6;
+      --accent-tertiary: #f59e0b;
+      --text: #fff7fb;
+      --muted: rgba(255, 247, 251, 0.78);
+      --line: rgba(255, 247, 251, 0.16);
+      --surface: rgba(38, 13, 31, 0.72);
+      --surface-strong: rgba(38, 13, 31, 0.92);
+      --shadow: rgba(2, 6, 23, 0.42);
+      --glow: rgba(251, 113, 133, 0.32);
+      --bg-start: #150712;
+      --bg-mid: #2d1131;
+      --bg-end: #28110d;
+      --wash-a: rgba(251, 113, 133, 0.22);
+      --wash-b: rgba(139, 92, 246, 0.18);
+      --wash-c: rgba(245, 158, 11, 0.18);
+  
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+
+      background:
+        radial-gradient(circle at 16% 18%, var(--wash-a), transparent 28%),
+        radial-gradient(circle at 82% 18%, var(--wash-b), transparent 30%),
+        radial-gradient(circle at 70% 78%, var(--wash-c), transparent 28%),
+        linear-gradient(145deg, var(--bg-start), var(--bg-mid) 58%, var(--bg-end));
+  
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    .layout {
+      min-height: 100vh;
+      padding: 2.8rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: 1.8rem;
+      border: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.18);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 48px var(--shadow);
+    }
+
+    .hero {
+      padding: 2rem;
+      display: grid;
+      gap: 1.1rem;
+      align-content: space-between;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 0.82rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 12ch;
+      font-size: clamp(2.9rem, 7vw, 5.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+    }
+
+    .headline {
+      margin: 0;
+      max-width: 44ch;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+
+    .timer {
+      width: fit-content;
+      padding: 0.85rem 1rem;
+      border-radius: 1.2rem;
+      background: linear-gradient(90deg, rgba(251, 113, 133, 0.24), rgba(139, 92, 246, 0.14));
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.05em;
+    }
+
+    .side {
+      padding: 1.6rem;
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    .side-title {
+      margin: 0;
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .list-item {
+      padding: 0.95rem 1rem;
+      border-radius: 1.15rem;
+      border: 1px solid rgba(251, 113, 133, 0.16);
+      background: rgba(255, 255, 255, 0.05);
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .footer-note {
+      padding: 0.9rem 1rem;
+      border-radius: 1.15rem;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--muted);
+      line-height: 1.65;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <section class="hero panel">
+      <div>
+        <p class="eyebrow" id="subtitle">Creator Commerce Suite</p>
+        <h1 id="title">Thanks for showing up for the drop</h1>
+        <p class="headline" id="headline">A calm closing frame for merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns.</p>
+      </div>
+      <div class="timer" id="timer">See you next time</div>
+    </section>
+    <aside class="side panel">
+      <p class="side-title">Closing beats</p>
+      <ul class="list" id="items">
+        <li class="list-item">Great for product cards and launch bullets</li>
+<li class="list-item">Strong CTA framing without hardcoding a brand</li>
+<li class="list-item">Works for merch, affiliates, and partner campaigns</li>
+      </ul>
+      <div class="footer-note">Use this outro for thank-yous, final CTAs, social reminders, or a clean handoff to the next event.</div>
+    </aside>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const accent = params.get('accent');
+    const timer = params.get('timer');
+    const items = params.get('items');
+    if (title) document.getElementById('title').textContent = title;
+    if (subtitle) document.getElementById('subtitle').textContent = subtitle;
+    if (headline) document.getElementById('headline').textContent = headline;
+    if (timer) document.getElementById('timer').textContent = timer;
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-secondary', accent);
+      document.documentElement.style.setProperty('--accent-tertiary', accent);
+    }
+    if (items) {
+      const list = document.getElementById('items');
+      list.innerHTML = '';
+      items.split('|').map((entry) => entry.trim()).filter(Boolean).forEach((entry) => {
+        const item = document.createElement('li');
+        item.className = 'list-item';
+        item.textContent = entry;
+        list.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>
