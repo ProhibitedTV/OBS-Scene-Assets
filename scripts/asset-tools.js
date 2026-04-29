@@ -91,8 +91,12 @@ function buildCatalogJson(assets) {
   const summary = {
     assetCount: sortedAssets.length,
     collections: [...new Set(sortedAssets.map((asset) => asset.collection))].length,
+    assetTypes: [...new Set(sortedAssets.map((asset) => asset.category))].length,
     categories: [...new Set(sortedAssets.map((asset) => asset.category))].length,
     previewCount: sortedAssets.filter((asset) => asset.previewStatus === 'image').length,
+    previewCoveragePercent: sortedAssets.length === 0
+      ? 0
+      : Math.round((sortedAssets.filter((asset) => asset.previewStatus === 'image').length / sortedAssets.length) * 100),
   };
 
   return `${JSON.stringify({ summary, assets: sortedAssets }, null, 2)}\n`;
@@ -100,12 +104,18 @@ function buildCatalogJson(assets) {
 
 function buildCatalogMarkdown(assets) {
   const groups = groupAssets(assets);
+  const collectionCount = [...new Set(assets.map((asset) => asset.collection))].length;
+  const assetTypeCount = [...new Set(assets.map((asset) => asset.category))].length;
+  const previewCount = assets.filter((asset) => asset.hasPreview).length;
+  const previewCoveragePercent = assets.length === 0 ? 0 : Math.round((previewCount / assets.length) * 100);
   const lines = [
     '# Asset Catalog',
     '',
     'This file is generated from the asset metadata blocks embedded in each HTML file. Run `npm run assets:generate` after adding or editing assets.',
     '',
     `Total assets: **${assets.length}**`,
+    '',
+    `Coverage snapshot: **${collectionCount} collections**, **${assetTypeCount} asset types**, **${previewCount} preview images** (${previewCoveragePercent}% preview coverage).`,
     '',
   ];
 
@@ -144,6 +154,7 @@ function buildIndexHtml(assets) {
   const sortedAssets = assets.slice().sort(compareAssets);
   const categories = [...new Set(sortedAssets.map((asset) => asset.categoryLabel))].sort((left, right) => left.localeCompare(right));
   const collections = [...new Set(sortedAssets.map((asset) => asset.collectionLabel))].sort((left, right) => left.localeCompare(right));
+  const previewCount = sortedAssets.filter((asset) => asset.hasPreview).length;
   const data = sortedAssets.map((asset) => ({
     title: asset.title,
     path: asset.relativePath,
@@ -459,11 +470,12 @@ function buildIndexHtml(assets) {
     <div class="hero">
       <p class="eyebrow">OBS Browser Source Library</p>
       <h1>Filterable asset gallery for stream overlays, scenes, widgets, and themed creator packs.</h1>
-      <p class="summary">Browse the full metadata-driven catalog, filter by category or theme, and use the embedded paths directly in OBS. Legacy assets without screenshots show metadata-driven placeholders so the gallery stays complete while previews are backfilled.</p>
+      <p class="summary">Browse the metadata-driven catalog, filter by asset type or suite, and use the embedded paths directly in OBS. The library is structured to scale toward thousands of white-label assets across broad creator niches without exploding the top-level taxonomy.</p>
       <div class="stats">
         <span class="stat">${sortedAssets.length} assets</span>
         <span class="stat">${collections.length} collections</span>
-        <span class="stat">${sortedAssets.filter((asset) => asset.hasPreview).length} preview images</span>
+        <span class="stat">${categories.length} asset types</span>
+        <span class="stat">${previewCount} preview images</span>
       </div>
     </div>
   </header>

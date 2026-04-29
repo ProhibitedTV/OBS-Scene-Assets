@@ -2,7 +2,9 @@
 
 This file is generated from the asset metadata blocks embedded in each HTML file. Run `npm run assets:generate` after adding or editing assets.
 
-Total assets: **121**
+Total assets: **139**
+
+Coverage snapshot: **11 collections**, **8 asset types**, **13 preview images** (9% preview coverage).
 
 ## Core Library
 
@@ -40,9 +42,17 @@ Location: `assets/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Breaking Update Lower Third | `lower-thirds/breaking-update.html` | Quick breaking news banner. | 1600x200 (Transparent) | Placeholder | Shows breaking headline. |
+| CTA Lower Third | `lower-thirds/cta-lower-third.html` | Call to action overlay. | 1600x200 (Transparent) | Placeholder | Prompt viewer to subscribe. |
+| Episode Title Lower Third | `lower-thirds/episode-title.html` | Display the episode title. | 1600x200 (Transparent) | Placeholder | Shows current episode. |
 | Gaming Angled Lower Third | `lower-thirds/gaming-angled.html` | Bold gamer tagplate with angled accent. | 1920x250 (Transparent) | Placeholder | Align to bottom-left; adjust animation delay for callouts. |
+| Guest Intro Lower Third | `lower-thirds/guest-intro.html` | Intro callout for guests. | 1600x200 (Transparent) | Placeholder | Shows guest name and role. |
+| Host Intro Lower Third | `lower-thirds/host-intro.html` | Intro callout for the stream host. | 1600x200 (Transparent) | Placeholder | Bold bar showing host name. |
 | Minimalist Bar Lower Third | `lower-thirds/minimalist-bar.html` | Simple bar with name and title slots. | 1600x200 (Transparent) | Placeholder | Great for interviews or podcasts. |
 | Modern News Lower Third | `lower-thirds/modern-news.html` | News-style dual-line chyron. | 1920x250 (Transparent) | Placeholder | Includes ticker slot for additional info. |
+| Schedule Reminder Lower Third | `lower-thirds/schedule-reminder.html` | Show upcoming show schedule. | 1600x200 (Transparent) | Placeholder | Displays next show timing. |
+| Sponsor Callout Lower Third | `lower-thirds/sponsor-callout.html` | Show sponsor logo and tagline. | 1600x200 (Transparent) | Placeholder | Highlight sponsor. |
+| Stat Highlight Lower Third | `lower-thirds/stat-highlight.html` | Show a quick statistic. | 1600x200 (Transparent) | Placeholder | Numeric highlight. |
 | Stream Announcement Lower Third | `lower-thirds/stream-announcement.html` | Banner for highlights or schedule reminders. | 1920x260 (Transparent) | Placeholder | Shared query params support title, subtitle, headline, and accent overrides for quick creator callouts. |
 
 ### News
@@ -69,7 +79,15 @@ Location: `assets/`
 | --- | --- | --- | --- | --- | --- |
 | Camera Frame Overlay | `overlays/camera-frame.html` | Stylized webcam frame with title header. | 1280x720 (Transparent) | Placeholder | Resize to match your camera crop; supports drop shadow. |
 | Chat Box Overlay | `overlays/chat-box.html` | Browser chat display panel. | 500x900 (Transparent) | Placeholder | Set Browser Source to interact with chat widget embed URL. |
+| Control‑Room Overlay | `overlays/control-room.html` | Control‑room view with monitoring panels. | 1920x1080 (Transparent) | Placeholder | Displays key stats and camera feeds. |
+| Corner Bug Overlay | `overlays/corner-bug.html` | Small decorative corner bug. | 1280x720 (Transparent) | Placeholder | A tiny pixel bug in top‑left to add personality. |
+| Dual Cam Frame Overlay | `overlays/dual-cam-frame.html` | Simultaneous dual webcam view side‑by‑side. | 1920x720 (Transparent) | Placeholder | Two frames side by side with a simple border. |
 | Event Ticker Overlay | `overlays/event-ticker.html` | Horizontal ticker for top supporters. | 1920x160 (Transparent) | Placeholder | Loop through events via embedded array. |
+| Scoreboard Shell Overlay | `overlays/scoreboard-shell.html` | Basic scoreboard layout for live games. | 1920x1080 (Transparent) | Placeholder | Empty template to be filled by game logic. |
+| Single Cam Frame Overlay | `overlays/single-cam-frame.html` | Frame for single webcam view with border. | 1280x720 (Transparent) | Placeholder | Simple solid border around webcam. |
+| Supporter Ticker Overlay | `overlays/supporter-ticker.html` | Horizontal ticker for top supporters. | 1920x160 (Transparent) | Placeholder | Scrolls supporter names. |
+| Top‑Bar Live Strip Overlay | `overlays/top-bar-live-strip.html` | Live status bar at top of screen. | 1920x80 (Transparent) | Placeholder | Shows stream title and live dot. |
+| Webcam Plus Chat Overlay | `overlays/webcam-plus-chat.html` | Composite of webcam plus chat stream. | 1920x1080 (Transparent) | Placeholder | Two panels side by side for webcam and chat. |
 
 ### Scenes
 
@@ -90,8 +108,10 @@ Location: `assets/`
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
 | Live Poll Widget | `widgets/live-poll.html` | Interactive poll results visualization. | 800x600 (Transparent) | Placeholder | Update poll options array with your question. |
+| Lottery Game Show Widget | `gameshows/lottery.html` | Animated game show panel for raffle reveals, prize draws, or giveaway checkpoints. | 800x600 | Placeholder | Warm radial game show card with a slow spin effect for energetic lottery or giveaway segments. |
 | Multi-Platform Event Feed | `widgets/multi-event-feed.html` | Rotating list of latest events. | 600x800 (Transparent) | Placeholder | Feeds events from JSON array inside script. |
 | Now Playing Widget | `widgets/now-playing.html` | Displays current track metadata. | 600x200 (Transparent) | Placeholder | Bind to your music bot via custom JavaScript. |
+| Quiz Show Prompt Widget | `gameshows/quiz.html` | Compact trivia or quiz panel for game show rounds, audience prompts, or intermission challenges. | 800x600 | Placeholder | Clean game show card with bold prompt framing for quiz rounds and viewer participation segments. |
 | Social Handle Rotator Widget | `widgets/social-rotator.html` | Rotating social media handles. | 600x240 (Transparent) | Placeholder | Adjust rotation interval in the script. |
 | Stream Progress Goal Widget | `widgets/progress-goal.html` | Progress bar with milestone stats. | 800x300 (Transparent) | Placeholder | Update `current` and `goal` values as needed. |
 

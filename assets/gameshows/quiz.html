@@ -1,4 +1,104 @@
-<div class="game-show">
-  <h2>Quiz Show</h2>
-  <p>Test your knowledge!</p>
-</div>
+<!--
+Title: Quiz Show Prompt Widget
+Category: widgets
+Collection: core
+UseCase: Compact trivia or quiz panel for game show rounds, audience prompts, or intermission challenges.
+Resolution: 800x600
+Transparent: false
+Description: Clean game show card with bold prompt framing for quiz rounds and viewer participation segments.
+Tags: core, game-show, quiz, trivia, prompt, widget
+Preview: none
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quiz Show Prompt Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: rgba(9, 17, 32, 0.88);
+      --panel-line: rgba(125, 211, 252, 0.28);
+      --text: #e0f2fe;
+      --muted: #bfdbfe;
+      --accent: #38bdf8;
+      --accent-strong: #0ea5e9;
+      --accent-warm: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.24), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.18), transparent 28%),
+        linear-gradient(160deg, #020617, #071526 62%, #0f172a);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      color: var(--text);
+    }
+
+    .quiz-card {
+      width: min(90vw, 800px);
+      padding: 2rem;
+      border-radius: 1.6rem;
+      border: 1px solid var(--panel-line);
+      background: var(--panel);
+      box-shadow: 0 30px 65px rgba(2, 8, 23, 0.46);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .quiz-card__eyebrow {
+      margin: 0;
+      font-size: 0.8rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .quiz-card h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.1rem);
+      letter-spacing: -0.05em;
+    }
+
+    .quiz-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .quiz-card__prompt {
+      padding: 1.25rem 1.4rem;
+      border-radius: 1.15rem;
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.16), rgba(245, 158, 11, 0.16));
+      border: 1px solid rgba(191, 219, 254, 0.14);
+    }
+
+    .quiz-card__accent {
+      width: 100%;
+      height: 0.5rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong), var(--accent-warm));
+    }
+  </style>
+</head>
+<body>
+  <main class="quiz-card" role="img" aria-label="Quiz show trivia prompt card">
+    <p class="quiz-card__eyebrow">Audience Challenge</p>
+    <h1>Quiz Show</h1>
+    <div class="quiz-card__prompt">
+      <p>Drop your question, answer choices, or speed-round rules here for a clean trivia segment.</p>
+    </div>
+    <p>Works well for chat-driven questions, sponsor trivia breaks, or community game nights.</p>
+    <div class="quiz-card__accent" aria-hidden="true"></div>
+  </main>
+</body>
+</html>

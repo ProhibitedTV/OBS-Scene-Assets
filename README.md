@@ -2,7 +2,9 @@
 
 OBS Scene Assets is a metadata-driven library of standalone HTML overlays, widgets, lower thirds, and complete scenes for [OBS Studio](https://obsproject.com/) Browser Sources.
 
-The repo currently ships with **121 assets** across the core library and themed suites, including the new **Vertical Creator** and **Live Show** packs for general streamers.
+The repo currently ships with **139 assets** across the core library and themed suites, including the new **Vertical Creator** and **Live Show** packs for general streamers.
+
+The long-term target is a scale-ready, white-label library with thousands of animated assets spanning thousands of discoverable creator niches. To keep that breadth usable, the repo keeps a compact set of stable asset types and expands depth through themed suites, coordinated packs, and strong tagging.
 
 ## Quick Start
 
@@ -17,12 +19,13 @@ If you are new to OBS, start with [docs/obs-setup-guide.md](docs/obs-setup-guide
 
 ## What's In The Repo
 
-- `assets/index.html`: generated gallery with search, category filters, collection filters, aspect badges, and preview placeholders.
 - `assets/catalog.json`: machine-readable catalog generated from the metadata block in each asset.
-- `docs/asset-catalog.md`: generated markdown catalog grouped by collection and category.
+- `assets/index.html`: generated gallery with search, category filters, collection filters, aspect badges, and preview placeholders.
 - `assets/previews/`: mirrored preview image tree. New assets must ship with a PNG preview.
-- `templates/asset-starter.html`: starter template for new assets with the required metadata block and shared query-param scaffold.
+- `docs/asset-catalog.md`: generated markdown catalog grouped by collection and category.
+- `docs/taxonomy-strategy.md`: scaling model for growing into thousands of assets without losing discoverability.
 - `scripts/`: lightweight tooling for metadata backfill, preview generation, catalog generation, and validation.
+- `templates/asset-starter.html`: starter template for new assets with the required metadata block and shared query-param scaffold.
 
 ## Repository Layout
 
@@ -43,6 +46,15 @@ docs/
 scripts/
 templates/
 ```
+
+## Scale Strategy
+
+- Keep the top-level asset types stable: alerts, backgrounds, lower thirds, news, overlays, scenes, transitions, and widgets.
+- Grow breadth through themed suites and collections for audiences, formats, franchises, and visual styles.
+- Use tags to capture long-tail niches such as podcast, charity, esports, mobile-first, watchalong, cozy, or tournament.
+- Ship coordinated packs so each niche gets a usable set of scenes, overlays, alerts, lower thirds, and transitions instead of isolated one-offs.
+
+See [docs/taxonomy-strategy.md](docs/taxonomy-strategy.md) for the full scaling model.
 
 ## Best Starter Assets
 
@@ -95,4 +107,5 @@ npm run previews:generate
 5. Review the result in OBS before submitting changes.
 
 Detailed contributor guidance lives in [docs/contribution-guide.md](docs/contribution-guide.md).
+For the taxonomy and coverage model behind long-term expansion, see [docs/taxonomy-strategy.md](docs/taxonomy-strategy.md).
 For roadmap priorities focused on repository hygiene and rapid asset expansion, see [docs/expansion-roadmap.md](docs/expansion-roadmap.md).

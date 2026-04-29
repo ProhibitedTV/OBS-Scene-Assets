@@ -22,10 +22,11 @@ Preview: previews/example/example-asset.png
 
 Field notes:
 
-- `Category`: use the asset group that should appear in the gallery filter (`alerts`, `backgrounds`, `lower-thirds`, `news`, `overlays`, `scenes`, `transitions`, or `widgets`)
-- `Collection`: use `core` for the base library or the suite slug such as `vertical-creator`, `live-show`, or `games/halo`
+- `Category`: use the stable asset group that should appear in the gallery filter (`alerts`, `backgrounds`, `lower-thirds`, `news`, `overlays`, `scenes`, `transitions`, or `widgets`); do not create a new top-level category casually
+- `Collection`: use `core` for the base library or the suite slug such as `vertical-creator`, `live-show`, or `games/halo`; new collections should represent reusable suites or themed families, not one-off variants
 - `Resolution`: use `WIDTHxHEIGHT`
 - `Transparent`: `true` or `false`
+- `Tags`: use concise discoverability cues for format, mood, workflow, franchise, event type, or audience
 - `Preview`: mirrored preview path under `assets/previews/`, or `none` for legacy assets that have not been backfilled yet
 
 ## 2. Use The Starter Template
@@ -92,13 +93,21 @@ Validation checks:
 - duplicate titles inside the same collection/category
 - out-of-date generated outputs
 
-## 7. Sorting And Generated Files
+## 7. Taxonomy For Large-Scale Growth
+
+- Keep `Category` small and stable so the gallery filter stays usable at scale.
+- Add breadth through `Collection`, folder structure, and tags rather than inventing new top-level categories.
+- Use tags for long-tail discoverability such as `charity`, `cozy`, `podcast`, `scoreboard`, `tournament`, `vertical`, or `watchalong`.
+- If you add a new collection, update the label map in `scripts/asset-library.js` so generated outputs stay readable.
+- When in doubt, prefer building a coherent pack for a niche instead of a single isolated asset.
+
+## 8. Sorting And Generated Files
 
 - Keep human-edited listings alphabetized when you touch them.
 - Do not hand-edit `assets/index.html`, `assets/catalog.json`, or `docs/asset-catalog.md`; regenerate them instead.
 - When you add a new collection or category, make sure the asset names themselves are still easy to scan alphabetically inside that group.
 
-## 8. Review Checklist
+## 9. Review Checklist
 
 - Load the asset in OBS and confirm the source size matches the metadata.
 - Verify there are no console errors on refresh.

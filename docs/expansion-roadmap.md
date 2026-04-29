@@ -7,17 +7,58 @@ This roadmap balances two goals:
 
 ## North Star
 
-Make this repository the easiest place for streamers to find, preview, customize, and ship high-quality animated OBS assets in minutes.
+Make this repository the easiest place for streamers to find, preview, customize, and ship high-quality animated white-label OBS assets in minutes, while growing toward thousands of assets across thousands of discoverable creator niches.
+
+## Scale Architecture
+
+To reach that size without making the repo unsearchable:
+
+- Keep the top-level asset types intentionally small and stable.
+- Expand breadth through suites, collections, and coordinated packs.
+- Use tags to express long-tail niches, moods, workflows, and event types.
+- Favor repeatable pack systems over isolated one-off additions.
+
+See `docs/taxonomy-strategy.md` for the full model.
 
 ## Success Metrics
 
 Track progress with metrics that tie directly to quality and growth:
 
 - **Catalog growth:** total assets and assets per category/theme.
+- **Coverage matrix:** number of packs across major lanes such as general creator, podcast, news, gaming, vertical, charity, and watchalong.
 - **Coverage depth:** number of complete packs (scene set + overlays + lower thirds + alerts + transition).
+- **Niche discoverability:** number of high-signal tags and collection combinations represented in the catalog.
 - **Quality bar:** percentage of assets with metadata completeness, preview image, and validation passing.
 - **Discovery speed:** time to find and launch an asset from `assets/index.html`.
 - **Customization readiness:** percentage of assets supporting shared query parameters (`title`, `subtitle`, `headline`, `accent`, `timer`, `items`).
+
+## Phase 0 (Now): Lock The Taxonomy
+
+### 1) Protect the small top-level structure
+
+- Treat `Category` as a stable list of asset jobs, not a catch-all for every niche idea.
+- Add new breadth through `Collection`, folder structure, and tags before introducing a new top-level category.
+- Keep `scripts/asset-library.js` collection labels current when new suites are added.
+
+### 2) Define a coverage matrix
+
+Track expansion by lane, not just by raw asset count:
+
+- creator format
+- event type
+- genre or franchise
+- monetization workflow
+- platform or aspect ratio
+- visual mood
+
+### 3) Standardize what counts as a "pack"
+
+Require new expansion efforts to target coordinated mini-libraries instead of isolated assets:
+
+- minimum scene coverage
+- at least one overlay or widget
+- at least one lower third
+- at least one alert or transition
 
 ## Phase 1 (Next 2 Weeks): Scale-Proof Hygiene Foundation
 
@@ -92,6 +133,23 @@ Ship in repeatable, complete packs rather than random one-offs.
 - **General creator packs:** clean minimal, neon, retro, cozy, esports desk
 - **Genre packs:** FPS tactical, MOBA draft, RPG fantasy, sports studio
 - **Event packs:** charity marathon, tournament finals, launch stream, holiday
+
+## Long-Horizon Coverage Lanes
+
+Use these lanes as the parent map for long-term expansion:
+
+- **Charity and fundraising:** donation goals, milestone alerts, sponsor slates, donor walls.
+- **Cozy and lifestyle:** soft scenes, ambient overlays, journaling or study layouts.
+- **Education and coaching:** lesson title cards, session goals, whiteboard overlays, Q&A prompts.
+- **Esports and tournament desk:** scoreboards, bracket scenes, analyst layouts, match intros.
+- **General creator essentials:** broad-use packs that work for almost any streamer out of the box.
+- **IRL and travel:** route cards, map overlays, sponsor check-ins, mobile-friendly alerts.
+- **Music and DJ:** now-playing, track IDs, crowd hype alerts, set-break slates.
+- **News and politics:** desk scenes, tickers, result boards, remote guest formats.
+- **Podcast and live show:** guest intros, topic cards, split-screen frames, schedule scenes.
+- **Sports and watchalong:** score bugs, period clocks, matchup intros, halftime scenes.
+- **Vertical and mobile-first:** portrait scenes, stacked chat, CTA strips, compact alerts.
+- **VTuber and avatar-first:** reactive frames, collab layouts, debut assets, lore-themed alerts.
 
 ## Operating Model
 

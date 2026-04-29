@@ -1,9 +1,11 @@
 {
   "summary": {
-    "assetCount": 121,
+    "assetCount": 139,
     "collections": 11,
-    "categories": 9,
-    "previewCount": 13
+    "assetTypes": 8,
+    "categories": 8,
+    "previewCount": 13,
+    "previewCoveragePercent": 9
   },
   "assets": [
     {
@@ -14,7 +16,7 @@
       "collection": "core",
       "collectionLabel": "Core Library",
       "useCase": "Donation animation with amount and donor name callout.",
-      "resolution": "800x600",
+      "resolution": "800x450",
       "width": 800,
       "height": 450,
       "aspect": "landscape",
@@ -37,7 +39,7 @@
         "third",
         "trigger"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -48,7 +50,7 @@
       "collection": "core",
       "collectionLabel": "Core Library",
       "useCase": "Facebook Stars donation alert card.",
-      "resolution": "800x600",
+      "resolution": "800x450",
       "width": 800,
       "height": 450,
       "aspect": "landscape",
@@ -69,7 +71,7 @@
         "stars",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -80,7 +82,7 @@
       "collection": "core",
       "collectionLabel": "Core Library",
       "useCase": "Celebrate new followers with animated confetti burst.",
-      "resolution": "800x600",
+      "resolution": "800x450",
       "width": 800,
       "height": 450,
       "aspect": "landscape",
@@ -104,7 +106,7 @@
         "well",
         "works"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -136,7 +138,7 @@
         "raider",
         "welcome"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -147,7 +149,7 @@
       "collection": "core",
       "collectionLabel": "Core Library",
       "useCase": "Acknowledges TikTok gifts with looping spark animations.",
-      "resolution": "800x600",
+      "resolution": "800x450",
       "width": 800,
       "height": 450,
       "aspect": "landscape",
@@ -170,7 +172,7 @@
         "spark",
         "tiktok"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -181,7 +183,7 @@
       "collection": "core",
       "collectionLabel": "Core Library",
       "useCase": "Highlights bit cheers with purple particle burst.",
-      "resolution": "800x600",
+      "resolution": "800x450",
       "width": 800,
       "height": 450,
       "aspect": "landscape",
@@ -205,7 +207,7 @@
         "snippet",
         "twitch"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -216,7 +218,7 @@
       "collection": "core",
       "collectionLabel": "Core Library",
       "useCase": "Recognizes new or returning subscribers.",
-      "resolution": "800x600",
+      "resolution": "800x450",
       "width": 800,
       "height": 450,
       "aspect": "landscape",
@@ -235,7 +237,7 @@
         "title",
         "twitch"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -246,7 +248,7 @@
       "collection": "core",
       "collectionLabel": "Core Library",
       "useCase": "Alert for YouTube channel memberships.",
-      "resolution": "800x600",
+      "resolution": "800x450",
       "width": 800,
       "height": 450,
       "aspect": "landscape",
@@ -265,7 +267,7 @@
         "swap",
         "youtube"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -276,7 +278,7 @@
       "collection": "core",
       "collectionLabel": "Core Library",
       "useCase": "Animated Super Chat notification.",
-      "resolution": "800x600",
+      "resolution": "800x450",
       "width": 800,
       "height": 450,
       "aspect": "landscape",
@@ -298,7 +300,7 @@
         "theme",
         "youtube"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -333,7 +335,7 @@
         "well",
         "works"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -368,7 +370,7 @@
         "seamless",
         "sit"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -403,7 +405,7 @@
         "soft",
         "wave"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -436,7 +438,7 @@
         "slow",
         "vibe"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -467,7 +469,7 @@
         "sunset",
         "synthwave"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -500,7 +502,7 @@
         "soft",
         "text"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -533,7 +535,7 @@
         "twinkle",
         "works"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -563,7 +565,7 @@
         "pair",
         "tech"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -595,7 +597,75 @@
         "tropical",
         "warm"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "lower-thirds/breaking-update.html",
+      "title": "Breaking Update Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Quick breaking news banner.",
+      "resolution": "1600x200",
+      "width": 1600,
+      "height": 200,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Shows breaking headline.",
+      "tags": [
+        "breaking",
+        "update",
+        "lower-third",
+        "core"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "lower-thirds/cta-lower-third.html",
+      "title": "CTA Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Call to action overlay.",
+      "resolution": "1600x200",
+      "width": 1600,
+      "height": 200,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Prompt viewer to subscribe.",
+      "tags": [
+        "cta",
+        "lower-third",
+        "core"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "lower-thirds/episode-title.html",
+      "title": "Episode Title Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Display the episode title.",
+      "resolution": "1600x200",
+      "width": 1600,
+      "height": 200,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Shows current episode.",
+      "tags": [
+        "episode",
+        "title",
+        "lower-third",
+        "core"
+      ],
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -631,7 +701,54 @@
         "tagplate",
         "third"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "lower-thirds/guest-intro.html",
+      "title": "Guest Intro Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Intro callout for guests.",
+      "resolution": "1600x200",
+      "width": 1600,
+      "height": 200,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Shows guest name and role.",
+      "tags": [
+        "guest",
+        "intro",
+        "lower-third",
+        "core"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "lower-thirds/host-intro.html",
+      "title": "Host Intro Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Intro callout for the stream host.",
+      "resolution": "1600x200",
+      "width": 1600,
+      "height": 200,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Bold bar showing host name.",
+      "tags": [
+        "host",
+        "intro",
+        "bar",
+        "lower-third",
+        "core"
+      ],
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -663,7 +780,7 @@
         "third",
         "title"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -697,7 +814,76 @@
         "third",
         "ticker"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "lower-thirds/schedule-reminder.html",
+      "title": "Schedule Reminder Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Show upcoming show schedule.",
+      "resolution": "1600x200",
+      "width": 1600,
+      "height": 200,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Displays next show timing.",
+      "tags": [
+        "schedule",
+        "reminder",
+        "lower-third",
+        "core"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "lower-thirds/sponsor-callout.html",
+      "title": "Sponsor Callout Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Show sponsor logo and tagline.",
+      "resolution": "1600x200",
+      "width": 1600,
+      "height": 200,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Highlight sponsor.",
+      "tags": [
+        "sponsor",
+        "callout",
+        "lower-third",
+        "core"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "lower-thirds/stat-highlight.html",
+      "title": "Stat Highlight Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Show a quick statistic.",
+      "resolution": "1600x200",
+      "width": 1600,
+      "height": 200,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Numeric highlight.",
+      "tags": [
+        "stat",
+        "highlight",
+        "lower-third",
+        "core"
+      ],
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -727,7 +913,7 @@
         "subtitle",
         "title"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -757,7 +943,7 @@
         "use",
         "webm"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -787,7 +973,7 @@
         "script",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -817,7 +1003,7 @@
         "top",
         "vertical"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -849,7 +1035,7 @@
         "right",
         "top"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -880,7 +1066,7 @@
         "swap",
         "third"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -909,7 +1095,7 @@
         "slate",
         "timer"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -940,7 +1126,7 @@
         "ticker",
         "webcam"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -969,7 +1155,7 @@
         "ticker",
         "title"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -998,7 +1184,7 @@
         "shoulder",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1028,7 +1214,7 @@
         "scene",
         "speaker"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1060,7 +1246,7 @@
         "split",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1091,7 +1277,7 @@
         "update",
         "weather"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1122,7 +1308,7 @@
         "overlays",
         "world"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1156,7 +1342,7 @@
         "title",
         "webcam"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1189,7 +1375,74 @@
         "url",
         "widget"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "overlays/control-room.html",
+      "title": "Control‑Room Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Control‑room view with monitoring panels.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Displays key stats and camera feeds.",
+      "tags": [
+        "control",
+        "overlay",
+        "monitoring"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "overlays/corner-bug.html",
+      "title": "Corner Bug Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Small decorative corner bug.",
+      "resolution": "1280x720",
+      "width": 1280,
+      "height": 720,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A tiny pixel bug in top‑left to add personality.",
+      "tags": [
+        "corner",
+        "bug",
+        "decorative"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "overlays/dual-cam-frame.html",
+      "title": "Dual Cam Frame Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Simultaneous dual webcam view side‑by‑side.",
+      "resolution": "1920x720",
+      "width": 1920,
+      "height": 720,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Two frames side by side with a simple border.",
+      "tags": [
+        "camera",
+        "dual",
+        "frame",
+        "overlay"
+      ],
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1222,7 +1475,117 @@
         "top",
         "via"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "overlays/scoreboard-shell.html",
+      "title": "Scoreboard Shell Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Basic scoreboard layout for live games.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Empty template to be filled by game logic.",
+      "tags": [
+        "scoreboard",
+        "overlay"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "overlays/single-cam-frame.html",
+      "title": "Single Cam Frame Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Frame for single webcam view with border.",
+      "resolution": "1280x720",
+      "width": 1280,
+      "height": 720,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Simple solid border around webcam.",
+      "tags": [
+        "camera",
+        "single",
+        "frame",
+        "overlay"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "overlays/supporter-ticker.html",
+      "title": "Supporter Ticker Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Horizontal ticker for top supporters.",
+      "resolution": "1920x160",
+      "width": 1920,
+      "height": 160,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Scrolls supporter names.",
+      "tags": [
+        "ticker",
+        "supporters",
+        "overlay"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "overlays/top-bar-live-strip.html",
+      "title": "Top‑Bar Live Strip Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Live status bar at top of screen.",
+      "resolution": "1920x80",
+      "width": 1920,
+      "height": 80,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Shows stream title and live dot.",
+      "tags": [
+        "live",
+        "bar",
+        "overlay"
+      ],
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "overlays/webcam-plus-chat.html",
+      "title": "Webcam Plus Chat Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Composite of webcam plus chat stream.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Two panels side by side for webcam and chat.",
+      "tags": [
+        "webcam",
+        "chat",
+        "overlay"
+      ],
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1255,7 +1618,7 @@
         "slate",
         "timer"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1283,7 +1646,7 @@
         "timer",
         "title"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1316,7 +1679,7 @@
         "text",
         "wrap"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1349,7 +1712,7 @@
         "schedule",
         "stream"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1383,7 +1746,7 @@
         "scenes",
         "webcam"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1412,7 +1775,7 @@
         "status",
         "streaming"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1440,7 +1803,7 @@
         "schedule",
         "weekly"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1474,7 +1837,7 @@
         "stream",
         "widgets"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1506,7 +1869,7 @@
         "support",
         "updates"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1537,7 +1900,33 @@
         "widget",
         "widgets"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "gameshows/lottery.html",
+      "title": "Lottery Game Show Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Animated game show panel for raffle reveals, prize draws, or giveaway checkpoints.",
+      "resolution": "800x600",
+      "width": 800,
+      "height": 600,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Warm radial game show card with a slow spin effect for energetic lottery or giveaway segments.",
+      "tags": [
+        "core",
+        "giveaway",
+        "lottery",
+        "prize",
+        "raffle",
+        "spinner",
+        "widget"
+      ],
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1571,7 +1960,7 @@
         "script",
         "widgets"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1605,7 +1994,32 @@
         "widget",
         "widgets"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
+      "previewStatus": "placeholder"
+    },
+    {
+      "path": "gameshows/quiz.html",
+      "title": "Quiz Show Prompt Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "core",
+      "collectionLabel": "Core Library",
+      "useCase": "Compact trivia or quiz panel for game show rounds, audience prompts, or intermission challenges.",
+      "resolution": "800x600",
+      "width": 800,
+      "height": 600,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Clean game show card with bold prompt framing for quiz rounds and viewer participation segments.",
+      "tags": [
+        "core",
+        "game-show",
+        "quiz",
+        "trivia",
+        "prompt",
+        "widget"
+      ],
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1637,7 +2051,7 @@
         "widget",
         "widgets"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1669,7 +2083,7 @@
         "widget",
         "widgets"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1703,7 +2117,7 @@
         "widget",
         "works"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1736,7 +2150,7 @@
         "ticker",
         "when"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1771,7 +2185,7 @@
         "team",
         "third"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1807,7 +2221,7 @@
         "scenes",
         "toggle"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1841,7 +2255,7 @@
         "split",
         "webcam"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1877,7 +2291,7 @@
         "ticker",
         "uplink"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1908,7 +2322,7 @@
         "slate",
         "status"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1943,7 +2357,7 @@
         "text",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -1978,7 +2392,7 @@
         "source",
         "stat"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2014,7 +2428,7 @@
         "start",
         "starting"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2047,7 +2461,7 @@
         "time",
         "timer"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2081,7 +2495,7 @@
         "slate",
         "timeline"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2115,7 +2529,7 @@
         "stats",
         "status"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2149,7 +2563,7 @@
         "slate",
         "synthwave"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2183,7 +2597,7 @@
         "webm",
         "you"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2194,7 +2608,7 @@
       "collection": "cyberpunk-broadcast",
       "collectionLabel": "Cyberpunk Broadcast Suite",
       "useCase": "Holographic follower alert widget with refreshed animation.",
-      "resolution": "800x600",
+      "resolution": "800x450",
       "width": 800,
       "height": 450,
       "aspect": "landscape",
@@ -2217,7 +2631,7 @@
         "widget",
         "widgets"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2228,7 +2642,7 @@
       "collection": "fantasy-legends",
       "collectionLabel": "Fantasy Legends Suite",
       "useCase": "Magical alert with arcane circle animation.",
-      "resolution": "800x600",
+      "resolution": "800x450",
       "width": 800,
       "height": 450,
       "aspect": "landscape",
@@ -2249,7 +2663,7 @@
         "sigils",
         "summoning"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2278,7 +2692,7 @@
         "title",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2311,7 +2725,7 @@
         "session",
         "text"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2341,7 +2755,7 @@
         "scenes",
         "script"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2372,7 +2786,7 @@
         "webm",
         "wipe"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2404,7 +2818,7 @@
         "timing",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2435,7 +2849,7 @@
         "sync",
         "timer"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2467,7 +2881,7 @@
         "squad",
         "table"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2497,7 +2911,7 @@
         "storm",
         "warning"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2529,7 +2943,7 @@
         "tips",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2560,7 +2974,7 @@
         "showcase",
         "weapon"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2598,7 +3012,7 @@
         "unsc",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2634,7 +3048,7 @@
         "text",
         "vista"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2669,7 +3083,7 @@
         "third",
         "unsc"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2704,7 +3118,7 @@
         "tracking",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2740,7 +3154,7 @@
         "values",
         "vitals"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2775,7 +3189,7 @@
         "weapon",
         "weapons"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2811,7 +3225,7 @@
         "styled",
         "text"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2849,7 +3263,7 @@
         "summary",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2886,7 +3300,7 @@
         "screen",
         "spectator"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2924,7 +3338,7 @@
         "tasking",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2962,7 +3376,7 @@
         "statistics",
         "summarizing"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -2997,7 +3411,7 @@
         "update",
         "value"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3032,7 +3446,7 @@
         "text",
         "title"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3069,7 +3483,7 @@
         "svg",
         "unsc"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3099,7 +3513,7 @@
         "use",
         "webm"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3135,7 +3549,7 @@
         "team",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3166,7 +3580,7 @@
         "team",
         "victory"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3198,7 +3612,7 @@
         "widget",
         "widgets"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3227,7 +3641,7 @@
         "valorant",
         "wins"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3257,7 +3671,7 @@
         "update",
         "valorant"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3289,7 +3703,7 @@
         "widget",
         "widgets"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3505,7 +3919,7 @@
         "use",
         "world"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3535,7 +3949,7 @@
         "third",
         "update"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3566,7 +3980,7 @@
         "scene",
         "video"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3596,7 +4010,7 @@
         "scrolling",
         "ticker"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3627,7 +4041,7 @@
         "reveal",
         "scenes"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3656,7 +4070,7 @@
         "reporter",
         "scenes"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3684,7 +4098,7 @@
         "transitions",
         "webm"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
@@ -3712,7 +4126,7 @@
         "use",
         "webm"
       ],
-      "preview": "assets/previews/assets/gameshows/lottery.png",
+      "preview": "none",
       "previewStatus": "placeholder"
     },
     {
