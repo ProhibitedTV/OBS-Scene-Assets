@@ -2,7 +2,7 @@
 
 OBS Scene Assets is a metadata-driven library of standalone HTML overlays, widgets, lower thirds, and complete scenes for [OBS Studio](https://obsproject.com/) Browser Sources.
 
-The repo currently ships with **387 assets** across the core library and themed suites, including broad white-label packs such as **Charity Marathon**, **Civic Broadcast**, **Creator Commerce**, **Holiday Celebration**, **Maker Garage**, **Music Pulse**, **Podcast Studio**, **Study Session**, **Tournament Desk**, **Travel Vlog**, **VTuber Spotlight**, **Wellness Retreat**, **Vertical Creator**, and **Live Show**.
+The repo currently ships with **597 assets** across the core library and themed suites, including broad white-label packs such as **Charity Marathon**, **Church Service**, **Civic Broadcast**, **Coaching Session**, **Creator Commerce**, **Fundraiser Drive**, **Holiday Celebration**, **Live Show**, **Local Business**, **Maker Garage**, **Music Pulse**, **Podcast Studio**, **Real Estate Showcase**, **Study Session**, **Tournament Desk**, **Travel Vlog**, **Vertical Creator**, **VTuber Spotlight**, and **Wellness Retreat**.
 
 The long-term target is a scale-ready, white-label library with thousands of animated assets spanning thousands of discoverable creator niches. To keep that breadth usable, the repo keeps a compact set of stable asset types and expands depth through themed suites, coordinated packs, and strong tagging.
 
@@ -58,12 +58,15 @@ See [docs/taxonomy-strategy.md](docs/taxonomy-strategy.md) for the full scaling 
 
 ## Best Starter Assets
 
-- `assets/scenes/starting-soon.html`
-- `assets/scenes/just-chatting.html`
 - `assets/scenes/countdown-timer.html`
-- `assets/themes/vertical-creator/scenes/start-screen.html`
-- `assets/themes/live-show/scenes/dual-camera-scene.html`
+- `assets/scenes/just-chatting.html`
+- `assets/scenes/starting-soon.html`
+- `assets/themes/church-service/scenes/main-live-scene.html`
 - `assets/themes/live-show/scenes/break-screen.html`
+- `assets/themes/live-show/scenes/dual-camera-scene.html`
+- `assets/themes/local-business/scenes/main-live-scene.html`
+- `assets/themes/real-estate-showcase/scenes/main-live-scene.html`
+- `assets/themes/vertical-creator/scenes/start-screen.html`
 
 For pack-level recipes, see [docs/creator-pack-recipes.md](docs/creator-pack-recipes.md).
 
