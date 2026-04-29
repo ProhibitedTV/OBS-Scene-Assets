@@ -1,0 +1,132 @@
+<!--
+Title: Creator Commerce Product Callout Lower Third
+Category: lower-thirds
+Collection: creator-commerce
+UseCase: Product mention lower third for featuring one item, collection, or merch highlight during a creator campaign.
+Resolution: 1920x260
+Transparent: true
+Description: Simple product spotlight strip for users who just need one clean callout line.
+Tags: creator-commerce, lower-thirds, product-callout-lower-third, white-label, easy-mode, novice-friendly
+Preview: previews/themes/creator-commerce/lower-thirds/product-callout-lower-third.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Creator Commerce Product Callout Lower Third</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #fb7185;
+      --accent-2: #8b5cf6;
+      --accent-3: #f59e0b;
+      --text: #fff7fb;
+      --muted: rgba(251, 207, 232, 0.82);
+      --panel: rgba(38, 10, 28, 0.86);
+      --line: rgba(251, 207, 232, 0.16);
+      --bg-1: #130712;
+      --bg-2: #2f1130;
+      --bg-3: #22130b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      color: var(--text);
+      background: transparent;
+    }
+
+    body {
+      display: grid;
+      align-items: end;
+      padding: 0 3vw 3vw;
+    }
+
+    .bar {
+      width: min(92vw, 1460px);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 1.6rem;
+      border: 1px solid var(--line);
+      background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 15%, transparent), color-mix(in srgb, var(--accent-2) 10%, transparent)), var(--panel);
+      box-shadow: 0 22px 44px rgba(2, 8, 23, 0.28);
+    }
+
+    .rail {
+      width: 0.8rem;
+      align-self: stretch;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--accent), var(--accent-2), var(--accent-3));
+    }
+
+    .eyebrow {
+      margin: 0 0 0.3rem;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .chip {
+      padding: 0.82rem 0.95rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      min-width: 240px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <div class="rail" aria-hidden="true"></div>
+    <div>
+      <p class="eyebrow" data-subtitle>Northwind Store</p>
+      <h1 data-title>Featured item: Creator Tee</h1>
+    </div>
+    <div class="chip" data-headline>Soft fit, limited run, ships this week</div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const channel = params.get('channel');
+    const username = params.get('username');
+    const handle = params.get('handle');
+    const cta = params.get('cta');
+    const timer = params.get('timer');
+    const accent = params.get('accent');
+    const items = params.get('items');
+
+    if (title) document.querySelectorAll('[data-title]').forEach((node) => node.textContent = title);
+    if (subtitle) document.querySelectorAll('[data-subtitle]').forEach((node) => node.textContent = subtitle);
+    if (headline) document.querySelectorAll('[data-headline]').forEach((node) => node.textContent = headline);
+    if (channel) document.querySelectorAll('[data-channel]').forEach((node) => node.textContent = channel);
+    if (username) document.querySelectorAll('[data-username]').forEach((node) => node.textContent = username);
+    if (handle) document.querySelectorAll('[data-handle]').forEach((node) => node.textContent = handle);
+    if (cta) document.querySelectorAll('[data-cta]').forEach((node) => node.textContent = cta);
+    if (timer) document.querySelectorAll('[data-timer]').forEach((node) => node.textContent = timer);
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-2', accent);
+      document.documentElement.style.setProperty('--accent-3', accent);
+    }
+  </script>
+</body>
+</html>

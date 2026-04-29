@@ -1,0 +1,155 @@
+<!--
+Title: Podcast Studio Quote Card Widget
+Category: widgets
+Collection: podcast-studio
+UseCase: Square quote card for highlighting memorable lines, episode takeaways, or guest soundbites during a talk-led show.
+Resolution: 900x900
+Transparent: true
+Description: A simple quote panel for repurposing good moments on stream or in clips.
+Tags: podcast-studio, widgets, quote-card, white-label, easy-mode, novice-friendly
+Preview: previews/themes/podcast-studio/widgets/quote-card.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Podcast Studio Quote Card Widget</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #8b5cf6;
+      --accent-2: #22d3ee;
+      --accent-3: #f97316;
+      --text: #f5f3ff;
+      --muted: rgba(221, 214, 254, 0.8);
+      --panel: rgba(15, 13, 36, 0.86);
+      --line: rgba(221, 214, 254, 0.16);
+      --bg-1: #07070f;
+      --bg-2: #161634;
+      --bg-3: #101d26;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      color: var(--text);
+      background: transparent;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 1.2rem;
+    }
+
+    .card {
+      width: min(92vw, 860px);
+      aspect-ratio: 1;
+      padding: 2rem;
+      border-radius: 1.8rem;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 14%, transparent), rgba(255, 255, 255, 0.03)), var(--panel);
+      box-shadow: 0 24px 48px rgba(2, 8, 23, 0.3);
+      display: grid;
+      align-content: space-between;
+      gap: 1rem;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0.55rem 0 1rem;
+      font-size: clamp(2rem, 4.8vw, 3.5rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      max-width: 10ch;
+    }
+
+    .chip {
+      width: fit-content;
+      padding: 0.75rem 0.95rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .item {
+      padding: 0.9rem 1rem;
+      border-radius: 1rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .items {
+      display: grid;
+      gap: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div>
+      <p class="eyebrow" data-subtitle>Northwind Podcast</p>
+      <h1 data-title>Quote of the episode</h1>
+    </div>
+    <div class="chip" data-headline>Good shows are easier when the layout already helps you out.</div>
+    <div class="items" data-items data-item-tag="div" data-item-class="item">
+      <div class="item">Use for clips</div><div class="item">Highlight a guest line</div><div class="item">Great for socials and live scenes</div>
+    </div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const channel = params.get('channel');
+    const username = params.get('username');
+    const handle = params.get('handle');
+    const cta = params.get('cta');
+    const timer = params.get('timer');
+    const accent = params.get('accent');
+    const items = params.get('items');
+
+    if (title) document.querySelectorAll('[data-title]').forEach((node) => node.textContent = title);
+    if (subtitle) document.querySelectorAll('[data-subtitle]').forEach((node) => node.textContent = subtitle);
+    if (headline) document.querySelectorAll('[data-headline]').forEach((node) => node.textContent = headline);
+    if (channel) document.querySelectorAll('[data-channel]').forEach((node) => node.textContent = channel);
+    if (username) document.querySelectorAll('[data-username]').forEach((node) => node.textContent = username);
+    if (handle) document.querySelectorAll('[data-handle]').forEach((node) => node.textContent = handle);
+    if (cta) document.querySelectorAll('[data-cta]').forEach((node) => node.textContent = cta);
+    if (timer) document.querySelectorAll('[data-timer]').forEach((node) => node.textContent = timer);
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-2', accent);
+      document.documentElement.style.setProperty('--accent-3', accent);
+    }
+    if (items) {
+      const entries = items.split('|').map((entry) => entry.trim()).filter(Boolean);
+      const list = document.querySelector('[data-items]');
+      if (list) {
+        list.innerHTML = '';
+        entries.forEach((entry) => {
+          const node = document.createElement(list.dataset.itemTag || 'div');
+          node.className = list.dataset.itemClass || 'item';
+          node.textContent = entry;
+          list.appendChild(node);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

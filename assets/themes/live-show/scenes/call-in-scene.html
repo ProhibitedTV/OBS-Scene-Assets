@@ -1,0 +1,200 @@
+<!--
+Title: Live Show Call-In Scene
+Category: scenes
+Collection: live-show
+UseCase: Two-person call-in layout for remote guest chats, creator interviews, and simple co-host streams.
+Resolution: 1920x1080
+Transparent: false
+Description: Out-of-the-box guest scene with clear name lanes and a clean question rail for beginners.
+Tags: live-show, scenes, call-in-scene, white-label, easy-mode, novice-friendly
+Preview: previews/themes/live-show/scenes/call-in-scene.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Show Call-In Scene</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #3b82f6;
+      --accent-2: #ec4899;
+      --accent-3: #f59e0b;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.78);
+      --panel: rgba(7, 14, 28, 0.86);
+      --line: rgba(226, 232, 240, 0.16);
+      --bg-1: #050914;
+      --bg-2: #0b1730;
+      --bg-3: #1b0f1f;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 24%, transparent), transparent 32%), radial-gradient(circle at bottom right, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent 28%), linear-gradient(150deg, var(--bg-1), var(--bg-2) 58%, var(--bg-3));
+    }
+
+    .layout {
+      min-height: 100vh;
+      padding: 2.8rem;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .panel {
+      border-radius: 1.7rem;
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel) 88%, transparent);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 50px rgba(2, 8, 23, 0.3);
+    }
+
+    .hero {
+      padding: 2rem;
+      display: grid;
+      gap: 1rem;
+      align-content: space-between;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+      max-width: 11ch;
+    }
+
+    .headline {
+      margin: 0;
+      max-width: 46ch;
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 1.02rem;
+    }
+
+    .timer {
+      width: fit-content;
+      padding: 0.82rem 1rem;
+      border-radius: 1.1rem;
+      background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 24%, transparent), color-mix(in srgb, var(--accent-2) 14%, transparent));
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.05em;
+    }
+
+    .side {
+      padding: 1.5rem;
+      display: grid;
+      gap: 1rem;
+      align-content: start;
+    }
+
+    .side-title {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.72rem;
+    }
+
+    .list-item {
+      padding: 0.95rem 1rem;
+      border-radius: 1.05rem;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .note {
+      padding: 0.9rem 1rem;
+      border-radius: 1.05rem;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      line-height: 1.62;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <section class="hero panel">
+      <div>
+        <p class="eyebrow" data-subtitle>Northwind Live</p>
+        <h1 data-title>Call-in interview starts soon</h1>
+        <p class="headline" data-headline>Use this for remote guests, community interviews, or creator collabs.</p>
+      </div>
+      <div class="timer" data-timer>Live now</div>
+    </section>
+    <aside class="side panel">
+      <p class="side-title" data-channel>Northwind Live</p>
+      <ul class="list" data-items data-item-tag="li" data-item-class="list-item">
+        <li class="list-item">Host window on the left</li><li class="list-item">Guest window on the right</li><li class="list-item">Add a topic in the sidebar</li>
+      </ul>
+      <div class="note">This one is ready as-is. Swap your title, handle, channel, or bullet list only if you want to.</div>
+    </aside>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const channel = params.get('channel');
+    const username = params.get('username');
+    const handle = params.get('handle');
+    const cta = params.get('cta');
+    const timer = params.get('timer');
+    const accent = params.get('accent');
+    const items = params.get('items');
+
+    if (title) document.querySelectorAll('[data-title]').forEach((node) => node.textContent = title);
+    if (subtitle) document.querySelectorAll('[data-subtitle]').forEach((node) => node.textContent = subtitle);
+    if (headline) document.querySelectorAll('[data-headline]').forEach((node) => node.textContent = headline);
+    if (channel) document.querySelectorAll('[data-channel]').forEach((node) => node.textContent = channel);
+    if (username) document.querySelectorAll('[data-username]').forEach((node) => node.textContent = username);
+    if (handle) document.querySelectorAll('[data-handle]').forEach((node) => node.textContent = handle);
+    if (cta) document.querySelectorAll('[data-cta]').forEach((node) => node.textContent = cta);
+    if (timer) document.querySelectorAll('[data-timer]').forEach((node) => node.textContent = timer);
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-2', accent);
+      document.documentElement.style.setProperty('--accent-3', accent);
+    }
+    if (items) {
+      const entries = items.split('|').map((entry) => entry.trim()).filter(Boolean);
+      const list = document.querySelector('[data-items]');
+      if (list) {
+        list.innerHTML = '';
+        entries.forEach((entry) => {
+          const node = document.createElement(list.dataset.itemTag || 'div');
+          node.className = list.dataset.itemClass || 'item';
+          node.textContent = entry;
+          list.appendChild(node);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

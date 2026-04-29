@@ -1,0 +1,208 @@
+<!--
+Title: Travel Vlog Trip Stats Overlay
+Category: overlays
+Collection: travel-vlog
+UseCase: Overlay for distance, budget, or trip progress statistics.
+Resolution: 1600x900
+Transparent: true
+Description: A compact travel stats box with legible milestones and progress cues.
+Tags: travel-vlog, overlays, trip-stats-overlay, white-label, novice-friendly, easy-mode
+Preview: previews/themes/travel-vlog/overlays/trip-stats-overlay.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Travel Vlog Trip Stats Overlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #38bdf8;
+      --accent-2: #f97316;
+      --accent-3: #facc15;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.8);
+      --panel: rgba(10, 15, 26, 0.82);
+      --line: rgba(255, 255, 255, 0.14);
+      --bg-1: #050816;
+      --bg-2: #0f1d3a;
+      --bg-3: #1f122f;
+      --bg-4: #351826;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      color: var(--text);
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .shell {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shell::before,
+    .shell::after {
+      content: '';
+      position: absolute;
+      inset: auto;
+      border-radius: 999px;
+      filter: blur(18px);
+      opacity: 0.6;
+      animation: drift 8s ease-in-out infinite;
+    }
+
+    .shell::before {
+      width: 28rem;
+      height: 28rem;
+      top: -8rem;
+      right: -6rem;
+      background: color-mix(in srgb, var(--accent) 22%, transparent);
+    }
+
+    .shell::after {
+      width: 22rem;
+      height: 22rem;
+      bottom: -6rem;
+      left: -4rem;
+      background: color-mix(in srgb, var(--accent-2) 20%, transparent);
+      animation-delay: 1.5s;
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+      background-size: 2.2rem 2.2rem;
+      mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.95), transparent 85%);
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .frame {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: 0 28px 60px rgba(2, 8, 23, 0.34);
+      backdrop-filter: blur(18px);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: fit-content;
+      padding: 0.48rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .title {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(0.94rem, 1.4vw, 1.12rem);
+      line-height: 1.55;
+    }
+
+    .accent-line {
+      width: 5rem;
+      height: 0.28rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    }
+
+    .key-grid {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .key-card {
+      padding: 0.9rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .key-card strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .key-card span {
+      display: block;
+      font-size: 1.02rem;
+      font-weight: 700;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, 1.1rem, 0) scale(1.04); }
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(18px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(180%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="grain"></div>
+    <section class="frame">
+      <article class="panel" style="position:absolute;right:1.2rem;top:1.2rem;width:min(28rem,32vw);padding:1.2rem;border-radius:1.35rem;display:grid;gap:0.85rem;animation:rise .7s ease both;">
+        <div class="pill">Quick Info</div>
+        <h1 class="title" style="font-size:clamp(1.25rem,2vw,2rem);" data-field="title">Trip Stats</h1>
+        <div class="accent-line"></div>
+        <div class="key-grid">
+          <div class="key-card"><strong>Primary</strong><span data-field="stat-one">486 miles today</span></div>
+          <div class="key-card"><strong>Secondary</strong><span data-field="stat-two">$72 fuel spend</span></div>
+        </div>
+        <p class="subtitle" data-field="notes">Useful for vanlife, road-trip, and budget-travel streams where viewers care about the numbers.</p>
+      </article>
+    </section>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.querySelector('[data-field="title"]').textContent = params.get('title') || "Trip Stats";
+    document.querySelector('[data-field="stat-one"]').textContent = params.get('primary') || "486 miles today";
+    document.querySelector('[data-field="stat-two"]').textContent = params.get('secondary') || "$72 fuel spend";
+    document.querySelector('[data-field="notes"]').textContent = params.get('notes') || "Useful for vanlife, road-trip, and budget-travel streams where viewers care about the numbers.";
+  </script>
+</body>
+</html>

@@ -2,9 +2,9 @@
 
 This file is generated from the asset metadata blocks embedded in each HTML file. Run `npm run assets:generate` after adding or editing assets.
 
-Total assets: **315**
+Total assets: **387**
 
-Coverage snapshot: **27 collections**, **8 asset types**, **315 preview images** (100% preview coverage).
+Coverage snapshot: **27 collections**, **8 asset types**, **387 preview images** (100% preview coverage).
 
 ## Charity Marathon Suite
 
@@ -273,6 +273,7 @@ Location: `assets/themes/creator-commerce/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Creator Commerce Offer Drop Alert | `themes/creator-commerce/alerts/offer-drop-alert.html` | Animated alert for a fresh offer, coupon drop, bundle launch, or product mention during creator commerce streams. | 800x450 (Transparent) | PNG | Novice-friendly sale alert that works out of the box for sponsor moments and merch pushes. |
 | Creator Commerce Supporter Surge Alert | `themes/creator-commerce/alerts/supporter-surge-alert.html` | Animated alert card for merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for creator commerce broadcasts. |
 
 ### Backgrounds
@@ -285,6 +286,8 @@ Location: `assets/themes/creator-commerce/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Creator Commerce Offer Lower Third | `themes/creator-commerce/lower-thirds/offer-lower-third.html` | Offer-focused lower third for sale windows, coupon codes, and sponsor CTA moments during commerce streams. | 1920x260 (Transparent) | PNG | Fast little offer strip that lets a beginner surface the discount without redesigning anything. |
+| Creator Commerce Product Callout Lower Third | `themes/creator-commerce/lower-thirds/product-callout-lower-third.html` | Product mention lower third for featuring one item, collection, or merch highlight during a creator campaign. | 1920x260 (Transparent) | PNG | Simple product spotlight strip for users who just need one clean callout line. |
 | Creator Commerce Segment Intro Lower Third | `themes/creator-commerce/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for creator commerce segments. |
 
 ### Overlays
@@ -292,13 +295,19 @@ Location: `assets/themes/creator-commerce/`
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
 | Creator Commerce Live Frame Overlay | `themes/creator-commerce/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to creator commerce coverage. |
+| Creator Commerce Offer Stack Overlay | `themes/creator-commerce/overlays/offer-stack-overlay.html` | Transparent offer list overlay for stacking bundle notes, perks, or sale reminders beside a host scene. | 1920x1080 (Transparent) | PNG | Helpful side stack overlay so beginners can show offer details without overwhelming the camera view. |
+| Creator Commerce Product Spec Overlay | `themes/creator-commerce/overlays/product-spec-overlay.html` | Transparent spec overlay for highlighting features, sizing, or bundle details during product spotlights. | 1920x1080 (Transparent) | PNG | Clean spec card for quick product details during live shopping or merch walkthroughs. |
 
 ### Scenes
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
 | Creator Commerce Break Screen | `themes/creator-commerce/scenes/break-screen.html` | Intermission scene for merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for creator commerce streams. |
+| Creator Commerce Cart Closing Scene | `themes/creator-commerce/scenes/cart-closing-scene.html` | Closing scene for final checkout reminders, last-call coupon pushes, and storefront countdown moments. | 1920x1080 | PNG | An out-of-the-box last call scene for beginners running a live offer window. |
 | Creator Commerce Closing Screen | `themes/creator-commerce/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for creator commerce creators. |
+| Creator Commerce Collection Launch Scene | `themes/creator-commerce/scenes/collection-launch-scene.html` | Launch scene for a new merch line, sponsor collection, or creator storefront release. | 1920x1080 | PNG | A polished launch board for first-time sellers who want their drop to look intentional right away. |
+| Creator Commerce Order Update Scene | `themes/creator-commerce/scenes/order-update-scene.html` | Scene for sharing shipping updates, sold-out notices, and post-drop order information during creator commerce broadcasts. | 1920x1080 | PNG | A nice utility scene for keeping your audience updated after the initial sales push. |
+| Creator Commerce Product Spotlight Scene | `themes/creator-commerce/scenes/product-spotlight-scene.html` | Primary product scene for live demos, merch features, and sponsor item walk-throughs during creator campaigns. | 1920x1080 | PNG | An easy home base for live product callouts that already looks structured and sales-ready. |
 | Creator Commerce Schedule Board Scene | `themes/creator-commerce/scenes/schedule-board.html` | Schedule and run-of-show scene for merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in creator commerce formats. |
 | Creator Commerce Starting Soon Scene | `themes/creator-commerce/scenes/starting-soon.html` | Pre-show countdown scene for merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for creator commerce broadcasts. |
 
@@ -306,12 +315,15 @@ Location: `assets/themes/creator-commerce/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Creator Commerce Deal Flash Transition | `themes/creator-commerce/transitions/deal-flash-transition.html` | Transition asset for moving between product scenes, countdowns, and offer callouts during a commerce stream. | 1920x1080 | PNG | A punchy but still approachable transition for sale moments and merch beats. |
 | Creator Commerce Scene Sweep Transition | `themes/creator-commerce/transitions/scene-sweep.html` | Stylized transition asset for moving between merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many creator commerce use cases. |
 
 ### Widgets
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Creator Commerce Bundle Comparison Card Widget | `themes/creator-commerce/widgets/bundle-comparison-card.html` | Square comparison card for showing what changes between product bundles, tiers, or special offer levels. | 900x900 (Transparent) | PNG | A clear beginner-friendly comparison panel for simple storefront decisions. |
+| Creator Commerce Coupon Card Widget | `themes/creator-commerce/widgets/coupon-card.html` | Square coupon card for surfacing one code, offer window, or checkout reminder during a creator commerce push. | 900x900 (Transparent) | PNG | Easy coupon panel that can sit in a scene or be clipped for socials without any extra work. |
 | Creator Commerce Goal Widget | `themes/creator-commerce/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for creator commerce campaigns or creator milestones. |
 | Creator Commerce Promo Card | `themes/creator-commerce/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in merch launches, affiliate pushes, live shopping, and sponsor-led creator campaigns. | 900x900 (Transparent) | PNG | Reusable square card that carries the creator commerce look across stream scenes, socials, and promo moments. |
 
@@ -670,26 +682,53 @@ Location: `assets/themes/launch-event/`
 
 Location: `assets/themes/live-show/`
 
+### Alerts
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Live Show Community Shoutout Alert | `themes/live-show/alerts/community-shoutout-alert.html` | Animated alert for welcoming chat members, raids, or shout-outs during live-show creator broadcasts. | 800x450 (Transparent) | PNG | Quick on-brand alert with space for a username, channel mention, and call to action. |
+
 ### Lower Thirds
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Live Show Creator Handle Strip | `themes/live-show/lower-thirds/creator-handle-strip.html` | Compact lower third for creator name, handle, and segment title in broad live-show formats. | 1920x260 (Transparent) | PNG | Simple transparent name strip that makes solo streams and guest intros easier for first-time users. |
 | Live Show Guest Intro Lower Third | `themes/live-show/lower-thirds/guest-intro.html` | Guest lower third for interviews, special segments, co-stream collaborators, and podcast call-ins. | 1920x260 (Transparent) | PNG | Elegant guest nameplate with standout accent framing and supporting descriptor copy for creator interviews or roundtable streams. |
 | Live Show Host Intro Lower Third | `themes/live-show/lower-thirds/host-intro.html` | Presenter lower third for podcasts, host-led creator shows, and talk-format broadcasts. | 1920x260 (Transparent) | PNG | Broadcast-style host nameplate with a clean headline lane and subtle accent flare for polished live-show intros. |
+| Live Show Sponsor Mention Lower Third | `themes/live-show/lower-thirds/sponsor-mention-lower-third.html` | Sponsor-friendly lower third for campaign mentions, affiliate links, or quick offer notes during talk-led streams. | 1920x260 (Transparent) | PNG | Easy sponsor callout strip with a readable offer lane and a clean CTA chip. |
+
+### Overlays
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Live Show Comment Callout Panel | `themes/live-show/overlays/comment-callout-panel.html` | Transparent side panel for featuring viewer questions, live comments, or moderator notes during creator streams. | 1920x1080 (Transparent) | PNG | Novice-friendly overlay for highlighting a single viewer comment without reworking the whole scene. |
+| Live Show Corner Camera Frame | `themes/live-show/overlays/corner-camera-frame.html` | Transparent corner frame for a webcam source in solo live-show scenes and commentary formats. | 1920x1080 (Transparent) | PNG | Soft-corner camera frame that gives a beginner stream a polished edge with almost no setup. |
 
 ### Scenes
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
 | Live Show Break Screen | `themes/live-show/scenes/break-screen.html` | General intermission scene for talk-format streams, podcasts, creator panels, and sponsored breaks. | 1920x1080 | PNG | Calm on-brand break screen with timer, segment notes, and a flexible update rail for host-led live shows. |
+| Live Show Call-In Scene | `themes/live-show/scenes/call-in-scene.html` | Two-person call-in layout for remote guest chats, creator interviews, and simple co-host streams. | 1920x1080 | PNG | Out-of-the-box guest scene with clear name lanes and a clean question rail for beginners. |
+| Live Show Community Q&A Scene | `themes/live-show/scenes/community-qa-scene.html` | Question-and-answer scene for creator updates, viewer prompts, and community check-ins. | 1920x1080 | PNG | Beginner-friendly Q-and-A layout with a clear topic zone and a visible prompt list. |
 | Live Show Dual Camera Scene | `themes/live-show/scenes/dual-camera-scene.html` | Broad creator and podcast layout for host-plus-guest interviews, commentary shows, and co-streams. | 1920x1080 | PNG | Polished live-show scene with dual camera windows, episode rundown, and production-style status rail for general creator broadcasts. |
+| Live Show Post-Show Wrap Scene | `themes/live-show/scenes/post-show-wrap-scene.html` | Wrap-up scene for thanking viewers, pointing to socials, and teasing the next stream. | 1920x1080 | PNG | Easy outro scene that keeps the last call to action on screen without extra setup. |
 | Live Show Schedule Scene | `themes/live-show/scenes/schedule-scene.html` | Full-screen upcoming-show board for creator calendars, episode lineups, and weekly broadcast schedules. | 1920x1080 | PNG | Broadcast-inspired schedule scene with day cards, topic prompts, and a clear next-show headline for creator-led programming. |
+| Live Show Solo Showcase Scene | `themes/live-show/scenes/solo-showcase-scene.html` | Solo host scene for updates, hot takes, webcams, and broad creator broadcasts. | 1920x1080 | PNG | Simple full-screen host layout that feels finished even before the user edits anything. |
 | Live Show Sponsor Slate | `themes/live-show/scenes/sponsor-slate.html` | Sponsor or partner acknowledgement scene for podcasts, livestream intermissions, and creator campaigns. | 1920x1080 | PNG | Full-screen sponsor slate with room for campaign copy, featured offer details, and polished live-show branding. |
+
+### Transitions
+
+| Title | File | Use Case | Resolution | Preview | Description |
+| --- | --- | --- | --- | --- | --- |
+| Live Show Soft Swipe Transition | `themes/live-show/transitions/soft-swipe-transition.html` | Gentle transition asset for moving between creator scenes, guest segments, and break layouts. | 1920x1080 | PNG | Clean swipe transition designed to feel polished without screaming over the content. |
 
 ### Widgets
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Live Show Countdown Chip Widget | `themes/live-show/widgets/countdown-chip.html` | Compact countdown widget for guest arrivals, segment starts, or short live-show timers. | 900x900 (Transparent) | PNG | Small timer chip for beginners who want a countdown without rebuilding a whole scene. |
+| Live Show Guest Queue Card Widget | `themes/live-show/widgets/guest-queue-card.html` | Small queue card for listing who is joining the stream next during creator shows and interviews. | 900x900 (Transparent) | PNG | Handy queue widget for beginner hosts managing guests, call-ins, or a mini lineup. |
 | Live Show Promo Card | `themes/live-show/widgets/promo-card.html` | Reusable promo panel for upcoming episodes, merch drops, sponsor moments, and creator announcements. | 900x900 (Transparent) | PNG | Square promo card with a strong headline lane, CTA slot, and supporting bullets for broad creator show packaging. |
 
 ## Maker Garage Suite
@@ -837,6 +876,7 @@ Location: `assets/themes/podcast-studio/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Podcast Studio New Member Alert | `themes/podcast-studio/alerts/new-member-alert.html` | On-screen alert for new members, subscribers, or paid supporters during talk-led shows and podcasts. | 800x450 (Transparent) | PNG | Warm little membership alert that feels polished for podcasts right away. |
 | Podcast Studio Supporter Surge Alert | `themes/podcast-studio/alerts/supporter-surge-alert.html` | Animated alert card for podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for podcast studio broadcasts. |
 
 ### Backgrounds
@@ -849,12 +889,16 @@ Location: `assets/themes/podcast-studio/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Podcast Studio Guest Tag Lower Third | `themes/podcast-studio/lower-thirds/guest-tag.html` | Guest name tag for interviews, panels, and podcast episodes with remote or in-studio guests. | 1920x260 (Transparent) | PNG | Easy guest identifier with a readable role line and creator-friendly defaults. |
 | Podcast Studio Segment Intro Lower Third | `themes/podcast-studio/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for podcast studio segments. |
+| Podcast Studio Segment Tag Lower Third | `themes/podcast-studio/lower-thirds/segment-tag.html` | Segment label lower third for podcasts, live interviews, topic pivots, and chapter markers. | 1920x260 (Transparent) | PNG | Simple chapter strip that makes it easy to label the current section of a show. |
 
 ### Overlays
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Podcast Studio Callout Sidebar Overlay | `themes/podcast-studio/overlays/callout-sidebar.html` | Transparent sidebar for bullet points, sponsor reminders, and topic notes during podcast-style broadcasts. | 1920x1080 (Transparent) | PNG | Straightforward side overlay for users who just need a clean note stack on screen. |
+| Podcast Studio Episode Timer Overlay | `themes/podcast-studio/overlays/episode-timer-overlay.html` | Transparent timer overlay for showing elapsed time, chapter countdowns, or ad break cues during podcasts. | 1920x1080 (Transparent) | PNG | Low-stress overlay for timing segments without cluttering the whole screen. |
 | Podcast Studio Live Frame Overlay | `themes/podcast-studio/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to podcast studio coverage. |
 
 ### Scenes
@@ -863,21 +907,28 @@ Location: `assets/themes/podcast-studio/`
 | --- | --- | --- | --- | --- | --- |
 | Podcast Studio Break Screen | `themes/podcast-studio/scenes/break-screen.html` | Intermission scene for podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for podcast studio streams. |
 | Podcast Studio Closing Screen | `themes/podcast-studio/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for podcast studio creators. |
+| Podcast Studio Listener Mail Scene | `themes/podcast-studio/scenes/listener-mail-scene.html` | Scene for reading listener questions, email prompts, and audience submissions in podcast-style creator shows. | 1920x1080 | PNG | A ready-made layout for mailbag episodes so beginners can just drop in questions and go. |
+| Podcast Studio One-on-One Scene | `themes/podcast-studio/scenes/one-on-one-scene.html` | Two-person conversation layout for interviews, creator collabs, and remote guest podcast episodes. | 1920x1080 | PNG | Clean interview scene for novices who want something that already feels broadcast-ready. |
+| Podcast Studio Post-Show Recap Scene | `themes/podcast-studio/scenes/post-show-recap-scene.html` | Outro scene for recap points, thank-yous, and next-episode calls to action after a podcast recording. | 1920x1080 | PNG | Easy closing layout for new hosts who want a clean sign-off without extra design work. |
 | Podcast Studio Schedule Board Scene | `themes/podcast-studio/scenes/schedule-board.html` | Schedule and run-of-show scene for podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in podcast studio formats. |
 | Podcast Studio Starting Soon Scene | `themes/podcast-studio/scenes/starting-soon.html` | Pre-show countdown scene for podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for podcast studio broadcasts. |
+| Podcast Studio Topic Board Scene | `themes/podcast-studio/scenes/topic-board-scene.html` | Scene with a visible topic stack for creator podcasts, live debates, and episode agendas. | 1920x1080 | PNG | Useful episode board for beginners who want to keep the structure of a long conversation visible. |
 
 ### Transitions
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
 | Podcast Studio Scene Sweep Transition | `themes/podcast-studio/transitions/scene-sweep.html` | Stylized transition asset for moving between podcasts, live interviews, call-in shows, and creator roundtable broadcasts scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many podcast studio use cases. |
+| Podcast Studio Topic Flip Transition | `themes/podcast-studio/transitions/topic-flip-transition.html` | Transition asset for flipping between podcast segments, guest intros, and chapter breaks. | 1920x1080 | PNG | Small broadcast-style flip that helps a beginner show feel more intentional. |
 
 ### Widgets
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
 | Podcast Studio Goal Widget | `themes/podcast-studio/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for podcast studio campaigns or creator milestones. |
+| Podcast Studio Listener Question Card Widget | `themes/podcast-studio/widgets/listener-question-card.html` | Square question card for featuring one viewer question, email, or community comment during a podcast broadcast. | 900x900 (Transparent) | PNG | Drop-in card for audience prompts that works with almost no setup. |
 | Podcast Studio Promo Card | `themes/podcast-studio/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in podcasts, live interviews, call-in shows, and creator roundtable broadcasts. | 900x900 (Transparent) | PNG | Reusable square card that carries the podcast studio look across stream scenes, socials, and promo moments. |
+| Podcast Studio Quote Card Widget | `themes/podcast-studio/widgets/quote-card.html` | Square quote card for highlighting memorable lines, episode takeaways, or guest soundbites during a talk-led show. | 900x900 (Transparent) | PNG | A simple quote panel for repurposing good moments on stream or in clips. |
 
 ## Sports Watchalong Suite
 
@@ -937,6 +988,7 @@ Location: `assets/themes/study-session/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Study Session Pomodoro Alert | `themes/study-session/alerts/pomodoro-alert.html` | Animated alert for kicking off a timed focus block or study sprint. | 1600x900 (Transparent) | PNG | Ready-made focus alert with default study branding and simple headline overrides. |
 | Study Session Supporter Surge Alert | `themes/study-session/alerts/supporter-surge-alert.html` | Animated alert card for study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for study session broadcasts. |
 
 ### Backgrounds
@@ -949,6 +1001,8 @@ Location: `assets/themes/study-session/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Study Session Focus Mode Strip | `themes/study-session/lower-thirds/focus-mode-strip.html` | Lower third for showing the current study mode or session phase. | 1600x900 (Transparent) | PNG | A calm lower third for study streams with simple name, role, and kicker fields. |
+| Study Session Host Nameplate | `themes/study-session/lower-thirds/host-nameplate.html` | Lower third for identifying the study host or accountability partner. | 1600x900 (Transparent) | PNG | Simple nameplate for the person leading the study session. |
 | Study Session Segment Intro Lower Third | `themes/study-session/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for study session segments. |
 
 ### Overlays
@@ -956,6 +1010,8 @@ Location: `assets/themes/study-session/`
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
 | Study Session Live Frame Overlay | `themes/study-session/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to study session coverage. |
+| Study Session Resource Panel | `themes/study-session/overlays/resource-panel.html` | Overlay panel for showing the current resource, chapter, or worksheet. | 1600x900 (Transparent) | PNG | A sidebar for course details and assignment context during study streams. |
+| Study Session Task List Overlay | `themes/study-session/overlays/task-list-overlay.html` | Overlay for displaying the current to-do list or study targets. | 1600x900 (Transparent) | PNG | Compact task board for the next study steps without editing layout code. |
 
 ### Scenes
 
@@ -963,6 +1019,10 @@ Location: `assets/themes/study-session/`
 | --- | --- | --- | --- | --- | --- |
 | Study Session Break Screen | `themes/study-session/scenes/break-screen.html` | Intermission scene for study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for study session streams. |
 | Study Session Closing Screen | `themes/study-session/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for study session creators. |
+| Study Session Coworking Scene | `themes/study-session/scenes/coworking-scene.html` | Complete shared-study scene for co-working and accountability streams. | 1600x900 | PNG | A finished study scene with room for goals, milestones, and the next group task. |
+| Study Session Deep Work Scene | `themes/study-session/scenes/deep-work-scene.html` | Complete scene for solo deep-work or exam prep sessions. | 1600x900 | PNG | A full-screen study scene designed for focus-heavy creator workflows. |
+| Study Session Exam Cram Scene | `themes/study-session/scenes/exam-cram-scene.html` | Complete scene for last-minute review or intensive cram sessions. | 1600x900 | PNG | A high-energy study layout for urgent prep streams and timed reviews. |
+| Study Session Review Session Scene | `themes/study-session/scenes/review-session-scene.html` | Complete scene for grading, checking answers, or reviewing finished work. | 1600x900 | PNG | A polished review layout for walk-throughs, corrections, and answer checking. |
 | Study Session Schedule Board Scene | `themes/study-session/scenes/schedule-board.html` | Schedule and run-of-show scene for study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in study session formats. |
 | Study Session Starting Soon Scene | `themes/study-session/scenes/starting-soon.html` | Pre-show countdown scene for study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for study session broadcasts. |
 
@@ -970,13 +1030,16 @@ Location: `assets/themes/study-session/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Study Session Page Turn Transition | `themes/study-session/transitions/page-turn-transition.html` | Transition card for moving between study sections or segments. | 1600x900 (Transparent) | PNG | A clean study transition for section breaks and lesson changes. |
 | Study Session Scene Sweep Transition | `themes/study-session/transitions/scene-sweep.html` | Stylized transition asset for moving between study streams, coding sessions, coworking rooms, and long-form focus broadcasts scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many study session use cases. |
 
 ### Widgets
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Study Session Goal Checklist Card | `themes/study-session/widgets/goal-checklist-card.html` | Widget card for showing completed and remaining study goals. | 1600x900 (Transparent) | PNG | A ready-made checklist card for quick OBS placement. |
 | Study Session Goal Widget | `themes/study-session/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for study session campaigns or creator milestones. |
+| Study Session Plan Card | `themes/study-session/widgets/session-plan-card.html` | Widget card for showing the stream plan for the current study block. | 1600x900 (Transparent) | PNG | An easy schedule card for study stream structure. |
 | Study Session Promo Card | `themes/study-session/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in study streams, coding sessions, coworking rooms, and long-form focus broadcasts. | 900x900 (Transparent) | PNG | Reusable square card that carries the study session look across stream scenes, socials, and promo moments. |
 
 ## Tournament Desk Suite
@@ -987,6 +1050,7 @@ Location: `assets/themes/tournament-desk/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Tournament Desk Bracket Clinch Alert | `themes/tournament-desk/alerts/bracket-clinch-alert.html` | Animated alert for clinches, upsets, and bracket-breaking moments. | 1600x900 (Transparent) | PNG | A match hype alert with beginner-friendly defaults for esports or sports watch streams. |
 | Tournament Desk Supporter Surge Alert | `themes/tournament-desk/alerts/supporter-surge-alert.html` | Animated alert card for bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for tournament desk broadcasts. |
 
 ### Backgrounds
@@ -999,27 +1063,36 @@ Location: `assets/themes/tournament-desk/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Tournament Desk Map Pick Lower Third | `themes/tournament-desk/lower-thirds/map-pick-lower-third.html` | Lower third for showing current map, mode, or round details. | 1600x900 (Transparent) | PNG | An easy lower third for map picks and match format labels. |
+| Tournament Desk Player Duo Tag | `themes/tournament-desk/lower-thirds/player-duo-tag.html` | Lower third for highlighting a duo, casters, or desk hosts. | 1600x900 (Transparent) | PNG | A fast nameplate for casters, analysts, or featured player duos. |
 | Tournament Desk Segment Intro Lower Third | `themes/tournament-desk/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for tournament desk segments. |
 
 ### Overlays
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Tournament Desk Bracket Sidebar | `themes/tournament-desk/overlays/bracket-sidebar.html` | Overlay sidebar for bracket status and next matches. | 1600x900 (Transparent) | PNG | A bracket sidebar for keeping viewers oriented between matches. |
 | Tournament Desk Live Frame Overlay | `themes/tournament-desk/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to tournament desk coverage. |
+| Tournament Desk Score Ribbon Overlay | `themes/tournament-desk/overlays/score-ribbon-overlay.html` | Overlay ribbon for quick match score updates. | 1600x900 (Transparent) | PNG | A compact scoreboard strip for analysts, co-streams, or watch parties. |
 
 ### Scenes
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Tournament Desk Analyst Desk Scene | `themes/tournament-desk/scenes/analyst-desk-scene.html` | Full scene for pre-show desk segments and tactical analysis. | 1600x900 | PNG | A desk layout with room for notes, topics, and the next segment. |
 | Tournament Desk Break Screen | `themes/tournament-desk/scenes/break-screen.html` | Intermission scene for bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for tournament desk streams. |
 | Tournament Desk Closing Screen | `themes/tournament-desk/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for tournament desk creators. |
+| Tournament Desk Finals Countdown Scene | `themes/tournament-desk/scenes/finals-countdown-scene.html` | Full scene for waiting on a finals match or main event start. | 1600x900 | PNG | A complete countdown scene for the biggest part of the bracket. |
+| Tournament Desk Post Match Recap Scene | `themes/tournament-desk/scenes/post-match-recap-scene.html` | Full scene for desk recaps, highlights, and post-match conversation. | 1600x900 | PNG | A recap layout for winner interviews and analysis after the set ends. |
 | Tournament Desk Schedule Board Scene | `themes/tournament-desk/scenes/schedule-board.html` | Schedule and run-of-show scene for bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in tournament desk formats. |
 | Tournament Desk Starting Soon Scene | `themes/tournament-desk/scenes/starting-soon.html` | Pre-show countdown scene for bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for tournament desk broadcasts. |
+| Tournament Desk Watch Party Scene | `themes/tournament-desk/scenes/watch-party-scene.html` | Full scene for community co-streams and watch parties. | 1600x900 | PNG | A clean watch-party scene for reactions, predictions, and live community chatter. |
 
 ### Transitions
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Tournament Desk Arena Flash Transition | `themes/tournament-desk/transitions/arena-flash-transition.html` | Transition splash for switching between desk, gameplay, and replays. | 1600x900 (Transparent) | PNG | A sharp, high-energy transition for tournament streams. |
 | Tournament Desk Scene Sweep Transition | `themes/tournament-desk/transitions/scene-sweep.html` | Stylized transition asset for moving between bracket shows, esports desks, tournament recaps, and match-day creator coverage scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many tournament desk use cases. |
 
 ### Widgets
@@ -1027,7 +1100,9 @@ Location: `assets/themes/tournament-desk/`
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
 | Tournament Desk Goal Widget | `themes/tournament-desk/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for tournament desk campaigns or creator milestones. |
+| Tournament Desk Matchup Card | `themes/tournament-desk/widgets/matchup-card.html` | Widget card for showing the featured matchup at a glance. | 1600x900 (Transparent) | PNG | A compact matchup widget for schedule bars or pre-show stacks. |
 | Tournament Desk Promo Card | `themes/tournament-desk/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in bracket shows, esports desks, tournament recaps, and match-day creator coverage. | 900x900 (Transparent) | PNG | Reusable square card that carries the tournament desk look across stream scenes, socials, and promo moments. |
+| Tournament Desk Schedule Card | `themes/tournament-desk/widgets/schedule-card.html` | Widget card for showing the next tournament segments. | 1600x900 (Transparent) | PNG | A simple schedule widget for novice watch-party hosts. |
 
 ## Travel Vlog Suite
 
@@ -1037,6 +1112,7 @@ Location: `assets/themes/travel-vlog/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Travel Vlog Checkpoint Alert | `themes/travel-vlog/alerts/checkpoint-alert.html` | Animated alert for new city arrivals, route checkpoints, or travel milestones. | 1600x900 (Transparent) | PNG | A fresh travel alert with built-in milestone text for vlog and road-trip streams. |
 | Travel Vlog Supporter Surge Alert | `themes/travel-vlog/alerts/supporter-surge-alert.html` | Animated alert card for IRL streams, travel updates, walking tours, and creator-led city guides. | 800x450 (Transparent) | PNG | Compact alert with layered motion and white-label framing for travel vlog broadcasts. |
 
 ### Backgrounds
@@ -1049,13 +1125,17 @@ Location: `assets/themes/travel-vlog/`
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Travel Vlog Location Tag | `themes/travel-vlog/lower-thirds/location-tag.html` | Lower third for displaying current location or neighborhood. | 1600x900 (Transparent) | PNG | A direct location label for city walkthroughs and destination streams. |
 | Travel Vlog Segment Intro Lower Third | `themes/travel-vlog/lower-thirds/segment-intro.html` | Reusable lower third for names, topics, or CTAs in IRL streams, travel updates, walking tours, and creator-led city guides. | 1920x260 (Transparent) | PNG | Transparent lower third with a strong headline lane and flexible copy blocks for travel vlog segments. |
+| Travel Vlog Sponsor Route Lower Third | `themes/travel-vlog/lower-thirds/sponsor-route-lower-third.html` | Lower third for route sponsors, hosted stays, or gear partners. | 1600x900 (Transparent) | PNG | A ready sponsor callout strip for travel creators who need tasteful promo space. |
 
 ### Overlays
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Travel Vlog Destination Board Overlay | `themes/travel-vlog/overlays/destination-board-overlay.html` | Overlay board for showing current stop and the next destination. | 1600x900 (Transparent) | PNG | An itinerary-style overlay that keeps viewers oriented on the journey. |
 | Travel Vlog Live Frame Overlay | `themes/travel-vlog/overlays/live-frame.html` | Full-frame overlay for commentary, facecam, or main presentation scenes in IRL streams, travel updates, walking tours, and creator-led city guides. | 1920x1080 (Transparent) | PNG | Transparent live frame with a modular header and sidebar notes tailored to travel vlog coverage. |
+| Travel Vlog Trip Stats Overlay | `themes/travel-vlog/overlays/trip-stats-overlay.html` | Overlay for distance, budget, or trip progress statistics. | 1600x900 (Transparent) | PNG | A compact travel stats box with legible milestones and progress cues. |
 
 ### Scenes
 
@@ -1063,13 +1143,18 @@ Location: `assets/themes/travel-vlog/`
 | --- | --- | --- | --- | --- | --- |
 | Travel Vlog Break Screen | `themes/travel-vlog/scenes/break-screen.html` | Intermission scene for IRL streams, travel updates, walking tours, and creator-led city guides. | 1920x1080 | PNG | Break layout with timer space, helper copy, and a structured side rail for travel vlog streams. |
 | Travel Vlog Closing Screen | `themes/travel-vlog/scenes/closing-screen.html` | Wrap-up scene for sign-offs, thank-yous, and next-step CTAs in IRL streams, travel updates, walking tours, and creator-led city guides. | 1920x1080 | PNG | Closing scene that keeps the final call to action readable and polished for travel vlog creators. |
+| Travel Vlog Day Plan Scene | `themes/travel-vlog/scenes/day-plan-scene.html` | Full scene for the day route plan before leaving a stop. | 1600x900 | PNG | A full-screen travel planning scene that is already populated with useful defaults. |
+| Travel Vlog Gear Breakdown Scene | `themes/travel-vlog/scenes/gear-breakdown-scene.html` | Full scene for talking through camera gear, bags, or packing choices. | 1600x900 | PNG | A ready-made layout for packing chats and equipment walk-throughs. |
+| Travel Vlog Live Walkthrough Scene | `themes/travel-vlog/scenes/live-walkthrough-scene.html` | Full scene for walking tours, market visits, and live destination exploration. | 1600x900 | PNG | A flexible travel scene for real-time exploration streams. |
 | Travel Vlog Schedule Board Scene | `themes/travel-vlog/scenes/schedule-board.html` | Schedule and run-of-show scene for IRL streams, travel updates, walking tours, and creator-led city guides. | 1920x1080 | PNG | Planner-style scene for outlining a live session, route, or milestone ladder in travel vlog formats. |
 | Travel Vlog Starting Soon Scene | `themes/travel-vlog/scenes/starting-soon.html` | Pre-show countdown scene for IRL streams, travel updates, walking tours, and creator-led city guides. | 1920x1080 | PNG | Starting-soon scene with timer-ready framing and flexible agenda copy for travel vlog broadcasts. |
+| Travel Vlog Sunset Wrap Scene | `themes/travel-vlog/scenes/sunset-wrap-scene.html` | Full scene for ending the day with a recap and tomorrow preview. | 1600x900 | PNG | A calm wrap-up scene for travel day recaps and next-stop teases. |
 
 ### Transitions
 
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
+| Travel Vlog Postcard Sweep Transition | `themes/travel-vlog/transitions/postcard-sweep-transition.html` | Transition splash for moving between travel stops or route segments. | 1600x900 (Transparent) | PNG | A postcard-inspired transition for route changes and scene swaps. |
 | Travel Vlog Scene Sweep Transition | `themes/travel-vlog/transitions/scene-sweep.html` | Stylized transition asset for moving between IRL streams, travel updates, walking tours, and creator-led city guides scenes. | 1920x1080 | PNG | Bold sweep transition with enough motion to sell a scene change while staying adaptable to many travel vlog use cases. |
 
 ### Widgets
@@ -1077,6 +1162,8 @@ Location: `assets/themes/travel-vlog/`
 | Title | File | Use Case | Resolution | Preview | Description |
 | --- | --- | --- | --- | --- | --- |
 | Travel Vlog Goal Widget | `themes/travel-vlog/widgets/goal-widget.html` | Progress widget for milestones, checkpoints, or audience targets in IRL streams, travel updates, walking tours, and creator-led city guides. | 900x260 (Transparent) | PNG | Compact goal tracker with fast text overrides for travel vlog campaigns or creator milestones. |
+| Travel Vlog Itinerary Card | `themes/travel-vlog/widgets/itinerary-card.html` | Widget card for showing the next travel stops in sequence. | 1600x900 (Transparent) | PNG | A simple itinerary card for keeping travel viewers oriented. |
+| Travel Vlog Packing List Card | `themes/travel-vlog/widgets/packing-list-card.html` | Widget card for packing lists and gear reminders before a route day. | 1600x900 (Transparent) | PNG | A grab-and-go packing widget for travel creators. |
 | Travel Vlog Promo Card | `themes/travel-vlog/widgets/promo-card.html` | Square promo panel for announcements, sponsor notes, or segment teases in IRL streams, travel updates, walking tours, and creator-led city guides. | 900x900 (Transparent) | PNG | Reusable square card that carries the travel vlog look across stream scenes, socials, and promo moments. |
 
 ## Vertical Creator Suite

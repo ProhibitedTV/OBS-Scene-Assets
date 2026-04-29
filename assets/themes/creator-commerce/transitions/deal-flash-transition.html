@@ -1,0 +1,133 @@
+<!--
+Title: Creator Commerce Deal Flash Transition
+Category: transitions
+Collection: creator-commerce
+UseCase: Transition asset for moving between product scenes, countdowns, and offer callouts during a commerce stream.
+Resolution: 1920x1080
+Transparent: false
+Description: A punchy but still approachable transition for sale moments and merch beats.
+Tags: creator-commerce, transitions, deal-flash-transition, white-label, easy-mode, novice-friendly
+Preview: previews/themes/creator-commerce/transitions/deal-flash-transition.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Creator Commerce Deal Flash Transition</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #fb7185;
+      --accent-2: #8b5cf6;
+      --accent-3: #f59e0b;
+      --text: #fff7fb;
+      --muted: rgba(251, 207, 232, 0.82);
+      --panel: rgba(38, 10, 28, 0.86);
+      --line: rgba(251, 207, 232, 0.16);
+      --bg-1: #130712;
+      --bg-2: #2f1130;
+      --bg-3: #22130b;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top left, color-mix(in srgb, var(--accent) 24%, transparent), transparent 32%), radial-gradient(circle at bottom right, color-mix(in srgb, var(--accent-2) 18%, transparent), transparent 28%), linear-gradient(150deg, var(--bg-1), var(--bg-2) 58%, var(--bg-3));
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      text-transform: uppercase;
+    }
+
+    .panel {
+      position: relative;
+      width: min(86vw, 900px);
+      padding: 3rem 2rem;
+      border-radius: 2rem;
+      border: 2px solid color-mix(in srgb, var(--accent) 50%, transparent);
+      background: color-mix(in srgb, var(--panel) 82%, transparent);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 24px 56px rgba(2, 8, 23, 0.34);
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .panel::before,
+    .panel::after {
+      content: '';
+      position: absolute;
+      inset: -24%;
+      background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 25%, transparent), transparent);
+      animation: sweep 2.1s ease-in-out infinite;
+      transform: rotate(16deg);
+    }
+
+    .panel::after {
+      background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent-2) 20%, transparent), transparent);
+      animation-delay: 0.55s;
+      transform: rotate(-16deg);
+    }
+
+    h1 {
+      position: relative;
+      margin: 0;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      letter-spacing: 0.18em;
+    }
+
+    p {
+      position: relative;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      letter-spacing: 0.22em;
+    }
+
+    @keyframes sweep {
+      0% { transform: translateX(-45%) rotate(16deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(45%) rotate(16deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1 data-title>Deal flash</h1>
+    <p data-headline>Use between spotlight scenes, bundles, and cart close reminders.</p>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const channel = params.get('channel');
+    const username = params.get('username');
+    const handle = params.get('handle');
+    const cta = params.get('cta');
+    const timer = params.get('timer');
+    const accent = params.get('accent');
+    const items = params.get('items');
+
+    if (title) document.querySelectorAll('[data-title]').forEach((node) => node.textContent = title);
+    if (subtitle) document.querySelectorAll('[data-subtitle]').forEach((node) => node.textContent = subtitle);
+    if (headline) document.querySelectorAll('[data-headline]').forEach((node) => node.textContent = headline);
+    if (channel) document.querySelectorAll('[data-channel]').forEach((node) => node.textContent = channel);
+    if (username) document.querySelectorAll('[data-username]').forEach((node) => node.textContent = username);
+    if (handle) document.querySelectorAll('[data-handle]').forEach((node) => node.textContent = handle);
+    if (cta) document.querySelectorAll('[data-cta]').forEach((node) => node.textContent = cta);
+    if (timer) document.querySelectorAll('[data-timer]').forEach((node) => node.textContent = timer);
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-2', accent);
+      document.documentElement.style.setProperty('--accent-3', accent);
+    }
+  </script>
+</body>
+</html>

@@ -1,10 +1,10 @@
 {
   "summary": {
-    "assetCount": 315,
+    "assetCount": 387,
     "collections": 27,
     "assetTypes": 8,
     "categories": 8,
-    "previewCount": 315,
+    "previewCount": 387,
     "previewCoveragePercent": 100
   },
   "assets": [
@@ -3082,6 +3082,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/creator-commerce/alerts/offer-drop-alert.html",
+      "title": "Creator Commerce Offer Drop Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Animated alert for a fresh offer, coupon drop, bundle launch, or product mention during creator commerce streams.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Novice-friendly sale alert that works out of the box for sponsor moments and merch pushes.",
+      "tags": [
+        "creator-commerce",
+        "alerts",
+        "offer-drop-alert",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/alerts/offer-drop-alert.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/creator-commerce/alerts/supporter-surge-alert.html",
       "title": "Creator Commerce Supporter Surge Alert",
       "category": "alerts",
@@ -3139,6 +3164,56 @@
         "creator-commerce"
       ],
       "preview": "previews/themes/creator-commerce/backgrounds/ambient-loop.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/creator-commerce/lower-thirds/offer-lower-third.html",
+      "title": "Creator Commerce Offer Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Offer-focused lower third for sale windows, coupon codes, and sponsor CTA moments during commerce streams.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Fast little offer strip that lets a beginner surface the discount without redesigning anything.",
+      "tags": [
+        "creator-commerce",
+        "lower-thirds",
+        "offer-lower-third",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/lower-thirds/offer-lower-third.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/creator-commerce/lower-thirds/product-callout-lower-third.html",
+      "title": "Creator Commerce Product Callout Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Product mention lower third for featuring one item, collection, or merch highlight during a creator campaign.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Simple product spotlight strip for users who just need one clean callout line.",
+      "tags": [
+        "creator-commerce",
+        "lower-thirds",
+        "product-callout-lower-third",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/lower-thirds/product-callout-lower-third.png",
       "previewStatus": "image"
     },
     {
@@ -3203,6 +3278,56 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/creator-commerce/overlays/offer-stack-overlay.html",
+      "title": "Creator Commerce Offer Stack Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Transparent offer list overlay for stacking bundle notes, perks, or sale reminders beside a host scene.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Helpful side stack overlay so beginners can show offer details without overwhelming the camera view.",
+      "tags": [
+        "creator-commerce",
+        "overlays",
+        "offer-stack-overlay",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/overlays/offer-stack-overlay.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/creator-commerce/overlays/product-spec-overlay.html",
+      "title": "Creator Commerce Product Spec Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Transparent spec overlay for highlighting features, sizing, or bundle details during product spotlights.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Clean spec card for quick product details during live shopping or merch walkthroughs.",
+      "tags": [
+        "creator-commerce",
+        "overlays",
+        "product-spec-overlay",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/overlays/product-spec-overlay.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/creator-commerce/scenes/break-screen.html",
       "title": "Creator Commerce Break Screen",
       "category": "scenes",
@@ -3233,6 +3358,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/creator-commerce/scenes/cart-closing-scene.html",
+      "title": "Creator Commerce Cart Closing Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Closing scene for final checkout reminders, last-call coupon pushes, and storefront countdown moments.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "An out-of-the-box last call scene for beginners running a live offer window.",
+      "tags": [
+        "creator-commerce",
+        "scenes",
+        "cart-closing-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/scenes/cart-closing-scene.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/creator-commerce/scenes/closing-screen.html",
       "title": "Creator Commerce Closing Screen",
       "category": "scenes",
@@ -3260,6 +3410,81 @@
         "creator-commerce"
       ],
       "preview": "previews/themes/creator-commerce/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/creator-commerce/scenes/collection-launch-scene.html",
+      "title": "Creator Commerce Collection Launch Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Launch scene for a new merch line, sponsor collection, or creator storefront release.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A polished launch board for first-time sellers who want their drop to look intentional right away.",
+      "tags": [
+        "creator-commerce",
+        "scenes",
+        "collection-launch-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/scenes/collection-launch-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/creator-commerce/scenes/order-update-scene.html",
+      "title": "Creator Commerce Order Update Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Scene for sharing shipping updates, sold-out notices, and post-drop order information during creator commerce broadcasts.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A nice utility scene for keeping your audience updated after the initial sales push.",
+      "tags": [
+        "creator-commerce",
+        "scenes",
+        "order-update-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/scenes/order-update-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/creator-commerce/scenes/product-spotlight-scene.html",
+      "title": "Creator Commerce Product Spotlight Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Primary product scene for live demos, merch features, and sponsor item walk-throughs during creator campaigns.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "An easy home base for live product callouts that already looks structured and sales-ready.",
+      "tags": [
+        "creator-commerce",
+        "scenes",
+        "product-spotlight-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/scenes/product-spotlight-scene.png",
       "previewStatus": "image"
     },
     {
@@ -3324,6 +3549,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/creator-commerce/transitions/deal-flash-transition.html",
+      "title": "Creator Commerce Deal Flash Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Transition asset for moving between product scenes, countdowns, and offer callouts during a commerce stream.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A punchy but still approachable transition for sale moments and merch beats.",
+      "tags": [
+        "creator-commerce",
+        "transitions",
+        "deal-flash-transition",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/transitions/deal-flash-transition.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/creator-commerce/transitions/scene-sweep.html",
       "title": "Creator Commerce Scene Sweep Transition",
       "category": "transitions",
@@ -3351,6 +3601,56 @@
         "creator-commerce"
       ],
       "preview": "previews/themes/creator-commerce/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/creator-commerce/widgets/bundle-comparison-card.html",
+      "title": "Creator Commerce Bundle Comparison Card Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Square comparison card for showing what changes between product bundles, tiers, or special offer levels.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "A clear beginner-friendly comparison panel for simple storefront decisions.",
+      "tags": [
+        "creator-commerce",
+        "widgets",
+        "bundle-comparison-card",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/widgets/bundle-comparison-card.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/creator-commerce/widgets/coupon-card.html",
+      "title": "Creator Commerce Coupon Card Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "creator-commerce",
+      "collectionLabel": "Creator Commerce Suite",
+      "useCase": "Square coupon card for surfacing one code, offer window, or checkout reminder during a creator commerce push.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Easy coupon panel that can sit in a scene or be clipped for socials without any extra work.",
+      "tags": [
+        "creator-commerce",
+        "widgets",
+        "coupon-card",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/creator-commerce/widgets/coupon-card.png",
       "previewStatus": "image"
     },
     {
@@ -6029,6 +6329,56 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/live-show/alerts/community-shoutout-alert.html",
+      "title": "Live Show Community Shoutout Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Animated alert for welcoming chat members, raids, or shout-outs during live-show creator broadcasts.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Quick on-brand alert with space for a username, channel mention, and call to action.",
+      "tags": [
+        "live-show",
+        "alerts",
+        "community-shoutout-alert",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/alerts/community-shoutout-alert.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/live-show/lower-thirds/creator-handle-strip.html",
+      "title": "Live Show Creator Handle Strip",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Compact lower third for creator name, handle, and segment title in broad live-show formats.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Simple transparent name strip that makes solo streams and guest intros easier for first-time users.",
+      "tags": [
+        "live-show",
+        "lower-thirds",
+        "creator-handle-strip",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/lower-thirds/creator-handle-strip.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/live-show/lower-thirds/guest-intro.html",
       "title": "Live Show Guest Intro Lower Third",
       "category": "lower-thirds",
@@ -6081,6 +6431,81 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/live-show/lower-thirds/sponsor-mention-lower-third.html",
+      "title": "Live Show Sponsor Mention Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Sponsor-friendly lower third for campaign mentions, affiliate links, or quick offer notes during talk-led streams.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Easy sponsor callout strip with a readable offer lane and a clean CTA chip.",
+      "tags": [
+        "live-show",
+        "lower-thirds",
+        "sponsor-mention-lower-third",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/lower-thirds/sponsor-mention-lower-third.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/live-show/overlays/comment-callout-panel.html",
+      "title": "Live Show Comment Callout Panel",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Transparent side panel for featuring viewer questions, live comments, or moderator notes during creator streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Novice-friendly overlay for highlighting a single viewer comment without reworking the whole scene.",
+      "tags": [
+        "live-show",
+        "overlays",
+        "comment-callout-panel",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/overlays/comment-callout-panel.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/live-show/overlays/corner-camera-frame.html",
+      "title": "Live Show Corner Camera Frame",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Transparent corner frame for a webcam source in solo live-show scenes and commentary formats.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Soft-corner camera frame that gives a beginner stream a polished edge with almost no setup.",
+      "tags": [
+        "live-show",
+        "overlays",
+        "corner-camera-frame",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/overlays/corner-camera-frame.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/live-show/scenes/break-screen.html",
       "title": "Live Show Break Screen",
       "category": "scenes",
@@ -6104,6 +6529,56 @@
         "talk-show"
       ],
       "preview": "previews/themes/live-show/scenes/break-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/live-show/scenes/call-in-scene.html",
+      "title": "Live Show Call-In Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Two-person call-in layout for remote guest chats, creator interviews, and simple co-host streams.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Out-of-the-box guest scene with clear name lanes and a clean question rail for beginners.",
+      "tags": [
+        "live-show",
+        "scenes",
+        "call-in-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/scenes/call-in-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/live-show/scenes/community-qa-scene.html",
+      "title": "Live Show Community Q&A Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Question-and-answer scene for creator updates, viewer prompts, and community check-ins.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Beginner-friendly Q-and-A layout with a clear topic zone and a visible prompt list.",
+      "tags": [
+        "live-show",
+        "scenes",
+        "community-qa-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/scenes/community-qa-scene.png",
       "previewStatus": "image"
     },
     {
@@ -6134,6 +6609,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/live-show/scenes/post-show-wrap-scene.html",
+      "title": "Live Show Post-Show Wrap Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Wrap-up scene for thanking viewers, pointing to socials, and teasing the next stream.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Easy outro scene that keeps the last call to action on screen without extra setup.",
+      "tags": [
+        "live-show",
+        "scenes",
+        "post-show-wrap-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/scenes/post-show-wrap-scene.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/live-show/scenes/schedule-scene.html",
       "title": "Live Show Schedule Scene",
       "category": "scenes",
@@ -6161,6 +6661,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/live-show/scenes/solo-showcase-scene.html",
+      "title": "Live Show Solo Showcase Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Solo host scene for updates, hot takes, webcams, and broad creator broadcasts.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Simple full-screen host layout that feels finished even before the user edits anything.",
+      "tags": [
+        "live-show",
+        "scenes",
+        "solo-showcase-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/scenes/solo-showcase-scene.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/live-show/scenes/sponsor-slate.html",
       "title": "Live Show Sponsor Slate",
       "category": "scenes",
@@ -6185,6 +6710,81 @@
         "creator"
       ],
       "preview": "previews/themes/live-show/scenes/sponsor-slate.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/live-show/transitions/soft-swipe-transition.html",
+      "title": "Live Show Soft Swipe Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Gentle transition asset for moving between creator scenes, guest segments, and break layouts.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Clean swipe transition designed to feel polished without screaming over the content.",
+      "tags": [
+        "live-show",
+        "transitions",
+        "soft-swipe-transition",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/transitions/soft-swipe-transition.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/live-show/widgets/countdown-chip.html",
+      "title": "Live Show Countdown Chip Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Compact countdown widget for guest arrivals, segment starts, or short live-show timers.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Small timer chip for beginners who want a countdown without rebuilding a whole scene.",
+      "tags": [
+        "live-show",
+        "widgets",
+        "countdown-chip",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/widgets/countdown-chip.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/live-show/widgets/guest-queue-card.html",
+      "title": "Live Show Guest Queue Card Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "live-show",
+      "collectionLabel": "Live Show Suite",
+      "useCase": "Small queue card for listing who is joining the stream next during creator shows and interviews.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Handy queue widget for beginner hosts managing guests, call-ins, or a mini lineup.",
+      "tags": [
+        "live-show",
+        "widgets",
+        "guest-queue-card",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/live-show/widgets/guest-queue-card.png",
       "previewStatus": "image"
     },
     {
@@ -7116,6 +7716,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/podcast-studio/alerts/new-member-alert.html",
+      "title": "Podcast Studio New Member Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "On-screen alert for new members, subscribers, or paid supporters during talk-led shows and podcasts.",
+      "resolution": "800x450",
+      "width": 800,
+      "height": 450,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Warm little membership alert that feels polished for podcasts right away.",
+      "tags": [
+        "podcast-studio",
+        "alerts",
+        "new-member-alert",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/alerts/new-member-alert.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/podcast-studio/alerts/supporter-surge-alert.html",
       "title": "Podcast Studio Supporter Surge Alert",
       "category": "alerts",
@@ -7176,6 +7801,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/podcast-studio/lower-thirds/guest-tag.html",
+      "title": "Podcast Studio Guest Tag Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Guest name tag for interviews, panels, and podcast episodes with remote or in-studio guests.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Easy guest identifier with a readable role line and creator-friendly defaults.",
+      "tags": [
+        "podcast-studio",
+        "lower-thirds",
+        "guest-tag",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/lower-thirds/guest-tag.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/podcast-studio/lower-thirds/segment-intro.html",
       "title": "Podcast Studio Segment Intro Lower Third",
       "category": "lower-thirds",
@@ -7204,6 +7854,81 @@
         "podcast-studio"
       ],
       "preview": "previews/themes/podcast-studio/lower-thirds/segment-intro.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/podcast-studio/lower-thirds/segment-tag.html",
+      "title": "Podcast Studio Segment Tag Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Segment label lower third for podcasts, live interviews, topic pivots, and chapter markers.",
+      "resolution": "1920x260",
+      "width": 1920,
+      "height": 260,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Simple chapter strip that makes it easy to label the current section of a show.",
+      "tags": [
+        "podcast-studio",
+        "lower-thirds",
+        "segment-tag",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/lower-thirds/segment-tag.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/podcast-studio/overlays/callout-sidebar.html",
+      "title": "Podcast Studio Callout Sidebar Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Transparent sidebar for bullet points, sponsor reminders, and topic notes during podcast-style broadcasts.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Straightforward side overlay for users who just need a clean note stack on screen.",
+      "tags": [
+        "podcast-studio",
+        "overlays",
+        "callout-sidebar",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/overlays/callout-sidebar.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/podcast-studio/overlays/episode-timer-overlay.html",
+      "title": "Podcast Studio Episode Timer Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Transparent timer overlay for showing elapsed time, chapter countdowns, or ad break cues during podcasts.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Low-stress overlay for timing segments without cluttering the whole screen.",
+      "tags": [
+        "podcast-studio",
+        "overlays",
+        "episode-timer-overlay",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/overlays/episode-timer-overlay.png",
       "previewStatus": "image"
     },
     {
@@ -7297,6 +8022,81 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/podcast-studio/scenes/listener-mail-scene.html",
+      "title": "Podcast Studio Listener Mail Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Scene for reading listener questions, email prompts, and audience submissions in podcast-style creator shows.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A ready-made layout for mailbag episodes so beginners can just drop in questions and go.",
+      "tags": [
+        "podcast-studio",
+        "scenes",
+        "listener-mail-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/scenes/listener-mail-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/podcast-studio/scenes/one-on-one-scene.html",
+      "title": "Podcast Studio One-on-One Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Two-person conversation layout for interviews, creator collabs, and remote guest podcast episodes.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Clean interview scene for novices who want something that already feels broadcast-ready.",
+      "tags": [
+        "podcast-studio",
+        "scenes",
+        "one-on-one-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/scenes/one-on-one-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/podcast-studio/scenes/post-show-recap-scene.html",
+      "title": "Podcast Studio Post-Show Recap Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Outro scene for recap points, thank-yous, and next-episode calls to action after a podcast recording.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Easy closing layout for new hosts who want a clean sign-off without extra design work.",
+      "tags": [
+        "podcast-studio",
+        "scenes",
+        "post-show-recap-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/scenes/post-show-recap-scene.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/podcast-studio/scenes/schedule-board.html",
       "title": "Podcast Studio Schedule Board Scene",
       "category": "scenes",
@@ -7358,6 +8158,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/podcast-studio/scenes/topic-board-scene.html",
+      "title": "Podcast Studio Topic Board Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Scene with a visible topic stack for creator podcasts, live debates, and episode agendas.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Useful episode board for beginners who want to keep the structure of a long conversation visible.",
+      "tags": [
+        "podcast-studio",
+        "scenes",
+        "topic-board-scene",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/scenes/topic-board-scene.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/podcast-studio/transitions/scene-sweep.html",
       "title": "Podcast Studio Scene Sweep Transition",
       "category": "transitions",
@@ -7385,6 +8210,31 @@
         "podcast-studio"
       ],
       "preview": "previews/themes/podcast-studio/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/podcast-studio/transitions/topic-flip-transition.html",
+      "title": "Podcast Studio Topic Flip Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Transition asset for flipping between podcast segments, guest intros, and chapter breaks.",
+      "resolution": "1920x1080",
+      "width": 1920,
+      "height": 1080,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "Small broadcast-style flip that helps a beginner show feel more intentional.",
+      "tags": [
+        "podcast-studio",
+        "transitions",
+        "topic-flip-transition",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/transitions/topic-flip-transition.png",
       "previewStatus": "image"
     },
     {
@@ -7418,6 +8268,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/podcast-studio/widgets/listener-question-card.html",
+      "title": "Podcast Studio Listener Question Card Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Square question card for featuring one viewer question, email, or community comment during a podcast broadcast.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "Drop-in card for audience prompts that works with almost no setup.",
+      "tags": [
+        "podcast-studio",
+        "widgets",
+        "listener-question-card",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/widgets/listener-question-card.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/podcast-studio/widgets/promo-card.html",
       "title": "Podcast Studio Promo Card",
       "category": "widgets",
@@ -7445,6 +8320,31 @@
         "podcast-studio"
       ],
       "preview": "previews/themes/podcast-studio/widgets/promo-card.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/podcast-studio/widgets/quote-card.html",
+      "title": "Podcast Studio Quote Card Widget",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "podcast-studio",
+      "collectionLabel": "Podcast Studio Suite",
+      "useCase": "Square quote card for highlighting memorable lines, episode takeaways, or guest soundbites during a talk-led show.",
+      "resolution": "900x900",
+      "width": 900,
+      "height": 900,
+      "aspect": "square",
+      "transparent": true,
+      "description": "A simple quote panel for repurposing good moments on stream or in clips.",
+      "tags": [
+        "podcast-studio",
+        "widgets",
+        "quote-card",
+        "white-label",
+        "easy-mode",
+        "novice-friendly"
+      ],
+      "preview": "previews/themes/podcast-studio/widgets/quote-card.png",
       "previewStatus": "image"
     },
     {
@@ -7780,6 +8680,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/study-session/alerts/pomodoro-alert.html",
+      "title": "Study Session Pomodoro Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Animated alert for kicking off a timed focus block or study sprint.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Ready-made focus alert with default study branding and simple headline overrides.",
+      "tags": [
+        "study-session",
+        "alerts",
+        "pomodoro-alert",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/alerts/pomodoro-alert.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/study-session/alerts/supporter-surge-alert.html",
       "title": "Study Session Supporter Surge Alert",
       "category": "alerts",
@@ -7837,6 +8762,56 @@
         "study-session"
       ],
       "preview": "previews/themes/study-session/backgrounds/ambient-loop.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/study-session/lower-thirds/focus-mode-strip.html",
+      "title": "Study Session Focus Mode Strip",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Lower third for showing the current study mode or session phase.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A calm lower third for study streams with simple name, role, and kicker fields.",
+      "tags": [
+        "study-session",
+        "lower-thirds",
+        "focus-mode-strip",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/lower-thirds/focus-mode-strip.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/study-session/lower-thirds/host-nameplate.html",
+      "title": "Study Session Host Nameplate",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Lower third for identifying the study host or accountability partner.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Simple nameplate for the person leading the study session.",
+      "tags": [
+        "study-session",
+        "lower-thirds",
+        "host-nameplate",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/lower-thirds/host-nameplate.png",
       "previewStatus": "image"
     },
     {
@@ -7901,6 +8876,56 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/study-session/overlays/resource-panel.html",
+      "title": "Study Session Resource Panel",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Overlay panel for showing the current resource, chapter, or worksheet.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A sidebar for course details and assignment context during study streams.",
+      "tags": [
+        "study-session",
+        "overlays",
+        "resource-panel",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/overlays/resource-panel.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/study-session/overlays/task-list-overlay.html",
+      "title": "Study Session Task List Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Overlay for displaying the current to-do list or study targets.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "Compact task board for the next study steps without editing layout code.",
+      "tags": [
+        "study-session",
+        "overlays",
+        "task-list-overlay",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/overlays/task-list-overlay.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/study-session/scenes/break-screen.html",
       "title": "Study Session Break Screen",
       "category": "scenes",
@@ -7958,6 +8983,106 @@
         "study-session"
       ],
       "preview": "previews/themes/study-session/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/study-session/scenes/coworking-scene.html",
+      "title": "Study Session Coworking Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Complete shared-study scene for co-working and accountability streams.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A finished study scene with room for goals, milestones, and the next group task.",
+      "tags": [
+        "study-session",
+        "scenes",
+        "coworking-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/scenes/coworking-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/study-session/scenes/deep-work-scene.html",
+      "title": "Study Session Deep Work Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Complete scene for solo deep-work or exam prep sessions.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A full-screen study scene designed for focus-heavy creator workflows.",
+      "tags": [
+        "study-session",
+        "scenes",
+        "deep-work-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/scenes/deep-work-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/study-session/scenes/exam-cram-scene.html",
+      "title": "Study Session Exam Cram Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Complete scene for last-minute review or intensive cram sessions.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A high-energy study layout for urgent prep streams and timed reviews.",
+      "tags": [
+        "study-session",
+        "scenes",
+        "exam-cram-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/scenes/exam-cram-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/study-session/scenes/review-session-scene.html",
+      "title": "Study Session Review Session Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Complete scene for grading, checking answers, or reviewing finished work.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A polished review layout for walk-throughs, corrections, and answer checking.",
+      "tags": [
+        "study-session",
+        "scenes",
+        "review-session-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/scenes/review-session-scene.png",
       "previewStatus": "image"
     },
     {
@@ -8022,6 +9147,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/study-session/transitions/page-turn-transition.html",
+      "title": "Study Session Page Turn Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Transition card for moving between study sections or segments.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A clean study transition for section breaks and lesson changes.",
+      "tags": [
+        "study-session",
+        "transitions",
+        "page-turn-transition",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/transitions/page-turn-transition.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/study-session/transitions/scene-sweep.html",
       "title": "Study Session Scene Sweep Transition",
       "category": "transitions",
@@ -8049,6 +9199,31 @@
         "study-session"
       ],
       "preview": "previews/themes/study-session/transitions/scene-sweep.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/study-session/widgets/goal-checklist-card.html",
+      "title": "Study Session Goal Checklist Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Widget card for showing completed and remaining study goals.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A ready-made checklist card for quick OBS placement.",
+      "tags": [
+        "study-session",
+        "widgets",
+        "goal-checklist-card",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/widgets/goal-checklist-card.png",
       "previewStatus": "image"
     },
     {
@@ -8082,6 +9257,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/study-session/widgets/session-plan-card.html",
+      "title": "Study Session Plan Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "study-session",
+      "collectionLabel": "Study Session Suite",
+      "useCase": "Widget card for showing the stream plan for the current study block.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "An easy schedule card for study stream structure.",
+      "tags": [
+        "study-session",
+        "widgets",
+        "session-plan-card",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/study-session/widgets/session-plan-card.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/study-session/widgets/promo-card.html",
       "title": "Study Session Promo Card",
       "category": "widgets",
@@ -8109,6 +9309,31 @@
         "study-session"
       ],
       "preview": "previews/themes/study-session/widgets/promo-card.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/tournament-desk/alerts/bracket-clinch-alert.html",
+      "title": "Tournament Desk Bracket Clinch Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Animated alert for clinches, upsets, and bracket-breaking moments.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A match hype alert with beginner-friendly defaults for esports or sports watch streams.",
+      "tags": [
+        "tournament-desk",
+        "alerts",
+        "bracket-clinch-alert",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/alerts/bracket-clinch-alert.png",
       "previewStatus": "image"
     },
     {
@@ -8172,6 +9397,56 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/tournament-desk/lower-thirds/map-pick-lower-third.html",
+      "title": "Tournament Desk Map Pick Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Lower third for showing current map, mode, or round details.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "An easy lower third for map picks and match format labels.",
+      "tags": [
+        "tournament-desk",
+        "lower-thirds",
+        "map-pick-lower-third",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/lower-thirds/map-pick-lower-third.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/tournament-desk/lower-thirds/player-duo-tag.html",
+      "title": "Tournament Desk Player Duo Tag",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Lower third for highlighting a duo, casters, or desk hosts.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A fast nameplate for casters, analysts, or featured player duos.",
+      "tags": [
+        "tournament-desk",
+        "lower-thirds",
+        "player-duo-tag",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/lower-thirds/player-duo-tag.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/tournament-desk/lower-thirds/segment-intro.html",
       "title": "Tournament Desk Segment Intro Lower Third",
       "category": "lower-thirds",
@@ -8203,6 +9478,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/tournament-desk/overlays/bracket-sidebar.html",
+      "title": "Tournament Desk Bracket Sidebar",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Overlay sidebar for bracket status and next matches.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A bracket sidebar for keeping viewers oriented between matches.",
+      "tags": [
+        "tournament-desk",
+        "overlays",
+        "bracket-sidebar",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/overlays/bracket-sidebar.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/tournament-desk/overlays/live-frame.html",
       "title": "Tournament Desk Live Frame Overlay",
       "category": "overlays",
@@ -8230,6 +9530,56 @@
         "tournament-desk"
       ],
       "preview": "previews/themes/tournament-desk/overlays/live-frame.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/tournament-desk/overlays/score-ribbon-overlay.html",
+      "title": "Tournament Desk Score Ribbon Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Overlay ribbon for quick match score updates.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A compact scoreboard strip for analysts, co-streams, or watch parties.",
+      "tags": [
+        "tournament-desk",
+        "overlays",
+        "score-ribbon-overlay",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/overlays/score-ribbon-overlay.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/tournament-desk/scenes/analyst-desk-scene.html",
+      "title": "Tournament Desk Analyst Desk Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Full scene for pre-show desk segments and tactical analysis.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A desk layout with room for notes, topics, and the next segment.",
+      "tags": [
+        "tournament-desk",
+        "scenes",
+        "analyst-desk-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/scenes/analyst-desk-scene.png",
       "previewStatus": "image"
     },
     {
@@ -8290,6 +9640,56 @@
         "tournament-desk"
       ],
       "preview": "previews/themes/tournament-desk/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/tournament-desk/scenes/finals-countdown-scene.html",
+      "title": "Tournament Desk Finals Countdown Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Full scene for waiting on a finals match or main event start.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A complete countdown scene for the biggest part of the bracket.",
+      "tags": [
+        "tournament-desk",
+        "scenes",
+        "finals-countdown-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/scenes/finals-countdown-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/tournament-desk/scenes/post-match-recap-scene.html",
+      "title": "Tournament Desk Post Match Recap Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Full scene for desk recaps, highlights, and post-match conversation.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A recap layout for winner interviews and analysis after the set ends.",
+      "tags": [
+        "tournament-desk",
+        "scenes",
+        "post-match-recap-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/scenes/post-match-recap-scene.png",
       "previewStatus": "image"
     },
     {
@@ -8354,6 +9754,56 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/tournament-desk/scenes/watch-party-scene.html",
+      "title": "Tournament Desk Watch Party Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Full scene for community co-streams and watch parties.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A clean watch-party scene for reactions, predictions, and live community chatter.",
+      "tags": [
+        "tournament-desk",
+        "scenes",
+        "watch-party-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/scenes/watch-party-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/tournament-desk/transitions/arena-flash-transition.html",
+      "title": "Tournament Desk Arena Flash Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Transition splash for switching between desk, gameplay, and replays.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A sharp, high-energy transition for tournament streams.",
+      "tags": [
+        "tournament-desk",
+        "transitions",
+        "arena-flash-transition",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/transitions/arena-flash-transition.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/tournament-desk/transitions/scene-sweep.html",
       "title": "Tournament Desk Scene Sweep Transition",
       "category": "transitions",
@@ -8414,6 +9864,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/tournament-desk/widgets/matchup-card.html",
+      "title": "Tournament Desk Matchup Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Widget card for showing the featured matchup at a glance.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A compact matchup widget for schedule bars or pre-show stacks.",
+      "tags": [
+        "tournament-desk",
+        "widgets",
+        "matchup-card",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/widgets/matchup-card.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/tournament-desk/widgets/promo-card.html",
       "title": "Tournament Desk Promo Card",
       "category": "widgets",
@@ -8441,6 +9916,56 @@
         "tournament-desk"
       ],
       "preview": "previews/themes/tournament-desk/widgets/promo-card.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/tournament-desk/widgets/schedule-card.html",
+      "title": "Tournament Desk Schedule Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "tournament-desk",
+      "collectionLabel": "Tournament Desk Suite",
+      "useCase": "Widget card for showing the next tournament segments.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A simple schedule widget for novice watch-party hosts.",
+      "tags": [
+        "tournament-desk",
+        "widgets",
+        "schedule-card",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/tournament-desk/widgets/schedule-card.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/alerts/checkpoint-alert.html",
+      "title": "Travel Vlog Checkpoint Alert",
+      "category": "alerts",
+      "categoryLabel": "Alerts",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Animated alert for new city arrivals, route checkpoints, or travel milestones.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A fresh travel alert with built-in milestone text for vlog and road-trip streams.",
+      "tags": [
+        "travel-vlog",
+        "alerts",
+        "checkpoint-alert",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/alerts/checkpoint-alert.png",
       "previewStatus": "image"
     },
     {
@@ -8504,6 +10029,31 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/travel-vlog/lower-thirds/location-tag.html",
+      "title": "Travel Vlog Location Tag",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Lower third for displaying current location or neighborhood.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A direct location label for city walkthroughs and destination streams.",
+      "tags": [
+        "travel-vlog",
+        "lower-thirds",
+        "location-tag",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/lower-thirds/location-tag.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/travel-vlog/lower-thirds/segment-intro.html",
       "title": "Travel Vlog Segment Intro Lower Third",
       "category": "lower-thirds",
@@ -8535,6 +10085,56 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/travel-vlog/lower-thirds/sponsor-route-lower-third.html",
+      "title": "Travel Vlog Sponsor Route Lower Third",
+      "category": "lower-thirds",
+      "categoryLabel": "Lower Thirds",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Lower third for route sponsors, hosted stays, or gear partners.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A ready sponsor callout strip for travel creators who need tasteful promo space.",
+      "tags": [
+        "travel-vlog",
+        "lower-thirds",
+        "sponsor-route-lower-third",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/lower-thirds/sponsor-route-lower-third.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/overlays/destination-board-overlay.html",
+      "title": "Travel Vlog Destination Board Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Overlay board for showing current stop and the next destination.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "An itinerary-style overlay that keeps viewers oriented on the journey.",
+      "tags": [
+        "travel-vlog",
+        "overlays",
+        "destination-board-overlay",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/overlays/destination-board-overlay.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/travel-vlog/overlays/live-frame.html",
       "title": "Travel Vlog Live Frame Overlay",
       "category": "overlays",
@@ -8562,6 +10162,31 @@
         "travel-vlog"
       ],
       "preview": "previews/themes/travel-vlog/overlays/live-frame.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/overlays/trip-stats-overlay.html",
+      "title": "Travel Vlog Trip Stats Overlay",
+      "category": "overlays",
+      "categoryLabel": "Overlays",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Overlay for distance, budget, or trip progress statistics.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A compact travel stats box with legible milestones and progress cues.",
+      "tags": [
+        "travel-vlog",
+        "overlays",
+        "trip-stats-overlay",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/overlays/trip-stats-overlay.png",
       "previewStatus": "image"
     },
     {
@@ -8622,6 +10247,81 @@
         "travel-vlog"
       ],
       "preview": "previews/themes/travel-vlog/scenes/closing-screen.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/scenes/day-plan-scene.html",
+      "title": "Travel Vlog Day Plan Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Full scene for the day route plan before leaving a stop.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A full-screen travel planning scene that is already populated with useful defaults.",
+      "tags": [
+        "travel-vlog",
+        "scenes",
+        "day-plan-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/scenes/day-plan-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/scenes/gear-breakdown-scene.html",
+      "title": "Travel Vlog Gear Breakdown Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Full scene for talking through camera gear, bags, or packing choices.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A ready-made layout for packing chats and equipment walk-throughs.",
+      "tags": [
+        "travel-vlog",
+        "scenes",
+        "gear-breakdown-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/scenes/gear-breakdown-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/scenes/live-walkthrough-scene.html",
+      "title": "Travel Vlog Live Walkthrough Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Full scene for walking tours, market visits, and live destination exploration.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A flexible travel scene for real-time exploration streams.",
+      "tags": [
+        "travel-vlog",
+        "scenes",
+        "live-walkthrough-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/scenes/live-walkthrough-scene.png",
       "previewStatus": "image"
     },
     {
@@ -8686,6 +10386,56 @@
       "previewStatus": "image"
     },
     {
+      "path": "themes/travel-vlog/scenes/sunset-wrap-scene.html",
+      "title": "Travel Vlog Sunset Wrap Scene",
+      "category": "scenes",
+      "categoryLabel": "Scenes",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Full scene for ending the day with a recap and tomorrow preview.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": false,
+      "description": "A calm wrap-up scene for travel day recaps and next-stop teases.",
+      "tags": [
+        "travel-vlog",
+        "scenes",
+        "sunset-wrap-scene",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/scenes/sunset-wrap-scene.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/transitions/postcard-sweep-transition.html",
+      "title": "Travel Vlog Postcard Sweep Transition",
+      "category": "transitions",
+      "categoryLabel": "Transitions",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Transition splash for moving between travel stops or route segments.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A postcard-inspired transition for route changes and scene swaps.",
+      "tags": [
+        "travel-vlog",
+        "transitions",
+        "postcard-sweep-transition",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/transitions/postcard-sweep-transition.png",
+      "previewStatus": "image"
+    },
+    {
       "path": "themes/travel-vlog/transitions/scene-sweep.html",
       "title": "Travel Vlog Scene Sweep Transition",
       "category": "transitions",
@@ -8743,6 +10493,56 @@
         "travel-vlog"
       ],
       "preview": "previews/themes/travel-vlog/widgets/goal-widget.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/widgets/itinerary-card.html",
+      "title": "Travel Vlog Itinerary Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Widget card for showing the next travel stops in sequence.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A simple itinerary card for keeping travel viewers oriented.",
+      "tags": [
+        "travel-vlog",
+        "widgets",
+        "itinerary-card",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/widgets/itinerary-card.png",
+      "previewStatus": "image"
+    },
+    {
+      "path": "themes/travel-vlog/widgets/packing-list-card.html",
+      "title": "Travel Vlog Packing List Card",
+      "category": "widgets",
+      "categoryLabel": "Widgets",
+      "collection": "travel-vlog",
+      "collectionLabel": "Travel Vlog Suite",
+      "useCase": "Widget card for packing lists and gear reminders before a route day.",
+      "resolution": "1600x900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "landscape",
+      "transparent": true,
+      "description": "A grab-and-go packing widget for travel creators.",
+      "tags": [
+        "travel-vlog",
+        "widgets",
+        "packing-list-card",
+        "white-label",
+        "novice-friendly",
+        "easy-mode"
+      ],
+      "preview": "previews/themes/travel-vlog/widgets/packing-list-card.png",
       "previewStatus": "image"
     },
     {

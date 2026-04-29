@@ -1,0 +1,164 @@
+<!--
+Title: Podcast Studio New Member Alert
+Category: alerts
+Collection: podcast-studio
+UseCase: On-screen alert for new members, subscribers, or paid supporters during talk-led shows and podcasts.
+Resolution: 800x450
+Transparent: true
+Description: Warm little membership alert that feels polished for podcasts right away.
+Tags: podcast-studio, alerts, new-member-alert, white-label, easy-mode, novice-friendly
+Preview: previews/themes/podcast-studio/alerts/new-member-alert.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Podcast Studio New Member Alert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #8b5cf6;
+      --accent-2: #22d3ee;
+      --accent-3: #f97316;
+      --text: #f5f3ff;
+      --muted: rgba(221, 214, 254, 0.8);
+      --panel: rgba(15, 13, 36, 0.86);
+      --line: rgba(221, 214, 254, 0.16);
+      --bg-1: #07070f;
+      --bg-2: #161634;
+      --bg-3: #101d26;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      color: var(--text);
+      background: transparent;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 1.2rem;
+    }
+
+    .alert {
+      position: relative;
+      width: min(92vw, 760px);
+      padding: 1.35rem;
+      border-radius: 1.5rem;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, transparent), color-mix(in srgb, var(--accent-2) 10%, transparent)), var(--panel);
+      box-shadow: 0 24px 52px rgba(2, 8, 23, 0.34);
+      overflow: hidden;
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(6px);
+      opacity: 0.9;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .orb.one { width: 220px; height: 220px; top: -90px; right: -70px; background: color-mix(in srgb, var(--accent) 24%, transparent); }
+    .orb.two { width: 140px; height: 140px; bottom: -50px; left: -30px; background: color-mix(in srgb, var(--accent-2) 20%, transparent); animation-delay: 0.8s; }
+
+    .pill {
+      position: relative;
+      z-index: 1;
+      width: fit-content;
+      padding: 0.48rem 0.8rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+      max-width: 12ch;
+    }
+
+    p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      max-width: 46ch;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .meter {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.45rem;
+    }
+
+    .meter span {
+      height: 0.6rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+      animation: rise 1.4s ease-in-out infinite;
+    }
+
+    .meter span:nth-child(2) { animation-delay: 0.12s; }
+    .meter span:nth-child(3) { animation-delay: 0.24s; }
+    .meter span:nth-child(4) { animation-delay: 0.36s; }
+
+    @keyframes pulse { 0%, 100% { transform: scale(0.9); opacity: 0.7; } 50% { transform: scale(1.08); opacity: 1; } }
+    @keyframes rise { 0%, 100% { transform: scaleY(0.75); opacity: 0.75; } 50% { transform: scaleY(1); opacity: 1; } }
+  </style>
+</head>
+<body>
+  <div class="alert">
+    <div class="orb one" aria-hidden="true"></div>
+    <div class="orb two" aria-hidden="true"></div>
+    <div class="pill" data-subtitle>Podcast Studio Suite</div>
+    <h1 data-title>Welcome, @newmember</h1>
+    <div class="pill" data-headline>Fresh member support</div>
+    <p>Use it for memberships, community joins, or any quick supporter recognition.</p>
+    <div class="meter" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const title = params.get('title');
+    const subtitle = params.get('subtitle');
+    const headline = params.get('headline');
+    const channel = params.get('channel');
+    const username = params.get('username');
+    const handle = params.get('handle');
+    const cta = params.get('cta');
+    const timer = params.get('timer');
+    const accent = params.get('accent');
+    const items = params.get('items');
+
+    if (title) document.querySelectorAll('[data-title]').forEach((node) => node.textContent = title);
+    if (subtitle) document.querySelectorAll('[data-subtitle]').forEach((node) => node.textContent = subtitle);
+    if (headline) document.querySelectorAll('[data-headline]').forEach((node) => node.textContent = headline);
+    if (channel) document.querySelectorAll('[data-channel]').forEach((node) => node.textContent = channel);
+    if (username) document.querySelectorAll('[data-username]').forEach((node) => node.textContent = username);
+    if (handle) document.querySelectorAll('[data-handle]').forEach((node) => node.textContent = handle);
+    if (cta) document.querySelectorAll('[data-cta]').forEach((node) => node.textContent = cta);
+    if (timer) document.querySelectorAll('[data-timer]').forEach((node) => node.textContent = timer);
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+      document.documentElement.style.setProperty('--accent-2', accent);
+      document.documentElement.style.setProperty('--accent-3', accent);
+    }
+  </script>
+</body>
+</html>
