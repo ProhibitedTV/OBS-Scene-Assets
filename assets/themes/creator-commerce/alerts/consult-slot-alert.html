@@ -1,0 +1,299 @@
+<!--
+Title: Creator Commerce Consult Slot Alert
+Category: alerts
+Collection: creator-commerce
+UseCase: Animated alert for live consult-slot sales and service-call conversions during creator-commerce broadcasts.
+Resolution: 1600x900
+Transparent: true
+Description: Consult-slot alert for service sellers booking calls live on stream.
+Tags: creator-commerce, alerts, consult-slot-alert, white-label, novice-friendly, easy-mode, commerce, sales, offer, checkout, service, consult, alert
+Preview: previews/themes/creator-commerce/alerts/consult-slot-alert.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Creator Commerce Consult Slot Alert</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --accent: #fb7185;
+      --accent-2: #f97316;
+      --accent-3: #facc15;
+      --text: #f8fafc;
+      --muted: rgba(226, 232, 240, 0.8);
+      --line: rgba(255, 255, 255, 0.14);
+      --panel: rgba(8, 12, 22, 0.82);
+      --shadow: rgba(2, 8, 23, 0.34);
+      --bg-1: #15090f;
+      --bg-2: #2c111c;
+      --bg-3: #432116;
+      --bg-4: #230d0a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      background: transparent;
+      color: var(--text);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    .shell {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .scenic {
+      background:
+        radial-gradient(circle at 14% 16%, rgba(255, 255, 255, 0.08), transparent 22%),
+        radial-gradient(circle at 84% 18%, color-mix(in srgb, var(--accent-2) 20%, transparent), transparent 24%),
+        radial-gradient(circle at 22% 82%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 26%),
+        linear-gradient(145deg, var(--bg-1), var(--bg-2) 42%, var(--bg-3) 72%, var(--bg-4));
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(14px);
+      opacity: 0.42;
+      animation: drift 8s ease-in-out infinite;
+    }
+
+    .orb.one {
+      top: -8rem;
+      right: -6rem;
+      width: 24rem;
+      height: 24rem;
+      background: color-mix(in srgb, var(--accent) 30%, transparent);
+    }
+
+    .orb.two {
+      bottom: -7rem;
+      left: -5rem;
+      width: 20rem;
+      height: 20rem;
+      background: color-mix(in srgb, var(--accent-2) 28%, transparent);
+      animation-delay: 1.2s;
+    }
+
+    .grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.2;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px);
+      background-size: 2.2rem 2.2rem;
+      mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.96), transparent 88%);
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 28px 60px var(--shadow);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      width: fit-content;
+      padding: 0.46rem 0.88rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .headline {
+      margin: 0;
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .copy {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.58;
+    }
+
+    .accent-line {
+      width: 5rem;
+      height: 0.28rem;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3));
+    }
+
+    .rows {
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .row {
+      padding: 0.86rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 0.82rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .stat {
+      padding: 0.92rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.06);
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .stat strong {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .stat span {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .ticker {
+      display: inline-flex;
+      gap: 1rem;
+      white-space: nowrap;
+      animation: marquee 24s linear infinite;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.46rem 0.82rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .timer {
+      width: fit-content;
+      padding: 0.78rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    @keyframes drift {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(0, 1rem, 0) scale(1.06); }
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="grain"></div>
+    <section style="min-height:100vh;display:grid;place-items:center;padding:1.4rem;">
+      <article class="panel" style="width:min(92vw,54rem);padding:1.45rem;border-radius:1.5rem;display:grid;gap:0.92rem;animation:rise .7s ease both;">
+        <div class="pill" id="headline">New Slot Taken</div>
+        <div class="accent-line"></div>
+        <h1 class="headline" id="title" style="font-size:clamp(2rem,3.4vw,3.25rem);">Consult Call Just Booked</h1>
+        <p class="copy" id="subtitle">Use this when service packages and consults are converting live and you want that momentum visible.</p>
+        <div class="chips" id="items">
+          <span class="chip">Only a few slots left today</span>
+          <span class="chip">Application link in bio</span>
+          <span class="chip">FAQ panel still available</span>
+        </div>
+      </article>
+    </section>
+  </div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const read = (key, fallback) => {
+      const value = params.get(key);
+      return value && value.trim() ? value.trim() : fallback;
+    };
+    const setText = (id, value) => {
+      const target = document.getElementById(id);
+      if (target) target.textContent = value;
+    };
+    const accent = read('accent', '');
+    if (accent) {
+      document.documentElement.style.setProperty('--accent', accent);
+    }
+
+    setText('headline', read('headline', "New Slot Taken"));
+    setText('title', read('title', "Consult Call Just Booked"));
+    setText('subtitle', read('subtitle', "Use this when service packages and consults are converting live and you want that momentum visible."));
+    const readItems = (fallback) => {
+      const raw = params.get('items');
+      if (!raw) return fallback;
+      return raw.split('|').map((item) => item.trim()).filter(Boolean);
+    };
+    const renderItems = (id, values) => {
+      const target = document.getElementById(id);
+      if (!target) return;
+      target.innerHTML = '';
+      values.forEach((value) => {
+        const el = document.createElement('span');
+        el.className = 'chip';
+        el.textContent = value;
+        target.appendChild(el);
+      });
+    };
+    renderItems('items', readItems(["Only a few slots left today","Application link in bio","FAQ panel still available"]));
+
+  </script>
+</body>
+</html>
